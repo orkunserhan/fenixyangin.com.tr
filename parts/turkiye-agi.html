@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fenix Yangın — Hizmet Ağı</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;height:100%;background:#14181B;font-family:'Instrument Sans',system-ui,sans-serif;overflow:hidden}
+#map{width:100%;height:100%;display:block}
+.ulke{fill:#232A2F;stroke:#5A666E;stroke-width:1.1;stroke-linejoin:round}
+.arc{fill:none;stroke:#BE1523;stroke-linecap:round}
+.arc-a{stroke-width:1.05;opacity:.66}
+.arc-b{stroke-width:.7;opacity:.3}
+.lbl{fill:#8A959B;font:500 11px 'Instrument Sans',sans-serif}
+.lbl-c{fill:#fff;font:600 13px 'Instrument Sans',sans-serif;letter-spacing:.02em}
+@keyframes flow{from{stroke-dashoffset:var(--l)}to{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{opacity:.16;transform:scale(.7)}50%{opacity:.5;transform:scale(1.5)}}
+.pulse{fill:none;stroke:#BE1523;stroke-width:1;transform-box:fill-box;transform-origin:center;animation:pulse 3.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.arc{animation:none!important;stroke-dashoffset:0!important}.pulse{animation:none;opacity:.36}}
+</style>
+</head>
+<body>
+<svg id="map" role="img" aria-label="İstanbul merkezli Fenix Yangın hizmet ağı — Türkiye'nin 81 ili"></svg>
+<script>
+/* 81 il merkezi [ad, boylam, enlem, bağlantı?, etiket?] — bağlantı=1 ana akış hattı, etiket=1 görünür ad */
+const IL = [
+['İstanbul',28.9784,41.0082,2,2],
+['Tekirdağ',27.5117,40.9781,1,0],['Edirne',26.5557,41.6771,0,0],['Kırklareli',27.2167,41.7333,0,0],
+['Çanakkale',26.4142,40.1553,1,0],['Balıkesir',27.8826,39.6484,1,0],['Bursa',29.0610,40.1885,1,0],
+['Yalova',29.2769,40.6500,0,0],['Kocaeli',29.9200,40.7654,1,0],['Sakarya',30.4033,40.6940,0,0],
+['Bilecik',29.9833,40.1500,0,0],['Düzce',31.1565,40.8438,0,0],['Bolu',31.6082,40.7392,0,0],
+['Zonguldak',31.7987,41.4564,1,0],['Karabük',32.6272,41.2061,0,0],['Bartın',32.3375,41.6344,0,0],
+['Kastamonu',33.7827,41.3887,0,0],['Sinop',35.1553,42.0231,0,0],['Samsun',36.3300,41.2867,1,1],
+['Ordu',37.8797,40.9839,1,0],['Giresun',38.3895,40.9128,0,0],['Trabzon',39.7168,41.0027,1,1],
+['Rize',40.5219,41.0201,0,0],['Artvin',41.8183,41.1828,0,0],['Ardahan',42.7022,41.1105,0,0],
+['Kars',43.0975,40.6013,0,0],['Iğdır',44.0448,39.9237,0,0],['Ağrı',43.0503,39.7191,0,0],
+['Erzurum',41.2769,39.9043,1,1],['Bayburt',40.2249,40.2552,0,0],['Gümüşhane',39.4816,40.4602,0,0],
+['Erzincan',39.4900,39.7500,0,0],['Tunceli',39.5401,39.1079,0,0],['Bingöl',40.4980,38.8847,0,0],
+['Muş',41.4911,38.7333,0,0],['Bitlis',42.1078,38.4006,0,0],['Van',43.3800,38.4891,1,0],
+['Hakkari',43.7408,37.5833,0,0],['Şırnak',42.4611,37.5164,0,0],['Siirt',41.9333,37.9333,0,0],
+['Batman',41.1351,37.8812,0,0],['Mardin',40.7351,37.3126,0,0],['Diyarbakır',40.2306,37.9144,1,1],
+['Şanlıurfa',38.7955,37.1591,1,0],['Adıyaman',38.2786,37.7648,0,0],['Malatya',38.3095,38.3552,1,0],
+['Elazığ',39.2264,38.6810,0,0],['Sivas',37.0179,39.7477,1,0],['Tokat',36.5544,40.3167,0,0],
+['Amasya',35.8353,40.6499,0,0],['Çorum',34.9537,40.5506,0,0],['Yozgat',34.8147,39.8181,0,0],
+['Kırıkkale',33.5153,39.8468,0,0],['Çankırı',33.6134,40.6013,0,0],['Ankara',32.8541,39.9334,1,1],
+['Eskişehir',30.5256,39.7767,1,0],['Kütahya',29.9833,39.4167,0,0],['Uşak',29.4058,38.6823,0,0],
+['Afyonkarahisar',30.5387,38.7638,0,0],['Manisa',27.4289,38.6191,0,0],['İzmir',27.1428,38.4237,1,1],
+['Aydın',27.8456,37.8560,0,0],['Muğla',28.3665,37.2153,1,0],['Denizli',29.0875,37.7765,1,0],
+['Burdur',30.2917,37.7203,0,0],['Isparta',30.5566,37.7648,0,0],['Antalya',30.7133,36.8969,1,1],
+['Konya',32.4846,37.8746,1,0],['Karaman',33.2287,37.1759,1,0],['Aksaray',34.0254,38.3687,0,0],
+['Nevşehir',34.7130,38.6244,0,0],['Kırşehir',34.1709,39.1425,0,0],['Kayseri',35.4787,38.7312,1,0],
+['Niğde',34.6791,37.9667,0,0],['Mersin',34.6415,36.8121,1,0],['Adana',35.3213,37.0000,1,1],
+['Osmaniye',36.2478,37.0682,0,0],['Hatay',36.1613,36.2023,1,0],['Kahramanmaraş',36.9371,37.5753,0,0],
+['Gaziantep',37.3781,37.0662,1,1],['Kilis',37.1212,36.7184,0,0]
+];
+
+const svg = d3.select('#map');
+let country = null;
+
+function render() {
+  if (!country) return;
+  const el = document.getElementById('map');
+  const w = el.clientWidth || 900, h = el.clientHeight || 520;
+  const small = w < 520;
+  svg.attr('viewBox', '0 0 ' + w + ' ' + h).selectAll('*').remove();
+  const pad = Math.min(w, h) * 0.07;
+  const proj = d3.geoMercator().fitExtent([[pad, pad], [w - pad, h - pad]], country);
+  svg.append('path').attr('class', 'ulke').attr('d', d3.geoPath(proj)(country));
+
+  const P = IL.map(c => {
+    const p = proj([c[1], c[2]]);
+    return { name: c[0], x: p[0], y: p[1], hub: c[3] === 2, main: c[3] === 1, label: c[4] };
+  });
+  const hub = P[0];
+
+  const gArc = svg.append('g');
+  let n = 0;
+  P.slice(1).forEach(c => {
+    const dx = c.x - hub.x, dy = c.y - hub.y;
+    const len = Math.hypot(dx, dy) || 1;
+    const ux = dx / len, uy = dy / len;
+    const sx = hub.x + ux * 7, sy = hub.y + uy * 7;
+    const ex = c.x - ux * 3, ey = c.y - uy * 3;
+    const bow = Math.max(12, Math.min(70, len * 0.13));
+    const mx = (sx + ex) / 2, my = (sy + ey) / 2;
+    const cx = mx - uy * bow, cy = my + ux * bow;
+    const p = gArc.append('path')
+      .attr('class', c.main ? 'arc arc-a' : 'arc arc-b')
+      .attr('d', 'M' + sx.toFixed(1) + ',' + sy.toFixed(1) + ' Q' + cx.toFixed(1) + ',' + cy.toFixed(1) + ' ' + ex.toFixed(1) + ',' + ey.toFixed(1));
+    const L = p.node().getTotalLength();
+    p.style('--l', L).attr('stroke-dasharray', L)
+      .style('animation', 'flow .7s cubic-bezier(.22,.61,.36,1) ' + (0.008 * n + 0.1).toFixed(3) + 's both');
+    n++;
+  });
+
+  svg.append('circle').attr('class', 'pulse').attr('cx', hub.x).attr('cy', hub.y).attr('r', 12);
+
+  P.forEach(c => {
+    svg.append('circle').attr('cx', c.x).attr('cy', c.y)
+      .attr('r', c.hub ? 4.5 : (c.main ? 2.4 : 1.5))
+      .attr('fill', c.hub ? '#BE1523' : (c.main ? '#E6EBED' : '#7E8A91'));
+    if (c.hub) {
+      svg.append('text').attr('class', 'lbl-c').attr('x', c.x + 2).attr('y', c.y - 15)
+        .attr('text-anchor', 'middle').text('İSTANBUL');
+    }
+    /* İstanbul dışında hiçbir il adı arayüzde gösterilmez — 81 il koordinatı yalnızca network hesabında kullanılır */
+  });
+}
+
+d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json').then(topo => {
+  const all = topojson.feature(topo, topo.objects.countries).features;
+  country = all.find(f => /^(Turkey|Türkiye)$/i.test(f.properties && f.properties.name)) || all.find(f => f.id === '792');
+  render();
+});
+window.addEventListener('resize', render);
+</script>
+</body>
+</html>

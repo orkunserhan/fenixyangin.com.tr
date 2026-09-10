@@ -1,0 +1,34 @@
+# --- gizli / asla commit edilmez ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+secrets.*
+config.local.*
+credentials.*
+
+# --- veritabanı ---
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.sql.gz
+
+# --- geliştirme artıkları ---
+*.map
+*.log
+node_modules/
+.cache/
+.tmp/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.bak
+*.orig
+*~
+
+# --- yerel editör ---
+.vscode/
+.idea/

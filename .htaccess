@@ -1,0 +1,35 @@
+# FENİX YANGIN — production web root (IHS / Apache)
+# Statik site: PHP yok, veritabanı yok, gizli anahtar yok.
+
+# 1 · dizin listelemesi kapalı
+Options -Indexes
+
+# 2 · gizli dosya ve klasörlere erişim yok (.git, .env, .htaccess dahil)
+RedirectMatch 404 /\.(?!well-known)
+<FilesMatch "^\.|\.(env|log|sql|sqlite|db|bak|orig|md|map|json|yml|yaml)$">
+  Require all denied
+</FilesMatch>
+
+# 3 · güvenlik başlıkları
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  # CSP — kullanılan tek dış kaynak: Google Fonts, jsDelivr/unpkg (harita), YouTube (tıkla-yükle)
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net; frame-src 'self' https://www.youtube-nocookie.com; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'"
+</IfModule>
+
+# 4 · 404
+ErrorDocument 404 /pages/404.html
+
+# 5 · önbellek
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
