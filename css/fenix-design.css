@@ -883,3 +883,97 @@ html, body {
       font-size: 14px;
   }
 }
+
+
+/* Footer padding fix */
+.fx-footer {
+    padding-top: 60px !important;
+}
+
+/* Sektor cards animation fix */
+.fx-sector {
+    min-height: unset !important;
+    height: 380px !important;
+    width: 240px !important;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease !important;
+    position: relative !important;
+}
+.fx-sector__media {
+    height: 140px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 0 !important;
+}
+.fx-sector__body {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 24px !important;
+    z-index: 2 !important;
+}
+.fx-sector.is-active {
+    width: 380px !important;
+    height: 380px !important;
+    padding: 0 !important;
+    justify-content: flex-end !important;
+}
+.fx-sector.is-active .fx-sector__media {
+    height: 100% !important;
+}
+.fx-sector.is-active::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(to top, rgba(11,14,16,0.95) 0%, rgba(20,24,27,0.4) 50%, rgba(20,24,27,0.1) 100%) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Mühendislik Süreci (fx-rail) Tek Satır (1 line) Fix on Desktop */
+@media (min-width: 761px) {
+  .fx-rail__steps {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 32px !important;
+    padding-bottom: 24px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .fx-rail__steps::-webkit-scrollbar {
+    display: none !important;
+  }
+  .fx-rail__step {
+    flex: 0 0 280px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-bottom: 0 !important;
+  }
+  .fx-rail__step::before {
+    display: none !important;
+  }
+}
+
+/* Video cards (fx-video-scroller) Tek Satır (1 line) Fix on Desktop */
+@media (min-width: 761px) {
+  .fx-video-scroller {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 24px !important;
+    padding-bottom: 32px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .fx-video-scroller::-webkit-scrollbar {
+    display: none !important;
+  }
+  .fx-video-scroller .fx-video {
+    flex: 0 0 320px !important; /* Fixed width so they look great and don't squish */
+  }
+}
