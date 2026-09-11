@@ -477,7 +477,7 @@ table{border-collapse:collapse;width:100%}
 /* YALNIZ "İSTANBUL" etiketi · başka şehir/bölge adı YOK · WebGL YOK */
 
 /* ---------- 20 · WHATSAPP ---------- */
-.fx-wa{position:fixed;right:var(--fx-s7);bottom:var(--fx-s7);z-index:50;
+.fx-wa{position:fixed;right:var(--fx-s7);bottom:var(--fx-s7);z-index:9999;
   display:flex;align-items:center;background:var(--fx-ink);border:1px solid var(--fx-on-dark-line-2);
   border-radius:var(--fx-r-ui);overflow:hidden;max-width:54px;transition:max-width var(--fx-t-fast) ease}
 .fx-wa:hover,.fx-wa:focus-visible{max-width:250px}
@@ -529,8 +529,8 @@ table{border-collapse:collapse;width:100%}
   .fx-logo img{height:22px}
   .fx-hero--home,.fx-hero--page{min-height:0}
   .fx-hero{display:flex;flex-direction:column}
-  .fx-hero__media{position:relative;inset:auto;aspect-ratio:1/1;order:-1}
-  .fx-hero__scrim{background:linear-gradient(180deg,rgba(20,24,27,.5) 0%,rgba(20,24,27,.18) 32%,rgba(20,24,27,.94) 78%,var(--fx-ink) 100%)}
+  .fx-hero__media{position:absolute;inset:0;width:100%;height:100%;order:unset;aspect-ratio:auto;z-index:1} .fx-hero__inner{position:relative;z-index:3;padding-block:60px}
+  .fx-hero__scrim{background:rgba(255,255,255,0.85);z-index:2}
   .fx-hero__inner{padding-block:var(--fx-s6);gap:var(--fx-s6)}
   .fx-hero__actions{display:grid;gap:10px}
   .fx-hero__actions .fx-btn{width:100%}
@@ -632,9 +632,9 @@ table{border-collapse:collapse;width:100%}
 }
 @media (max-width:760px){
   /* mobilde kontrat: fotoğraf metnin üstünde ayrı 4:5 blok — full-bleed bindirme yok */
-  .fx-hero--full .fx-hero__media{position:relative;inset:auto;aspect-ratio:1/1;order:-1}
+  .fx-hero--full .fx-hero__media{position:absolute;inset:0;width:100%;height:100%;order:unset;aspect-ratio:auto;z-index:1} .fx-hero__inner{position:relative;z-index:3;padding-block:60px}
   .fx-hero__media img{object-position:60% 45%}
-  .fx-hero--full .fx-hero__scrim{background:linear-gradient(180deg,rgba(20,24,27,.5) 0%,rgba(20,24,27,.18) 32%,rgba(20,24,27,.94) 78%,var(--fx-ink) 100%)}
+  .fx-hero--full .fx-hero__scrim{background:rgba(255,255,255,0.85);z-index:2}
 }
 
 
@@ -642,4 +642,5 @@ table{border-collapse:collapse;width:100%}
    Bleed'li şeritler (sektör/proje) bölüm dışına sızıp belgeyi yatay kaydırmasın.
    Şeritler kendi içinde kaymaya devam eder; kırpma yalnız bölüm sınırındadır. */
 .fx-section,.fx-section--dark,.fx-section--darker,.fx-section--paper,.fx-section--white,.fx-section--red{overflow-x:clip}
+
 
