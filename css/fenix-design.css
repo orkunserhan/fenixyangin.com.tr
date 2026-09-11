@@ -583,7 +583,7 @@ table{border-collapse:collapse;width:100%}
   .fx-footer__bottom{display:block}
   .fx-footer__legal{margin-top:var(--fx-s4)}
   /* WhatsApp: CTA'ların üzerine binmez */
-  .fx-wa{right:var(--fx-s5);bottom:var(--fx-s5);max-width:200px; background:var(--fx-red); border-color:var(--fx-red);}
+  .fx-wa{right:var(--fx-s5);bottom:80px;max-width:220px; background:var(--fx-red); border-color:var(--fx-red); box-shadow: 0 4px 14px rgba(0,0,0,0.25);}
   .fx-wa:hover{max-width:250px}
   .fx-wa__label{display:inline-block; font-size:12px; padding-right:12px}
   .fx-map__frame{height:250px}
@@ -707,3 +707,4 @@ table{border-collapse:collapse;width:100%}
 
 
 @media (min-width: 761px) { .fx-topbar { flex-direction: row !important; justify-content: center; gap: 30px !important; padding: 10px 40px !important; } }
+
