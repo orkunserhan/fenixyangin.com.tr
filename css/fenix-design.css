@@ -190,7 +190,7 @@ table{border-collapse:collapse;width:100%}
 .fx-nav__link.is-active{background:var(--fx-wash-red);color:var(--fx-red)}
 .fx-header--dark .fx-nav__link.is-active{background:rgba(255,255,255,.1);color:#fff}
 .fx-nav__cta{margin-left:var(--fx-s3)}
-.fx-burger{display:none;min-height:var(--fx-touch);align-items:center;padding:10px 14px;border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);background:transparent;font:var(--fx-w-medium) 14px/1 var(--fx-font)}
+.fx-burger{display:none;margin-left:auto;min-height:var(--fx-touch);align-items:center;padding:10px 14px;border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);background:transparent;font:var(--fx-w-medium) 14px/1 var(--fx-font)}
 .fx-header--dark .fx-burger{border-color:rgba(255,255,255,.28);color:#fff}
 
 /* mobil panel — açık/kapalı state class ile */
@@ -998,7 +998,41 @@ html, body {
 
 
 
-/* Animations for logos */
+
+/* ---------- HERO SCRIM (Glassmorphism Transition) ---------- */
+/* Masaüstü: Sol taraf (yazı arkası) buğulu ve aydınlık, fotoğraf tamamen belirgin */
+.fx-hero--home .fx-hero__scrim {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.6) 40%, transparent 60%) !important;
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 65%);
+  mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 65%);
+}
+
+/* Sol taraftaki beyazlık bomboş durmasın diye hafif atan bir kırmızılık (pulse) */
+.fx-hero--home .fx-hero__scrim::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 50%, rgba(220,38,38,0.06) 0%, transparent 40%);
+  animation: fx-pulse-light 6s ease-in-out infinite alternate;
+}
+
+@keyframes fx-pulse-light {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Mobil: Yukarıdan aşağıya buğulu geçiş (fotonun üstünü kapatmaz, sadece flulaştırıp yazıyı okutur) */
+@media (max-width: 760px) {
+  .fx-hero--home .fx-hero__scrim {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 55%, transparent 80%) !important;
+    backdrop-filter: blur(8px);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 85%);
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 85%);
+  }
+}
+
+/* ---------- LOGO STYLES (Classy Transparent Frames) ---------- */
 @keyframes fx-float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -1012,50 +1046,47 @@ html, body {
 }
 
 .fx-hero__logo-tse {
-  height: 80px;
+  height: 90px;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.90); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  filter: contrast(1.15) brightness(0.95);
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 3px solid var(--fx-red);
+  padding: 10px 20px;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1);
   animation: fx-float 4s ease-in-out infinite;
   display: block;
 }
 
 .fx-hero__logo-certs {
-  height: 100px;
+  height: 120px;
   max-width: 100%;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.90); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  filter: contrast(1.15) brightness(0.95);
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 3px solid var(--fx-red);
+  padding: 10px 20px;
+  border-radius: 8px;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1);
   animation: fx-float-reverse 5s ease-in-out infinite;
   display: block;
 }
 
 @media (max-width: 760px) {
   .fx-hero__logo-tse {
-    height: 60px;
+    height: 65px;
+    padding: 8px 16px;
   }
   .fx-hero__logo-certs {
-    height: 65px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    height: 80px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     align-self: center;
   }
 }
-
-
-/* Define the light scrim for desktop */
-.fx-hero--home .fx-hero__scrim {
-  background: linear-gradient(97deg, var(--fx-paper) 0%, rgba(245,246,246,0.95) 45%, rgba(220,38,38,0.1) 80%, rgba(220,38,38,0.15) 100%) !important;
-}
-
-/* On mobile, make the light scrim cover from top to bottom so the text doesn't overflow into transparency */
-@media (max-width: 760px) {
-  .fx-hero--home .fx-hero__scrim {
-    background: linear-gradient(to bottom, var(--fx-paper) 0%, rgba(245,246,246,0.95) 75%, rgba(245,246,246,0.2) 100%) !important;
-  }
-}
-
-
 
 /* Ensure text is perfectly readable over the light scrim */
 .fx-hero--home .fx-hero__title {
