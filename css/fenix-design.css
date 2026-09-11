@@ -600,7 +600,7 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- 24 · PRINT ---------- */
 @media print{
-  .fx-wa,.fx-strip-nav,.fx-video__play,.fx-burger,.fx-mobilenav{position:fixed;top:0;right:0;bottom:0;width:85%;max-width:360px;background:#14181b;color:#fff;z-index:999;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,0.5);}
+  .fx-wa,.fx-strip-nav,.fx-video__play,.fx-mobilenav{position:fixed;top:0;right:0;bottom:0;width:85%;max-width:360px;background:#14181b;color:#fff;z-index:999;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,0.5);}
   body{background:#fff}
   .fx-section--dark,.fx-section--darker,.fx-header--dark{background:#fff !important;color:#000 !important}
 }
@@ -999,63 +999,29 @@ html, body {
 
 
 
-/* ---------- HERO SCRIM (Glassmorphism Transition) ---------- */
-/* Masaüstü: Sol taraf (yazı arkası) buğulu ve aydınlık, fotoğraf tamamen belirgin */
+
+/* ---------- HERO SCRIM (Clean, Bright, Minimal) ---------- */
+/* Masaüstü: Sol taraf aydınlık beyaz geçiş, fotoğrafa klas bir fade out */
 .fx-hero--home .fx-hero__scrim {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.6) 40%, transparent 60%) !important;
-  backdrop-filter: blur(10px);
-  -webkit-mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 65%);
-  mask-image: linear-gradient(90deg, black 0%, black 45%, transparent 65%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.7) 45%, transparent 65%) !important;
 }
 
-/* Sol taraftaki beyazlık bomboş durmasın diye hafif atan bir kırmızılık (pulse) */
-.fx-hero--home .fx-hero__scrim::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 10% 50%, rgba(220,38,38,0.06) 0%, transparent 40%);
-  animation: fx-pulse-light 6s ease-in-out infinite alternate;
-}
-
-@keyframes fx-pulse-light {
-  0% { opacity: 0.3; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1.05); }
-}
-
-/* Mobil: Yukarıdan aşağıya buğulu geçiş (fotonun üstünü kapatmaz, sadece flulaştırıp yazıyı okutur) */
+/* Mobil: Yukarıdan aşağıya aydınlık beyaz geçiş (yazıyı okutur, fotoyu kaybetmez) */
 @media (max-width: 760px) {
   .fx-hero--home .fx-hero__scrim {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.6) 55%, transparent 80%) !important;
-    backdrop-filter: blur(8px);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 85%);
-    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 85%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 55%, transparent 75%) !important;
   }
 }
 
-/* ---------- LOGO STYLES (Classy Transparent Frames) ---------- */
-@keyframes fx-float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes fx-float-reverse {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-  100% { transform: translateY(0); }
-}
-
+/* ---------- LOGO STYLES (Solid, Premium, No Animation) ---------- */
 .fx-hero__logo-tse {
   height: 90px;
   object-fit: contain;
-  background: transparent !important;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-left: 3px solid var(--fx-red);
-  padding: 10px 20px;
+  background: #fff !important;
   border-radius: 8px;
-  mix-blend-mode: multiply;
-  filter: contrast(1.1);
-  animation: fx-float 4s ease-in-out infinite;
+  padding: 12px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
   display: block;
 }
 
@@ -1063,32 +1029,35 @@ html, body {
   height: 120px;
   max-width: 100%;
   object-fit: contain;
-  background: transparent !important;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 3px solid var(--fx-red);
-  padding: 10px 20px;
+  background: #fff !important;
   border-radius: 8px;
-  mix-blend-mode: multiply;
-  filter: contrast(1.1);
-  animation: fx-float-reverse 5s ease-in-out infinite;
+  padding: 12px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
   display: block;
 }
 
-@media (max-width: 760px) {
-  .fx-hero__logo-tse {
-    height: 65px;
-    padding: 8px 16px;
-  }
-  .fx-hero__logo-certs {
-    height: 80px;
-    padding: 8px 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    align-self: center;
-  }
+.fx-hero__aside {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 40px;
 }
 
-/* Ensure text is perfectly readable over the light scrim */
+/* Mobile Visibility Utilities */
+@media (max-width: 760px) {
+  .fx-desktop-only { display: none !important; }
+  .fx-hero__logo-tse { height: 75px; padding: 10px 20px; margin: 0 auto; }
+  .fx-hero__logo-certs { height: 85px; padding: 10px 20px; margin-top: 16px; align-self: center; }
+  .fx-hero__aside { justify-content: center; padding-bottom: 20px; }
+}
+@media (min-width: 761px) {
+  .fx-mobile-only { display: none !important; }
+}
+
+/* Ensure text is perfectly readable over the bright scrim */
 .fx-hero--home .fx-hero__title {
   color: var(--fx-ink) !important;
 }
@@ -1096,3 +1065,36 @@ html, body {
 .fx-hero--home .fx-hero__text {
   color: var(--fx-body) !important;
 }
+
+/* ---------- FENIX LOGO SHINE EFFECT ---------- */
+.fx-logo img {
+  width: 175px !important; /* Bir tık daha büyük */
+  height: auto;
+}
+.fx-logo {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.fx-logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: fx-shine 15s infinite;
+}
+@keyframes fx-shine {
+  0%, 85% { left: -150%; }
+  95%, 100% { left: 200%; }
+}
+
+/* Fix Mobile Burger Z-index */
+.fx-burger {
+  position: relative;
+  z-index: 1001; /* Ensure it's clickable above everything */
+}
+
