@@ -840,3 +840,32 @@ table{border-collapse:collapse;width:100%}
   .fx-cta-buttons { flex-direction: column !important; align-items: stretch !important; }
   .fx-cta-buttons .fx-btn { width: 100% !important; text-align: center; }
 }
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.fx-sector.is-active {
+    min-height: 460px !important;
+    justify-content: flex-end !important;
+}
+.fx-sector.is-active .fx-sector__body {
+    margin-top: auto;
+}
+
+.fx-rail__steps {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 761px) {
+  .fx-rail__steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+  .fx-rail__step::after {
+    display: none !important;
+  }
+}
