@@ -834,3 +834,9 @@ table{border-collapse:collapse;width:100%}
   .fx-footer__legal { margin-left:0; }
   .fx-footer__legal a { margin-left:0; margin-right:16px; }
 }
+
+@media (max-width: 760px) {
+  .fx-hide-mobile { display: none !important; }
+  .fx-cta-buttons { flex-direction: column !important; align-items: stretch !important; }
+  .fx-cta-buttons .fx-btn { width: 100% !important; text-align: center; }
+}
