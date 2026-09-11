@@ -195,7 +195,7 @@ table{border-collapse:collapse;width:100%}
 
 /* mobil panel — açık/kapalı state class ile */
 .fx-mobilenav{position:fixed;top:0;right:0;bottom:0;width:85%;max-width:360px;background:#14181b;color:#fff;z-index:999;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,0.5);}
-.fx-mobilenav.is-open{display:block}
+.fx-mobilenav.is-open{display:block;transform:translateX(0) !important;}
 .fx-mobilenav__item{display:flex;align-items:center;justify-content:space-between;min-height:var(--fx-touch);padding:var(--fx-s4) var(--fx-s6);border-bottom:1px solid var(--fx-on-dark-line);color:#fff;font:var(--fx-w-semi) 15.5px/1 var(--fx-font)}
 .fx-mobilenav__sub{display:none;background:var(--fx-ink-3)}
 .fx-mobilenav__item[aria-expanded="true"]+.fx-mobilenav__sub{display:block}
@@ -1025,11 +1025,10 @@ html, body {
 /* ---------- LOGO STYLES ---------- */
 /* Desktop (Sağ Alt Köşe - Cam Efekti / Glassmorphism Çerçeve) */
 .fx-hero__logo-tse, .fx-hero__logo-certs {
-  background: rgba(255, 255, 255, 0.6) !important;
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
   mix-blend-mode: normal !important;
   display: block;
 }
@@ -1065,7 +1064,7 @@ html, body {
     border: none;
     box-shadow: none;
     backdrop-filter: none;
-    mix-blend-mode: multiply !important;
+    mix-blend-mode: normal !important;
     padding: 0;
   }
   
@@ -1078,7 +1077,7 @@ html, body {
     border: none;
     box-shadow: none;
     backdrop-filter: none;
-    mix-blend-mode: multiply !important;
+    mix-blend-mode: normal !important;
     padding: 0;
   }
   
