@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
@@ -406,33 +406,58 @@
     </div>
   </section>
 
-  <section class="fx-section fx-section--paper" style="padding:0">
-    <div class="fx-grid fx-grid--7-5" style="gap:0">
-      <div class="fx-media fx-media--3x2 fx-media--flat">
-        <img src="assets/img/hero-fenix-yangin.webp" alt="Vaka Çalışması Örneği" style="opacity: 0.9;">
-        <div style="position:absolute;top:24px;left:24px;display:flex;gap:8px">
-          <span class="fx-badge fx-badge--yellow">Öne çıkan vaka çalışması</span>
-          <span class="fx-badge fx-badge--dark">Video var</span>
+  <section class="fx-section fx-section--paper">
+    <div class="fx-wrap">
+      <div style="max-width:600px; margin-bottom:40px;">
+        <span class="fx-eyebrow" style="color:var(--fx-red);">Vaka Çalışmaları</span>
+        <h2 class="fx-h2 fx-h2--sm" style="margin:14px 0; color:var(--fx-ink)">Mühendislik kapasitesi, ölçülebilir verilerle</h2>
+        <p class="fx-text" style="color:var(--fx-body);">Öne çıkan vaka kaydı eklendiğinde bu alanda proje adı, mahal tipi, hacim, gaz miktarı ve tutma süresi gösterilir. Tamamlanan uygulamaları teknik verileriyle inceleyin.</p>
+      </div>
+
+      <div class="fx-grid" style="grid-template-columns: repeat(12, 1fr); gap: 24px;">
+        
+        <!-- Öne Çıkan Büyük Proje -->
+        <a href="pages/projeler.html" style="grid-column: span 8; position: relative; border-radius: var(--fx-r-box); overflow:hidden; display:block; aspect-ratio: 16/9; background: #E5E7EB; text-decoration:none;">
+          <img src="assets/img/hero-fenix-yangin.webp" alt="Vaka Çalışması Örneği" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,24,27,0) 40%, rgba(20,24,27,0.85) 100%);"></div>
+          <div style="position:absolute; bottom:30px; left:30px; right:30px;">
+            <div style="display:flex; gap:8px; margin-bottom:12px;">
+              <span class="fx-badge fx-badge--yellow">Öne çıkan vaka</span>
+              <span class="fx-badge fx-badge--red">FM200</span>
+            </div>
+            <h3 class="fx-h2 fx-h2--sm" style="color:#fff; margin:0 0 8px;">Sunucu Odası ve Veri Merkezi Koruma Sistemi</h3>
+            <span style="color:rgba(255,255,255,0.8); font-size:14px;">1200m³ Hacim • İstanbul, Türkiye</span>
+          </div>
+        </a>
+
+        <!-- Yandaki Diğer Projeler -->
+        <div style="grid-column: span 4; display:flex; flex-direction:column; gap:24px;">
+          
+          <a href="pages/projeler.html" style="display:flex; flex-direction:column; background:var(--fx-white); border:1px solid var(--fx-line); border-radius:var(--fx-r-box); overflow:hidden; text-decoration:none; height:100%;">
+            <div style="aspect-ratio:16/9; background:#EDEFF0; position:relative;">
+              <span class="fx-media__note" style="color:var(--fx-muted)">PROJE GÖRSELİ (16:9)</span>
+            </div>
+            <div style="padding:20px;">
+              <h4 class="fx-h3 fx-h3--sm" style="color:var(--fx-ink); margin:0 0 6px;">Endüstriyel Üretim Tesisi</h4>
+              <span style="color:var(--fx-muted); font-size:13px;">Karbondioksit (CO2) • 450m³</span>
+            </div>
+          </a>
+
+          <a href="pages/projeler.html" style="display:flex; flex-direction:column; background:var(--fx-white); border:1px solid var(--fx-line); border-radius:var(--fx-r-box); overflow:hidden; text-decoration:none; height:100%;">
+            <div style="aspect-ratio:16/9; background:#EDEFF0; position:relative;">
+              <span class="fx-media__note" style="color:var(--fx-muted)">PROJE GÖRSELİ (16:9)</span>
+            </div>
+            <div style="padding:20px;">
+              <h4 class="fx-h3 fx-h3--sm" style="color:var(--fx-ink); margin:0 0 6px;">Arşiv ve Müze Odası</h4>
+              <span style="color:var(--fx-muted); font-size:13px;">Novec 1230 • 280m³</span>
+            </div>
+          </a>
+
         </div>
       </div>
-      <div style="padding:36px var(--fx-gut)">
-        <span class="fx-eyebrow" style="color:var(--fx-yellow)">Vaka çalışmaları</span>
-        <h2 class="fx-h2 fx-h2--sm" style="margin:14px 0">Mühendislik kapasitesi, ölçülebilir verilerle</h2>
-        <p class="fx-text" style="margin-bottom:22px">Öne çıkan vaka kaydı eklendiğinde bu alanda proje adı, mahal tipi, hacim, gaz miktarı, tüp sayısı ve tutma süresi gösterilir. Şu an yayımlanmış vaka bulunmuyor.</p>
-        <a class="fx-link-arrow fx-link-arrow--dark" href="pages/projeler.html">Proje arşivini gör &#8594;</a>
-      </div>
-    </div>
-    <div class="fx-wrap fx-wrap--bleed-r" style="padding-top:22px;padding-bottom:46px;border-top:1px solid var(--fx-on-dark-line)">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:22px var(--fx-gut) 22px 0">
-        <span class="fx-label">Diğer projeler · sektör ve sistem etiketleriyle</span>
-        <a class="fx-link-arrow fx-link-arrow--dark" href="pages/projeler.html">Tüm projeler &#8594;</a>
-      </div>
-      <div class="fx-strip" data-fx-strip="proje" role="list">
-        <a class="fx-project" href="pages/projeler.html" role="listitem"><div class="fx-media fx-media--16x10 fx-project__media"><span class="fx-media__note">PROJE · 16:10</span></div><h3 class="fx-project__title" style="color:var(--fx-ink)">Proje kaydı eklendiğinde burada listelenir</h3><span class="fx-project__meta">sektör · sistem etiketleriyle</span></a>
-        <a class="fx-project" href="pages/projeler.html" role="listitem"><div class="fx-media fx-media--16x10 fx-project__media"><span class="fx-media__note">PROJE · 16:10</span></div><h3 class="fx-project__title" style="color:var(--fx-ink)">Proje kaydı eklendiğinde burada listelenir</h3><span class="fx-project__meta">sektör · sistem etiketleriyle</span></a>
-        <a class="fx-project" href="pages/projeler.html" role="listitem"><div class="fx-media fx-media--16x10 fx-project__media"><span class="fx-media__note">PROJE · 16:10</span></div><h3 class="fx-project__title" style="color:var(--fx-ink)">Proje kaydı eklendiğinde burada listelenir</h3><span class="fx-project__meta">sektör · sistem etiketleriyle</span></a>
-        <a class="fx-project" href="pages/projeler.html" role="listitem"><div class="fx-media fx-media--16x10 fx-project__media"><span class="fx-media__note">PROJE · 16:10</span></div><h3 class="fx-project__title" style="color:var(--fx-ink)">Proje kaydı eklendiğinde burada listelenir</h3><span class="fx-project__meta">sektör · sistem etiketleriyle</span></a>
-        <div class="fx-project fx-strip__ghost" aria-hidden="true"></div>
+
+      <div style="margin-top:32px; display:flex; justify-content:flex-end;">
+        <a class="fx-link-arrow" href="pages/projeler.html" style="color:var(--fx-ink); font-weight:500;">Tüm projeleri incele &#8594;</a>
       </div>
     </div>
   </section>

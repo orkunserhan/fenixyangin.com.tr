@@ -645,3 +645,5 @@ table{border-collapse:collapse;width:100%}
 
 
 
+
+@media (max-width:760px){ .fx-grid[style*="repeat(12"] > a, .fx-grid[style*="repeat(12"] > div { grid-column: span 12 !important; } }
