@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Fenix Yangın — fenix-design.css
    Tek stil dosyası · tasarım tokenları, grid ve tüm bileşenler burada.
    Renk, tipografi ve boşluk değerleri :root altındaki değişkenlerden gelir.
@@ -1031,21 +1031,22 @@ html, body {
 }
 
 .fx-hero__logo-tse {
-  height: 90px;
+  height: 78px;
   width: auto;
   object-fit: contain;
 }
 .fx-hero__logo-certs {
-  height: 95px;
+  height: 82px;
   width: auto;
   object-fit: contain;
 }
 
 .fx-hero__aside {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   justify-content: flex-end;
   align-items: flex-end;
+  flex-wrap: wrap;
   height: 100%;
   padding-bottom: 25px;
   padding-right: 15px;
@@ -1054,15 +1055,17 @@ html, body {
 @media (max-width: 760px) {
   .fx-desktop-only { display: none !important; }
   .fx-hero__logo-tse { 
-    height: 65px; 
-    margin: 0 auto 16px auto; 
-    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.15));
+    height: 55px; 
+    margin: 0 0 12px 0; 
+    display: inline-block;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12));
   }
   .fx-hero__logo-certs { 
-    height: 70px; 
-    margin: 20px auto 0 auto; 
+    height: 48px; 
+    max-width: 90%;
+    margin: 16px auto 0 auto; 
     align-self: center; 
-    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12));
   }
   .fx-hero__aside { justify-content: center; padding-bottom: 20px; padding-right: 0; }
 }
