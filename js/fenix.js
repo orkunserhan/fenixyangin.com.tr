@@ -145,14 +145,7 @@
     render();
   }
 
-  /* ---------- MOBİL MENÜ ---------- */
-  var burger = $('.fx-burger'), mnav = $('.fx-mobilenav');
-  if (burger && mnav) {
-    burger.addEventListener('click', function () {
-      var open = mnav.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
+  /* ---------- MOBİL MENÜ ---------- (Managed centrally with overlay and X button) */
 
   /* ---------- AKORDİYON (mobil menü alt seviye + footer) ---------- */
   $$('.fx-mobilenav__item[aria-expanded], .fx-accordion__head').forEach(function (b) {
