@@ -488,7 +488,7 @@ table{border-collapse:collapse;width:100%}
 
 /* ---------- 21 · FOOTER ---------- */
 .fx-footer{background:#fff; color:var(--fx-body); border-top:1px solid var(--fx-line);}
-.fx-footer__grid{display:grid;grid-template-columns:3fr 2fr 2fr 2fr 3fr;gap:var(--fx-s10)}
+
 .fx-footer__title{margin-bottom:var(--fx-s5);font:var(--fx-w-semi) var(--fx-fs-label)/1 var(--fx-font);color:var(--fx-ink)}
 .fx-footer__list{display:grid;gap:14px;font:var(--fx-w-regular) 13.5px/1.4 var(--fx-font);color:var(--fx-ink)}
 .fx-footer__list a{color:var(--fx-ink)}
@@ -513,7 +513,7 @@ table{border-collapse:collapse;width:100%}
   .fx-calc{grid-template-columns:minmax(0,1fr)}
   .fx-hero__inner{grid-template-columns:minmax(0,1fr)}
   .fx-hero__aside{justify-self:start;width:100%;max-width:420px}
-  .fx-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  
 }
 @media (max-width:760px){
   :root{
@@ -574,7 +574,7 @@ table{border-collapse:collapse;width:100%}
   .fx-form__row--dims{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--fx-s2)}
   /* footer akordiyon */
   .fx-footer{background:#fff; color:var(--fx-body); border-top:1px solid var(--fx-line);}
-  .fx-footer__grid{grid-template-columns:minmax(0,1fr);gap:0}
+  
   .fx-accordion__head{display:flex;align-items:center;justify-content:space-between;
     width:100%;min-height:var(--fx-touch);padding-block:var(--fx-s5);background:transparent;border:0;
     border-bottom:1px solid var(--fx-on-dark-line);color:#fff;font:var(--fx-w-semi) 15.5px/1 var(--fx-font)}
@@ -803,4 +803,34 @@ table{border-collapse:collapse;width:100%}
   }
   div[style*="display:flex;gap:10px;flex-wrap:wrap"]::-webkit-scrollbar { display: none !important; }
   div[style*="display:flex;gap:10px;flex-wrap:wrap"] .fx-chip { scroll-snap-align: start !important; }
+}
+
+/* FOOTER YENI APP MANTIGI */
+.fx-footer__menus {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+@media (max-width: 760px) {
+  .fx-footer__menus {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 32px !important;
+    padding-bottom: 24px !important;
+  }
+  .fx-footer__menus::-webkit-scrollbar { display: none !important; }
+  .fx-footer__menus > div {
+    flex: 0 0 70% !important;
+    scroll-snap-align: start !important;
+  }
+  .fx-footer__title { font-size: 15px !important; opacity:0.9; }
+  .fx-footer__list a, .fx-footer__list span { font-size: 14px !important; }
+  
+  .fx-footer__bottom { flex-direction:column; gap:16px; align-items:flex-start; }
+  .fx-footer__legal { margin-left:0; }
+  .fx-footer__legal a { margin-left:0; margin-right:16px; }
 }
