@@ -530,7 +530,7 @@ table{border-collapse:collapse;width:100%}
   .fx-hero--home,.fx-hero--page{min-height:0}
   .fx-hero{display:flex;flex-direction:column}
   .fx-hero__media{position:absolute;inset:0;width:100%;height:100%;order:unset;aspect-ratio:auto;z-index:1} .fx-hero__inner{position:relative;z-index:3;padding-block:60px}
-  .fx-hero__scrim{background:rgba(255,255,255,0.85);z-index:2}
+  .fx-hero__scrim{background:linear-gradient(to bottom, rgba(20,24,27,0.85) 0%, rgba(20,24,27,0.7) 100%);z-index:2}
   .fx-hero__inner{padding-block:var(--fx-s6);gap:var(--fx-s6)}
   .fx-hero__actions{display:grid;gap:10px}
   .fx-hero__actions .fx-btn{width:100%}
@@ -634,7 +634,7 @@ table{border-collapse:collapse;width:100%}
   /* mobilde kontrat: fotoğraf metnin üstünde ayrı 4:5 blok — full-bleed bindirme yok */
   .fx-hero--full .fx-hero__media{position:absolute;inset:0;width:100%;height:100%;order:unset;aspect-ratio:auto;z-index:1} .fx-hero__inner{position:relative;z-index:3;padding-block:60px}
   .fx-hero__media img{object-position:60% 45%}
-  .fx-hero--full .fx-hero__scrim{background:rgba(255,255,255,0.85);z-index:2}
+  .fx-hero--full .fx-hero__scrim{background:linear-gradient(to bottom, rgba(20,24,27,0.85) 0%, rgba(20,24,27,0.7) 100%);z-index:2}
 }
 
 
@@ -977,3 +977,22 @@ html, body {
     flex: 0 0 320px !important; /* Fixed width so they look great and don't squish */
   }
 }
+
+
+/* Topbar Mobile Hide Email */
+@media (max-width: 760px) {
+  .fx-topbar-email, .fx-topbar-email-divider, .fx-topbar-dash { display: none !important; }
+  .fx-topbar-contact { flex-direction: column !important; gap: 4px !important; font-size: 16px !important; }
+  .fx-topbar-text { display: block !important; margin-bottom: 2px !important; opacity: 0.8; font-size: 13px !important; }
+  .fx-topbar-contact a { background: #fff; color: var(--fx-red) !important; padding: 4px 12px; border-radius: 100px; display: inline-block; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); margin: 2px 0; width: 100%; text-align: center; }
+}
+
+/* Make logos beautiful */
+.fx-hero__aside img { transition: transform 0.3s ease; }
+.fx-hero__aside img:hover { transform: scale(1.05); }
+
+
+  .fx-hero__title { text-shadow: none !important; }
+}
+
+

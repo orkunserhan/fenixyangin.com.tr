@@ -11,7 +11,15 @@
 <link rel="icon" href="assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="stylesheet" href="css/fenix-design.css">
+
+<style>
+@media (max-width: 760px) {
+  .fx-topbar-email, .fx-topbar-email-divider { display: none !important; }
+  .fx-topbar-contact { flex-direction: row; gap: 6px; font-size: 15px; }
+}
+</style>
 </head>
+
 <body class="fx-page fx-page--home">
 
 <a class="fx-skip" href="#icerik">İçeriğe atla</a>
@@ -20,7 +28,7 @@
 </div>
 
 <div class="fx-topbar" style="background:var(--fx-red); color:#fff; text-align:center; padding:12px 20px; font-size:14px; font-weight:500; display:flex; flex-direction:column; align-items:center; gap:12px; z-index:90; position:relative;">
-  <div class="fx-topbar-contact" style="opacity:0.95; letter-spacing:0.3px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px;"><span class="fx-topbar-text">Bizi arayın:</span> <a href="tel:+902126180701" style="color:#fff; text-decoration:none; font-weight:700;">0212 618 07 01</a> <span class="fx-topbar-dash" style="opacity:0.5;">-</span> <a href="tel:+902126180702" style="color:#fff; text-decoration:none; font-weight:700;" class="fx-topbar-tel2">0212 618 07 02</a> <span class="fx-topbar-email-divider" style="margin:0 4px; opacity:0.5;">|</span> <a class="fx-topbar-email" href="mailto:info@fenixyangin.com.tr" style="color:#fff; text-decoration:none;">info@fenixyangin.com.tr</a></div>
+  <div style="opacity:0.95; letter-spacing:0.3px;">Bizi arayın +90 212 618 07 01 - 02 <span style="margin:0 8px; opacity:0.5;">|</span> info@fenixyangin.com.tr</div>
   <div style="display:flex; gap:12px;">
     <a href="#" aria-label="X (Twitter)" style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#fff; color:var(--fx-red); border-radius:50%; text-decoration:none;">
       <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -97,22 +105,19 @@
     <div class="fx-wrap fx-hero__inner">
       <div>
         
-        <div style="margin-bottom: 24px;">
-            <img src="assets/img/tse-hyb.png" alt="TSE-HYB Güvenilirliğin Adresi" style="height: 60px; object-fit: contain; background: rgba(255,255,255,0.95); padding: 8px 16px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <div style="margin-bottom: 16px;">
+            <img src="assets/img/tse-hyb.png" alt="TSE-HYB Güvenirlilik" style="height: 65px; object-fit: contain; mix-blend-mode: multiply;">
         </div>
-        <p class="fx-hero__kicker"><span style="color:var(--fx-red); font-weight:800; letter-spacing:3px; font-size:14px; text-transform:uppercase;">Güvenilirliğin Adresi</span></p>
+        <p class="fx-hero__kicker" style="margin-bottom: 12px;"><span style="color:var(--fx-red); font-weight:800; letter-spacing:3px; font-size:14px; text-transform:uppercase;">Güvenilirliğin Adresi</span></p>
 
         <h1 class="fx-h1 fx-h1--hero fx-hero__title" style="color:var(--fx-ink);">Yangın söndürme sistemlerinde güvenirliğin adresi</h1>
-        <p class="fx-lead fx-hero__text">Sunucu odası, trafo merkezi, endüstriyel mutfak ve üretim tesislerinde gazlı söndürme, algılama ve periyodik bakım. Hacim hesabından devreye almaya kadar bütün süreci tek elden yürütüyoruz.</p>
+        <p class="fx-lead fx-hero__text" style="color:var(--fx-body);">Sunucu odası, trafo merkezi, endüstriyel mutfak ve üretim tesislerinde gazlı söndürme, algılama ve periyodik bakım. Hacim hesabından devreye almaya kadar bütün süreci tek elden yürütüyoruz.</p>
         <div class="fx-hero__actions">
           <a class="fx-btn fx-btn--primary" href="pages/iletisim.html">7/24 Bize Ulaşın</a>
           <a class="fx-btn fx-btn--secondary" href="pages/hizmetler.html">Çözümleri Gör</a>
         </div>
       </div>
       
-      <div class="fx-hero__aside" style="display:flex; justify-content:flex-end; align-items:flex-end; height:100%; padding-bottom:40px;">
-         <img src="assets/img/ul-fm-nfpa.png" alt="UL Listed, FM Approved, NFPA" style="height: 75px; object-fit: contain; background: rgba(255,255,255,0.95); padding: 12px 24px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
-      </div>
     </div>
   </section>
 
@@ -147,7 +152,7 @@
     <div class="fx-wrap fx-grid fx-grid--4-8">
       <div>
         <h2 class="fx-h2 fx-h2--sm">Doğrulanabilir kurumsal kapasite</h2>
-        <p class="fx-text fx-text--sm" style="margin-top:10px; color:var(--fx-red); font-weight:600;">Tüm süreçlerimiz uluslararası sertifikasyonlara tabidir.</p>
+        <p class="fx-text fx-text--sm" style="margin-top:10px">Sayısal veriler ve belge numaraları firma onayı gelmeden yayımlanmaz.</p>
       </div>
       <div class="fx-grid fx-grid--2">
         <dl class="fx-dl">
@@ -156,9 +161,9 @@
           <div class="fx-dl__row"><dt class="fx-dl__k">Hizmet verilen sektör</dt><dd class="fx-dl__v fx-num">7</dd></div>
         </dl>
         <dl class="fx-dl">
-          <div class="fx-dl__row"><dt class="fx-dl__k">TSE-HYB hizmet yeterlilik</dt><dd class="fx-dl__v" style="color:#059669; font-weight:600;">✓ Onaylı</dd></div>
-          <div class="fx-dl__row"><dt class="fx-dl__k">Florlu sera gazı sertifikası</dt><dd class="fx-dl__v" style="color:#059669; font-weight:600;">✓ Onaylı</dd></div>
-          
+          <div class="fx-dl__row"><dt class="fx-dl__k">TSE-HYB hizmet yeterlilik</dt><dd class="fx-dl__v fx-dl__v--pending">teyit bekliyor</dd></div>
+          <div class="fx-dl__row"><dt class="fx-dl__k">Florlu sera gazı sertifikası</dt><dd class="fx-dl__v fx-dl__v--pending">teyit bekliyor</dd></div>
+          <div class="fx-dl__row"><dt class="fx-dl__k">Tamamlanan proje sayısı</dt><dd class="fx-dl__v fx-dl__v--pending">teyit bekliyor</dd></div>
         </dl>
       </div>
     </div>
