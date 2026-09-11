@@ -328,9 +328,9 @@ table{border-collapse:collapse;width:100%}
 .fx-marquee__track{display:flex;gap:var(--fx-s4);width:max-content;animation:fx-mq var(--fx-marquee) linear infinite}
 .fx-marquee:hover .fx-marquee__track,.fx-marquee:focus-within .fx-marquee__track{animation-play-state:paused}
 @keyframes fx-mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.fx-logo-tile{width:186px;height:78px;flex:none;display:flex;align-items:center;justify-content:center;
-  background:var(--fx-paper);border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);padding:var(--fx-s3)}
-.fx-logo-tile img{max-height:46px;width:auto;object-fit:contain}
+.fx-logo-tile{width:204px;height:88px;flex:none;display:flex;align-items:center;justify-content:center;
+  background:#ffffff;border:1px solid var(--fx-line);border-radius:12px;padding:8px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.03)}
+.fx-logo-tile img{max-height:62px;max-width:172px;width:auto;height:auto;object-fit:contain;display:block}
 .fx-logo-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--fx-s4)}
 .fx-logo-grid .fx-logo-tile{width:auto;height:96px}
 
