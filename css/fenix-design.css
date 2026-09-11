@@ -489,12 +489,12 @@ table{border-collapse:collapse;width:100%}
 /* ---------- 21 · FOOTER ---------- */
 .fx-footer{background:#fff; color:var(--fx-body); border-top:1px solid var(--fx-line);}
 .fx-footer__grid{display:grid;grid-template-columns:3fr 2fr 2fr 2fr 3fr;gap:var(--fx-s10)}
-.fx-footer__title{margin-bottom:var(--fx-s5);font:var(--fx-w-semi) var(--fx-fs-label)/1 var(--fx-font);color:#fff}
-.fx-footer__list{display:grid;gap:11px;font:var(--fx-w-regular) 14px/1.3 var(--fx-font)}
-.fx-footer__list a{color:var(--fx-on-dark)}
+.fx-footer__title{margin-bottom:var(--fx-s5);font:var(--fx-w-semi) var(--fx-fs-label)/1 var(--fx-font);color:var(--fx-ink)}
+.fx-footer__list{display:grid;gap:14px;font:var(--fx-w-regular) 13.5px/1.4 var(--fx-font);color:var(--fx-ink)}
+.fx-footer__list a{color:var(--fx-ink)}
 .fx-footer__list a:hover{color:#fff}
 .fx-footer__certs{display:flex;flex-wrap:wrap;gap:var(--fx-s2)}
-.fx-footer__cert{border:1px solid rgba(255,255,255,.2);border-radius:var(--fx-r-ui);padding:9px 11px;font:var(--fx-w-regular) var(--fx-fs-label)/1 var(--fx-font);color:rgba(255,255,255,.84)}
+.fx-footer__cert{font:var(--fx-w-medium) 11px/1 var(--fx-font);color:var(--fx-ink);border:1px solid var(--fx-line);border-radius:4px;padding:6px 8px;margin-right:8px;display:inline-block}
 .fx-footer__bottom{margin-top:var(--fx-s10);padding-block:var(--fx-s7);border-top:1px solid rgba(255,255,255,.12);
   display:flex;align-items:center;justify-content:space-between;gap:var(--fx-s6);
   font:var(--fx-w-regular) var(--fx-fs-label)/1.5 var(--fx-font);color:rgba(255,255,255,.72)}
@@ -580,7 +580,7 @@ table{border-collapse:collapse;width:100%}
     border-bottom:1px solid var(--fx-on-dark-line);color:#fff;font:var(--fx-w-semi) 15.5px/1 var(--fx-font)}
   .fx-accordion__body{display:none;padding-block:var(--fx-s4)}
   .fx-accordion__head[aria-expanded="true"]+.fx-accordion__body{display:block}
-  .fx-footer__bottom{display:block}
+  .fx-footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:var(--fx-s8);margin-top:var(--fx-s8);border-top:1px solid var(--fx-line);font:var(--fx-w-regular) var(--fx-fs-sm)/1 var(--fx-font);color:var(--fx-ink)}
   .fx-footer__legal{margin-top:var(--fx-s4)}
   /* WhatsApp: CTA'ların üzerine binmez */
   .fx-wa{right:var(--fx-s5);bottom:80px;max-width:220px; background:var(--fx-red); border-color:var(--fx-red); box-shadow: 0 4px 14px rgba(0,0,0,0.25);}
@@ -616,7 +616,7 @@ table{border-collapse:collapse;width:100%}
 .fx-section--dark .fx-project,.fx-section--dark .fx-project .fx-project__title,
 .fx-card--dark,.fx-card--dark .fx-h3{color:#fff}
 .fx-sector.is-active{color:#fff}
-.fx-footer__cert{white-space:nowrap}
+.fx-footer__cert{font:var(--fx-w-medium) 11px/1 var(--fx-font);color:var(--fx-ink);border:1px solid var(--fx-line);border-radius:4px;padding:6px 8px;margin-right:8px;display:inline-block}
 
 
 /* ---------- 22 · HERO GÖRSELİ ----------
@@ -716,3 +716,41 @@ table{border-collapse:collapse;width:100%}
 .fx-mobilenav__sublink { color:rgba(255,255,255,0.7) !important; padding:12px 24px 12px 40px !important; display:block; font-size:15px; border-bottom:1px solid rgba(255,255,255,0.05); }
 
 @media (max-width:760px) { .fx-rail__steps { display:flex; flex-direction:row; overflow-x:auto; scroll-snap-type: x mandatory; padding-bottom:16px; gap:16px; -webkit-overflow-scrolling:touch; scrollbar-width:none; border-top:none !important; } .fx-rail__steps::-webkit-scrollbar { display:none; } .fx-rail__step { flex: 0 0 85%; scroll-snap-align: center; background:#fff; padding:24px; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.05) !important; padding-top:24px !important; } .fx-rail__step::before { display:none !important; } .fx-rail { border-top:none !important; margin: 0 -var(--fx-gut); padding: 0 var(--fx-gut); } }
+
+.fx-footer { background: #fff !important; color: var(--fx-ink) !important; border-top: 1px solid var(--fx-line) !important; }
+.fx-footer .fx-text, .fx-footer p, .fx-footer span { color: var(--fx-body) !important; }
+.fx-footer h2, .fx-footer strong, .fx-footer .fx-footer__title { color: var(--fx-ink) !important; }
+.fx-footer a { color: var(--fx-ink) !important; }
+.fx-footer a:hover { color: var(--fx-red) !important; }
+.fx-accordion__head { color: var(--fx-ink) !important; border-bottom-color: var(--fx-line) !important; }
+.fx-map__note, .fx-label[style*='color:var(--fx-muted)'] { color: var(--fx-ink) !important; opacity: 0.8; font-weight: 500; }
+.fx-text[style*='color:var(--fx-body)'] { color: var(--fx-ink) !important; opacity: 0.85; }
+
+@media (max-width:760px) {
+  /* Teknik Bilgi Merkezi vb. row elemanlari icin yatay (swipeable) App dizilimi */
+  .fx-rows {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding-bottom: 20px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    background: transparent !important;
+    border: none !important;
+  }
+  .fx-rows::-webkit-scrollbar { display: none !important; }
+  .fx-rows__item {
+    flex: 0 0 85% !important;
+    scroll-snap-align: center !important;
+    background: #fff !important;
+    border: 1px solid var(--fx-line) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+}
