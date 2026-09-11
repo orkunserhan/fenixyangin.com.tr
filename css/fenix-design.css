@@ -869,3 +869,17 @@ html, body {
     display: none !important;
   }
 }
+
+.fx-mobile-cta { display: none !important; }
+@media (max-width: 760px) {
+  .fx-mobile-cta { 
+      display: inline-block !important; 
+      color: var(--fx-red); 
+      font-weight: 600; 
+      text-decoration: none; 
+      padding-right: 16px; 
+      margin-right: 16px; 
+      border-right: 1px solid var(--fx-line);
+      font-size: 14px;
+  }
+}
