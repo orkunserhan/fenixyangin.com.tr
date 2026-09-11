@@ -466,18 +466,50 @@
       <div>
         <span class="fx-eyebrow" style="color:var(--fx-red); font-weight:600;">Galeri · Saha Videoları</span>
         <h2 class="fx-h2 fx-h2--sm" style="margin:14px 0 20px; color:var(--fx-ink)">Sistemi çalışırken görün</h2>
-        <div class="fx-video" data-fx-video data-fx-yt="">
-          <div class="fx-video__poster fx-media fx-media--16x9"><span class="fx-media__note">VİDEO KAPAK · 1920×1080 (16:9) poster<br>oynatıcı yalnızca tıklamada yüklenir</span></div>
-          <div class="fx-video__scrim"></div>
-          <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
-            <span class="fx-badge fx-badge--red">Sistem anlatımı</span>
-            
-          </div>
-          <button class="fx-video__play" type="button" aria-label="Videoyu oynat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
-          <div style="position:absolute;left:20px;bottom:20px;max-width:52ch">
-            <h3 class="fx-h3" style="color:#fff">Saha kaydı eklendiğinde burada oynatılır</h3>
-          </div>
-        </div>
+        <div class="fx-video-scroller" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type: x mandatory; padding-bottom:16px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
+  <div class="fx-video" data-fx-video data-fx-yt="" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+    <div class="fx-video__poster fx-media fx-media--16x9" style="background:#14181B;"><span class="fx-media__note" style="color:#fff;">VİDEO 1 - SİSTEM ÇALIŞMASI</span></div>
+    <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
+      <span class="fx-badge fx-badge--red">Sistem anlatımı</span>
+    </div>
+    <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg viewBox="0 0 24 24" style="width:32px; fill:currentColor;"><path d="M8 5v14l11-7z"/></svg></button>
+    <div style="position:absolute;left:20px;bottom:20px;right:20px;">
+      <h3 class="fx-h3" style="color:#fff; margin:0;">FM200 Devreye Alma Testi</h3>
+    </div>
+  </div>
+
+  <div class="fx-video" data-fx-video data-fx-yt="" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+    <div class="fx-video__poster fx-media fx-media--16x9" style="background:#14181B;"><span class="fx-media__note" style="color:#fff;">VİDEO 2 - BAKIM</span></div>
+    <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
+      <span class="fx-badge fx-badge--dark">Periyodik Bakım</span>
+    </div>
+    <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg viewBox="0 0 24 24" style="width:32px; fill:currentColor;"><path d="M8 5v14l11-7z"/></svg></button>
+    <div style="position:absolute;left:20px;bottom:20px;right:20px;">
+      <h3 class="fx-h3" style="color:#fff; margin:0;">Novec 1230 Sızdırmazlık Testi</h3>
+    </div>
+  </div>
+  
+  <div class="fx-video" data-fx-video data-fx-yt="" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+    <div class="fx-video__poster fx-media fx-media--16x9" style="background:#14181B;"><span class="fx-media__note" style="color:#fff;">VİDEO 3 - DAVLUMBAZ</span></div>
+    <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
+      <span class="fx-badge fx-badge--red">Mutfak Yangını</span>
+    </div>
+    <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg viewBox="0 0 24 24" style="width:32px; fill:currentColor;"><path d="M8 5v14l11-7z"/></svg></button>
+    <div style="position:absolute;left:20px;bottom:20px;right:20px;">
+      <h3 class="fx-h3" style="color:#fff; margin:0;">Endüstriyel Davlumbaz Yangın Söndürme</h3>
+    </div>
+  </div>
+</div>
+<style>
+.fx-video-scroller::-webkit-scrollbar { display:none; }
+@media(min-width:761px){
+  .fx-video-scroller { display:grid !important; grid-template-columns:1fr 1fr 1fr !important; overflow:visible !important; gap:24px !important; }
+  .fx-video-scroller .fx-video { flex:auto !important; }
+}
+</style>
         <div class="fx-filters" style="margin-top:14px">
           <a class="fx-chip" href="pages/galeri.html">Kurulum</a>
           <a class="fx-chip" href="pages/galeri.html">Bakım</a>
@@ -610,6 +642,7 @@
 <script src="js/fenix.js"></script>
 </body>
 </html>
+
 
 
 
