@@ -471,7 +471,7 @@ table{border-collapse:collapse;width:100%}
 /* 2+ sayfa noindex,follow */
 
 /* ---------- 19 · MAP (81 il ağı) ---------- */
-.fx-map{position:relative;background:var(--fx-ink);min-height:400px}
+.fx-map{position:relative;background:transparent;min-height:400px}
 .fx-map__frame{width:100%;height:470px;border:0;display:block}   /* loading="lazy" */
 .fx-map__note{font:var(--fx-w-regular) var(--fx-fs-label)/1.6 var(--fx-font);color:var(--fx-on-dark-2)}
 /* YALNIZ "İSTANBUL" etiketi · başka şehir/bölge adı YOK · WebGL YOK */
@@ -642,5 +642,6 @@ table{border-collapse:collapse;width:100%}
    Bleed'li şeritler (sektör/proje) bölüm dışına sızıp belgeyi yatay kaydırmasın.
    Şeritler kendi içinde kaymaya devam eder; kırpma yalnız bölüm sınırındadır. */
 .fx-section,.fx-section--dark,.fx-section--darker,.fx-section--paper,.fx-section--white,.fx-section--red{overflow-x:clip}
+
 
 
