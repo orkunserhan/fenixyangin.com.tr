@@ -383,6 +383,71 @@
     });
   })();
 
+  /* ---------- MOBILE DRAWER NAVIGATION (SINGLETON SITEWIDE) ---------- */
+  function getMobileNavElements() {
+    var burger = document.querySelector('.fx-burger');
+    var nav = document.getElementById('fx-mobilenav');
+    var overlay = document.querySelector('.fx-mobilenav-overlay');
+    if (!overlay && document.body) {
+      overlay = document.createElement('div');
+      overlay.className = 'fx-mobilenav-overlay';
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function (e) {
+        window.fxCloseNav(e);
+      });
+    }
+    return { burger: burger, nav: nav, overlay: overlay };
+  }
+
+  window.fxOpenNav = function (e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    var els = getMobileNavElements();
+    if (els.nav) els.nav.classList.add('is-open');
+    if (els.overlay) els.overlay.classList.add('is-visible');
+    if (els.burger) els.burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('fx-nav-open');
+  };
+
+  window.fxCloseNav = function (e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    var els = getMobileNavElements();
+    if (els.nav) els.nav.classList.remove('is-open');
+    if (els.overlay) els.overlay.classList.remove('is-visible');
+    if (els.burger) els.burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('fx-nav-open');
+  };
+
+  window.fxToggleNav = function (e) {
+    if (e) { e.preventDefault(); e.stopPropagation(); }
+    var els = getMobileNavElements();
+    if (!els.nav) return;
+    if (els.nav.classList.contains('is-open')) {
+      window.fxCloseNav(e);
+    } else {
+      window.fxOpenNav(e);
+    }
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      window.fxCloseNav();
+    }
+  });
+
+  /* ---------- MOBILE LOGO CINEMATIC REVEAL: ONE-TIME PER SESSION (5s) ---------- */
+  (function () {
+    try {
+      if (sessionStorage.getItem('fx_logo_revealed')) {
+        document.documentElement.classList.add('fx-logo-revealed');
+      } else {
+        sessionStorage.setItem('fx_logo_revealed', 'true');
+        setTimeout(function () {
+          document.documentElement.classList.add('fx-logo-revealed');
+        }, 5000);
+      }
+    } catch (err) {}
+  })();
+
   /* Auto-initialize dynamic reference counts */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', window.fxInitReferenceCounts);
@@ -390,4 +455,5 @@
     window.fxInitReferenceCounts();
   }
 })();
+
 

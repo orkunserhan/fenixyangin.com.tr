@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}</script>
 <meta name="robots" content="noindex, follow">
 <title>Rehber — Fenix Yangın</title>
 <meta name="description" content="Teknik rehber: konunun sahadaki karşılığı, ölçüm ve uygulama yöntemi, sık yapılan hatalar, ilgili sistemler ve sık sorulan sorular.">
@@ -21,7 +22,7 @@
     <span>TS EN 15004 · NFPA 2001 · ISO 14520</span>
     <div class="fx-topbar__right">
       
-      <a href="tel:+902126180701">0212 618 07 01</a> <span style="opacity:0.5">/</span> <a href="tel:+902126180702">0212 618 07 02</a>
+      <a href="tel:+902126180701">+90 212 618 07 01</a> <span style="opacity:0.5">/</span> <a href="tel:+902126180702">+90 212 618 07 02</a>
       <div class="fx-social">
         <a class="fx-social__link" href="#" aria-label="LinkedIn — hesap adresi bekleniyor" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.3 18.3H5.7V9.7h2.6v8.6zM7 8.5A1.5 1.5 0 1 1 7 5.5a1.5 1.5 0 0 1 0 3zm11.3 9.8h-2.6v-4.5c0-1.1-.4-1.8-1.4-1.8-.8 0-1.2.5-1.4 1-.1.2-.1.5-.1.8v4.5h-2.6s0-7.3 0-8.6h2.6v1.2c.3-.5 1-1.3 2.4-1.3 1.8 0 3.1 1.2 3.1 3.7v5z"/></svg></a>
         <a class="fx-social__link" href="#" aria-label="YouTube — hesap adresi bekleniyor" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C19.2 4.8 12 4.8 12 4.8s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.6 1 12 1 12s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5zM9.7 15.4V8.6l6 3.4-6 3.4z"/></svg></a>
@@ -32,8 +33,17 @@
 </div>
 
 <header class="fx-header fx-header--light">
-  <div class="fx-wrap" style="display:flex;align-items:center;gap:22px;width:100%">
-    <a class="fx-logo" href="../index.html"><picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="151" height="28" alt="Fenix Yangın"></picture></a>
+  <div class="fx-wrap fx-header__inner" style="display:flex;align-items:center;gap:22px;width:100%">
+    <a class="fx-logo" href="../index.html" aria-label="Fenix Yangın Ana Sayfa">
+      <span class="fx-logo__track">
+        <picture class="fx-logo__pic">
+          <source type="image/webp" srcset="../assets/fenix-logo.webp">
+          <img src="../assets/fenix-logo.png" width="140" height="26" alt="Fenix Yangın">
+        </picture>
+        <span class="fx-logo__reveal" aria-hidden="true"></span>
+        <span class="fx-logo__shine" aria-hidden="true"></span>
+      </span>
+    </a>
     <nav class="fx-nav" aria-label="Ana menü">
       <a class="fx-nav__link" href="hizmetler.html">Hizmetler</a>
       <a class="fx-nav__link" href="sistemler.html">Sistemler</a>
@@ -45,37 +55,151 @@
       <a class="fx-nav__link" href="kurumsal.html">Kurumsal</a>
       <a class="fx-btn fx-btn--primary fx-btn--sm fx-nav__cta" href="iletisim.html">7/24 Bize Ulaşın</a>
     </nav>
-    <a class="fx-mobile-cta" href="iletisim.html">7/24 Bize Ulaşın</a><button class="fx-burger" type="button" aria-expanded="false" aria-controls="fx-mobilenav">Menü</button>
+    <div class="fx-header__actions">
+      <a class="fx-mobile-search-btn" href="arama.html" aria-label="Site İçi Arama">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </a>
+      <button class="fx-burger" type="button" aria-expanded="false" aria-controls="fx-mobilenav" onclick="window.fxToggleNav && window.fxToggleNav(event)" aria-label="Menüyü Aç">
+        <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:currentColor;pointer-events:none;"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
 <nav class="fx-mobilenav" id="fx-mobilenav" aria-label="Mobil menü">
-  <button class="fx-mobilenav__item" type="button" aria-expanded="false">Hizmetler <span aria-hidden="true">+</span></button>
-  <div class="fx-mobilenav__sub">
-    <a class="fx-mobilenav__sublink" href="hizmetler.html">Gazlı söndürme sistemi kurulumu</a>
-    <a class="fx-mobilenav__sublink" href="hizmetler.html">Periyodik bakım</a>
-    <a class="fx-mobilenav__sublink" href="hizmetler.html">Gaz dolumu</a>
+  <!-- 1. Drawer Header -->
+  <div class="fx-mobilenav__header">
+    <a class="fx-logo" href="../index.html" onclick="window.fxCloseNav && window.fxCloseNav(event)">
+      <picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="136" height="25" alt="Fenix Yangın"></picture>
+    </a>
+    <button class="fx-mobilenav-close" type="button" aria-label="Kapat" onclick="window.fxCloseNav && window.fxCloseNav(event)">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
   </div>
-  <button class="fx-mobilenav__item" type="button" aria-expanded="false">Sistemler <span aria-hidden="true">+</span></button>
-  <div class="fx-mobilenav__sub">
-    <a class="fx-mobilenav__sublink" href="sistemler.html">FM200</a>
-    <a class="fx-mobilenav__sublink" href="sistemler.html">Novec 1230</a>
-    <a class="fx-mobilenav__sublink" href="sistemler.html">CO₂</a>
-    <a class="fx-mobilenav__sublink" href="sistemler.html">Davlumbaz</a>
-    <a class="fx-mobilenav__sublink" href="sistemler.html">Pano içi</a>
+
+  <!-- 2. Search Bar -->
+  <form class="fx-mobilenav__search" action="arama.html" method="get">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fx-mobilenav__search-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="search" name="q" placeholder="Site içinde ara..." aria-label="Site içi arama" class="fx-mobilenav__search-input" autocomplete="off">
+    <button type="submit" aria-label="Ara" class="fx-mobilenav__search-submit">
+      <svg viewBox="0 0 20 20" width="15" height="15" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </button>
+  </form>
+
+  <!-- 3. 8 Nav Items with Icons -->
+  <div class="fx-mobilenav__list">
+    <!-- 1. Hizmetler -->
+    <a class="fx-mobilenav__link" href="hizmetler.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Hizmetler</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 2. Sistemler -->
+    <a class="fx-mobilenav__link" href="sistemler.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Sistemler</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 3. Sektörler -->
+    <a class="fx-mobilenav__link" href="sektorler.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Sektörler</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 4. Projeler -->
+    <a class="fx-mobilenav__link" href="projeler.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Projeler</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 5. Galeri -->
+    <a class="fx-mobilenav__link" href="galeri.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Galeri</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 6. Referanslar -->
+    <a class="fx-mobilenav__link" href="referanslar.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Referanslar</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 7. Blog -->
+    <a class="fx-mobilenav__link" href="blog.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Blog</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
+
+    <!-- 8. Kurumsal -->
+    <a class="fx-mobilenav__link" href="kurumsal.html">
+      <span class="fx-mobilenav__link-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </span>
+      <span class="fx-mobilenav__link-text">Kurumsal</span>
+      <span class="fx-mobilenav__link-arrow" aria-hidden="true">&#8250;</span>
+    </a>
   </div>
-  <button class="fx-mobilenav__item" type="button" aria-expanded="false">Sektörler <span aria-hidden="true">+</span></button>
-  <div class="fx-mobilenav__sub">
-    <a class="fx-mobilenav__sublink" href="sektorler.html">Veri merkezi ve sunucu odası</a>
-    <a class="fx-mobilenav__sublink" href="sektorler.html">Endüstriyel mutfak</a>
-    <a class="fx-mobilenav__sublink" href="sektorler.html">Trafo ve enerji odası</a>
+
+  <!-- 4. Highlight Contact Card -->
+  <a class="fx-mobilenav__card" href="iletisim.html">
+    <div class="fx-mobilenav__card-left">
+      <div class="fx-mobilenav__card-badge">
+        <span class="fx-pulse-dot" style="background:#BE1523;box-shadow:0 0 8px #BE1523;"></span>
+        <span>7/24 Bize Ulaşın</span>
+      </div>
+      <p class="fx-mobilenav__card-desc">Hızlı iletişim, uzman mühendis desteği</p>
+    </div>
+    <div class="fx-mobilenav__card-arrow" aria-hidden="true">
+      <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+  </a>
+
+  <!-- 5. Drawer Footer -->
+  <div class="fx-mobilenav__footer">
+    <div class="fx-mobilenav__footer-row">
+      <div class="fx-mobilenav__socials">
+        <a class="fx-mobilenav__soc-pill" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a class="fx-mobilenav__soc-pill" href="https://www.linkedin.com/company/fenixyangin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a class="fx-mobilenav__soc-pill" href="https://www.facebook.com/fenixyangin/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a class="fx-mobilenav__soc-pill" href="https://www.instagram.com/fenixyangin" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </div>
+      <span class="fx-mobilenav__sep" aria-hidden="true">|</span>
+      <div class="fx-mobilenav__lang" title="Dil / Language">
+        <span>TR</span>
+        <svg viewBox="0 0 20 20" width="12" height="12" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+    </div>
+    <div class="fx-mobilenav__tagline">Güvenli Yapılar. Kesintisiz Gelecek.</div>
   </div>
-  <a class="fx-mobilenav__item" href="projeler.html">Projeler</a>
-  <a class="fx-mobilenav__item" href="galeri.html">Galeri</a>
-  <a class="fx-mobilenav__item" href="referanslar.html">Referanslar</a>
-  <a class="fx-mobilenav__item" href="blog.html">Blog</a>
-  <a class="fx-mobilenav__item" href="kurumsal.html">Kurumsal</a>
-  <div style="padding:18px"><a class="fx-btn fx-btn--primary fx-btn--block" href="iletisim.html">7/24 Bize Ulaşın</a></div>
 </nav>
 
 <main id="icerik" class="fx-page fx-page--single-post">
@@ -161,7 +285,7 @@
         
           <address class="fx-footer__list" style="font-style:normal">
             <span>Yıldırım Mah. Buğday Sok. No:16<br>34405 Bayrampaşa / İstanbul</span>
-            <div style="display:flex;flex-direction:column;gap:3px;"><a class="fx-num" href="tel:+902126180701" style="text-decoration:none;">0212 618 07 01</a><a class="fx-num" href="tel:+902126180702" style="text-decoration:none;">0212 618 07 02</a></div>
+            <div style="display:flex;flex-direction:column;gap:3px;"><a class="fx-num" href="tel:+902126180701" style="text-decoration:none;">+90 212 618 07 01</a><a class="fx-num" href="tel:+902126180702" style="text-decoration:none;">+90 212 618 07 02</a></div>
             <a href="mailto:info@fenixyangin.com.tr">info@fenixyangin.com.tr</a>
           </address>
       </div>
@@ -175,9 +299,12 @@
   </div>
 </footer>
 
-<a class="fx-wa" href="https://wa.me/902126180701" target="_blank" rel="noopener" aria-label="7/24 Bize Ulaşın">
-  <span class="fx-wa__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.08-.13-.28-.2-.58-.35z"/><path fill="none" stroke="#25D366" stroke-width="1.3" d="M12.02 3C7.05 3 3 7.03 3 11.98c0 1.76.5 3.4 1.36 4.8L3 21l4.35-1.34a9.05 9.05 0 0 0 4.67 1.28h.01c4.97 0 9.02-4.03 9.02-8.98A8.98 8.98 0 0 0 12.02 3z"/></svg></span>
-  <span class="fx-wa__label">7/24 Bize Ulaşın</span>
+<a class="fx-wa" href="https://wa.me/902126180701" target="_blank" rel="noopener" aria-label="WhatsApp ile 7/24 Bize Ulaşın">
+  <span class="fx-wa__icon">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.5 6.5 18.8 5.4 16 5.4c-5.8 0-10.6 4.8-10.6 10.6 0 1.9.5 3.7 1.4 5.3L5.4 27.2l6.1-1.6c1.5.8 3.2 1.3 4.9 1.3h0c5.8 0 10.6-4.8 10.6-10.6.1-2.8-1-5.5-3-7.5zM16 25.1c-1.6 0-3.2-.4-4.6-1.2l-.3-.2-3.4.9.9-3.3-.2-.4c-.9-1.4-1.4-3.1-1.4-4.8 0-4.9 4-8.8 8.8-8.8 2.4 0 4.6.9 6.2 2.6s2.6 3.9 2.6 6.2c0 4.8-3.9 8.8-8.8 8.8zm4.8-6.6c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.3c-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.3c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z" fill="#FFFFFF"/></svg>
+    <span class="fx-wa__dot" aria-hidden="true"></span>
+  </span>
+  <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
 </a>
 
 <script src="../js/fenix.js"></script>
