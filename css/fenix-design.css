@@ -1385,3 +1385,611 @@ body.fx-nav-open {
 .fx-burger svg {
   pointer-events: none;
 }
+
+/* ===================================================
+   MASTER SYSTEM PAGE COMPONENTS (2026 REFERENCE)
+   =================================================== */
+
+/* --- 1. System Page Hero --- */
+.fx-sys-hero {
+  background: #14181b;
+  color: #fff;
+  padding: 44px 0 36px;
+  position: relative;
+  overflow: hidden;
+}
+.fx-sys-hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+.fx-sys-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f87171;
+  margin-bottom: 14px;
+}
+.fx-sys-hero__eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--fx-red);
+}
+.fx-sys-hero__title {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.fx-sys-hero__title span.fx-highlight {
+  color: #ef4444;
+}
+.fx-sys-hero__lead {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.fx-sys-hero__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 24px;
+  max-width: 540px;
+}
+.fx-sys-hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.fx-sys-hero__media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 3 / 2;
+  background: #1c2126;
+}
+.fx-sys-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- 2. Quick Specs Banner (Frosted Dark Pill) --- */
+.fx-sys-specs {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  backdrop-filter: blur(8px);
+}
+.fx-sys-spec {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fx-sys-spec__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.fx-sys-spec__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.fx-sys-spec__title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+.fx-sys-spec__sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 3px;
+  display: block;
+}
+
+/* --- 3. 6-Card Technical Snapshot Grid --- */
+.fx-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.fx-snapshot-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.fx-snapshot-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+.fx-snapshot-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.fx-snapshot-card__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.fx-snapshot-card__title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.3;
+}
+.fx-snapshot-card__badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fx-red);
+  margin-top: 4px;
+}
+
+/* --- 4. How It Works Section (4 Steps & Image with Badge) --- */
+.fx-how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.fx-how-media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 3 / 2;
+  background: #14181b;
+}
+.fx-how-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fx-how-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.fx-how-badge svg {
+  width: 20px;
+  height: 20px;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+.fx-how-badge span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.fx-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.fx-step-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.fx-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.fx-step-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.5;
+}
+.fx-step-text strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* --- 5. Advantages Cards (5 Columns Centered) --- */
+.fx-advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+.fx-adv-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fx-adv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border-color: #cbd5e1;
+}
+.fx-adv-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.fx-adv-card__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.fx-adv-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+.fx-adv-card__desc {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+/* --- 6. Installation & Door Fan Highlight --- */
+.fx-install-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: stretch;
+}
+.fx-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.fx-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+.fx-check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.fx-check-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: #fff;
+  stroke-width: 2.5;
+  fill: none;
+}
+.fx-doorfan-box {
+  background: #fdf2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.fx-doorfan-box__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.fx-doorfan-box__icon svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+.fx-doorfan-box__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+.fx-doorfan-box__text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin-bottom: 22px;
+  max-width: 340px;
+}
+
+/* Responsive adjustments for Master System Page */
+@media (max-width: 960px) {
+  .fx-sys-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .fx-sys-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fx-snapshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fx-how-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .fx-advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fx-install-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .fx-sys-hero__title {
+    font-size: 32px;
+  }
+  .fx-sys-specs {
+    grid-template-columns: 1fr;
+  }
+  .fx-snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+  .fx-advantages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 7. Engineering Process (4 Steps Grid) --- */
+.fx-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.fx-process-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 20px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fx-process-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border-color: #cbd5e1;
+}
+.fx-process-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ef4444;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.fx-process-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.fx-process-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --- 8. Applications Grid (6 Cards) --- */
+.fx-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.fx-app-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.fx-app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  border-color: #ef4444;
+}
+.fx-app-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.fx-app-card__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.fx-app-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.fx-app-card__desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+.fx-app-card__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ef4444;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- 9. FAQ Cards --- */
+.fx-faq-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.fx-faq-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px 24px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fx-faq-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.fx-faq-card__q {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.35;
+}
+.fx-faq-card__q-badge {
+  background: #fef2f2;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.fx-faq-card__a {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #475569;
+  padding-left: 36px;
+  margin: 0;
+}
+
+/* Responsive updates for new grids */
+@media (max-width: 960px) {
+  .fx-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fx-apps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .fx-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .fx-apps-grid {
+    grid-template-columns: 1fr;
+  }
+  .fx-faq-card__a {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+}
+
