@@ -1782,44 +1782,6 @@ body.fx-nav-open {
   max-width: 340px;
 }
 
-/* Responsive adjustments for Master System Page */
-@media (max-width: 960px) {
-  .fx-sys-hero__grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .fx-sys-specs {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .fx-snapshot-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .fx-how-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .fx-advantages-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .fx-install-grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 600px) {
-  .fx-sys-hero__title {
-    font-size: 32px;
-  }
-  .fx-sys-specs {
-    grid-template-columns: 1fr;
-  }
-  .fx-snapshot-grid {
-    grid-template-columns: 1fr;
-  }
-  .fx-advantages-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* --- 7. Engineering Process (4 Steps Grid) --- */
 .fx-process-grid {
   display: grid;
@@ -1834,6 +1796,7 @@ body.fx-nav-open {
   padding: 24px 20px;
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 0;
 }
 .fx-process-card:hover {
   transform: translateY(-3px);
@@ -1862,7 +1825,7 @@ body.fx-nav-open {
   margin: 0;
 }
 
-/* --- 8. Applications Grid (6 Cards) --- */
+/* --- 8. Applications Grid (3 or 6 Cards) --- */
 .fx-apps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1878,6 +1841,7 @@ body.fx-nav-open {
   display: flex;
   flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  min-width: 0;
 }
 .fx-app-card:hover {
   transform: translateY(-3px);
@@ -1894,6 +1858,7 @@ body.fx-nav-open {
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  flex-shrink: 0;
 }
 .fx-app-card__icon svg {
   width: 22px;
@@ -1927,7 +1892,7 @@ body.fx-nav-open {
 .fx-faq-stack {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   margin-top: 28px;
   max-width: 900px;
   margin-inline: auto;
@@ -1938,13 +1903,14 @@ body.fx-nav-open {
   border-radius: 12px;
   padding: 22px 24px;
   transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 0;
 }
 .fx-faq-card:hover {
   border-color: #cbd5e1;
   box-shadow: 0 4px 14px rgba(0,0,0,0.04);
 }
 .fx-faq-card__q {
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 10px;
@@ -1971,25 +1937,297 @@ body.fx-nav-open {
   margin: 0;
 }
 
-/* Responsive updates for new grids */
+/* ===================================================
+   MASTER SYSTEM PAGE: RESPONSIVE MEDIA QUERIES
+   =================================================== */
+
+/* --- Tablet Breakpoint (<= 960px) --- */
 @media (max-width: 960px) {
+  .fx-sys-hero {
+    padding: 36px 0 30px;
+  }
+  .fx-sys-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .fx-sys-hero__title {
+    font-size: 34px;
+  }
+  .fx-sys-specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 14px 18px;
+    margin-top: 28px;
+  }
+  .fx-snapshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .fx-how-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .fx-advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .fx-install-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
   .fx-process-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
   .fx-apps-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 }
+
+/* --- Mobile Breakpoint (<= 600px) --- */
 @media (max-width: 600px) {
+  .fx-sys-hero {
+    padding: 24px 0 24px;
+  }
+  .fx-sys-hero__grid {
+    gap: 20px;
+  }
+  .fx-sys-hero__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+  .fx-sys-hero__title {
+    font-size: 26px;
+    line-height: 1.22;
+    margin-bottom: 12px;
+    word-break: break-word;
+  }
+  .fx-sys-hero__lead {
+    font-size: 14.5px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .fx-sys-hero__desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  .fx-sys-hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .fx-sys-hero__actions .fx-btn {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .fx-sys-hero__media {
+    border-radius: 12px;
+  }
+  .fx-sys-specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px 10px;
+    margin-top: 20px;
+  }
+  .fx-sys-spec {
+    gap: 8px;
+  }
+  .fx-sys-spec__icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 6px;
+  }
+  .fx-sys-spec__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .fx-sys-spec__title {
+    font-size: 12.5px;
+  }
+  .fx-sys-spec__sub {
+    font-size: 10.5px;
+    margin-top: 1px;
+  }
+  .fx-snapshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .fx-snapshot-card {
+    padding: 14px 10px;
+  }
+  .fx-snapshot-card__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+  }
+  .fx-snapshot-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .fx-snapshot-card__title {
+    font-size: 13px;
+  }
+  .fx-snapshot-card__badge {
+    font-size: 11px;
+  }
+  .fx-how-media {
+    border-radius: 12px;
+  }
+  .fx-how-badge {
+    bottom: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  .fx-how-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+  .fx-how-badge span {
+    font-size: 11.5px;
+  }
+  .fx-step-list {
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .fx-step-item {
+    gap: 10px;
+  }
+  .fx-step-num {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 13px;
+  }
+  .fx-step-text {
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+  .fx-advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .fx-adv-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 14px 14px;
+    gap: 12px;
+  }
+  .fx-adv-card__icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+  }
+  .fx-adv-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .fx-adv-card__title {
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+  .fx-adv-card__desc {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .fx-doorfan-box {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  .fx-doorfan-box__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+  }
+  .fx-doorfan-box__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .fx-doorfan-box__title {
+    font-size: 18px;
+  }
+  .fx-doorfan-box__text {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+  .fx-doorfan-box .fx-btn {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+  }
   .fx-process-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .fx-process-card {
+    padding: 16px 14px;
+  }
+  .fx-process-num {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .fx-process-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .fx-process-desc {
+    font-size: 13px;
+    line-height: 1.45;
   }
   .fx-apps-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .fx-app-card {
+    padding: 16px 14px;
+  }
+  .fx-faq-stack {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .fx-faq-card {
+    padding: 16px 14px;
+  }
+  .fx-faq-card__q {
+    font-size: 14px;
+    gap: 8px;
   }
   .fx-faq-card__a {
     padding-left: 0;
-    margin-top: 10px;
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* --- Small Mobile Breakpoint (<= 390px, e.g. iPhone SE 375px) --- */
+@media (max-width: 390px) {
+  .fx-sys-hero__title {
+    font-size: 23px;
+  }
+  .fx-sys-specs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .fx-snapshot-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 
