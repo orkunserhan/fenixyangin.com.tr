@@ -369,6 +369,8 @@ table{border-collapse:collapse;width:100%}
 .fx-header--light{background:var(--fx-white);border-bottom:1px solid var(--fx-line)}
 .fx-logo{flex:none;display:block}
 .fx-logo img{height:28px;width:auto}          /* wordmark · oran 5.38:1 · 151×28 */
+.fx-logo__inner{display:contents}
+.fx-logo__reveal,.fx-logo__shine{display:none !important}
 .fx-nav{display:flex;gap:2px;margin-left:auto;align-items:center;font:var(--fx-w-medium) var(--fx-fs-sm)/1 var(--fx-font)}
 .fx-nav__link{padding:9px 11px;border-radius:var(--fx-r-ui);color:var(--fx-body)}
 .fx-header--dark .fx-nav__link{color:var(--fx-on-dark)}
@@ -2747,9 +2749,136 @@ body.fx-nav-open {
     justify-content: space-between !important;
     gap: 0 !important;
   }
-  .fx-logo img {
+  .fx-header .fx-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    position: relative !important;
+    line-height: 0 !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .fx-header .fx-logo__inner {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 24px !important;
+    width: 130px !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+  }
+  .fx-header .fx-logo img {
     height: 24px !important;
     width: auto !important;
+    display: block !important;
+  }
+  /* Mobile Logo Cinematic White-Line Reveal (Initial paint ~1.05s) */
+  .fx-header .fx-logo__pic {
+    display: block !important;
+    animation: fxMobileLogoReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+  @keyframes fxMobileLogoReveal {
+    0% {
+      opacity: 0.35;
+      filter: brightness(0.85);
+    }
+    45% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+  }
+  .fx-header .fx-logo__reveal {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: 2 !important;
+    -webkit-mask-image: url('../assets/fenix-logo.webp');
+    mask-image: url('../assets/fenix-logo.webp');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.45) 45%,
+      #ffffff 50%,
+      rgba(255, 255, 255, 0.45) 55%,
+      transparent 62%,
+      transparent 100%
+    );
+    background-size: 250% 100%;
+    background-position: -120% 0;
+    mix-blend-mode: screen;
+    animation: fxMobileRevealSweep 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  }
+  @keyframes fxMobileRevealSweep {
+    0% {
+      background-position: -120% 0;
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 0.9;
+    }
+    100% {
+      background-position: 220% 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  /* Mobile Logo 10-Second Subtle Metallic Shine */
+  .fx-header .fx-logo__shine {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: 3 !important;
+    -webkit-mask-image: url('../assets/fenix-logo.webp');
+    mask-image: url('../assets/fenix-logo.webp');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.3) 46%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.3) 54%,
+      transparent 60%,
+      transparent 100%
+    );
+    background-size: 250% 100%;
+    background-position: -120% 0;
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: fxMobileTenSecShine 10s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+    animation-delay: 1.2s !important;
+  }
+  @keyframes fxMobileTenSecShine {
+    0%, 93% {
+      background-position: -120% 0;
+      opacity: 0;
+    }
+    94% {
+      opacity: 0.95;
+    }
+    98.5% {
+      background-position: 220% 0;
+      opacity: 0.95;
+    }
+    100% {
+      background-position: 220% 0;
+      opacity: 0;
+    }
   }
   .fx-header__actions {
     display: flex !important;
@@ -3511,5 +3640,24 @@ body.fx-nav-open {
   }
   .fx-section--tight .fx-dl__v.fx-num {
     font-size: 18px !important;
+  }
+}
+
+/* --- 9. Accessibility: Reduced Motion Override --- */
+@media (prefers-reduced-motion: reduce) {
+  .fx-header .fx-logo,
+  .fx-header .fx-logo *,
+  .fx-header .fx-logo__pic,
+  .fx-header .fx-logo__reveal,
+  .fx-header .fx-logo__shine {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+  .fx-header .fx-logo__reveal,
+  .fx-header .fx-logo__shine {
+    display: none !important;
   }
 }

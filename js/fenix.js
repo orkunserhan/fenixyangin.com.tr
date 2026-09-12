@@ -370,6 +370,19 @@
     m.addEventListener('touchend', function () { t.style.animationPlayState = 'running'; }, { passive: true });
   });
 
+  /* ---------- MOBİL HEADER LOGO SHINE (VISIBILITY AWARE) ---------- */
+  (function () {
+    var sheen = document.querySelector('.fx-header .fx-logo__shine');
+    if (!sheen) return;
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        sheen.style.animationPlayState = 'paused';
+      } else {
+        sheen.style.animationPlayState = 'running';
+      }
+    });
+  })();
+
   /* Auto-initialize dynamic reference counts */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', window.fxInitReferenceCounts);
