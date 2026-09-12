@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" fill="none" role="img" aria-label="TRT Haber">
+  <rect width="140" height="44" rx="6" fill="#1e293b"/>
+  <rect x="12" y="10" width="46" height="24" rx="4" fill="#dc2626"/>
+  <text x="35" y="27" fill="#ffffff" font-family="'Instrument Sans', sans-serif" font-size="14" font-weight="900" letter-spacing="0.05em" text-anchor="middle">TRT</text>
+  <text x="94" y="27" fill="#ffffff" font-family="'Instrument Sans', sans-serif" font-size="16" font-weight="800" letter-spacing="0.08em" text-anchor="middle">HABER</text>
+</svg>
