@@ -34,6 +34,12 @@
 
   <!-- Sistem Sayfaları — Yüksek Öncelik (Anahtar Kelimeler) -->
   <url>
+    <loc>https://fenixyangin.com.tr/pages/yangin-algilama-ve-ihbar-sistemleri.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://fenixyangin.com.tr/pages/fm200-gazli-yangin-sondurme-sistemleri.html</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
