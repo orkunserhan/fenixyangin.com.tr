@@ -7,6 +7,8 @@ Sitemap: https://fenixyangin.com.tr/sitemap.xml
 # Arama motorları için önerilen tarama hızı
 Crawl-delay: 2
 
-# Gereksiz/teknik sayfaları engelle
+# Gereksiz/teknik ve şablon sayfaları engelle
 Disallow: /pages/404.html
 Disallow: /pages/arama.html
+Disallow: /pages/*-single.html
+Disallow: /pages/bolge.html

@@ -1269,25 +1269,35 @@ html, body {
     pointer-events: none !important;
 }
 
-/* Mühendislik Süreci (fx-rail) Tek Satır (1 line) Fix on Desktop */
-@media (min-width: 761px) {
+/* Mühendislik Süreci (fx-rail) Responsive Grid */
+@media (min-width: 1024px) {
   .fx-rail__steps {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 32px !important;
-    padding-bottom: 24px !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-  .fx-rail__steps::-webkit-scrollbar {
-    display: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    overflow-x: visible !important;
+    padding-bottom: 0 !important;
   }
   .fx-rail__step {
-    flex: 0 0 280px !important;
-    display: flex !important;
-    flex-direction: column !important;
+    flex: auto !important;
+    display: block !important;
+    padding-bottom: 0 !important;
+  }
+  .fx-rail__step::before {
+    display: block !important;
+  }
+}
+@media (min-width: 761px) and (max-width: 1023px) {
+  .fx-rail__steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    overflow-x: visible !important;
+    padding-bottom: 0 !important;
+  }
+  .fx-rail__step {
+    flex: auto !important;
+    display: block !important;
     padding-bottom: 0 !important;
   }
   .fx-rail__step::before {
