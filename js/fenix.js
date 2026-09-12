@@ -6,6 +6,81 @@
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
+  /* ---------- 0 · CENTRAL REFERENCE REGISTRY (SINGLE SOURCE OF TRUTH) ---------- */
+  window.FENIX_VERIFIED_REFS = [
+    { id: "baykar", name: "Baykar", cat: "havacilik-savunma", logo: "1-baykar.png" },
+    { id: "turk-hava-yollari", name: "Türk Hava Yolları", cat: "havacilik-savunma", logo: "2-turk-hava-yollari.jpg" },
+    { id: "pegasus", name: "Pegasus", cat: "havacilik-savunma", logo: "3-pegasus.png" },
+    { id: "hermes", name: "Hermès", cat: "turizm-perakende", logo: "4-hermes.png" },
+    { id: "aksa", name: "Aksa", cat: "enerji-sanayi", logo: "5-aksa.png" },
+    { id: "havelsan", name: "Havelsan", cat: "havacilik-savunma", logo: "6-havelsan.png" },
+    { id: "odeabank", name: "Odeabank", cat: "finans-teknoloji", logo: "7-odeabank.png" },
+    { id: "merit-royal", name: "Merit Royal", cat: "turizm-perakende", logo: "8-merit-royal.jpeg" },
+    { id: "sheraton-hotel", name: "Sheraton Hotel", cat: "turizm-perakende", logo: "9-sheraton-hotel.png" },
+    { id: "trendyol", name: "Trendyol", cat: "finans-teknoloji", logo: "10-trendyol.png" },
+    { id: "paribu", name: "Paribu", cat: "finans-teknoloji", logo: "11-paribu.png" },
+    { id: "iga", name: "İGA", cat: "havacilik-savunma", logo: "12-iga.png" },
+    { id: "tupras", name: "Tüpraş", cat: "enerji-sanayi", logo: "13-tupras.png" }
+  ];
+
+  window.fxInitReferenceCounts = function () {
+    var refs = window.FENIX_VERIFIED_REFS || [];
+    var domCards = document.querySelectorAll('.fx-ref-card');
+    var total = Math.max(refs.length, domCards.length);
+
+    document.querySelectorAll('[data-fx-stat="ref-count"]').forEach(function (el) {
+      el.textContent = total + '+ Seçkin Kurum';
+    });
+    document.querySelectorAll('[data-fx-stat="ref-count-num"]').forEach(function (el) {
+      el.textContent = total + '+';
+    });
+    document.querySelectorAll('[data-fx-stat="ref-count-text"]').forEach(function (el) {
+      el.textContent = total + ' Kurumsal Marka';
+    });
+    document.querySelectorAll('[data-fx-stat="ref-filter-all"]').forEach(function (el) {
+      el.textContent = 'Tümü (' + total + ')';
+    });
+    document.querySelectorAll('[data-fx-stat="ref-summary"]').forEach(function (el) {
+      el.textContent = 'Uluslararası standartlarda korunan ' + total + '+ seçkin referansımız.';
+    });
+
+    var catCounts = {};
+    if (domCards.length > 0) {
+      document.querySelectorAll('.fx-ref-group').forEach(function (g) {
+        var grp = g.getAttribute('data-group');
+        var c = g.querySelectorAll('.fx-ref-card').length;
+        catCounts[grp] = c;
+        var lbl = g.querySelector('.fx-ref-section-head .fx-label');
+        if (lbl) lbl.textContent = c + ' Referans';
+      });
+    } else {
+      refs.forEach(function (r) {
+        catCounts[r.cat] = (catCounts[r.cat] || 0) + 1;
+      });
+    }
+    Object.keys(catCounts).forEach(function (cat) {
+      document.querySelectorAll('[data-fx-stat="ref-filter-' + cat + '"]').forEach(function (el) {
+        var name = el.getAttribute('data-cat-name') || el.textContent.split('(')[0].trim();
+        el.textContent = name + ' (' + catCounts[cat] + ')';
+      });
+    });
+  };
+
+  window.fxFilterRefs = function (cat, btn) {
+    var chips = document.querySelectorAll('.fx-filters .fx-chip');
+    chips.forEach(function (c) { c.classList.remove('is-active'); });
+    if (btn) btn.classList.add('is-active');
+    var groups = document.querySelectorAll('.fx-ref-group');
+    groups.forEach(function (g) {
+      if (cat === 'all' || g.getAttribute('data-group') === cat) {
+        g.style.display = 'block';
+      } else {
+        g.style.display = 'none';
+      }
+    });
+  };
+
+
   /* ---------- HACİM HESAPLAYICI ----------
      hacim = en × boy × yükseklik
      gaz   = hacim × 0,625
@@ -154,21 +229,63 @@
     });
   });
 
-  /* ---------- ŞERİT OKLARI ---------- */
-  $$('[data-fx-strip]').forEach(function (strip) {
-    var nav = strip.parentNode.parentNode.querySelector('.fx-strip-nav');
-    if (!nav) return;
-    var b = $$('.fx-strip-nav__btn', nav);
-    function step(d) { strip.scrollBy({ left: d * strip.clientWidth * 0.7, behavior: 'smooth' }); }
-    if (b[0]) b[0].addEventListener('click', function () { step(-1); });
-    if (b[1]) b[1].addEventListener('click', function () { step(1); });
-    var bar = strip.parentNode.querySelector('.fx-strip-progress__bar');
-    if (bar) strip.addEventListener('scroll', function () {
-      var max = strip.scrollWidth - strip.clientWidth;
-      bar.style.width = (max > 0 ? Math.max(12, (strip.scrollLeft / max) * 100) : 100) + '%';
-    });
-  });
+  /* ---------- DİNAMİK SEKTÖR & MEDYA RAYI (PHOTO-FIRST MEDIA RAIL) ---------- */
+  window.fxInitStrip = function (strip) {
+    if (!strip) {
+      $$('[data-fx-strip]').forEach(function (s) {
+        window.fxInitStrip(s);
+      });
+      return;
+    }
+    var container = strip.closest('section') || strip.parentNode.parentNode;
+    var nav = container.querySelector('.fx-strip-nav');
+    var b = nav ? $$('.fx-strip-nav__btn', nav) : [];
+    var bar = container.querySelector('.fx-strip-progress__bar');
+    var progressText = container.querySelector('.fx-strip-progress__text');
+    var cards = $$('.fx-sector:not(.fx-strip__ghost)', strip);
+    var totalCards = cards.length;
 
+    // Dynamically initialize card badges (e.g. 01 / 07, 02 / 07...)
+    cards.forEach(function (card, idx) {
+      var badge = card.querySelector('.fx-sector__badge');
+      var numStr = (idx < 9 ? '0' + (idx + 1) : (idx + 1)) + ' / ' + (totalCards < 10 ? '0' + totalCards : totalCards);
+      if (badge) badge.textContent = numStr;
+    });
+
+    function updateStrip() {
+      var max = strip.scrollWidth - strip.clientWidth;
+      if (bar) bar.style.width = (max > 0 ? Math.max(12, (strip.scrollLeft / max) * 100) : 100) + '%';
+      if (progressText && cards.length) {
+        var cardW = cards[0].offsetWidth + (parseFloat(window.getComputedStyle(cards[0]).marginRight) || 20);
+        var current = Math.min(totalCards, Math.max(1, Math.round(strip.scrollLeft / (cardW || 300)) + 1));
+        var str = (current < 10 ? '0' + current : current) + ' / ' + (totalCards < 10 ? '0' + totalCards : totalCards) + ' · kaydır';
+        progressText.textContent = str;
+      }
+      if (b[0]) b[0].classList.toggle('is-disabled', strip.scrollLeft <= 5);
+      if (b[1]) b[1].classList.toggle('is-disabled', strip.scrollLeft >= max - 5);
+    }
+
+    function step(d) {
+      var cardW = cards[0] ? cards[0].offsetWidth + 20 : strip.clientWidth * 0.75;
+      strip.scrollBy({ left: d * cardW, behavior: 'smooth' });
+    }
+
+    if (b[0]) {
+      b[0].onclick = function () { step(-1); };
+      b[0].setAttribute('aria-label', 'Önceki sektör');
+    }
+    if (b[1]) {
+      b[1].onclick = function () { step(1); };
+      b[1].setAttribute('aria-label', 'Sonraki sektör');
+    }
+    strip.addEventListener('scroll', updateStrip, { passive: true });
+    updateStrip();
+  };
+
+  $$('[data-fx-strip]').forEach(function (strip) {
+    window.fxInitStrip(strip);
+  });
+  
   /* ---------- VİDEO · TIKLA-YÜKLE (ilk yüklemede iframe yok) ---------- */
   /* ---------- VİDEO · TIKLA-YÜKLE (ilk yüklemede iframe yok) ----------
      data-fx-yt herhangi bir YouTube biçimini kabul eder; ID'ye indirger.
@@ -252,5 +369,12 @@
     m.addEventListener('touchstart', function () { t.style.animationPlayState = 'paused'; }, { passive: true });
     m.addEventListener('touchend', function () { t.style.animationPlayState = 'running'; }, { passive: true });
   });
+
+  /* Auto-initialize dynamic reference counts */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.fxInitReferenceCounts);
+  } else {
+    window.fxInitReferenceCounts();
+  }
 })();
 

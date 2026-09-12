@@ -484,24 +484,149 @@ table{border-collapse:collapse;width:100%}
 .fx-strip-progress__bar{position:absolute;left:0;top:0;height:2px;background:var(--fx-ink)}
 .fx-strip-progress__text{font:var(--fx-w-regular) var(--fx-fs-label)/1 var(--fx-font);color:var(--fx-muted);font-variant-numeric:tabular-nums}
 
-/* sektör vitrini — aktif kart geniş */
-.fx-sector{position:relative;width:228px;height:404px;border-radius:var(--fx-r-box);overflow:hidden;
-  display:flex;flex-direction:column;justify-content:space-between;
-  background:var(--fx-white);border:1px solid var(--fx-line);padding:var(--fx-s3) var(--fx-s3) var(--fx-s6);
-  transition:width var(--fx-t-base) ease,background var(--fx-t-fast)}
-.fx-sector:hover{background:var(--fx-wash-yellow)}
-.fx-sector.is-active{width:416px;background:var(--fx-ink);border-color:var(--fx-ink);padding:var(--fx-s7)}
-.fx-sector.is-active .fx-sector__media{position:absolute;inset:0 0 50% 0}
-.fx-sector.is-active::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:var(--fx-r-box);
-  background:linear-gradient(180deg,rgba(20,24,27,.5) 0%,rgba(20,24,27,.2) 34%,rgba(11,14,16,.94) 100%)}
-.fx-sector__media{height:146px;flex:none}
-.fx-sector__body{position:relative;z-index:1}
-.fx-sector.is-active .fx-sector__title{color:#fff}
-.fx-sector.is-active .fx-sector__text{color:rgba(255,255,255,.82)}
-.fx-sector__systems{font:var(--fx-w-medium) var(--fx-fs-label)/1 var(--fx-font);color:var(--fx-muted)}
-.fx-sector.is-active .fx-sector__systems{color:var(--fx-yellow)}
-.fx-sector__cta{display:none}
-.fx-sector.is-active .fx-sector__cta{display:flex;align-items:center;justify-content:space-between;gap:var(--fx-s4);padding-top:13px;border-top:1px solid rgba(255,255,255,.16)}
+/* ==========================================================================
+   PHOTO-FIRST SECTOR MEDIA RAIL (DESKTOP + MOBILE 2026 ARCHITECTURE)
+   ========================================================================== */
+.fx-strip[data-fx-strip="sektor"] {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 12px;
+  padding-top: 4px;
+}
+.fx-strip[data-fx-strip="sektor"]::-webkit-scrollbar {
+  display: none;
+}
+
+.fx-sector {
+  position: relative;
+  flex: 0 0 clamp(360px, 30vw, 440px);
+  height: 420px;
+  border-radius: var(--fx-r-box);
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--fx-ink);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.fx-sector:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+.fx-sector__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.fx-sector__media picture, .fx-sector__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.fx-sector__media img {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fx-sector:hover .fx-sector__media img {
+  transform: scale(1.04);
+}
+
+.fx-sector__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 14, 16, 0.15) 0%, rgba(11, 14, 16, 0.28) 35%, rgba(11, 14, 16, 0.84) 70%, rgba(11, 14, 16, 0.98) 100%);
+  pointer-events: none;
+}
+
+.fx-sector__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 22px;
+}
+
+.fx-sector__top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.fx-sector__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(14, 18, 20, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.fx-sector__bottom {
+  display: flex;
+  flex-direction: column;
+}
+.fx-sector__title {
+  color: #ffffff !important;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.fx-sector__text {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.fx-sector__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 12px;
+}
+.fx-sector__systems {
+  color: var(--fx-yellow) !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.fx-link-arrow--white {
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease;
+}
+.fx-sector:hover .fx-link-arrow--white {
+  transform: translateX(4px);
+}
 
 /* proje şeridi kartı */
 .fx-project{width:300px;min-width:0}
@@ -835,8 +960,28 @@ table{border-collapse:collapse;width:100%}
   .fx-rail__step:last-child::after{display:none}
   /* şeritler mobilde de yatay kalır */
   .fx-strip{gap:var(--fx-s3);padding-right:var(--fx-gut)}
-  .fx-sector{width:272px;height:290px}
-  .fx-sector.is-active{width:272px;padding:var(--fx-s5)}
+  .fx-strip[data-fx-strip="sektor"] {
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-right: var(--fx-gut);
+  }
+  .fx-sector {
+    flex: 0 0 84vw !important;
+    max-width: 340px !important;
+    height: 380px !important;
+    scroll-snap-align: start;
+  }
+  .fx-sector__content {
+    padding: 18px 16px !important;
+  }
+  .fx-sector__title {
+    font-size: 18px !important;
+  }
+  .fx-sector__text {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+  }
   .fx-project{width:240px}
   .fx-project__media{height:150px}
   .fx-strip-progress__track{width:120px}
@@ -1225,49 +1370,6 @@ html, body {
 
 
 
-
-/* Sektor cards animation fix */
-.fx-sector {
-    min-height: unset !important;
-    height: 380px !important;
-    width: 240px !important;
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease !important;
-    position: relative !important;
-}
-.fx-sector__media {
-    height: 140px !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    z-index: 0 !important;
-}
-.fx-sector__body {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 24px !important;
-    z-index: 2 !important;
-}
-.fx-sector.is-active {
-    width: 380px !important;
-    height: 380px !important;
-    padding: 0 !important;
-    justify-content: flex-end !important;
-}
-.fx-sector.is-active .fx-sector__media {
-    height: 100% !important;
-}
-.fx-sector.is-active::after {
-    content: "" !important;
-    position: absolute !important;
-    inset: 0 !important;
-    background: linear-gradient(to top, rgba(11,14,16,0.95) 0%, rgba(20,24,27,0.4) 50%, rgba(20,24,27,0.1) 100%) !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
 
 /* Mühendislik Süreci (fx-rail) Responsive Grid */
 @media (min-width: 1024px) {

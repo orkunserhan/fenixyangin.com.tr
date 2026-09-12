@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="icon" href="../assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="../assets/favicon.png">
-<link rel="stylesheet" href="../css/fenix-design.css">
+<link rel="stylesheet" href="../css/fenix-design.css?v=15">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -244,7 +244,7 @@
           <p class="fx-lead" style="color:var(--fx-body);line-height:1.6;">Havacılık, savunma sanayii, enerji üretimi, bankacılık ve perakende sektörlerinde faaliyet gösteren öncü kurumların kritik tesislerinde gazlı söndürme, yangın algılama ve periyodik bakım altyapılarını projelendiriyoruz.</p>
         </div>
         <dl class="fx-dl">
-          <div class="fx-dl__row"><dt class="fx-dl__k">Doğrulanmış Referans</dt><dd class="fx-dl__v">13 Kurumsal Marka</dd></div>
+          <div class="fx-dl__row"><dt class="fx-dl__k">Doğrulanmış Referans</dt><dd class="fx-dl__v" data-fx-stat="ref-count-text">13 Kurumsal Marka</dd></div>
           <div class="fx-dl__row"><dt class="fx-dl__k">Sektör Kümesi</dt><dd class="fx-dl__v">4 Temel Sektör Grubu</dd></div>
           <div class="fx-dl__row"><dt class="fx-dl__k">Standart Çerçevesi</dt><dd class="fx-dl__v">NFPA · ISO · TS EN</dd></div>
         </dl>
@@ -259,11 +259,11 @@
       <!-- Kategori Filtre Butonları -->
       <div style="margin-bottom:32px;">
         <div class="fx-filters" style="display:flex;flex-wrap:wrap;gap:8px;">
-          <button class="fx-chip is-active" type="button" data-ref-cat="all" onclick="fxFilterRefs('all', this)">Tümü (13)</button>
-          <button class="fx-chip" type="button" data-ref-cat="havacilik-savunma" onclick="fxFilterRefs('havacilik-savunma', this)">Havacılık & Savunma (5)</button>
-          <button class="fx-chip" type="button" data-ref-cat="enerji-sanayi" onclick="fxFilterRefs('enerji-sanayi', this)">Enerji & Sanayi (2)</button>
-          <button class="fx-chip" type="button" data-ref-cat="finans-teknoloji" onclick="fxFilterRefs('finans-teknoloji', this)">Finans & Teknoloji (3)</button>
-          <button class="fx-chip" type="button" data-ref-cat="turizm-perakende" onclick="fxFilterRefs('turizm-perakende', this)">Turizm & Perakende (3)</button>
+          <button class="fx-chip is-active" type="button" data-ref-cat="all" data-fx-stat="ref-filter-all" onclick="fxFilterRefs('all', this)">Tümü (13)</button>
+          <button class="fx-chip" type="button" data-ref-cat="havacilik-savunma" data-fx-stat="ref-filter-havacilik-savunma" data-cat-name="Havacılık & Savunma" onclick="fxFilterRefs('havacilik-savunma', this)">Havacılık & Savunma (5)</button>
+          <button class="fx-chip" type="button" data-ref-cat="enerji-sanayi" data-fx-stat="ref-filter-enerji-sanayi" data-cat-name="Enerji & Sanayi" onclick="fxFilterRefs('enerji-sanayi', this)">Enerji & Sanayi (2)</button>
+          <button class="fx-chip" type="button" data-ref-cat="finans-teknoloji" data-fx-stat="ref-filter-finans-teknoloji" data-cat-name="Finans & Teknoloji" onclick="fxFilterRefs('finans-teknoloji', this)">Finans & Teknoloji (3)</button>
+          <button class="fx-chip" type="button" data-ref-cat="turizm-perakende" data-fx-stat="ref-filter-turizm-perakende" data-cat-name="Turizm & Perakende" onclick="fxFilterRefs('turizm-perakende', this)">Turizm & Perakende (3)</button>
         </div>
       </div>
 
@@ -600,6 +600,6 @@ window.addEventListener('DOMContentLoaded', function() {
   <span class="fx-wa__label">7/24 Bize Ulaşın</span>
 </a>
 
-<script src="../js/fenix.js" defer></script>
+<script src="../js/fenix.js?v=15" defer></script>
 </body>
 </html>

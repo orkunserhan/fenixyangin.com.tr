@@ -21,7 +21,7 @@
 <link rel="preload" as="image" href="assets/img/hero-fenix-yangin.webp" type="image/webp" fetchpriority="high" imagesrcset="assets/img/hero-fenix-yangin-900.webp 900w, assets/img/hero-fenix-yangin.webp 1920w" imagesizes="100vw">
 <link rel="icon" href="assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="stylesheet" href="css/fenix-design.css?v=14">
+<link rel="stylesheet" href="css/fenix-design.css?v=15">
 
 <!-- Schema.org Structured Data (JSON-LD) -->
 <script type="application/ld+json">
@@ -370,7 +370,7 @@
     </div>
     <div class="fx-wrap fx-marquee-fallback"><div class="fx-logo-tile"><img src="assets/img/referanslar/1-baykar.png" alt="Baykar" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/2-turk-hava-yollari.jpg" alt="Türk Hava Yolları" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/3-pegasus.png" alt="Pegasus" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/4-hermes.png" alt="Hermes" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/5-aksa.png" alt="Aksa" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/6-havelsan.png" alt="Havelsan" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/7-odeabank.png" alt="Odeabank" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/8-merit-royal.jpeg" alt="Merit Royal" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/9-sheraton-hotel.png" alt="Sheraton Hotel" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/10-trendyol.png" alt="Trendyol" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/11-paribu.png" alt="Paribu" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/12-iga.png" alt="İGA" loading="lazy"></div><div class="fx-logo-tile"><img src="assets/img/referanslar/13-tupras.png" alt="Tüpraş" loading="lazy"></div></div>
     <div class="fx-wrap" style="padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-      <span class="fx-label" style="color:var(--fx-muted); font-size:13px;">Uluslararası standartlarda korunan seçkin referanslarımız.</span>
+      <span class="fx-label" data-fx-stat="ref-summary" style="color:var(--fx-muted); font-size:13px;">Uluslararası standartlarda korunan 13+ seçkin referansımız.</span>
       <a class="fx-link-arrow fx-desktop-only" href="pages/referanslar.html" style="color:var(--fx-ink)">Tüm referanslar &#8594;</a>
     </div>
     <div class="fx-wrap fx-mobile-only" style="padding-top:14px; text-align:center;">
@@ -396,7 +396,7 @@
         <dl class="fx-dl" style="background:var(--fx-white); padding:20px; border-radius:var(--fx-r-box); border:1px solid var(--fx-line);">
           <div class="fx-dl__row"><dt class="fx-dl__k">Kuruluş Yılı</dt><dd class="fx-dl__v fx-num" style="font-size:22px; font-weight:700; color:var(--fx-ink)">2011</dd></div>
           <div class="fx-dl__row"><dt class="fx-dl__k">Uzmanlık Sistemi</dt><dd class="fx-dl__v fx-num" style="font-size:22px; font-weight:700; color:var(--fx-red)">7 Ana Sistem</dd></div>
-          <div class="fx-dl__row"><dt class="fx-dl__k">Doğrulanmış Marka</dt><dd class="fx-dl__v fx-num" style="font-size:22px; font-weight:700; color:var(--fx-ink)">13+ Seçkin Kurum</dd></div>
+          <div class="fx-dl__row"><dt class="fx-dl__k">Doğrulanmış Marka</dt><dd class="fx-dl__v fx-num" data-fx-stat="ref-count" style="font-size:22px; font-weight:700; color:var(--fx-ink)">13+ Seçkin Kurum</dd></div>
         </dl>
         <dl class="fx-dl" style="background:var(--fx-white); padding:20px; border-radius:var(--fx-r-box); border:1px solid var(--fx-line);">
           <div class="fx-dl__row"><dt class="fx-dl__k">Standart Uyumu</dt><dd class="fx-dl__v" style="font-weight:600; font-size:13.5px;">NFPA 2001 · ISO 14520 · TS EN 15004</dd></div>
@@ -410,7 +410,7 @@
   <!-- ==================================================
        SECTION 4: SEKTÖRLER / NEYİ KORUYORUZ
        ================================================== -->
-  <section class="fx-section fx-section--paper">
+  <section class="fx-section fx-section--paper" id="sektorler">
     <div class="fx-wrap">
       <div style="display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px">
         <div>
@@ -419,74 +419,184 @@
           <p class="fx-lead">Tesisin kullanım amacı, içindeki ekipmanın niteliği ve ortamdaki insan varlığı doğru söndürme yaklaşımını belirler.</p>
         </div>
         <div class="fx-strip-nav fx-desktop-only">
-          <button class="fx-strip-nav__btn" type="button" aria-label="Geriye kaydır">&#8592;</button>
-          <button class="fx-strip-nav__btn is-enabled" type="button" aria-label="İleriye kaydır">&#8594;</button>
+          <button class="fx-strip-nav__btn fx-strip-nav__btn--prev" type="button" aria-label="Önceki sektör">&#8592;</button>
+          <button class="fx-strip-nav__btn fx-strip-nav__btn--next" type="button" aria-label="Sonraki sektör">&#8594;</button>
         </div>
       </div>
     </div>
     <div class="fx-wrap fx-wrap--bleed-r">
       <div class="fx-strip" data-fx-strip="sektor" role="list">
+        
         <!-- 01: Veri Merkezi -->
-        <a class="fx-sector is-active" href="pages/veri-merkezi-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/hero-fenix-yangin.webp" alt="Veri Merkezi ve Sunucu Odası Gazlı Söndürme" loading="lazy" width="416" height="260">
+        <a class="fx-sector" href="pages/veri-merkezi-yangin-sondurme.html" role="listitem" aria-label="Veri merkezi ve sunucu odası yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/hero-fenix-yangin.webp">
+              <img src="assets/img/hero-fenix-yangin.webp" alt="Veri Merkezi ve Sunucu Odası Gazlı Söndürme Sistemleri" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
           </div>
-          <div class="fx-sector__body">
-            <span class="fx-badge fx-badge--yellow fx-num">01 / 07</span>
-            <h3 class="fx-h3 fx-sector__title" style="margin:10px 0">Veri merkezi ve sunucu odası</h3>
-            <p class="fx-text fx-text--sm fx-sector__text">Kesintisiz çalışma zorunluluğu. Kalıntı bırakmayan söndürme, çapraz bölgeli algılama ve oda sızdırmazlık testi birlikte projelendirilir.</p>
-            <div class="fx-sector__cta">
-              <span class="fx-sector__systems">FM200 · Novec 1230</span>
-              <span class="fx-link-arrow fx-link-arrow--dark">Sektörü incele &#8594;</span>
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">01 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Veri merkezi ve sunucu odası</h3>
+              <p class="fx-sector__text">Kesintisiz çalışma zorunluluğu olan BT altyapılarında kalıntı bırakmayan temiz gazlı söndürme ve çapraz bölgeli algılama.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">FM200 · Novec 1230</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
             </div>
           </div>
         </a>
+
         <!-- 02: Endüstriyel Mutfak -->
-        <a class="fx-sector" href="pages/endustriyel-mutfak-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/davlumbaz-yangin-sondurme-sistemi-mutfak-genel.webp" alt="Endüstriyel Mutfak Davlumbaz Yangın Söndürme" loading="lazy" width="300" height="188">
+        <a class="fx-sector" href="pages/endustriyel-mutfak-yangin-sondurme.html" role="listitem" aria-label="Endüstriyel mutfak davlumbaz söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/davlumbaz-yangin-sondurme-sistemi-mutfak-genel.webp">
+              <img src="assets/img/davlumbaz-yangin-sondurme-sistemi-mutfak-genel.webp" alt="Endüstriyel Mutfak Davlumbaz Yangın Söndürme" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">02</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Endüstriyel mutfak</h3><span class="fx-sector__systems">Davlumbaz</span></div>
-        </a>
-        <!-- 03: Trafo Odası -->
-        <a class="fx-sector" href="pages/trafo-odasi-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/trafo-yangin-sondurme-trafo-merkezi-kosk.webp" alt="Trafo ve Enerji Odası Karbondioksit Söndürme" loading="lazy" width="300" height="188">
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">02 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Endüstriyel mutfak</h3>
+              <p class="fx-sector__text">Yoğun yağ buharı ve açık alev riskine karşı ocak, filtre ve baca kanallarında mekanik ve eriyen telli otomatik koruma.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">Davlumbaz Söndürme</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">03</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Trafo ve enerji odası</h3><span class="fx-sector__systems">CO₂ · Pano içi</span></div>
         </a>
-        <!-- 04: Arşiv & Müze -->
-        <a class="fx-sector" href="pages/arsiv-muze-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/novec-1230-fk-5-1-12-yangin-sondurme-sistemi.webp" alt="Arşiv Müze ve Kütüphane Novec 1230 Söndürme" loading="lazy" width="300" height="188">
+
+        <!-- 03: Trafo ve Enerji Odası -->
+        <a class="fx-sector" href="pages/trafo-odasi-yangin-sondurme.html" role="listitem" aria-label="Trafo ve enerji odası yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/trafo-yangin-sondurme-trafo-merkezi-kosk.webp">
+              <img src="assets/img/trafo-yangin-sondurme-trafo-merkezi-kosk.webp" alt="Trafo ve Enerji Odası Karbondioksit Söndürme" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">04</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Arşiv, müze ve kütüphane</h3><span class="fx-sector__systems">Novec 1230</span></div>
-        </a>
-        <!-- 05: Hastane -->
-        <a class="fx-sector" href="pages/hastane-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" alt="Hastane ve Sağlık Yapıları Yangın Güvenliği" loading="lazy" width="300" height="188">
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">03 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Trafo ve enerji odası</h3>
+              <p class="fx-sector__text">Yüksek gerilim ve jeneratör alanlarında oksijeni boğarak yangını saniyeler içinde etkisiz kılan karbondioksitli çözümler.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">CO₂ · Pano İçi</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">05</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Hastane</h3><span class="fx-sector__systems">FM200 · Yangın algılama</span></div>
         </a>
-        <!-- 06: Fabrika -->
-        <a class="fx-sector" href="pages/fabrika-uretim-tesisi-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/aerosol-yangin-sondurme-sistemi-endustriyel-uygulama.webp" alt="Fabrika ve Üretim Tesisi Yangın Koruma" loading="lazy" width="300" height="188">
+
+        <!-- 04: Arşiv, Müze ve Kütüphane -->
+        <a class="fx-sector" href="pages/arsiv-muze-yangin-sondurme.html" role="listitem" aria-label="Arşiv, müze ve kütüphane yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/novec-1230-fk-5-1-12-yangin-sondurme-sistemi.webp">
+              <img src="assets/img/novec-1230-fk-5-1-12-yangin-sondurme-sistemi.webp" alt="Arşiv Müze ve Kütüphane Novec 1230 Söndürme" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">06</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Fabrika ve üretim tesisi</h3><span class="fx-sector__systems">CO₂ · Pano içi</span></div>
-        </a>
-        <!-- 07: Telekom -->
-        <a class="fx-sector" href="pages/telekomunikasyon-yangin-sondurme.html" role="listitem">
-          <div class="fx-media fx-media--16x10 fx-sector__media">
-            <img src="assets/img/pano-ici-yangin-sondurme-sistemi-kat-dagitim-panosu-uygulama.webp" alt="Telekomünikasyon ve Santral Yangın Söndürme" loading="lazy" width="300" height="188">
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">04 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Arşiv, müze ve kütüphane</h3>
+              <p class="fx-sector__text">Tarihi evrak, el yazması ve sanat eserlerine su veya kimyasal temas ettirmeden sıfır kalıntıyla yangın söndürme güvencesi.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">Novec 1230</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
           </div>
-          <div class="fx-sector__body"><span class="fx-label fx-num">07</span><h3 class="fx-h3 fx-sector__title" style="margin:10px 0 6px">Telekom</h3><span class="fx-sector__systems">FM200 · Aerosol</span></div>
         </a>
-        <div class="fx-sector fx-strip__ghost" aria-hidden="true"></div>
+
+        <!-- 05: Hastane ve Sağlık Yapıları -->
+        <a class="fx-sector" href="pages/hastane-yangin-sondurme.html" role="listitem" aria-label="Hastane ve sağlık yapıları yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp">
+              <img src="assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" alt="Hastane ve Sağlık Yapıları Yangın Güvenliği" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
+          </div>
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">05 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Hastane ve sağlık yapıları</h3>
+              <p class="fx-sector__text">Ameliyathane, MR/BT odaları ve kritik medikal ekipmanlarda insan sağlığına zararsız, kesintisiz çalışan gazlı koruma.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">FM200 · Yangın Algılama</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- 06: Fabrika ve Üretim Tesisi -->
+        <a class="fx-sector" href="pages/fabrika-uretim-tesisi-yangin-sondurme.html" role="listitem" aria-label="Fabrika ve üretim tesisi yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerosol-yangin-sondurme-sistemi-endustriyel-uygulama.webp">
+              <img src="assets/img/aerosol-yangin-sondurme-sistemi-endustriyel-uygulama.webp" alt="Fabrika ve Üretim Tesisi Yangın Koruma" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
+          </div>
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">06 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Fabrika ve üretim tesisi</h3>
+              <p class="fx-sector__text">Üretim hatları, endüstriyel prosesler ve ana dağıtım panolarında ağır sanayi şartlarına dayanıklı entegre yangın güvenliği.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">CO₂ · Pano İçi · Algılama</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- 07: Telekomünikasyon -->
+        <a class="fx-sector" href="pages/telekomunikasyon-yangin-sondurme.html" role="listitem" aria-label="Telekomünikasyon ve santral yangın söndürme çözümleri">
+          <div class="fx-sector__media">
+            <picture>
+              <source type="image/webp" srcset="assets/img/pano-ici-yangin-sondurme-sistemi-kat-dagitim-panosu-uygulama.webp">
+              <img src="assets/img/pano-ici-yangin-sondurme-sistemi-kat-dagitim-panosu-uygulama.webp" alt="Telekomünikasyon ve Santral Yangın Söndürme" loading="lazy" width="600" height="400">
+            </picture>
+            <div class="fx-sector__scrim"></div>
+          </div>
+          <div class="fx-sector__content">
+            <div class="fx-sector__top">
+              <span class="fx-sector__badge fx-num">07 / 07</span>
+            </div>
+            <div class="fx-sector__bottom">
+              <h3 class="fx-sector__title">Telekomünikasyon ve santral</h3>
+              <p class="fx-sector__text">Baz istasyonları, santral odaları ve 19 inç sunucu kabinlerinde dar alanlara tam uyumlu noktasal söndürme modülleri.</p>
+              <div class="fx-sector__footer">
+                <span class="fx-sector__systems">FM200 · Aerosol</span>
+                <span class="fx-link-arrow fx-link-arrow--white">Sektörü İncele &#8594;</span>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
       <div class="fx-strip-progress">
-        <div class="fx-strip-progress__track"><div class="fx-strip-progress__bar" style="width:35%"></div></div>
+        <div class="fx-strip-progress__track"><div class="fx-strip-progress__bar" style="width:14%"></div></div>
         <span class="fx-strip-progress__text fx-num">01 / 07 · kaydır</span>
       </div>
     </div>
@@ -1279,7 +1389,7 @@
   <span class="fx-wa__badge-mobile fx-mobile-only" aria-hidden="true">7/24</span>
 </a>
 
-<script src="js/fenix.js"></script>
+<script src="js/fenix.js?v=15"></script>
 
 <script>
 (function() {
