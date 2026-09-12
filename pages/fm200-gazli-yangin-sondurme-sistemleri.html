@@ -256,14 +256,10 @@
         </div>
 
         <div class="fx-sys-hero__media">
-          <!-- PHOTO SLOT 1: Hero Destek Görseli -->
-          <div class="fx-photo-slot" data-slot="photo-slot-1" style="width:100%;height:100%;min-height:280px;background:#181e24;border:1px dashed rgba(255,255,255,0.22);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;box-sizing:border-box;">
-            <div style="width:46px;height:46px;border-radius:10px;background:rgba(239,68,68,0.15);color:#ef4444;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-            </div>
-            <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#ef4444;background:rgba(239,68,68,0.12);padding:4px 10px;border-radius:6px;margin-bottom:8px">Fotoğraf Yuvası 1 · Hero Destek Görseli</span>
-            <p style="font-size:13px;color:rgba(255,255,255,0.85);max-width:340px;line-height:1.45;margin:0">FM200 (HFC-227ea) dikişsiz çelik silindir bataryası, yüksek debili boşaltma vanası ve basınç izleme donanımı saha montaj görünümü.</p>
-          </div>
+          <picture>
+            <source type="image/webp" srcset="../assets/img/fm200-gazli-yangin-sondurme-sistemi-teknik-ekip-uygulama.webp">
+            <img class="fx-sys-hero__img" src="../assets/img/fm200-gazli-yangin-sondurme-sistemi-teknik-ekip-uygulama.webp" width="1024" height="682" alt="Fenix teknik ekibinin FM200 gazlı yangın söndürme sistemi kontrol paneli üzerinde saha uygulaması" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
         </div>
       </div>
 
@@ -395,14 +391,7 @@
         </div>
       </div>
 
-      <!-- PHOTO SLOT 2: Temel Bileşenler / Çalışma Prensibi -->
-      <div class="fx-photo-slot" data-slot="photo-slot-2" style="width:100%;border-radius:12px;overflow:hidden;background:#f1f5f9;border:1px dashed #cbd5e1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;text-align:center;box-sizing:border-box;">
-        <div style="width:44px;height:44px;border-radius:10px;background:#fee2e2;color:#dc2626;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-        </div>
-        <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#dc2626;background:#fef2f2;padding:4px 10px;border-radius:6px;margin-bottom:8px">Fotoğraf Yuvası 2 · Temel Bileşenler ve Aktivasyon Mekanizması</span>
-        <p style="font-size:13.5px;color:#475569;max-width:440px;line-height:1.45;margin:0">Elektromanyetik solenoid aktüatör, pnömatik tetikleme hortumu, pirinç boşaltma vanası ve çift kontaklı basınç şalterinin saha bağlantı düzeni.</p>
-      </div>
+
     </div>
   </section>
 
@@ -478,6 +467,17 @@
           <p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5">Hidrolik akış hesaplarına göre delik çapları belirlenen; mahalin ortasında 360° veya duvar kenarlarında 180° homojen radyal püskürtme yapan pirinç nozullar.</p>
         </div>
       </div>
+
+      <!-- PHOTO 2: Çoklu Silindir Grubu ve Manifold Dağıtım Tesisatı -->
+      <div style="margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.04)">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/fm200-gazli-yangin-sondurme-sistemi-silindir-manifold.webp">
+          <img src="../assets/img/fm200-gazli-yangin-sondurme-sistemi-silindir-manifold.webp" width="1024" height="682" alt="FM200 gazlı yangın söndürme sisteminde çoklu silindir grubu ve manifold bağlantıları" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;aspect-ratio:1024/682;object-fit:cover">
+        </picture>
+        <div style="padding:14px 20px;background:#f8fafc;border-top:1px solid #e2e8f0">
+          <p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5"><strong>Saha Görseli:</strong> Çoklu FM200 (HFC-227ea) dikişsiz çelik silindir grubu, yüksek basınca dayanıklı manifold kolektörü ve dağıtım borulaması montajı.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -534,13 +534,15 @@
         </div>
       </div>
 
-      <!-- PHOTO SLOT 3: Kullanım Alanları / Gerçek Saha Uygulaması -->
-      <div class="fx-photo-slot" data-slot="photo-slot-3" style="width:100%;border-radius:12px;overflow:hidden;background:#f8fafc;border:1px dashed #cbd5e1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;text-align:center;box-sizing:border-box;margin-top:28px">
-        <div style="width:44px;height:44px;border-radius:10px;background:#fee2e2;color:#dc2626;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      <!-- PHOTO 4: Kontrol Paneli ve Korunan Hacim Girişi -->
+      <div style="max-width:640px;margin:32px auto 0;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.04)">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp">
+          <img src="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" width="629" height="1024" alt="FM200 yangın söndürme sistemi kontrol paneli ve korunan hacim girişinde Fenix saha uygulaması" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;aspect-ratio:629/1024">
+        </picture>
+        <div style="padding:14px 20px;background:#f8fafc;border-top:1px solid #e2e8f0">
+          <p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5"><strong>Saha Uygulaması:</strong> Korunan hacim girişinde FM200 yangın söndürme sistemi kontrol paneli, sesli tahliye ikaz zilleri ve uyarı tabelaları entegrasyonu.</p>
         </div>
-        <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#dc2626;background:#fef2f2;padding:4px 10px;border-radius:6px;margin-bottom:8px">Fotoğraf Yuvası 3 · Saha Uygulaması ve Mahal Dağıtımı</span>
-        <p style="font-size:13.5px;color:#475569;max-width:440px;line-height:1.45;margin:0">Veri merkezi ve sunucu odalarında asma tavan içi, oda hacmi ve yükseltilmiş zemin altı 360° nozul yerleşimi ve dağıtım borulaması saha görünümü.</p>
       </div>
     </div>
   </section>
@@ -610,13 +612,15 @@
         </div>
       </div>
 
-      <!-- PHOTO SLOT 4: Kurulum / Manifold / Borulama -->
-      <div class="fx-photo-slot" data-slot="photo-slot-4" style="width:100%;border-radius:12px;overflow:hidden;background:#f8fafc;border:1px dashed #cbd5e1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;text-align:center;box-sizing:border-box;margin-top:28px">
-        <div style="width:44px;height:44px;border-radius:10px;background:#fee2e2;color:#dc2626;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      <!-- PHOTO 3: Fenix Teknik Ekip Saha Çalışması -->
+      <div style="margin-top:32px;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.04)">
+        <picture>
+          <source type="image/webp" srcset="../assets/img/fm200-gazli-yangin-sondurme-sistemi-saha-uygulama-ekip.webp">
+          <img src="../assets/img/fm200-gazli-yangin-sondurme-sistemi-saha-uygulama-ekip.webp" width="1024" height="682" alt="Fenix teknik ekibinin FM200 silindir ve bağlantı sistemleri üzerinde saha çalışması" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;aspect-ratio:1024/682;object-fit:cover">
+        </picture>
+        <div style="padding:14px 20px;background:#f8fafc;border-top:1px solid #e2e8f0">
+          <p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5"><strong>Saha Çalışması:</strong> Fenix teknik ekibi, FM200 silindir grubu, vana aktüatörleri ve basınç ölçüm hatları üzerinde montaj ve devreye alma kontrollerini yürütürken.</p>
         </div>
-        <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#dc2626;background:#fef2f2;padding:4px 10px;border-radius:6px;margin-bottom:8px">Fotoğraf Yuvası 4 · Manifold ve Silindir Sabitleme Donanımı</span>
-        <p style="font-size:13.5px;color:#475569;max-width:440px;line-height:1.45;margin:0">Çoklu silindir grubu sabitleme konsolu, toplayıcı dikişsiz çelik manifold borusu, yüksek basınç çekvalfleri ve basınç şalteri mekanik montaj detayı.</p>
       </div>
     </div>
   </section>
