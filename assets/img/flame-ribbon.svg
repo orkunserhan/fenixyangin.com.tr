@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 1200" fill="none" preserveAspectRatio="xMinYMid slice">
+  <defs>
+    <!-- 1. Deep Corporate Crimson Gradient -->
+    <linearGradient id="flameGradRed" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7B0813" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#BE1523" stop-opacity="0.9" />
+      <stop offset="85%" stop-color="#D32F2F" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#8E0E18" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- 2. Warm Scarlet Ribbon Gradient -->
+    <linearGradient id="flameGradScarlet" x1="0%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#C62828" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#E53935" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FF5252" stop-opacity="0.7" />
+    </linearGradient>
+
+    <!-- 3. Golden Amber Fire Ribbon Gradient (Matching Image 1) -->
+    <linearGradient id="flameGradGold" x1="10%" y1="100%" x2="90%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#FBBF24" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- 4. Deep Garnet / Dark Velvet Contour (Matching Image 1) -->
+    <linearGradient id="flameGradDark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E070B" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#3A0811" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#540D18" stop-opacity="0.6" />
+    </linearGradient>
+
+    <filter id="flameGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient background glow aura -->
+  <path d="M -60 1200 C 60 1000 180 780 140 500 C 100 280 190 100 320 -60 C 240 -60 100 120 40 380 C -30 650 -20 950 -120 1200 Z" 
+        fill="url(#flameGradRed)" opacity="0.35" filter="url(#flameGlow)" />
+
+  <!-- Flowing Ribbon 1: Primary Deep Crimson Wave (Image 1 Left Ribbon) -->
+  <path d="M -50 1250 C 70 1020 200 800 150 520 C 105 280 210 90 340 -40 C 270 -40 145 100 80 340 C 15 580 0 840 -120 1150 Z" 
+        fill="url(#flameGradRed)" />
+
+  <!-- Flowing Ribbon 2: Warm Scarlet Accent Overlay -->
+  <path d="M -10 1250 C 95 1060 170 880 145 680 C 120 490 195 310 300 140 C 255 160 160 330 115 510 C 70 690 60 900 -50 1180 Z" 
+        fill="url(#flameGradScarlet)" opacity="0.85" />
+
+  <!-- Flowing Ribbon 3: Warm Fire Gold / Amber Wave (Image 1 Yellow Ribbon) -->
+  <path d="M -110 960 C -15 820 60 690 38 540 C 10 380 75 240 195 110 C 220 80 250 50 285 10 C 235 50 155 150 115 290 C 75 430 25 580 -75 780 Z" 
+        fill="url(#flameGradGold)" opacity="0.82" />
+
+  <!-- Flowing Ribbon 4: Top Dynamic Gold Swirl (Image 1 Upper Curve) -->
+  <path d="M 330 -50 C 370 40 390 110 445 170 C 490 215 550 245 610 260 C 565 215 500 170 455 115 C 415 65 380 0 355 -50 Z" 
+        fill="url(#flameGradGold)" opacity="0.75" />
+
+  <!-- Flowing Ribbon 5: Dark Garnet Counter Curve (Image 1 Right Dark Ribbon) -->
+  <path d="M 380 1250 C 420 1010 445 810 415 620 C 385 440 445 300 540 160 C 500 200 435 340 405 500 C 375 680 355 900 320 1250 Z" 
+        fill="url(#flameGradDark)" opacity="0.65" />
+</svg>

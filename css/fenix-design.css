@@ -834,13 +834,131 @@ table{border-collapse:collapse;width:100%}
 
 @media (max-width:760px){ .fx-grid[style*="repeat(12"] > a, .fx-grid[style*="repeat(12"] > div { grid-column: span 12 !important; } }
 
-/* Butonlari devasa ve vurgulu yapalim */
-.fx-hero__actions .fx-btn {
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    padding: 16px 32px !important;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+/* ---------- 2026 HERO ACTION BUTTONS (MINIMAL & DISTINCTIVE) ---------- */
+.fx-hero__actions {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.fx-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 26px;
+  border-radius: 12px;
+  font-family: var(--fx-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.fx-hero-cta svg {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.fx-hero-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* Primary Button: 2026 Corporate Flame Ruby */
+.fx-hero-cta--primary {
+  background: linear-gradient(135deg, #BE1523 0%, #900E19 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 4px 18px rgba(190, 21, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.fx-hero-cta--primary:hover {
+  background: linear-gradient(135deg, #d31828 0%, #a3111d 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(190, 21, 35, 0.52), 0 0 18px rgba(190, 21, 35, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #ffffff !important;
+}
+
+/* Secondary Button: 2026 Frosted Glass Ceramic */
+.fx-hero-cta--secondary {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--fx-ink) !important;
+  border: 1px solid rgba(20, 24, 27, 0.14) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.fx-hero-cta--secondary:hover {
+  background: #ffffff !important;
+  border-color: rgba(20, 24, 27, 0.3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1);
+  color: var(--fx-ink) !important;
+}
+
+/* Ambient Flame Ribbon Wave (Yangın Hüzmesi Çizimi) */
+.fx-hero__flame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 520px;
+  max-width: 48vw;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  transition: opacity 0.3s ease;
+}
+.fx-hero__flame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+}
+
+@media (max-width: 760px) {
+  .fx-hero__flame {
+    width: 280px;
+    max-width: 75vw;
+    height: 65%;
+    top: auto;
+    bottom: 0;
+    opacity: 0.16;
+  }
+  .fx-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .fx-hero-cta {
+    flex: 1 1 calc(50% - 6px) !important;
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+    min-height: 46px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+@media (max-width: 420px) {
+  .fx-hero__actions {
+    flex-direction: column !important;
+  }
+  .fx-hero-cta {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
 }
 
 
