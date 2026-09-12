@@ -181,17 +181,22 @@
 }
 .fx-mr-hero__watermark {
   position: absolute;
-  right: -20px;
-  bottom: -25px;
-  font-size: clamp(64px, 12vw, 150px);
+  right: -10px;
+  bottom: -20px;
+  font-size: clamp(56px, 10.5vw, 140px);
   font-weight: 900;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.03);
-  user-select: none;
-  pointer-events: none;
+  letter-spacing: 0.06em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 45%, #a90432 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.12;
 }
 .fx-mr-hero__eyebrow {
   display: inline-flex;
@@ -731,6 +736,13 @@
   .fx-mr-hero {
     padding: 44px 0 36px;
   }
+  .fx-mr-hero__watermark {
+    font-size: clamp(32px, 8.5vw, 46px);
+    right: 0;
+    bottom: -6px;
+    opacity: 0.08;
+    letter-spacing: 0.04em;
+  }
   .fx-mr-hero__title {
     font-size: 32px;
   }
@@ -847,7 +859,7 @@
 
   <!-- HERO: 2026 Editorial Media Room Header -->
   <section class="fx-mr-hero">
-    <div class="fx-mr-hero__watermark" aria-hidden="true">MEDIA ARCHIVE</div>
+    <div class="fx-mr-hero__watermark" aria-hidden="true">BASIN ODASI</div>
     <div class="fx-wrap" style="position:relative;z-index:2">
       <span class="fx-mr-hero__eyebrow">FENİX YANGIN MEDYA ODASI</span>
       <h1 class="fx-mr-hero__title">Basında Biz</h1>
