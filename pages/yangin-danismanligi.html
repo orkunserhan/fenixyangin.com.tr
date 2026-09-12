@@ -1,23 +1,105 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<title>Yangın Danışmanlığı — Risk Analizi ve Sistem Tasarımı | Fenix Yangın</title>
-<meta name="description" content="Bağımsız yangın danışmanlığı; risk analizi, yangın güvenliği raporu, gazlı söndürme sistemi teknik şartnamesi, NFPA & TS EN uyumluluk değerlendirmesi. İstanbul. 0212 618 07 01">
+<title>Yangın Danışmanlığı | Fenix Yangın</title>
+<meta name="description" content="Tesislerin yangın risklerinin değerlendirilmesi, mevcut sistemlerin incelenmesi, projelendirme, denetim ve raporlama süreçleri için yangın danışmanlığı hizmetleri.">
 <link rel="canonical" href="https://fenixyangin.com.tr/pages/yangin-danismanligi.html">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yangın Danışmanlığı — Fenix Yangın">
-<meta property="og:description" content="Bağımsız yangın danışmanlığı; risk analizi, sistem tasarımı, NFPA & TS EN uyumluluk. FM200, Novec 1230, CO2 sistemleri için teknik şartname. Türkiye geneli.">
+<meta property="og:title" content="Yangın Danışmanlığı | Fenix Yangın">
+<meta property="og:description" content="Tesislerin yangın risklerinin değerlendirilmesi, mevcut sistemlerin incelenmesi, projelendirme, denetim ve raporlama süreçleri için yangın danışmanlığı hizmetleri.">
 <meta property="og:url" content="https://fenixyangin.com.tr/pages/yangin-danismanligi.html">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yangın Danışmanlığı | Fenix Yangın">
+<meta name="twitter:description" content="Tesislerin yangın risklerinin değerlendirilmesi, mevcut sistemlerin incelenmesi, projelendirme, denetim ve raporlama süreçleri için yangın danışmanlığı hizmetleri.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="icon" href="../assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../css/fenix-design.css">
+<style>
+@media (min-width: 601px) {
+  .fx-process-grid--2col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (min-width: 769px) {
+  .fx-grid--3col {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+  .fx-grid--2col {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+}
+@media (max-width: 768px) {
+  .fx-grid--3col, .fx-grid--2col {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+.fx-check-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fx-check-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.fx-check-card__icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--fx-red);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.fx-check-card__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fx-dark);
+  margin: 0 0 4px 0;
+}
+.fx-check-card__desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+.fx-highlight-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--fx-red);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.fx-highlight-box__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--fx-dark);
+  margin: 0 0 8px 0;
+}
+.fx-highlight-box__text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+</style>
+
+<!-- SCHEMA (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,7 +119,11 @@
         "postalCode": "34405",
         "addressCountry": "TR"
       },
-      "geo": {"@type": "GeoCoordinates", "latitude": "41.0491", "longitude": "28.9125"},
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.0491",
+        "longitude": "28.9125"
+      },
       "sameAs": [
         "https://www.facebook.com/fenixyangin/",
         "https://www.instagram.com/fenixyangin",
@@ -48,27 +134,101 @@
       "@type": "WebPage",
       "@id": "https://fenixyangin.com.tr/pages/yangin-danismanligi.html",
       "url": "https://fenixyangin.com.tr/pages/yangin-danismanligi.html",
-      "name": "Yangın Danışmanlığı — Risk Analizi ve Sistem Tasarımı | Fenix Yangın",
-      "description": "Bağımsız yangın danışmanlığı, risk analizi, gazlı söndürme sistemi teknik şartname ve NFPA & TS EN uyumluluk değerlendirme hizmetleri.",
+      "name": "Yangın Danışmanlığı | Fenix Yangın",
+      "description": "Tesislerin yangın risklerinin değerlendirilmesi, mevcut sistemlerin incelenmesi, projelendirme, denetim ve raporlama süreçleri için yangın danışmanlığı hizmetleri.",
       "inLanguage": "tr",
-      "breadcrumb": {"@id": "https://fenixyangin.com.tr/pages/yangin-danismanligi.html#breadcrumb"}
+      "breadcrumb": {
+        "@id": "https://fenixyangin.com.tr/pages/yangin-danismanligi.html#breadcrumb"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://fenixyangin.com.tr/pages/yangin-danismanligi.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://fenixyangin.com.tr/"},
-        {"@type": "ListItem", "position": 2, "name": "Hizmetler", "item": "https://fenixyangin.com.tr/pages/hizmetler.html"},
-        {"@type": "ListItem", "position": 3, "name": "Yangın Danışmanlığı"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://fenixyangin.com.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hizmetler",
+          "item": "https://fenixyangin.com.tr/pages/hizmetler.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Yangın Danışmanlığı"
+        }
       ]
     },
     {
       "@type": "Service",
       "name": "Yangın Danışmanlığı",
-      "provider": {"@id": "https://fenixyangin.com.tr/#organization"},
-      "description": "Bağımsız yangın güvenliği danışmanlığı, risk analizi, gazlı söndürme sistemi tasarımı ve NFPA/TS EN uyumluluk değerlendirme hizmetleri.",
-      "serviceType": "Yangın Güvenliği Danışmanlığı",
-      "areaServed": {"@type": "Country", "name": "Türkiye"}
+      "provider": {
+        "@id": "https://fenixyangin.com.tr/#organization"
+      },
+      "description": "Tesislerin yerleşim ve üretim süreçlerinin incelenmesi, yangın risklerinin belirlenmesi, sistem ihtiyaçlarının tespiti, projelendirme, ihale şartnamesi hazırlığı, montaj ve teslim denetimi ile kapsamlı teknik raporlama hizmetleri.",
+      "serviceType": "Yangın Danışmanlığı Hizmetleri",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Türkiye"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Yangın danışmanlığı kapsamında tesiste neler incelenir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tesis yerleşimi, üretim süreçleri, yangın riskleri, mevcut söndürme ve algılama sistemleri, tahliye yolları, acil durum planları ve ekipmanların fiziki durumu incelenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mevcut yangın sistemlerinin kontrolü ve değerlendirilmesi yapılır mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Tesis bünyesinde bulunan sulu, kuru ve gazlı yangın söndürme sistemleri, alarm panelleri, yangın pompaları ve yangın hidrantları detaylı kontrolden geçirilerek teknik yeterlilikleri değerlendirilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Yeni kurulacak yangın sistemleri için projelendirme ve şartname desteği veriliyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Yeni sistemler için projelendirme yapılmakta, gerekli alt sistemlerle birlikte ihale kiti ve teknik şartname hazırlanarak tekliflerin kontrolü ve müteahhit firma sözleşme danışmanlığı sağlanmaktadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Montaj ve teslim aşamalarında nasıl bir denetim uygulanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yapım aşamasında yangın sistem ve malzemelerinin projesine uygunluğu kontrol edilir, montaj denetlenir ve teslim aşamasındaki testlere nezaret edilerek kabul ve 'olur' onayı verilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Acil durum prosedürleri ve tahliye planları kapsama dahil midir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Acil durum tahliye planlarının incelenmesi (yoksa hazırlanması), yangın kaçış senaryolarının güncellenmesi ve kontroller için standartlara uygun checklistlerin oluşturulması hizmet kapsamındadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Yangın tatbikatı ve personel eğitimi yapılıyor mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Oluşturulan acil durum ekiplerinin eğitilmesi, yangın senaryosu kapsamında tatbikat gerçekleştirilmesi, genel yangın eğitimi ve söndürme teçhizatlarının kullanım tatbikatları uygulanmaktadır."
+          }
+        }
+      ]
     }
   ]
 }
@@ -78,11 +238,11 @@
 
 <a class="fx-skip" href="#icerik">İçeriğe atla</a>
 
+<!-- Topbar -->
 <div class="fx-topbar">
   <div class="fx-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%">
-    <span>TS EN 15004 · NFPA 2001 · ISO 14520</span>
+    <span>Yangın Güvenliği Danışmanlığı ve Risk Yönetimi</span>
     <div class="fx-topbar__right">
-      
       <a href="tel:+902126180701">0212 618 07 01 - 02</a>
       <div class="fx-social">
         <a class="fx-social__link" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" aria-label="YouTube kanalımız" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C19.2 4.8 12 4.8 12 4.8s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.6 1 12 1 12s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5zM9.7 15.4V8.6l6 3.4-6 3.4z"/></svg></a>
@@ -93,9 +253,10 @@
   </div>
 </div>
 
+<!-- Header -->
 <header class="fx-header fx-header--light">
   <div class="fx-wrap" style="display:flex;align-items:center;gap:22px;width:100%">
-    <a class="fx-logo" href="../index.html"><picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="151" height="28" alt="Fenix Yangın — Gazlı Söndürme Sistemleri"></picture></a>
+    <a class="fx-logo" href="../index.html"><picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="151" height="28" alt="Fenix Yangın"></picture></a>
     <nav class="fx-nav" aria-label="Ana menü">
       <a class="fx-nav__link fx-nav__link--active" href="hizmetler.html">Hizmetler</a>
       <a class="fx-nav__link" href="sistemler.html">Sistemler</a>
@@ -107,10 +268,12 @@
       <a class="fx-nav__link" href="kurumsal.html">Kurumsal</a>
       <a class="fx-btn fx-btn--primary fx-btn--sm fx-nav__cta" href="iletisim.html">7/24 Bize Ulaşın</a>
     </nav>
-    <a class="fx-mobile-cta" href="iletisim.html">7/24 Bize Ulaşın</a><button class="fx-burger" type="button" aria-expanded="false" aria-controls="fx-mobilenav">Menü</button>
+    <a class="fx-mobile-cta" href="iletisim.html">7/24 Bize Ulaşın</a>
+    <button class="fx-burger" type="button" aria-expanded="false" aria-controls="fx-mobilenav">Menü</button>
   </div>
 </header>
 
+<!-- Mobil Menü -->
 <nav class="fx-mobilenav" id="fx-mobilenav" aria-label="Mobil menü">
   <button class="fx-mobilenav__item" type="button" aria-expanded="false">Hizmetler <span aria-hidden="true">+</span></button>
   <div class="fx-mobilenav__sub">
@@ -148,7 +311,8 @@
   <div style="padding:18px"><a class="fx-btn fx-btn--primary fx-btn--block" href="iletisim.html">7/24 Bize Ulaşın</a></div>
 </nav>
 
-<main id="icerik" class="fx-page fx-page--single-hizmet">
+<main id="icerik">
+  <!-- 1. BREADCRUMB -->
   <nav class="fx-crumb" aria-label="Breadcrumb">
     <div class="fx-wrap">
       <a href="../index.html">Ana Sayfa</a> ›
@@ -157,127 +321,657 @@
     </div>
   </nav>
 
-  <section class="fx-section fx-section--paper fx-section--tight">
-    <div class="fx-wrap fx-grid fx-grid--7-5">
-      <div>
-        <span class="fx-eyebrow">Hizmet · Bağımsız Danışmanlık · Risk Analizi</span>
-        <h1 class="fx-h1" style="font-size:44px;margin:14px 0 18px">Yangın Danışmanlığı</h1>
-        <div class="fx-callout fx-callout--dark">
-          <span class="fx-label" style="display:block;margin-bottom:8px">Kısaca</span>
-          <p style="color:var(--fx-ink)">Yangın danışmanlığı; tesisinizin yangın risklerini bilimsel yöntemlerle analiz etmek, uygun sistem çözümünü belirlemek ve standartlara uygun teknik şartname hazırlamak demektir. Fenix Yangın'ın mühendislik ekibi, projenizin başından sonuna kadar bağımsız ve tarafsız danışmanlık hizmeti sunar.</p>
+  <!-- 2. SERVICE HERO -->
+  <section class="fx-sys-hero">
+    <div class="fx-wrap">
+      <div class="fx-sys-hero__grid">
+        <div>
+          <span class="fx-sys-hero__eyebrow">YANGIN GÜVENLİĞİ VE RİSK YÖNETİMİ DANIŞMANLIĞI</span>
+          <h1 class="fx-sys-hero__title"><span class="fx-highlight">Yangın Danışmanlığı</span></h1>
+          <p class="fx-sys-hero__lead">Tesisin yerleşim ve üretim süreçlerinin incelenerek yangın risklerinin belirlenmesi, proje bazında çözüm önerilerinin sunulması ve teknik şartnamelerin hazırlanması.</p>
+          <p class="fx-sys-hero__desc">Alan ve risk prensibi doğrultusunda uluslararası standartlara uygun sulu, kuru ve gazlı yangın söndürme, ikaz ve ihbar sistemleri, alarm panelleri ve kontrol odası cihaz ihtiyaçlarının tespiti, mevcut sistemlerin kontrolü ve kapsamlı teknik raporlama hizmetleri sunuyoruz.</p>
+          <div class="fx-sys-hero__actions">
+            <a class="fx-btn fx-btn--primary" href="iletisim.html">Danışmanlık Teklifi Alın</a>
+            <a class="fx-btn fx-btn--ghost-dark" href="tel:+902126180701">0212 618 07 01</a>
+          </div>
         </div>
-        <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap">
-          <a class="fx-btn fx-btn--primary" href="iletisim.html">Danışmanlık Talep Edin — 0212 618 07 01</a>
+
+        <div class="fx-sys-hero__media">
+          <picture>
+            <source type="image/webp" srcset="../assets/img/yangin-danismanligi-risk-degerlendirme-saha-denetimi.webp">
+            <img class="fx-sys-hero__img" src="../assets/img/yangin-danismanligi-risk-degerlendirme-saha-denetimi.png" width="1024" height="682" alt="Fenix Yangın uzmanı yangın güvenliği değerlendirme formu ve kat planı ile sahada yangın dolabı ve ekipman denetimi yaparken" fetchpriority="high">
+          </picture>
         </div>
       </div>
-      
-      <dl class="fx-dl">
-        <div class="fx-dl__row"><dt class="fx-dl__k">Hizmet türü</dt><dd class="fx-dl__v">Bağımsız yangın mühendisliği danışmanlığı</dd></div>
-        <div class="fx-dl__row"><dt class="fx-dl__k">Kapsam</dt><dd class="fx-dl__v">Risk analizi, sistem seçimi, teknik şartname</dd></div>
-        <div class="fx-dl__row"><dt class="fx-dl__k">Standartlar</dt><dd class="fx-dl__v">NFPA 2001 · ISO 14520 · TS EN 15004</dd></div>
-        <div class="fx-dl__row"><dt class="fx-dl__k">Çıktı</dt><dd class="fx-dl__v fx-hi--tech">Rapor, şartname, onay belgesi</dd></div>
-        <div class="fx-dl__row"><dt class="fx-dl__k">Proje tipi</dt><dd class="fx-dl__v">Yeni yapı, mevcut sistem revizyonu</dd></div>
-        <div class="fx-dl__row"><dt class="fx-dl__k">Kapsam</dt><dd class="fx-dl__v">Türkiye geneli saha ziyareti</dd></div>
-      </dl>
+
+      <!-- Quick Specs Banner (4-Pill Specs) -->
+      <div class="fx-sys-specs">
+        <div class="fx-sys-spec">
+          <div class="fx-sys-spec__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <div>
+            <div class="fx-sys-spec__title">Tesis &amp; Risk Analizi</div>
+            <span class="fx-sys-spec__sub">Üretim Süreci İncelemesi</span>
+          </div>
+        </div>
+
+        <div class="fx-sys-spec">
+          <div class="fx-sys-spec__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+          </div>
+          <div>
+            <div class="fx-sys-spec__title">Projelendirme &amp; Şartname</div>
+            <span class="fx-sys-spec__sub">İhale Kiti Hazırlığı</span>
+          </div>
+        </div>
+
+        <div class="fx-sys-spec">
+          <div class="fx-sys-spec__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <div>
+            <div class="fx-sys-spec__title">Montaj &amp; Teslim Denetimi</div>
+            <span class="fx-sys-spec__sub">Test &amp; Kabul Onayı</span>
+          </div>
+        </div>
+
+        <div class="fx-sys-spec">
+          <div class="fx-sys-spec__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
+          <div>
+            <div class="fx-sys-spec__title">Prosedür &amp; Tatbikat</div>
+            <span class="fx-sys-spec__sub">Acil Durum Yönetimi</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="fx-section fx-section--white">
-    <div class="fx-wrap fx-grid fx-grid--8-4">
-      <article class="fx-text" style="max-width:var(--fx-measure)">
-        
-        <h2>Yangın Danışmanlığı Nedir?</h2>
-        <p>Yangın danışmanlığı; bir tesisin veya yapının yangın risklerini belirlemek, uygun söndürme ve algılama sistemi çözümlerini önermek, teknik şartnameyi hazırlamak ve standartlara uygunluğu doğrulamak amacıyla gerçekleştirilen mühendislik hizmetinin genel adıdır. Fenix Yangın olarak sunduğumuz danışmanlık hizmeti yalnızca sistem satışına bağımlı değildir; ihtiyacınıza en uygun çözümü tarafsız olarak değerlendiririz.</p>
-
-        <h2>Danışmanlık Kapsamı</h2>
-        
-        <h3>1. Yangın Risk Analizi</h3>
-        <p>Tesisin kullanım amacı, içinde barındırdığı ekipmanlar, insan kapasitesi ve yapısal özellikleri göz önüne alınarak yangın riskleri tanımlanır. Risk sınıflandırması NFPA ve yerel yönetmelik çerçevesinde yapılır.</p>
-
-        <h3>2. Sistem Seçimi ve Ön Tasarım</h3>
-        <p>Risk analizine dayalı olarak en uygun söndürme sistemi (FM200, Novec 1230, CO₂, aerosol, su bazlı vb.) belirlenir. Hacim hesaplamaları, ajan miktarı ve boru sistemi ön tasarımı yapılır.</p>
-
-        <h3>3. Teknik Şartname Hazırlama</h3>
-        <p>İhale, sigorta veya onay süreçleri için gerekli teknik şartname belgeleri hazırlanır. Şartname; sistem bileşenlerini, standartlara uygunluk gereksinimlerini, test ve kabul prosedürlerini kapsar.</p>
-
-        <h3>4. Mevcut Sistem İncelemesi</h3>
-        <p>Kurulu bir sistemin NFPA 2001, ISO 14520 veya TS EN 15004 standartlarına uygunluğu değerlendirilir. Eksiklikler raporlanır ve iyileştirme önerileri sunulur.</p>
-
-        <h3>5. Proje Denetimi ve Devreye Alma Desteği</h3>
-        <p>Kurulum sırasında teknik denetim yapılır. Devreye alma testlerine katılım sağlanarak belgeler onaylanır.</p>
-
-        <h3>6. Personel Eğitimi</h3>
-        <p>Tesis personeline yangın söndürme sistemi kullanımı, acil müdahale prosedürleri ve periyodik bakım hakkında eğitim verilir.</p>
-
-        <h2>Kimler Danışmanlık Almalıdır?</h2>
-        <ul>
-          <li>Yeni bina veya tesis inşa edenler (proje aşamasında sistem planlaması)</li>
-          <li>Mevcut sisteminin yeterliliğini sorgulayan tesis yöneticileri</li>
-          <li>Sigorta veya denetim gereği belge hazırlaması gerekenler</li>
-          <li>Sistem ihalesine çıkacak kurumlar (tarafsız teknik şartname)</li>
-          <li>Veri merkezi, hastane, müze, üretim tesisi gibi yüksek riskli alanlardaki işletmeciler</li>
-        </ul>
-
-      </article>
-
-      <aside>
-        <h2 class="fx-h2 fx-h2--sm" style="margin-bottom:16px">İlgili Hizmetler</h2>
-        <div class="fx-rows">
-          <a class="fx-rows__item" href="oda-sizdirmazlik-testi.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:4px">Oda Sızdırmazlık Testi</h3>
-            <span class="fx-label">Door fan test · NFPA 2001</span>
-          </a>
-          <a class="fx-rows__item" href="fm200-gazli-yangin-sondurme-sistemleri-bakimi.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:4px">FM200 Periyodik Bakım</h3>
-            <span class="fx-label">Yıllık bakım · Onay belgeli</span>
-          </a>
-          <a class="fx-rows__item" href="novec-1230-gazli-yangin-sondurme-sistemleri-bakimi.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:4px">Novec 1230 Bakım</h3>
-            <span class="fx-label">Yıllık bakım · Onay belgeli</span>
-          </a>
-        </div>
-
-        <h2 class="fx-h2 fx-h2--sm" style="margin:26px 0 16px">Sistem Sayfaları</h2>
-        <div class="fx-filters">
-          <a class="fx-chip" href="fm200-gazli-yangin-sondurme-sistemleri.html">FM200</a>
-          <a class="fx-chip" href="novec-1230-gazli-yangin-sondurme-sistemleri.html">Novec 1230</a>
-          <a class="fx-chip" href="co2-gazli-yangin-sondurme-sistemleri.html">CO₂</a>
-        </div>
-
-        <div class="fx-callout" style="margin-top:32px">
-          <span class="fx-label" style="display:block;margin-bottom:8px">Danışmanlık Talebi</span>
-          <p style="margin-bottom:12px;font-size:0.9em">Tesisiniz için bağımsız yangın risk analizi ve sistem danışmanlığı.</p>
-          <a class="fx-btn fx-btn--primary fx-btn--block" href="tel:+902126180701">0212 618 07 01 - 02</a>
-          <a class="fx-btn fx-btn--ghost fx-btn--block" href="iletisim.html" style="margin-top:8px">İletişim Formu</a>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="fx-section fx-section--red fx-section--tight">
+  <!-- 3. SECTION: Yangın Danışmanlığı Nedir? -->
+  <section class="fx-section fx-section--light" id="nedir">
     <div class="fx-wrap">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+      <div class="fx-grid fx-grid--6-6" style="align-items:start;gap:40px">
         <div>
-          <h2 class="fx-h2" style="margin-bottom:8px;color:var(--fx-ink)">Yangın Danışmanlığı Alın</h2>
-          <p style="color:var(--fx-ink);max-width:560px">Risk analizi, sistem tasarımı ve teknik şartname için uzman ekibimizle iletişime geçin. Türkiye geneli hizmet veriyoruz.</p>
+          <span class="fx-badge">TANIM VE KAPSAM</span>
+          <h2 class="fx-section__title" style="margin-top:12px">Yangın Danışmanlığı Nedir?</h2>
+          <p class="fx-lead" style="margin-bottom:16px">Yangın danışmanlığı, tüm tesis yerleşiminin üretim süreci ile birlikte detaylıca incelenerek kapsamlı bir yangın risk değerlendirmesi yapılması ve proje bazında teknik çözüm önerilerinin sunulması sürecidir.</p>
+          <p class="fx-lead" style="margin-bottom:16px">Alan ve risk prensibi doğrultusunda uluslararası standartlara uygun sulu, kuru ve gazlı yangın söndürme, ikaz ve ihbar sistemleri, yangın alarm panelleri ve kontrol odası cihaz, aparat ve malzeme ihtiyaçları yerinde tespit edilir.</p>
+          <p class="fx-lead" style="margin-bottom:16px">Tesis bünyesinde hâlihazırda bulunan mevcut sistemler detaylı bir kontrol ve değerlendirmeden geçirilir; ardından tüm tespit ve gerekli önerileri içeren kapsamlı bir teknik değerlendirme raporu hazırlanır.</p>
+          <p class="fx-lead">Deneyimli yangın uzmanlarımızın bilgi ve saha tecrübeleri ile kurumunuzun tüm risk analizleri titizlikle yapılarak tesisiniz için en uygun yangın danışmanlığı hizmetleri sağlanmaktadır.</p>
         </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a class="fx-btn fx-btn--white" href="tel:+902126180701">0212 618 07 01 - 02</a>
-          <a class="fx-btn fx-btn--ghost-dark" href="iletisim.html">İletişim Formu</a>
+
+        <div class="fx-grid fx-grid--2col" style="gap:16px">
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Tesis Yerleşimi İncelemesi</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Tüm bina planı, kaçış yolları ve yerleşim alanlarının risk odaklı tespiti.</span>
+          </div>
+
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Üretim Süreci Analizi</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Üretim hatları, hammadde akışı ve operasyonel yangın yüklerinin belirlenmesi.</span>
+          </div>
+
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Yangın Risklerinin Belirlenmesi</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Tesis genelinde yangın çıkma olasılıkları ve yayılma tehlikelerinin tespiti.</span>
+          </div>
+
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Mevcut Sistem Kontrolü</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Kurulu bulunan söndürme, alarm ve algılama ekipmanlarının fiziki incelenmesi.</span>
+          </div>
+
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Uluslararası Standartlar</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Sulu, kuru ve gazlı söndürme sistemlerinde standartlara tam uygunluk önerileri.</span>
+          </div>
+
+          <div class="fx-adv-card" style="padding:20px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+            <div style="width:32px;height:32px;margin-bottom:10px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            </div>
+            <div style="font-weight:700;font-size:15px;margin-bottom:4px;color:var(--fx-dark)">Teknik Raporlama</div>
+            <span style="font-size:13px;color:#64748b;line-height:1.5">Tüm bulguları, eksikleri ve çözüm adımlarını içeren resmi teknik rapor tanzimi.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECTION: Yangın Danışmanlığı Hizmet Kapsamı -->
+  <section class="fx-section" id="kapsam">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin-bottom:32px">
+        <span class="fx-badge">HİZMET MODÜLLERİ</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Yangın Danışmanlığı Hizmet Kapsamı</h2>
+        <p class="fx-lead">Yangın sistemleri danışmanlığı kapsamında tesis genelinde yürütülen tüm teknik, idari ve operasyonel hizmet süreçleri adım adım yapılandırılmıştır:</p>
+      </div>
+
+      <div class="fx-grid fx-grid--3col" style="gap:20px">
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">01</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Mevcut Sistemlerin Değerlendirilmesi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Tesis bünyesinde bulunan mevcut söndürme, algılama ve uyarı sistemlerinin teknik kapasite ve işlevsellik kontrolü.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">02</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Yangın Sistemi İhtiyaçlarının Belirlenmesi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Alan ve risk prensibine göre sulu, kuru ve gazlı yangın söndürme, ihbar panelleri ve kontrol odası malzeme ihtiyaçlarının tespiti.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">03</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Yeni Sistemler İçin Projelendirme</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Tesiste yeni kurulması gereken tüm yangın söndürme ve güvenlik sistemlerinin uluslararası standartlara uygun şekilde projelendirilmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">04</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Şartname ve İhale Kiti Hazırlanması</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Teknik raporun ardından, gerekli alt sistemlerle birlikte eksiksiz ihale kiti ve teknik şartnamelerin hazırlanarak teslim edilmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">05</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">İhale Sürecine Danışmanlık</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Yangın tesisatı ve ekipman temini için açılacak ihale sürecinde teknik rehberlik ve süreç yönetimi danışmanlığı verilmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">06</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Tekliflerin Uygunluk Kontrolü</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Tedarikçi ve taahhüt firmalarından toplanan tekliflerin teknik şartnameye, malzeme kalitesine ve projesine uygunluğunun denetimi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">07</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Yüklenici Sözleşmesine Danışmanlık</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Müteahhit firma ile gerçekleştirilecek yangın sistemleri uygulama sözleşmesi için teknik koruma maddeleri ve danışmanlık hizmeti verilmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">08</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Montaj ve Malzeme Denetimi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Yapım aşamasında sahaya sevk edilen yangın sistemi ve malzemelerinin kontrolü, montajın projeye uygunluğunun denetlenmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="font-size:24px;font-weight:700;color:var(--fx-red);margin-bottom:8px">09</div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Test ve Teslim Süreçlerinin Takibi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Sistemin teslim aşamasındaki fonksiyonel testlere nezaret edilerek projesine uygun çalışan sistemler için teknik kabul ('olur') verilmesi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SECTION: Projelendirme ve Teknik Değerlendirme -->
+  <section class="fx-section fx-section--light" id="projelendirme">
+    <div class="fx-wrap">
+      <div class="fx-grid fx-grid--6-6" style="align-items:center;gap:40px">
+        <div>
+          <span class="fx-badge">MÜHENDİSLİK VE ŞARTNAME</span>
+          <h2 class="fx-section__title" style="margin-top:12px">Projelendirme ve Teknik Değerlendirme</h2>
+          <p class="fx-lead" style="margin-bottom:16px">Yangın güvenliğinde doğru projelendirme, tesisin üretim faaliyetleri kesintiye uğramadan maksimum can ve mal güvenliği elde edilmesinin temel koşuludur. Yangın proje danışmanlığı kapsamında her tesisin mimari ve operasyonel yapısına özel çözümler geliştirilir.</p>
+          <p class="fx-lead" style="margin-bottom:16px">Alan ve risk prensibine göre yeni kurulacak sistemler için sulu, kuru ve gazlı söndürme ile algılama sistemlerinin detaylı projelendirmesi gerçekleştirilir. Tesis bünyesinde bulunan kontrol odaları, alarm panelleri, aparat ve malzeme ihtiyaçları yerinde incelenerek projelendirilir.</p>
+          <div class="fx-highlight-box">
+            <div class="fx-highlight-box__title">İhale Kiti ve Şartname Teslimi</div>
+            <div class="fx-highlight-box__text">Teknik raporun tamamlanması ardından, gerekli tüm alt sistemleri içeren ihale kiti ve teknik şartname hazırlanarak kuruma teslim edilir. Toplanan tekliflerin şartnameye uygunluğu denetlenir ve müteahhit firma ile imzalanacak sözleşme süreçlerinde teknik danışmanlık sağlanır.</div>
+          </div>
+        </div>
+
+        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:32px">
+          <h3 style="font-size:18px;font-weight:700;color:var(--fx-dark);margin:0 0 16px 0">Teknik Değerlendirme Çıktıları</h3>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155;line-height:1.5">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Yeni kurulacak sistemler için alan ve risk prensibine uygun projelendirme</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155;line-height:1.5">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Gerekli tüm alt sistemleri içeren ihale kiti ve teknik şartname seti</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155;line-height:1.5">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>İhale sürecinde toplanan teknik tekliflerin uygunluğunun denetimi</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155;line-height:1.5">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Müteahhit firma ile gerçekleştirilecek sözleşme için teknik danışmanlık</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SECTION: Montaj ve Teslim Denetimi -->
+  <section class="fx-section" id="montaj-denetimi">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin-bottom:32px">
+        <span class="fx-badge">UYGULAMA VE KABUL</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Montaj ve Teslim Denetimi</h2>
+        <p class="fx-lead">Sistemlerin sadece kağıt üzerinde değil, sahada da kusursuz uygulanmasını sağlamak için yapım ve teslim aşamalarını bağımsız uzman gözüyle denetliyoruz.</p>
+      </div>
+
+      <div class="fx-grid fx-grid--3col" style="gap:20px">
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+            <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+          </div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Yapım Aşamasında Malzeme Kontrolü</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Yapım aşamasında sahaya sevk edilen yangın sistem ekipmanları ve malzemelerinin teknik şartnameye uygunluğunun yerinde kontrolü.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Testlere Nezaret ve 'Olur' Onayı</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Sistemin teslim aşamasında yürütülen tüm fonksiyonel testlere nezaret edilerek projesine uygun çalışan sistemler için resmi teknik 'olur' verilmesi.</p>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff">
+          <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+            <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+          </div>
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--fx-dark)">Değişikliklerin Sisteme Uyarlanması</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Tesis dahilinde oluşabilecek fiziksel veya üretim süreci değişikliklerinin yangın yapılanmasına etkileri incelenerek sisteme entegre edilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SECTION: Acil Durum ve Yangın Prosedürleri -->
+  <section class="fx-section fx-section--light" id="prosedurler">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin-bottom:32px">
+        <span class="fx-badge">ACİL DURUM YÖNETİMİ</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Acil Durum ve Yangın Prosedürleri</h2>
+        <p class="fx-lead">Tesis genelinde can güvenliğinin temini, tahliye ve arama kurtarma operasyonlarının aksamadan yönetilmesi için kapsamlı rutin ve acil durum prosedür setleri hazırlanır.</p>
+      </div>
+
+      <div class="fx-grid fx-grid--2col" style="gap:24px">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:28px">
+          <div style="font-size:18px;font-weight:700;color:var(--fx-dark);margin-bottom:12px">Rutin ve Acil Durum Prosedür Setleri</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#475569;margin-bottom:16px">Yangın, tahliye ve arama kurtarma konularında personelin, teknik ekiplerin ve acil durum sorumlularının uygulayacağı operasyonel prosedür setleri hazırlanarak yazılı hale getirilir.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Yangın anı alarm ve ihbar aksiyon adımları</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Personel tahliye protokolü ve toplanma alanı kuralları</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Arama ve kurtarma ekiplerinin müdahale prosedürleri</span>
+            </li>
+          </ul>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:28px">
+          <div style="font-size:18px;font-weight:700;color:var(--fx-dark);margin-bottom:12px">Denetim Kontrol Listeleri (Checklistler)</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#475569;margin-bottom:16px">Uluslararası standartlarda belirlenen kontroller için tesise özel periyodik denetim checklistleri oluşturulur. Bu listeler tesis sorumlularının rutin kontrollerini eksiksiz yürütmesini sağlar.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Standartlara uygun saha ve ekipman checklistleri</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Muayyen veya periyodik zamanlarda yapılanmanın denetimi</span>
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#334155">
+              <svg style="width:16px;height:16px;fill:var(--fx-red)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Denetim sonuçlarının resmi teknik rapora işlenmesi</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SECTION: Yangın Danışmanlığı Kontrol ve Denetim Hizmetleri (Checklist) -->
+  <section class="fx-section" id="denetim-maddeleri">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin-bottom:32px">
+        <span class="fx-badge">SAHA VE EKİPMAN DENETİMİ</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Yangın Danışmanlığı Kontrol ve Denetim Hizmetleri</h2>
+        <p class="fx-lead">Yangın güvenliği danışmanlığı kapsamında yürütülen tüm kontrol, tatbikat, eğitim ve denetim adımları uzman kadromuzca eksiksiz uygulanır:</p>
+      </div>
+
+      <div class="fx-grid fx-grid--3col" style="gap:16px">
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Acil Durum Tahliye Planları</div>
+            <div class="fx-check-card__desc">Acil durum tahliye planlarının incelenmesi; mevcut tahliye planı bulunmuyorsa hazırlanması.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Acil Durum Ekipleri</div>
+            <div class="fx-check-card__desc">Tesis bünyesinde acil durum ekiplerinin oluşturulması ve acil durum ekiplerinin eğitilmesi.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Yangın Kaçış Senaryoları</div>
+            <div class="fx-check-card__desc">Kaçış senaryolarının güncellenmesi; yok ise yapının mevcut mimari planına göre kaçış senaryolarının oluşturulması.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Teçhizat ve Malzeme Durum Tespiti</div>
+            <div class="fx-check-card__desc">Yangın önleme ve söndürme teçhizat ve malzemelerinin yerinde fiziksel durum tespitlerinin yapılması.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Bina Tahliye Çıkışları</div>
+            <div class="fx-check-card__desc">Bina tahliye çıkışlarının, acil çıkış kapılarının ve kaçış yollarının kullanılabilirlik kontrolleri.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Sprinkler Yangın Pompaları</div>
+            <div class="fx-check-card__desc">Sprinkler yangın söndürme sistemlerine ait yangın pompalarının fiziksel ve mekanik kontrolleri.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Yangın Hidrantları Su Basıncı</div>
+            <div class="fx-check-card__desc">Tesis sahasında bulunan yangın hidrantlarının su basınç kontrolleri ve hat incelemeleri.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">İtfaiye Aracı ve Malzemeleri</div>
+            <div class="fx-check-card__desc">Tesis bünyesinde varsa itfaiye aracının ve söndürme malzemelerinin faaliyet kontrolleri.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Yangın Senaryosu ve Tatbikat</div>
+            <div class="fx-check-card__desc">Oluşturulan acil durum ekibi ile yangın senaryosu kapsamında pratik yangın tatbikatı yapılması.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Genel Yangın Eğitimi</div>
+            <div class="fx-check-card__desc">Personel için yangın bilinci, önleme tedbirleri ve acil durum kurallarını kapsayan genel eğitim.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Teçhizat Kullanım Tatbikatı</div>
+            <div class="fx-check-card__desc">Yangın önleme ve söndürme teçhizatlarının (hortum, lans, yangın tüpleri vb.) uygulamalı tatbikatı.</div>
+          </div>
+        </div>
+
+        <div class="fx-check-card">
+          <svg class="fx-check-card__icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div>
+            <div class="fx-check-card__title">Çalışma Sonuç Raporlaması</div>
+            <div class="fx-check-card__desc">Yapılan tüm saha çalışmaları, denetimler, testler ve eğitimler sonucunda kapsamlı raporlama yapılması.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. SECTION: Saha Çalışması ve Süreç Yönetimi -->
+  <section class="fx-section fx-section--light" id="saha-surec">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin-bottom:32px">
+        <span class="fx-badge">METODOLOJİ VE SÜREÇ</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Saha Çalışması ve Süreç Yönetimi</h2>
+        <p class="fx-lead">Deneyimli yangın eğitim ve denetim uzmanlarımızın bilgi ve tecrübeleri ile kurumunuzun tüm değerlendirmeleri 4 temel aşamada hayata geçirilir:</p>
+      </div>
+
+      <div class="fx-grid fx-grid--2col" style="gap:20px">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:24px;position:relative">
+          <div style="font-size:28px;font-weight:700;color:var(--fx-red);margin-bottom:6px">01</div>
+          <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">Saha &amp; Tesis İncelemesi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Tesis yerleşimi ve üretim süreçlerinin yerinde incelenmesi, mevcut söndürme sistemleri ve yangın risklerinin tespiti.</p>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:24px;position:relative">
+          <div style="font-size:28px;font-weight:700;color:var(--fx-red);margin-bottom:6px">02</div>
+          <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">Teknik Değerlendirme &amp; Şartname</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">İhtiyaç duyulan sistemlerin projelendirilmesi, ihale kiti ve teknik şartname hazırlanması, toplanan tekliflerin denetlenmesi.</p>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:24px;position:relative">
+          <div style="font-size:28px;font-weight:700;color:var(--fx-red);margin-bottom:6px">03</div>
+          <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">Montaj &amp; Malzeme Denetimi</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Yapım aşamasında malzeme kontrolü, montaj denetimi ve teslim aşamasında fonksiyonel testlere nezaret edilerek kabul onayı.</p>
+        </div>
+
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:24px;position:relative">
+          <div style="font-size:28px;font-weight:700;color:var(--fx-red);margin-bottom:6px">04</div>
+          <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">Prosedür, Eğitim &amp; Raporlama</div>
+          <p style="font-size:13.5px;line-height:1.55;color:#475569;margin:0">Acil durum prosedürleri, tahliye planları, checklistler, acil durum ekibi tatbikatları ve sonuç raporunun teslimi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. SECTION: Raporlama ve Sonuçların Sunulması -->
+  <section class="fx-section" id="raporlama">
+    <div class="fx-wrap">
+      <div class="fx-grid fx-grid--6-6" style="align-items:center;gap:40px">
+        <div>
+          <span class="fx-badge">RESMİ RAPORLAMA</span>
+          <h2 class="fx-section__title" style="margin-top:12px">Raporlama ve Sonuçların Sunulması</h2>
+          <p class="fx-lead" style="margin-bottom:16px">Yangın danışmanlığı sürecinin en kritik adımı, elde edilen tüm bulguların kurumsal karar alıcılar için net, şeffaf ve uygulanabilir bir teknik rapora dönüştürülmesidir.</p>
+          <p class="fx-lead" style="margin-bottom:16px">Hazırlanan kapsamlı rapor; tesisin mevcut yangın güvenliği profilini, tespit edilen riskleri, acil önlem gerektiren noktaları ve uluslararası standartlara uygun çözüm önerilerini içerir.</p>
+          <p class="fx-lead">Raporun sunumu ardından gerekli alt sistemlerle birlikte ihale kiti ve şartnameler teslim edilir; tesis bünyesinde meydana gelebilecek fiziksel veya üretim süreci değişiklikleri de periyodik olarak incelenerek sisteme uyarlanır.</p>
+        </div>
+
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:32px">
+          <div style="font-size:18px;font-weight:700;color:var(--fx-dark);margin-bottom:14px">Teknik Raporun Kapsamı</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Tesis yerleşimi ve üretim süreçlerinin risk değerlendirmesi</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Mevcut yangın söndürme, pompa ve hidrant kontrolleri</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Sulu, kuru ve gazlı sistem ihtiyaç tespiti ve projelendirme</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Şartname, ihale kiti ve sözleşme danışmanlığı tavsiyeleri</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#334155">
+              <svg style="width:18px;height:18px;fill:var(--fx-red);flex-shrink:0;margin-top:2px" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Acil durum tahliye planları ve tatbikat sonuçları</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. SECTION: FAQ Accordion -->
+  <section class="fx-section fx-section--light" id="faq">
+    <div class="fx-wrap">
+      <div style="max-width:800px;margin:0 auto 36px auto;text-align:center">
+        <span class="fx-badge">SIKÇA SORULAN SORULAR</span>
+        <h2 class="fx-section__title" style="margin-top:12px">Yangın Danışmanlığı Hakkında Sık Sorulan Sorular</h2>
+        <p class="fx-lead">Yangın danışmanlığı, risk değerlendirmesi ve denetim süreçleri hakkında en çok merak edilen konular.</p>
+      </div>
+
+      <div style="max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Yangın danışmanlığı kapsamında tesiste neler incelenir?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Tesis yerleşimi, üretim süreçleri, yangın riskleri, mevcut söndürme ve algılama sistemleri, tahliye yolları, acil durum planları ve ekipmanların fiziki durumu yerinde detaylıca incelenir.</p>
+        </details>
+
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Mevcut yangın sistemlerinin kontrolü ve değerlendirilmesi yapılır mı?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Evet. Tesis bünyesinde hâlihazırda kurulu bulunan sulu, kuru ve gazlı yangın söndürme sistemleri, yangın alarm panelleri, kontrol odaları, yangın pompaları ve hidrantlar detaylı kontrolden geçirilerek teknik yeterlilikleri değerlendirilir.</p>
+        </details>
+
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Yeni kurulacak yangın sistemleri için projelendirme ve şartname desteği veriliyor mu?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Evet. Yeni sistemler için projelendirme yapılmakta, gerekli alt sistemlerle birlikte ihale kiti ve teknik şartname hazırlanarak tekliflerin kontrolü ve müteahhit firma sözleşme danışmanlığı sağlanmaktadır.</p>
+        </details>
+
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Montaj ve teslim aşamalarında nasıl bir denetim uygulanır?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Yapım aşamasında yangın sistem ve malzemelerinin projesine uygunluğu denetlenir, montaj kontrol edilir ve teslim aşamasındaki fonksiyonel testlere nezaret edilerek kabul ve 'olur' onayı verilir.</p>
+        </details>
+
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Acil durum prosedürleri ve tahliye planları kapsama dahil midir?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Evet. Acil durum tahliye planlarının incelenmesi (yoksa hazırlanması), yangın kaçış senaryolarının güncellenmesi ve kontroller için standartlara uygun checklistlerin oluşturulması danışmanlık kapsamındadır.</p>
+        </details>
+
+        <details class="fx-faq" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px 22px">
+          <summary style="font-weight:700;font-size:15.5px;color:var(--fx-dark);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+            <span>Yangın tatbikatı ve personel eğitimi yapılıyor mu?</span>
+            <span style="color:var(--fx-red);font-size:18px;font-weight:700">+</span>
+          </summary>
+          <p style="margin:12px 0 0 0;font-size:14px;line-height:1.6;color:#475569">Evet. Oluşturulan acil durum ekiplerinin eğitilmesi, yangın senaryosu kapsamında tatbikat gerçekleştirilmesi, genel yangın eğitimi ve teçhizat kullanım tatbikatları uygulanmaktadır.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. SECTION: İlgili Hizmetler ve Sistemler -->
+  <section class="fx-section" id="ilgili-hizmetler">
+    <div class="fx-wrap">
+      <div style="margin-bottom:28px">
+        <span class="fx-badge">TAMAMLAYICI ÇÖZÜMLER</span>
+        <h2 class="fx-section__title" style="margin-top:12px">İlgili Hizmetler ve Sistemler</h2>
+        <p class="fx-lead">Yangın danışmanlığı kapsamında tesisinizde ihtiyaç duyulan teknik ve mühendislik çözümleri.</p>
+      </div>
+
+      <div class="fx-grid fx-grid--3col" style="gap:20px">
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">CO₂ Gazlı Söndürme</div>
+            <p style="font-size:13.5px;line-height:1.55;color:#475569;margin-bottom:16px">İnsansız endüstriyel tesisler, trafo ve motor odaları için karbondioksit gazlı söndürme.</p>
+          </div>
+          <a href="co2-gazli-yangin-sondurme-sistemleri.html" style="color:var(--fx-red);font-weight:600;font-size:13.5px;text-decoration:none">Sistemi İncele →</a>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            </div>
+            <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">FM200 Gazlı Söndürme</div>
+            <p style="font-size:13.5px;line-height:1.55;color:#475569;margin-bottom:16px">İnsanlı ve kritik alanlarda temiz gazlı, kalıntı bırakmayan otomatik yangın söndürme.</p>
+          </div>
+          <a href="fm200-gazli-yangin-sondurme-sistemleri.html" style="color:var(--fx-red);font-weight:600;font-size:13.5px;text-decoration:none">Sistemi İncele →</a>
+        </div>
+
+        <div class="fx-adv-card" style="padding:24px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div style="width:32px;height:32px;margin-bottom:12px;fill:var(--fx-red)">
+              <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2v1.08c3.39.49 6 3.39 6 6.92v6l2 2v1H2v-1l2-2v-6c0-3.53 2.61-6.43 6-6.92V4c0-1.1.9-2 2-2zm-2 19h4c0 1.1-.9 2-2 2s-2-.9-2-2z"/></svg>
+            </div>
+            <div style="font-size:16px;font-weight:700;color:var(--fx-dark);margin-bottom:8px">Oda Sızdırmazlık Testi</div>
+            <p style="font-size:13.5px;line-height:1.55;color:#475569;margin-bottom:16px">Gaz tutma süresi ve mahalin sızdırmazlık bütünlüğünü değerlendirme testi.</p>
+          </div>
+          <a href="oda-sizdirmazlik-testi.html" style="color:var(--fx-red);font-weight:600;font-size:13.5px;text-decoration:none">Test Detayları →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FINAL CTA BANNER -->
+  <section class="fx-cta-banner">
+    <div class="fx-wrap">
+      <div class="fx-cta-banner__grid">
+        <div>
+          <h2 class="fx-cta-banner__title">Tesisiniz İçin Yangın Danışmanlığı Teklifi Alın</h2>
+          <p class="fx-cta-banner__desc">Deneyimli yangın uzmanlarımızın bilgi ve tecrübeleriyle tesisinizin yangın risklerini değerlendirmek, projelendirme ve denetim süreçlerini başlatmak için bize ulaşın.</p>
+        </div>
+        <div class="fx-cta-banner__actions">
+          <a class="fx-btn fx-btn--white" href="iletisim.html">Danışmanlık Talep Edin</a>
+          <a class="fx-btn fx-btn--ghost" href="tel:+902126180701">0212 618 07 01</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="fx-footer" style="background:var(--fx-paper);color:var(--fx-ink);">
+<!-- Footer -->
+<footer class="fx-footer">
   <div class="fx-wrap">
     <div class="fx-footer__grid">
       <div>
-        <a class="fx-logo" href="../index.html" style="margin-bottom:18px;display:block"><picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="151" height="28" alt="Fenix Yangın"></picture></a>
-        <p class="fx-text fx-text--sm" style="margin-bottom:18px;color:var(--fx-body)">Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş. Gazlı söndürme ve algılama sistemlerinde projelendirme, kurulum, devreye alma ve bakım.</p>
-        <div class="fx-footer__certs">
-          <span class="fx-footer__cert">NFPA 2001</span><span class="fx-footer__cert">ISO 14520</span><span class="fx-footer__cert">TS EN 15004</span>
+        <a class="fx-logo" href="../index.html"><picture><source type="image/webp" srcset="../assets/fenix-logo.webp"><img src="../assets/fenix-logo.png" width="151" height="28" alt="Fenix Yangın"></picture></a>
+        <p class="fx-footer__desc">Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş. Yangın güvenliği danışmanlığı, risk analizi, projelendirme, denetim, söndürme sistemleri kurulum ve periyodik kontrol hizmetleri.</p>
+        <div class="fx-footer__tags">
+          <span class="fx-footer__tag">Yangın Danışmanlığı</span>
+          <span class="fx-footer__tag">Risk Değerlendirmesi</span>
+          <span class="fx-footer__tag">Uluslararası Standartlar</span>
         </div>
       </div>
       <div>
@@ -289,7 +983,6 @@
           <a href="aerosol-yangin-sondurme-sistemleri.html">Aerosol</a>
           <a href="davlumbaz-yangin-sondurme-sistemleri.html">Davlumbaz</a>
           <a href="pano-ici-yangin-sondurme-sistemleri.html">Pano İçi</a>
-          <a href="lityum-batarya-yangin-sondurme-sistemleri.html">Lityum Batarya</a>
         </nav>
       </div>
       <div>
@@ -316,12 +1009,12 @@
       </div>
       <div>
         <h2 class="fx-footer__title">İletişim</h2>
-        
-          <address class="fx-footer__list" style="font-style:normal">
-            <span>Yıldırım Mah. Buğday Sok. No:16<br>34405 Bayrampaşa / İstanbul</span>
-            <div style="display:flex;gap:6px;"><a class="fx-num" href="tel:+902126180701" style="text-decoration:none;">0212 618 07 01</a> <span style="opacity:0.5">-</span> <a class="fx-num" href="tel:+902126180702" style="text-decoration:none;">02</a></div>
-            <a href="mailto:info@fenixyangin.com.tr">info@fenixyangin.com.tr</a>
-          </address>
+        <address class="fx-footer__list" style="font-style:normal">
+          <span>Yıldırım Mah. Buğday Sok. No:16<br>34405 Bayrampaşa / İstanbul</span>
+          <div style="display:flex;gap:6px;"><a class="fx-num" href="tel:+902126180701" style="text-decoration:none;">0212 618 07 01</a> <span style="opacity:0.5">-</span> <a class="fx-num" href="tel:+902126180702" style="text-decoration:none;">02</a></div>
+          <a href="mailto:info@fenixyangin.com.tr">info@fenixyangin.com.tr</a>
+          <span style="color:#e2e8f0;font-size:13px;margin-top:4px">7/24 Acil Müdahale</span>
+        </address>
       </div>
     </div>
     <div class="fx-footer__bottom">
@@ -341,8 +1034,3 @@
 <script src="../js/fenix.js"></script>
 </body>
 </html>
-
-
-
-
-
