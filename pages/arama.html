@@ -295,6 +295,18 @@ function fxFilterList() {
     }
   });
 }
+
+window.addEventListener('DOMContentLoaded', function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var q = urlParams.get('q');
+  if (q) {
+    var box = document.getElementById('fx-search-box');
+    if (box) {
+      box.value = q;
+      fxFilterList();
+    }
+  }
+});
 </script>
 
 <footer class="fx-footer" style="background:var(--fx-paper);color:var(--fx-ink);">

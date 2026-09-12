@@ -2608,3 +2608,806 @@ body.fx-nav-open {
 }
 
 
+
+
+/* ==========================================================================
+   MOBILE 2026 INDEPENDENT PRODUCT: MASTER PASS STYLES
+   Strictly isolated to mobile (@media max-width: 760px).
+   Desktop appearance (min-width: 761px and >= 1024px) remains 100% UNTOUCHED.
+   ========================================================================== */
+
+/* --- 1. Global Mobile Reset & Topbar Isolation --- */
+@media (max-width: 760px) {
+  .fx-topbar {
+    display: none !important;
+  }
+}
+
+/* --- 2. Mobile 2026 Header --- */
+@media (max-width: 760px) {
+  .fx-header {
+    min-height: 58px !important;
+    height: 58px !important;
+    padding: 0 16px !important;
+    background: #0b0e10 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-page--home .fx-header {
+    background: rgba(11, 14, 16, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+  .fx-header .fx-wrap, .fx-header__inner {
+    padding: 0 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+  .fx-logo img {
+    height: 24px !important;
+    width: auto !important;
+  }
+  .fx-header__actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+  .fx-mobile-search-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+  }
+  .fx-mobile-search-btn:hover, .fx-mobile-search-btn:active {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  .fx-burger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
+  }
+  .fx-burger:hover, .fx-burger:active {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+  .fx-burger svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #fff !important;
+  }
+}
+@media (min-width: 761px) {
+  .fx-mobile-search-btn {
+    display: none !important;
+  }
+}
+
+/* --- 3. Mobile 2026 Navigation Drawer --- */
+@media (max-width: 760px) {
+  .fx-mobilenav {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 88% !important;
+    max-width: 340px !important;
+    background: radial-gradient(circle at 100% 0%, rgba(190, 21, 35, 0.18) 0%, transparent 60%), #0B0E10 !important;
+    color: #fff !important;
+    z-index: 99999 !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+    visibility: hidden;
+    padding: 0 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-mobilenav.is-open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+  }
+
+  /* Drawer Header */
+  .fx-mobilenav__header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 18px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-mobilenav-close {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: background 0.2s ease !important;
+  }
+  .fx-mobilenav-close:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  /* Drawer Search */
+  .fx-mobilenav__search {
+    margin: 14px 18px 8px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .fx-mobilenav__search-icon {
+    position: absolute !important;
+    left: 12px !important;
+    color: #899196 !important;
+    pointer-events: none !important;
+  }
+  .fx-mobilenav__search-input {
+    width: 100% !important;
+    height: 42px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 0 40px 0 38px !important;
+    font-size: 13.5px !important;
+    color: #fff !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, background 0.2s ease !important;
+  }
+  .fx-mobilenav__search-input:focus {
+    border-color: rgba(190, 21, 35, 0.6) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-mobilenav__search-input::placeholder {
+    color: #64748b !important;
+  }
+  .fx-mobilenav__search-submit {
+    position: absolute !important;
+    right: 6px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+  }
+
+  /* 8 Nav Items */
+  .fx-mobilenav__list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 4px 12px !important;
+    gap: 2px !important;
+  }
+  .fx-mobilenav__link {
+    display: flex !important;
+    align-items: center !important;
+    padding: 11px 12px !important;
+    border-radius: 8px !important;
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    gap: 12px !important;
+  }
+  .fx-mobilenav__link:hover, .fx-mobilenav__link:active {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #fff !important;
+  }
+  .fx-mobilenav__link-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+    color: #94a3b8 !important;
+    flex-shrink: 0 !important;
+  }
+  .fx-mobilenav__link:hover .fx-mobilenav__link-icon {
+    color: var(--fx-red) !important;
+  }
+  .fx-mobilenav__link-text {
+    flex: 1 !important;
+  }
+  .fx-mobilenav__link-arrow {
+    color: #64748b !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+  }
+
+  /* Highlight Card with Red Border & Glow */
+  .fx-mobilenav__card {
+    margin: 8px 18px !important;
+    padding: 14px 16px !important;
+    background: linear-gradient(135deg, rgba(190, 21, 35, 0.12) 0%, rgba(20, 24, 27, 0.6) 100%) !important;
+    border: 1px solid rgba(190, 21, 35, 0.5) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 24px rgba(190, 21, 35, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .fx-mobilenav__card:hover, .fx-mobilenav__card:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0 30px rgba(190, 21, 35, 0.3) !important;
+  }
+  .fx-mobilenav__card-left {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+  .fx-mobilenav__card-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    letter-spacing: 0.2px !important;
+  }
+  .fx-mobilenav__card-desc {
+    font-size: 11.5px !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+  }
+  .fx-mobilenav__card-arrow {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50% !important;
+    background: var(--fx-red) !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Drawer Footer */
+  .fx-mobilenav__footer {
+    margin-top: auto !important;
+    padding: 16px 18px 24px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .fx-mobilenav__footer-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+  .fx-mobilenav__socials {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .fx-mobilenav__soc-pill {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #cbd5e1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease, color 0.15s ease !important;
+  }
+  .fx-mobilenav__soc-pill:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+  }
+  .fx-mobilenav__sep {
+    color: rgba(255, 255, 255, 0.2) !important;
+    font-size: 14px !important;
+  }
+  .fx-mobilenav__lang {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    cursor: default !important;
+  }
+  .fx-mobilenav__tagline {
+    font-size: 11px !important;
+    color: #64748b !important;
+    letter-spacing: 0.3px !important;
+    text-align: center !important;
+  }
+}
+
+/* --- 4. Mobile 2026 Hero Composition --- */
+@media (max-width: 760px) {
+  .fx-hero--home {
+    background: #0B0E10 !important;
+    padding-top: 20px !important;
+    padding-bottom: 28px !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+  .fx-hero--home .fx-hero__scrim {
+    background: linear-gradient(180deg, rgba(11,14,16,0.65) 0%, rgba(11,14,16,0.85) 45%, #0B0E10 100%) !important;
+    inset: 0 !important;
+  }
+  .fx-hero--home .fx-hero__flame {
+    display: none !important;
+  }
+  .fx-hero--home .fx-hero__col-layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  /* Badges: horizontal monochrome strip */
+  .fx-hero--home .fx-hero__badges {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    border-right: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+  .fx-hero--home .fx-hero__badges::-webkit-scrollbar {
+    display: none;
+  }
+  .fx-hero--home .fx-hero__badge-wrap {
+    width: auto !important;
+    height: 32px !important;
+  }
+  .fx-hero--home .fx-hero__badge {
+    max-height: 28px !important;
+    max-width: 60px !important;
+    filter: brightness(0) invert(1) opacity(0.85) !important;
+  }
+
+  /* Eyebrow: Red bar + GÜVENİLİRLİĞİN ADRESİ */
+  .fx-hero__eyebrow-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  .fx-hero__eyebrow-bar {
+    width: 22px !important;
+    height: 3px !important;
+    background: var(--fx-red) !important;
+    border-radius: 2px !important;
+    flex-shrink: 0 !important;
+  }
+  .fx-hero__eyebrow-text {
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2.5px !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Hero Title & Text */
+  .fx-hero--home .fx-hero__title {
+    color: #ffffff !important;
+    font-size: 30px !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.025em !important;
+    margin: 0 0 12px !important;
+  }
+  .fx-hero--home .fx-hero__text {
+    color: rgba(255, 255, 255, 0.78) !important;
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+    margin: 0 0 22px !important;
+  }
+
+  /* Action Buttons: 2 Pill Buttons Side-by-Side */
+  .fx-hero__actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+  }
+  .fx-hero-pill--red {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: var(--fx-red) !important;
+    color: #fff !important;
+    border-radius: 999px !important;
+    padding: 13px 22px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 18px rgba(190, 21, 35, 0.45) !important;
+    border: none !important;
+    flex: 1 1 auto !important;
+    text-align: center !important;
+  }
+  .fx-hero-pill--glass {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 999px !important;
+    padding: 13px 20px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    flex: 1 1 auto !important;
+    text-align: center !important;
+  }
+
+  /* Scroll Hint */
+  .fx-hero__scroll-hint {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding-top: 26px !important;
+    animation: fxBounce 2.4s infinite ease-in-out !important;
+  }
+}
+
+@keyframes fxBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@media (min-width: 761px) {
+  .fx-hero__scroll-hint {
+    display: none !important;
+  }
+  .fx-hero__eyebrow-bar {
+    display: none !important;
+  }
+}
+
+/* --- 5. Mobile Compact Floating WhatsApp Squircle --- */
+@media (max-width: 760px) {
+  .fx-wa {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 16px !important;
+    width: 52px !important;
+    height: 56px !important;
+    max-width: 52px !important;
+    border-radius: 14px !important;
+    background: rgba(14, 18, 20, 0.92) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    gap: 2px !important;
+    z-index: 9999 !important;
+    text-decoration: none !important;
+  }
+  .fx-wa:hover, .fx-wa:focus-visible {
+    max-width: 52px !important;
+    transform: scale(1.04) !important;
+  }
+  .fx-wa__icon {
+    position: relative !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .fx-wa__icon svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .fx-wa__dot {
+    display: block !important;
+    position: absolute !important;
+    top: -1px !important;
+    right: -2px !important;
+    width: 7px !important;
+    height: 7px !important;
+    background: var(--fx-red) !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #0e1214 !important;
+  }
+  .fx-wa__badge-mobile {
+    display: block !important;
+    font-size: 9.5px !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    letter-spacing: 0.4px !important;
+    line-height: 1 !important;
+  }
+}
+@media (min-width: 761px) {
+  .fx-wa__dot {
+    display: none !important;
+  }
+  .fx-wa__badge-mobile {
+    display: none !important;
+  }
+}
+
+/* --- 6. Mobile 2026 Compact Footer --- */
+@media (max-width: 760px) {
+  .fx-footer {
+    padding: 36px 0 24px !important;
+    background: #0B0E10 !important;
+    color: #fff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-footer-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .fx-footer-mobile__brand {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .fx-footer-mobile__desc {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+  }
+  .fx-footer-mobile__certs {
+    display: flex !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    margin-top: 6px !important;
+  }
+  .fx-footer-mobile__certs span {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* 2-Column Quick Links */
+  .fx-footer-mobile__nav-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    padding: 16px 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+  .fx-footer-mobile__nav-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+  }
+  .fx-footer-mobile__heading {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: var(--fx-red) !important;
+    margin-bottom: 4px !important;
+  }
+  .fx-footer-mobile__nav-col a {
+    font-size: 13.5px !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease !important;
+  }
+  .fx-footer-mobile__nav-col a:hover {
+    color: #fff !important;
+  }
+
+  /* Contact Action Strip */
+  .fx-footer-mobile__contact {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .fx-footer-mobile__contact-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 8px 14px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease !important;
+  }
+  .fx-footer-mobile__contact-pill--wa {
+    background: rgba(37, 211, 102, 0.12) !important;
+    border-color: rgba(37, 211, 102, 0.3) !important;
+    color: #25d366 !important;
+  }
+
+  /* Socials, Legal, Copy */
+  .fx-footer-mobile__socials {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-size: 12.5px !important;
+  }
+  .fx-footer-mobile__socials a {
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+  }
+  .fx-footer-mobile__socials a:hover {
+    color: #fff !important;
+  }
+  .fx-footer-mobile__socials span {
+    color: rgba(255, 255, 255, 0.2) !important;
+  }
+  .fx-footer-mobile__legal {
+    display: flex !important;
+    gap: 16px !important;
+    font-size: 12px !important;
+  }
+  .fx-footer-mobile__legal a {
+    color: #64748b !important;
+    text-decoration: none !important;
+  }
+  .fx-footer-mobile__copy {
+    font-size: 11.5px !important;
+    color: #475569 !important;
+    padding-top: 6px !important;
+  }
+}
+@media (min-width: 761px) {
+  .fx-footer-mobile {
+    display: none !important;
+  }
+}
+
+/* --- 7. Mobile Horizontal Process Rail (01 -> 06) --- */
+@media (max-width: 760px) {
+  .fx-rail {
+    padding-top: 0 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 calc(-1 * var(--fx-gut)) !important;
+    padding: 10px var(--fx-gut) 20px !important;
+  }
+  .fx-rail::-webkit-scrollbar { display: none !important; }
+  .fx-rail::before { display: none !important; }
+  .fx-rail__steps {
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: none !important;
+    gap: 14px !important;
+    width: max-content !important;
+  }
+  .fx-rail__step {
+    flex: 0 0 260px !important;
+    scroll-snap-align: start !important;
+    background: #fff !important;
+    padding: 20px 18px !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--fx-line) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+    position: relative !important;
+  }
+  .fx-rail__step::before { display: none !important; }
+  .fx-rail__step::after { display: none !important; }
+  .fx-rail__step .fx-rail__n {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: var(--fx-ink-3) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+  .fx-rail__step.is-first .fx-rail__n {
+    background: var(--fx-red) !important;
+  }
+  .fx-rail__title {
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: var(--fx-ink) !important;
+  }
+  .fx-rail__text {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: var(--fx-body) !important;
+    margin: 0 !important;
+  }
+}
+
+/* --- 8. Mobile Metrics Grid (Hakkımızda / Rakamlarla Fenix 2x2) --- */
+@media (max-width: 760px) {
+  .fx-section--tight .fx-grid--4-8 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .fx-section--tight .fx-grid--2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .fx-section--tight .fx-dl {
+    padding: 14px !important;
+    margin: 0 !important;
+  }
+  .fx-section--tight .fx-dl__row {
+    padding: 6px 0 !important;
+  }
+  .fx-section--tight .fx-dl__k {
+    font-size: 11.5px !important;
+  }
+  .fx-section--tight .fx-dl__v {
+    font-size: 12.5px !important;
+  }
+  .fx-section--tight .fx-dl__v.fx-num {
+    font-size: 18px !important;
+  }
+}
