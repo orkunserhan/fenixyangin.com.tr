@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" width="160" height="44" fill="none" role="img" aria-label="Safeguard davlumbaz yangın söndürme sistemleri marka logosu">
+  <!-- Shield Icon -->
+  <path d="M22 10l12-4v14c0 8.5-5.5 15.5-12 18-6.5-2.5-12-9.5-12-18V6l12 4z" fill="#C8102E"/>
+  <path d="M22 13l8-2.5v10c0 6-3.8 11-8 13-4.2-2-8-7-8-13v-10l8 2.5z" fill="#FFFFFF"/>
+  <path d="M22 17l4.5-1.5v6c0 3.5-2 6.5-4.5 7.8V17z" fill="#C8102E"/>
+  <!-- SAFEGUARD Wordmark -->
+  <text x="44" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="17" fill="#0F172A" letter-spacing="1.2">SAFEGUARD</text>
+  <text x="45" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="6.5" fill="#64748B" letter-spacing="1.8">KITCHEN FIRE SYSTEMS</text>
+</svg>
