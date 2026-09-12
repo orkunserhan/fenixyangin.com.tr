@@ -200,6 +200,51 @@
     });
   });
 
+  /* ---------- DECISION RAIL (Ne / Nerede / Neden) ---------- */
+  $$('[data-fx-decision-rail]').forEach(function (rail) {
+    var section = rail.closest('section') || rail.parentNode.parentNode;
+    var prevBtn = $('.fx-decision-navbtn--prev', section);
+    var nextBtn = $('.fx-decision-navbtn--next', section);
+    var bar = $('.fx-decision-progress__bar', section);
+    var text = $('.fx-decision-progress__text', section);
+    var cards = $$('.fx-decision-card', rail);
+    var total = cards.length || 8;
+
+    function updateProgress() {
+      var max = rail.scrollWidth - rail.clientWidth;
+      var pct = max > 0 ? Math.min(100, Math.max(12, (rail.scrollLeft / max) * 100)) : 100;
+      if (bar) bar.style.width = pct + '%';
+      if (text && cards.length) {
+        var cardW = cards[0].offsetWidth + 20;
+        var current = Math.min(total, Math.max(1, Math.round(rail.scrollLeft / cardW) + 1));
+        var str = (current < 10 ? '0' + current : current) + ' / ' + (total < 10 ? '0' + total : total) + ' · Sağa kaydırın';
+        text.textContent = str;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        var step = (cards[0] ? cards[0].offsetWidth + 20 : 360);
+        rail.scrollBy({ left: -step, behavior: 'smooth' });
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        var step = (cards[0] ? cards[0].offsetWidth + 20 : 360);
+        rail.scrollBy({ left: step, behavior: 'smooth' });
+      });
+    }
+    rail.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+
+  /* ---------- CALCULATOR PDF / PRINT ACTION ---------- */
+  $$('[data-fx-action="pdf"]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      window.print();
+    });
+  });
+
   /* ---------- MARQUEE · dokunmatik durdurma ---------- */
   $$('[data-fx-marquee]').forEach(function (m) {
     var t = $('.fx-marquee__track', m);
@@ -208,3 +253,4 @@
     m.addEventListener('touchend', function () { t.style.animationPlayState = 'running'; }, { passive: true });
   });
 })();
+
