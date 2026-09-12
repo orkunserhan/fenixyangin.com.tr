@@ -672,20 +672,114 @@ table{border-collapse:collapse;width:100%}
 .fx-wa__label{padding-right:18px;font:var(--fx-w-semi) 13.5px/52px var(--fx-font);color:#fff;white-space:nowrap}
 /* numara tema ayarından · yeşil YALNIZ ikonda */
 
-/* ---------- 21 · FOOTER ---------- */
-.fx-footer{background:#fff; color:var(--fx-body); border-top:1px solid var(--fx-line);}
-
-.fx-footer__title{margin-bottom:var(--fx-s5);font:var(--fx-w-semi) var(--fx-fs-label)/1 var(--fx-font);color:var(--fx-ink)}
-.fx-footer__list{display:grid;gap:14px;font:var(--fx-w-regular) 13.5px/1.4 var(--fx-font);color:var(--fx-ink)}
-.fx-footer__list a{color:var(--fx-ink)}
-.fx-footer__list a:hover{color:#fff}
-.fx-footer__certs{display:flex;flex-wrap:wrap;gap:var(--fx-s2)}
-.fx-footer__cert{font:var(--fx-w-medium) 11px/1 var(--fx-font);color:var(--fx-ink);border:1px solid var(--fx-line);border-radius:4px;padding:6px 8px;margin-right:8px;display:inline-block}
-.fx-footer__bottom{margin-top:var(--fx-s10);padding-block:var(--fx-s7);border-top:1px solid rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:space-between;gap:var(--fx-s6);
-  font:var(--fx-w-regular) var(--fx-fs-label)/1.5 var(--fx-font);color:rgba(255,255,255,.72)}
-.fx-footer__legal{display:flex;gap:var(--fx-s7);flex-wrap:wrap}
-.fx-accordion__head{display:none}
+/* ---------- 21 · FOOTER (2026 MASTER MINIMAL) ---------- */
+.fx-footer {
+  background: #0f1215;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 64px 0 32px;
+  font-family: var(--fx-font);
+  font-size: 13.5px;
+}
+.fx-footer a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+.fx-footer a:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+.fx-footer__grid, .fx-footer__menus {
+  display: grid;
+  grid-template-columns: 2.2fr 1.2fr 1.2fr 1.2fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+.fx-footer__brand p, .fx-footer .fx-text--sm {
+  color: #94a3b8;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 16px 0 20px;
+  max-width: 320px;
+  opacity: 1;
+}
+.fx-footer__certs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.fx-footer__cert {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.fx-footer__title {
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.fx-footer__list, .fx-footer address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-style: normal;
+}
+.fx-footer__list a, .fx-footer__list span, .fx-footer address span, .fx-footer address a {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+.fx-footer__list a:hover, .fx-footer address a:hover {
+  color: #ffffff;
+}
+.fx-footer__phone-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.fx-footer__emergency {
+  color: #ef4444;
+  font-weight: 600;
+  margin-top: 4px;
+  font-size: 12.5px;
+}
+.fx-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.fx-footer__legal {
+  display: flex;
+  gap: 20px;
+}
+.fx-footer__legal a {
+  color: #64748b;
+  font-size: 12.5px;
+}
+.fx-footer__legal a:hover {
+  color: #cbd5e1;
+}
+.fx-accordion__head { display: none; }
 
 /* ---------- 22 · RESPONSIVE ---------- */
 @media (max-width:1100px){
@@ -758,16 +852,43 @@ table{border-collapse:collapse;width:100%}
   /* form */
   .fx-form__row--2,.fx-form__row--3{grid-template-columns:minmax(0,1fr)}
   .fx-form__row--dims{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--fx-s2)}
-  /* footer akordiyon */
-  .fx-footer{background:#fff; color:var(--fx-body); border-top:1px solid var(--fx-line);}
-  
-  .fx-accordion__head{display:flex;align-items:center;justify-content:space-between;
-    width:100%;min-height:var(--fx-touch);padding-block:var(--fx-s5);background:transparent;border:0;
-    border-bottom:1px solid var(--fx-on-dark-line);color:#fff;font:var(--fx-w-semi) 15.5px/1 var(--fx-font)}
-  .fx-accordion__body{display:none;padding-block:var(--fx-s4)}
-  .fx-accordion__head[aria-expanded="true"]+.fx-accordion__body{display:block}
-  .fx-footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:var(--fx-s8);margin-top:var(--fx-s8);border-top:1px solid var(--fx-line);font:var(--fx-w-regular) var(--fx-fs-sm)/1 var(--fx-font);color:var(--fx-ink)}
-  .fx-footer__legal{margin-top:var(--fx-s4)}
+  /* 2026 Minimal Classy Mobile Footer */
+  .fx-footer {
+    padding: 44px 0 24px;
+  }
+  .fx-footer__grid, .fx-footer__menus {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+    margin-bottom: 28px;
+  }
+  .fx-footer__brand, .fx-footer__grid > div:first-child, .fx-footer__menus > div:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 8px;
+  }
+  .fx-footer__brand p, .fx-footer .fx-text--sm {
+    font-size: 13px;
+    margin: 12px 0 16px;
+  }
+  .fx-footer__title {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .fx-footer__list a, .fx-footer__list span, .fx-footer address span, .fx-footer address a {
+    font-size: 13px;
+    padding: 2px 0;
+  }
+  .fx-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+  .fx-footer__legal {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
   /* WhatsApp: CTA'ların üzerine binmez */
   .fx-wa{right:var(--fx-s5);bottom:80px;max-width:220px; background:var(--fx-red); border-color:var(--fx-red); box-shadow: 0 4px 14px rgba(0,0,0,0.25);}
   .fx-wa:hover{max-width:250px}
@@ -802,7 +923,7 @@ table{border-collapse:collapse;width:100%}
 .fx-section--dark .fx-project,.fx-section--dark .fx-project .fx-project__title,
 .fx-card--dark,.fx-card--dark .fx-h3{color:#fff}
 .fx-sector.is-active{color:#fff}
-.fx-footer__cert{font:var(--fx-w-medium) 11px/1 var(--fx-font);color:var(--fx-ink);border:1px solid var(--fx-line);border-radius:4px;padding:6px 8px;margin-right:8px;display:inline-block}
+
 
 
 /* ---------- 22 · HERO GÖRSELİ ----------
@@ -962,7 +1083,6 @@ table{border-collapse:collapse;width:100%}
 }
 
 
-.fx-footer a { color: var(--fx-ink); text-decoration:none; } .fx-footer a:hover { color: var(--fx-red); } .fx-footer h3, .fx-footer strong { color: var(--fx-ink); font-weight:700; }
 @media (max-width:760px) { .fx-filters { display:flex; flex-wrap:nowrap !important; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:8px; scroll-snap-type: x mandatory; } .fx-filters::-webkit-scrollbar { display:none; } .fx-filters .fx-chip { scroll-snap-align: start; white-space:nowrap; } }
 .fx-mobilenav__item { color:#fff !important; background:transparent !important; border-bottom:1px solid rgba(255,255,255,0.1) !important; padding:16px 24px !important; text-align:left; font-size:18px; font-weight:600; }
 .fx-mobilenav__sub { background:rgba(255,255,255,0.03) !important; }
@@ -970,12 +1090,6 @@ table{border-collapse:collapse;width:100%}
 
 @media (max-width:760px) { .fx-rail__steps { display:flex; flex-direction:row; overflow-x:auto; scroll-snap-type: x mandatory; padding-bottom:16px; gap:16px; -webkit-overflow-scrolling:touch; scrollbar-width:none; border-top:none !important; } .fx-rail__steps::-webkit-scrollbar { display:none; } .fx-rail__step { flex: 0 0 85%; scroll-snap-align: center; background:#fff; padding:24px; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.05) !important; padding-top:24px !important; } .fx-rail__step::before { display:none !important; } .fx-rail { border-top:none !important; margin: 0 -var(--fx-gut); padding: 0 var(--fx-gut); } }
 
-.fx-footer { background: #fff !important; color: var(--fx-ink) !important; border-top: 1px solid var(--fx-line) !important; }
-.fx-footer .fx-text, .fx-footer p, .fx-footer span { color: var(--fx-body) !important; }
-.fx-footer h2, .fx-footer strong, .fx-footer .fx-footer__title { color: var(--fx-ink) !important; }
-.fx-footer a { color: var(--fx-ink) !important; }
-.fx-footer a:hover { color: var(--fx-red) !important; }
-.fx-accordion__head { color: var(--fx-ink) !important; border-bottom-color: var(--fx-line) !important; }
 .fx-map__note, .fx-label[style*='color:var(--fx-muted)'] { color: var(--fx-ink) !important; opacity: 0.8; font-weight: 500; }
 .fx-text[style*='color:var(--fx-body)'] { color: var(--fx-ink) !important; opacity: 0.85; }
 
@@ -1058,35 +1172,7 @@ table{border-collapse:collapse;width:100%}
   div[style*="display:flex;gap:10px;flex-wrap:wrap"] .fx-chip { scroll-snap-align: start !important; }
 }
 
-/* FOOTER YENI APP MANTIGI */
-.fx-footer__menus {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-@media (max-width: 760px) {
-  .fx-footer__menus {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    gap: 32px !important;
-    padding-bottom: 24px !important;
-  }
-  .fx-footer__menus::-webkit-scrollbar { display: none !important; }
-  .fx-footer__menus > div {
-    flex: 0 0 70% !important;
-    scroll-snap-align: start !important;
-  }
-  .fx-footer__title { font-size: 15px !important; opacity:0.9; }
-  .fx-footer__list a, .fx-footer__list span { font-size: 14px !important; }
-  
-  .fx-footer__bottom { flex-direction:column; gap:16px; align-items:flex-start; }
-  .fx-footer__legal { margin-left:0; }
-  .fx-footer__legal a { margin-left:0; margin-right:16px; }
-}
+
 
 @media (max-width: 760px) {
   .fx-hide-mobile { display: none !important; }
@@ -1138,10 +1224,7 @@ html, body {
 }
 
 
-/* Footer padding fix */
-.fx-footer {
-    padding-top: 60px !important;
-}
+
 
 /* Sektor cards animation fix */
 .fx-sector {
