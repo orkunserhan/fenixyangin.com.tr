@@ -3686,6 +3686,20 @@ body.fx-nav-open {
   }
 }
 
+/* --- 9. Mobile Red CTA Phone Buttons Removal & Height Optimization --- */
+@media (max-width: 760px) {
+  .fx-section--red {
+    padding-block: 28px !important;
+  }
+  .fx-section--red .fx-wrap {
+    gap: 16px !important;
+  }
+  .fx-section--red a[href^="tel:"],
+  .fx-section--red .fx-cta-phones {
+    display: none !important;
+  }
+}
+
 /* --- 9. Accessibility: Reduced Motion Override --- */
 @media (prefers-reduced-motion: reduce) {
   .fx-header .fx-logo,
