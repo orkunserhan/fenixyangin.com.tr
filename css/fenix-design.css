@@ -2323,4 +2323,11 @@ body.fx-nav-open {
     gap: 8px;
   }
 }
+/* Responsive display utilities */
+@media (max-width: 760px) {
+  .fx-desktop-only { display: none !important; }
+}
+@media (min-width: 761px) {
+  .fx-mobile-only { display: none !important; }
+}
 
