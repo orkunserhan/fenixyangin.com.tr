@@ -2740,9 +2740,10 @@ body.fx-nav-open {
     z-index: 1000 !important;
   }
   .fx-page--home .fx-header {
-    background: rgba(11, 14, 16, 0.95) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
   .fx-header .fx-wrap, .fx-header__inner {
     padding: 0 !important;
@@ -2917,29 +2918,38 @@ body.fx-nav-open {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 8px !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    color: #fff !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
     text-decoration: none !important;
     transition: background 0.2s ease, border-color 0.2s ease !important;
   }
   .fx-mobile-search-btn:hover, .fx-mobile-search-btn:active {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.25) !important;
+    background: rgba(255, 255, 255, 0.28) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .fx-mobile-search-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #ffffff !important;
   }
   .fx-burger {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 8px !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    color: #fff !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
     padding: 0 !important;
     min-height: 0 !important;
     margin: 0 !important;
@@ -2947,13 +2957,13 @@ body.fx-nav-open {
     transition: background 0.2s ease, border-color 0.2s ease !important;
   }
   .fx-burger:hover, .fx-burger:active {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.25) !important;
+    background: rgba(255, 255, 255, 0.28) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
   }
   .fx-burger svg {
-    width: 20px !important;
-    height: 20px !important;
-    fill: #fff !important;
+    width: 22px !important;
+    height: 22px !important;
+    fill: #ffffff !important;
   }
 }
 @media (min-width: 761px) {
@@ -3229,18 +3239,54 @@ body.fx-nav-open {
 /* --- 4. Mobile 2026 Hero Composition --- */
 @media (max-width: 760px) {
   .fx-hero--home {
+    margin-top: -58px !important;
+    padding-top: calc(58px + 18px) !important;
+    padding-bottom: 20px !important;
     background: #0B0E10 !important;
-    padding-top: 20px !important;
-    padding-bottom: 28px !important;
-    min-height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
     position: relative !important;
+    box-sizing: border-box !important;
+  }
+  .fx-hero--home .fx-hero__media {
+    position: absolute !important;
+    inset: 0 !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+  }
+  .fx-hero--home .fx-hero__media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 18% !important;
   }
   .fx-hero--home .fx-hero__scrim {
-    background: linear-gradient(180deg, rgba(11,14,16,0.48) 0%, rgba(11,14,16,0.68) 42%, rgba(11,14,16,0.84) 78%, #0B0E10 100%) !important;
+    position: absolute !important;
     inset: 0 !important;
+    z-index: 1 !important;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.10) 0%,
+      rgba(15, 23, 42, 0.20) 22%,
+      rgba(15, 23, 42, 0.45) 48%,
+      rgba(11, 14, 16, 0.76) 72%,
+      rgba(11, 14, 16, 0.94) 100%
+    ) !important;
   }
   .fx-hero--home .fx-hero__flame {
     display: none !important;
+  }
+  .fx-hero--home .fx-hero__inner {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
   }
   .fx-hero--home .fx-hero__col-layout {
     flex-direction: column !important;
@@ -3253,13 +3299,13 @@ body.fx-nav-open {
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 16px !important;
+    gap: 14px !important;
     border-right: none !important;
     padding: 0 !important;
     width: 100% !important;
     overflow-x: hidden !important;
     scrollbar-width: none !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 4px !important;
   }
   .fx-hero--home .fx-hero__badges::-webkit-scrollbar {
     display: none;
@@ -3273,20 +3319,20 @@ body.fx-nav-open {
     flex-shrink: 0 !important;
   }
   .fx-hero--home .fx-hero__badge {
-    max-height: 25px !important;
-    max-width: 54px !important;
+    max-height: 28px !important;
+    max-width: 58px !important;
     width: auto !important;
     height: auto !important;
-    filter: brightness(0) invert(1) opacity(0.85) !important;
+    filter: brightness(0) invert(1) opacity(0.92) !important;
     object-fit: contain !important;
   }
-  /* TSE-HYB: Specific scale boost for sharp text readability while keeping visual balance */
+  /* TSE-HYB: Specific scale boost for sharp text readability */
   .fx-hero--home .fx-hero__badge[src*="logo-tse"],
   .fx-hero--home .fx-hero__badge[src*="tse"],
   .fx-hero--home .fx-hero__badge--tse {
-    max-height: 35px !important;
+    max-height: 36px !important;
     max-width: 74px !important;
-    filter: brightness(0) invert(1) opacity(0.98) !important;
+    filter: brightness(0) invert(1) opacity(1) !important;
   }
 
   /* Eyebrow: Red bar + GÜVENİLİRLİĞİN ADRESİ */
@@ -3297,8 +3343,8 @@ body.fx-nav-open {
     margin-bottom: 12px !important;
   }
   .fx-hero__eyebrow-bar {
-    width: 22px !important;
-    height: 3px !important;
+    width: 24px !important;
+    height: 3.5px !important;
     background: var(--fx-red) !important;
     border-radius: 2px !important;
     flex-shrink: 0 !important;
@@ -3306,68 +3352,92 @@ body.fx-nav-open {
   .fx-hero__eyebrow-text {
     font-size: 11.5px !important;
     font-weight: 800 !important;
-    letter-spacing: 2.5px !important;
-    color: #fff !important;
+    letter-spacing: 2.2px !important;
+    color: #ffffff !important;
     text-transform: uppercase !important;
   }
 
-  /* Hero Title & Text with subtle contrast enhancement */
+  /* Hero Title & Text with contrast enhancement */
   .fx-hero--home .fx-hero__title {
     color: #ffffff !important;
-    font-size: 30px !important;
-    line-height: 1.14 !important;
+    font-size: 31px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
     letter-spacing: -0.025em !important;
-    margin: 0 0 12px !important;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.65) !important;
+    margin: 0 0 14px !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7) !important;
+    word-break: break-word !important;
   }
   .fx-hero--home .fx-hero__text {
-    color: rgba(255, 255, 255, 0.82) !important;
+    color: rgba(255, 255, 255, 0.88) !important;
     font-size: 14.5px !important;
-    line-height: 1.55 !important;
+    line-height: 1.52 !important;
     margin: 0 0 22px !important;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.55) !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
   }
 
-  /* Action Buttons: 2 Pill Buttons Side-by-Side */
+  /* Action Buttons: Stacked Full-Width Pills */
   .fx-hero__actions {
     display: flex !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
   .fx-hero-pill--red {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
+    width: 100% !important;
     background: var(--fx-red) !important;
-    color: #fff !important;
+    color: #ffffff !important;
     border-radius: 999px !important;
-    padding: 13px 22px !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
+    padding: 14px 24px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
     text-decoration: none !important;
     box-shadow: 0 4px 18px rgba(190, 21, 35, 0.45) !important;
     border: none !important;
-    flex: 1 1 auto !important;
     text-align: center !important;
+    box-sizing: border-box !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+  }
+  .fx-hero-pill--red:active {
+    transform: scale(0.98) !important;
+  }
+  .fx-hero-pill--red svg {
+    fill: #ffffff !important;
+    width: 16px !important;
+    height: 16px !important;
   }
   .fx-hero-pill--glass {
-    display: inline-flex !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    color: #fff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(8px) !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.72) !important;
+    color: var(--fx-red) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.90) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
     border-radius: 999px !important;
-    padding: 13px 20px !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
+    padding: 14px 24px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
     text-decoration: none !important;
-    flex: 1 1 auto !important;
     text-align: center !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 0.15s ease, background 0.15s ease !important;
+  }
+  .fx-hero-pill--glass:active {
+    transform: scale(0.98) !important;
+  }
+  .fx-hero-pill--glass svg {
+    fill: var(--fx-red) !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 
   /* Scroll Hint */
@@ -3377,8 +3447,9 @@ body.fx-nav-open {
     justify-content: center !important;
     gap: 6px !important;
     font-size: 12px !important;
-    color: rgba(255, 255, 255, 0.5) !important;
-    padding-top: 26px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding-top: 18px !important;
+    padding-bottom: 6px !important;
     animation: fxBounce 2.4s infinite ease-in-out !important;
   }
 }
