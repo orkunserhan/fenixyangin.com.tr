@@ -87,8 +87,10 @@
      tüp   = CEILING(gaz / 180)
      Bu formül değiştirilemez.                       */
   var ORAN = 0.625, TUP_KG = 180;
-  var calc = $('[data-fx-calc]');
-  if (calc) {
+  window.fxInitCalculator = function () {
+    var calc = $('[data-fx-calc]');
+    if (!calc || calc.getAttribute('data-fx-calc-ready')) return;
+    calc.setAttribute('data-fx-calc-ready', 'true');
     var st = { en: 8, boy: 5, yukseklik: 3.6 };
     var lim = { en: [1, 60], boy: [1, 60], yukseklik: [1.5, 12] };
     var view = 'iso';
@@ -218,7 +220,8 @@
       });
     });
     render();
-  }
+  };
+  window.fxInitCalculator();
 
   /* ---------- MOBİL MENÜ ---------- (Managed centrally with overlay and X button) */
 
@@ -674,13 +677,15 @@
     if (window.fxCloseNav) window.fxCloseNav();
   });
 
-  /* Auto-initialize dynamic systems nav and reference counts */
+  /* Auto-initialize dynamic systems nav, calculator and reference counts */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
+      window.fxInitCalculator && window.fxInitCalculator();
       window.fxInitSystemsNav();
       window.fxInitReferenceCounts();
     });
   } else {
+    window.fxInitCalculator && window.fxInitCalculator();
     window.fxInitSystemsNav();
     window.fxInitReferenceCounts();
   }

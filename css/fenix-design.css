@@ -4101,4 +4101,143 @@ body.fx-nav-open {
   }
 }
 
+/* ==========================================================================
+   12. GAZLI SÖNDÜRME HESAPLAMA SAYFASI & DESTEK AL BÖLÜMÜ
+   ========================================================================== */
+.fx-calc-page-hero {
+  background: #ffffff;
+  border-bottom: 1px solid var(--fx-line, #E2E8F0);
+  padding: 36px 0 28px;
+}
+.fx-calc-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+@media (max-width: 760px) {
+  .fx-calc-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.fx-calc-info-card {
+  background: var(--fx-paper, #F7F9FA);
+  border: 1px solid var(--fx-line, #E2E8F0);
+  border-radius: var(--fx-r-box, 10px);
+  padding: 24px;
+}
+.fx-calc-info-card__num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fx-red, #BE1523);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  display: block;
+}
+.fx-calc-info-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fx-ink, #0E1214);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+.fx-calc-info-card__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fx-body, #334155);
+  margin: 0;
+}
+
+/* Destek Al Card */
+.fx-support-card {
+  background: #ffffff;
+  border: 1px solid var(--fx-line, #E2E8F0);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+@media (max-width: 760px) {
+  .fx-support-card {
+    padding: 28px 18px;
+  }
+}
+.fx-support-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+.fx-support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.fx-support-btn--phone {
+  background: #f8fafc;
+  color: var(--fx-ink, #0E1214);
+  border: 1px solid #cbd5e1;
+}
+.fx-support-btn--phone:hover {
+  background: var(--fx-wash-red, #FBEDEE);
+  color: var(--fx-red, #BE1523);
+  border-color: var(--fx-red, #BE1523);
+  transform: translateY(-1px);
+}
+.fx-support-btn--wa {
+  background: #25D366;
+  color: #ffffff;
+  border: 1px solid #20bd5a;
+}
+.fx-support-btn--wa:hover {
+  background: #1eb956;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.28);
+}
+.fx-support-btn--email {
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+.fx-support-btn--email:hover {
+  background: #f1f5f9;
+  color: var(--fx-ink, #0E1214);
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+.fx-support-btn--cta {
+  background: var(--fx-red, #BE1523);
+  color: #ffffff;
+  border: 1px solid var(--fx-red, #BE1523);
+}
+.fx-support-btn--cta:hover {
+  background: #9f101c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(190, 21, 35, 0.25);
+}
+@media (max-width: 600px) {
+  .fx-support-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .fx-support-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
