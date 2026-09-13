@@ -8,19 +8,94 @@
 
   /* ---------- 0 · CENTRAL REFERENCE REGISTRY (SINGLE SOURCE OF TRUTH) ---------- */
   window.FENIX_VERIFIED_REFS = [
-    { id: "baykar", name: "Baykar", cat: "havacilik-savunma", logo: "1-baykar.png" },
-    { id: "turk-hava-yollari", name: "Türk Hava Yolları", cat: "havacilik-savunma", logo: "2-turk-hava-yollari.jpg" },
-    { id: "pegasus", name: "Pegasus", cat: "havacilik-savunma", logo: "3-pegasus.png" },
-    { id: "hermes", name: "Hermès", cat: "turizm-perakende", logo: "4-hermes.png" },
-    { id: "aksa", name: "Aksa", cat: "enerji-sanayi", logo: "5-aksa.png" },
-    { id: "havelsan", name: "Havelsan", cat: "havacilik-savunma", logo: "6-havelsan.png" },
-    { id: "odeabank", name: "Odeabank", cat: "finans-teknoloji", logo: "7-odeabank.png" },
-    { id: "merit-royal", name: "Merit Royal", cat: "turizm-perakende", logo: "8-merit-royal.jpeg" },
-    { id: "sheraton-hotel", name: "Sheraton Hotel", cat: "turizm-perakende", logo: "9-sheraton-hotel.png" },
-    { id: "trendyol", name: "Trendyol", cat: "finans-teknoloji", logo: "10-trendyol.png" },
-    { id: "paribu", name: "Paribu", cat: "finans-teknoloji", logo: "11-paribu.png" },
-    { id: "iga", name: "İGA", cat: "havacilik-savunma", logo: "12-iga.png" },
-    { id: "tupras", name: "Tüpraş", cat: "enerji-sanayi", logo: "13-tupras.png" }
+    { id: "baykar", name: "Baykar", cat: "havacilik-savunma", logo: "ref-01-baykar.webp" },
+    { id: "turk-hava-yollari", name: "Türk Hava Yolları", cat: "havacilik-savunma", logo: "ref-02-turk-hava-yollari.webp" },
+    { id: "pegasus", name: "Pegasus", cat: "havacilik-savunma", logo: "ref-03-pegasus.webp" },
+    { id: "hermes", name: "Hermès", cat: "turizm-perakende", logo: "ref-04-hermes.webp" },
+    { id: "aksa", name: "Aksa", cat: "enerji-sanayi", logo: "ref-05-aksa.webp" },
+    { id: "havelsan", name: "Havelsan", cat: "havacilik-savunma", logo: "ref-06-havelsan.webp" },
+    { id: "odeabank", name: "Odeabank", cat: "finans-teknoloji", logo: "ref-07-odeabank.webp" },
+    { id: "merit-royal", name: "Merit Royal", cat: "turizm-perakende", logo: "ref-08-merit-royal.webp" },
+    { id: "sheraton-hotel", name: "Sheraton Hotel", cat: "turizm-perakende", logo: "ref-09-sheraton-hotel.webp" },
+    { id: "trendyol", name: "Trendyol", cat: "finans-teknoloji", logo: "ref-10-trendyol.webp" },
+    { id: "paribu", name: "Paribu", cat: "finans-teknoloji", logo: "ref-11-paribu.webp" },
+    { id: "iga", name: "İGA İstanbul Havalimanı", cat: "havacilik-savunma", logo: "ref-12-iga.webp" },
+    { id: "tupras", name: "Tüpraş", cat: "enerji-sanayi", logo: "ref-13-tupras.webp" },
+    { id: "tusas-turk-havacilik-uzay-sanayii", name: "Türk Havacılık Uzay Sanayii (TUSAŞ)", cat: "havacilik-savunma", logo: "ref-14-tusas-turk-havacilik-uzay-sanayii.webp" },
+    { id: "iett", name: "İETT", cat: "havacilik-savunma", logo: "ref-15-iett.webp" },
+    { id: "tc-ulastirma-ve-altyapi-bakanligi", name: "T.C. Ulaştırma ve Altyapı Bakanlığı", cat: "havacilik-savunma", logo: "ref-16-tc-ulastirma-ve-altyapi-bakanligi.webp" },
+    { id: "turkiye-is-bankasi", name: "Türkiye İş Bankası", cat: "finans-teknoloji", logo: "ref-17-turkiye-is-bankasi.webp" },
+    { id: "turk-telekom", name: "Türk Telekom", cat: "finans-teknoloji", logo: "ref-19-turk-telekom.webp" },
+    { id: "iron-mountain", name: "Iron Mountain", cat: "finans-teknoloji", logo: "ref-20-iron-mountain.webp" },
+    { id: "aselsan", name: "ASELSAN", cat: "havacilik-savunma", logo: "ref-21-aselsan.webp" },
+    { id: "turkiye-maarif-vakfi", name: "Türkiye Maarif Vakfı", cat: "turizm-perakende", logo: "ref-22-turkiye-maarif-vakfi.webp" },
+    { id: "philip-morris", name: "Philip Morris", cat: "enerji-sanayi", logo: "ref-23-philip-morris.webp" },
+    { id: "tulomsas", name: "TÜLOMSAŞ", cat: "enerji-sanayi", logo: "ref-24-tulomsas.webp" },
+    { id: "turkiye-denizcilik-isletmeleri", name: "Türkiye Denizcilik İşletmeleri", cat: "havacilik-savunma", logo: "ref-25-turkiye-denizcilik-isletmeleri.webp" },
+    { id: "iski", name: "İSKİ", cat: "enerji-sanayi", logo: "ref-26-iski.webp" },
+    { id: "mutfak-sanatlari-akademisi-msa", name: "Mutfak Sanatları Akademisi (MSA)", cat: "turizm-perakende", logo: "ref-27-mutfak-sanatlari-akademisi-msa.webp" },
+    { id: "hurriyet", name: "Hürriyet", cat: "finans-teknoloji", logo: "ref-28-hurriyet.webp" },
+    { id: "vodafone", name: "Vodafone", cat: "finans-teknoloji", logo: "ref-29-vodafone.webp" },
+    { id: "brt-bayrak-radyo-televizyon", name: "Bayrak Radyo Televizyon Kurumu (BRT)", cat: "finans-teknoloji", logo: "ref-30-brt-bayrak-radyo-televizyon.webp" },
+    { id: "gokbora-uluslararasi-nakliyat", name: "Gökbora Uluslararası Nakliyat", cat: "enerji-sanayi", logo: "ref-31-gokbora-uluslararasi-nakliyat.webp" },
+    { id: "tc-cevre-sehircilik-ve-iklim-degisikligi-bakanligi", name: "T.C. Çevre, Şehircilik ve İklim Değişikliği Bakanlığı", cat: "enerji-sanayi", logo: "ref-32-tc-cevre-sehircilik-ve-iklim-degisikligi-bakanligi.webp" },
+    { id: "hilton-garden-inn", name: "Hilton Garden Inn", cat: "turizm-perakende", logo: "ref-33-hilton-garden-inn.webp" },
+    { id: "tc-adalet-bakanligi", name: "T.C. Adalet Bakanlığı", cat: "havacilik-savunma", logo: "ref-34-tc-adalet-bakanligi.webp" },
+    { id: "bahcesehir-koleji", name: "Bahçeşehir Koleji", cat: "turizm-perakende", logo: "ref-35-bahcesehir-koleji.webp" },
+    { id: "the-marmara-hotels", name: "The Marmara Hotels", cat: "turizm-perakende", logo: "ref-36-the-marmara-hotels.webp" },
+    { id: "tubitak", name: "TÜBİTAK", cat: "finans-teknoloji", logo: "ref-37-tubitak.webp" },
+    { id: "tc-gumrukler-muhafaza", name: "T.C. Ticaret Bakanlığı (Gümrükler Muhafaza)", cat: "havacilik-savunma", logo: "ref-38-tc-gumrukler-muhafaza.webp" },
+    { id: "senpilic", name: "Şenpiliç", cat: "turizm-perakende", logo: "ref-39-senpilic.webp" },
+    { id: "vakif-pazarlama", name: "Vakıf Pazarlama", cat: "finans-teknoloji", logo: "ref-40-vakif-pazarlama.webp" },
+    { id: "tc-saglik-bakanligi", name: "T.C. Sağlık Bakanlığı", cat: "turizm-perakende", logo: "ref-41-tc-saglik-bakanligi.webp" },
+    { id: "istanbul-bilgi-universitesi", name: "İstanbul Bilgi Üniversitesi", cat: "turizm-perakende", logo: "ref-42-istanbul-bilgi-universitesi.webp" },
+    { id: "ford", name: "Ford", cat: "enerji-sanayi", logo: "ref-43-ford.webp" },
+    { id: "mark-antalya", name: "MarkAntalya", cat: "turizm-perakende", logo: "ref-44-mark-antalya.webp" },
+    { id: "istek-okullari", name: "İSTEK Okulları", cat: "turizm-perakende", logo: "ref-45-istek-okullari.webp" },
+    { id: "ramada-hotels", name: "Ramada Hotels", cat: "turizm-perakende", logo: "ref-46-ramada-hotels.webp" },
+    { id: "renaissance-hotels", name: "Renaissance Hotels", cat: "turizm-perakende", logo: "ref-47-renaissance-hotels.webp" },
+    { id: "yapi-kredi", name: "Yapı Kredi", cat: "finans-teknoloji", logo: "ref-48-yapi-kredi.webp" },
+    { id: "112-acil-cagri-merkezi", name: "112 Acil Çağrı Merkezi", cat: "havacilik-savunma", logo: "ref-49-112-acil-cagri-merkezi.webp" },
+    { id: "aslan-cimento", name: "Aslan Çimento", cat: "enerji-sanayi", logo: "ref-50-aslan-cimento.webp" },
+    { id: "kasap-doner", name: "Kasap Döner", cat: "turizm-perakende", logo: "ref-51-kasap-doner.webp" },
+    { id: "batman-universitesi", name: "Batman Üniversitesi", cat: "turizm-perakende", logo: "ref-52-batman-universitesi.webp" },
+    { id: "sushico", name: "SushiCo", cat: "turizm-perakende", logo: "ref-53-sushico.webp" },
+    { id: "tavuk-dunyasi", name: "Tavuk Dünyası", cat: "turizm-perakende", logo: "ref-54-tavuk-dunyasi.webp" },
+    { id: "durumle", name: "Dürümle", cat: "turizm-perakende", logo: "ref-55-durumle.webp" },
+    { id: "simit-sarayi", name: "Simit Sarayı", cat: "turizm-perakende", logo: "ref-55-simit-sarayi.webp" },
+    { id: "pizza-hut", name: "Pizza Hut", cat: "turizm-perakende", logo: "ref-56-pizza-hut.webp" },
+    { id: "tefal", name: "Tefal", cat: "turizm-perakende", logo: "ref-57-tefal.webp" },
+    { id: "turkiye-petrolleri", name: "Türkiye Petrolleri (TP)", cat: "enerji-sanayi", logo: "ref-58-turkiye-petrolleri.webp" },
+    { id: "sofra-grup", name: "Sofra Grup", cat: "turizm-perakende", logo: "ref-59-sofra-grup.webp" },
+    { id: "baydoner", name: "Baydöner", cat: "turizm-perakende", logo: "ref-60-baydoner.webp" },
+    { id: "jandarma-genel-komutanligi", name: "Jandarma Genel Komutanlığı", cat: "havacilik-savunma", logo: "ref-61-jandarma-genel-komutanligi.webp" },
+    { id: "kfc", name: "KFC", cat: "turizm-perakende", logo: "ref-62-kfc.webp" },
+    { id: "gozen-air-services", name: "Gözen Air Services", cat: "havacilik-savunma", logo: "ref-63-gozen-air-services.webp" },
+    { id: "excelsior-hotel-baku", name: "Excelsior Hotel Baku", cat: "turizm-perakende", logo: "ref-64-excelsior-hotel-baku.webp" },
+    { id: "ensar-vakfi", name: "Ensar Vakfı", cat: "turizm-perakende", logo: "ref-65-ensar-vakfi.webp" },
+    { id: "migros", name: "Migros", cat: "turizm-perakende", logo: "ref-66-migros.webp" },
+    { id: "sinefekt", name: "Sinefekt", cat: "finans-teknoloji", logo: "ref-67-sinefekt.webp" },
+    { id: "anadolu-universitesi", name: "Anadolu Üniversitesi", cat: "turizm-perakende", logo: "ref-68-anadolu-universitesi.webp" },
+    { id: "mapfre-sigorta", name: "MAPFRE Sigorta", cat: "finans-teknoloji", logo: "ref-69-mapfre-sigorta.webp" },
+    { id: "yildiz-teknik-universitesi", name: "Yıldız Teknik Üniversitesi", cat: "turizm-perakende", logo: "ref-70-yildiz-teknik-universitesi.webp" },
+    { id: "ibb-sosyal-tesisleri", name: "İBB Sosyal Tesisleri", cat: "turizm-perakende", logo: "ref-71-ibb-sosyal-tesisleri.webp" },
+    { id: "odtu", name: "Orta Doğu Teknik Üniversitesi (ODTÜ)", cat: "turizm-perakende", logo: "ref-72-odtu.webp" },
+    { id: "eskisehir-buyuksehir-belediyesi", name: "Eskişehir Büyükşehir Belediyesi", cat: "enerji-sanayi", logo: "ref-73-eskisehir-buyuksehir-belediyesi.webp" },
+    { id: "eti", name: "ETİ", cat: "enerji-sanayi", logo: "ref-74-eti.webp" },
+    { id: "tursab", name: "TÜRSAB", cat: "turizm-perakende", logo: "ref-75-tursab.webp" },
+    { id: "ibb-kultur-as", name: "İBB Kültür A.Ş.", cat: "turizm-perakende", logo: "ref-75-ibb-kultur-as.webp" },
+    { id: "unilever", name: "Unilever", cat: "enerji-sanayi", logo: "ref-76-unilever.webp" },
+    { id: "totalenergies", name: "TotalEnergies", cat: "enerji-sanayi", logo: "ref-77-totalenergies.webp" },
+    { id: "istanbul-arel-universitesi", name: "İstanbul Arel Üniversitesi", cat: "turizm-perakende", logo: "ref-77-istanbul-arel-universitesi.webp" },
+    { id: "grohe", name: "Grohe", cat: "enerji-sanayi", logo: "ref-78-grohe.webp" },
+    { id: "firat-universitesi", name: "Fırat Üniversitesi", cat: "turizm-perakende", logo: "ref-79-firat-universitesi.webp" },
+    { id: "wyndham-hotels-resorts", name: "Wyndham Hotels & Resorts", cat: "turizm-perakende", logo: "ref-80-wyndham-hotels-resorts.webp" },
+    { id: "gulermak-agir-sanayi", name: "Gülermak Ağır Sanayi", cat: "enerji-sanayi", logo: "ref-81-gulermak-agir-sanayi.webp" },
+    { id: "koctas", name: "Koçtaş", cat: "turizm-perakende", logo: "ref-81-koctas.webp" },
+    { id: "yilmaz-reduktor", name: "Yılmaz Redüktör", cat: "enerji-sanayi", logo: "ref-83-yilmaz-reduktor.webp" },
+    { id: "cengiz-makina", name: "Cengiz Makina", cat: "enerji-sanayi", logo: "ref-84-cengiz-makina.webp" },
+    { id: "park-inn-by-radisson", name: "Park Inn by Radisson", cat: "turizm-perakende", logo: "ref-85-park-inn-by-radisson.webp" },
+    { id: "hyundai", name: "Hyundai", cat: "enerji-sanayi", logo: "ref-86-hyundai.webp" }
   ];
 
   window.fxInitReferenceCounts = function () {
@@ -64,6 +139,14 @@
         el.textContent = name + ' (' + catCounts[cat] + ')';
       });
     });
+
+    if (window.location.hash) {
+      var h = window.location.hash.replace('#', '').replace('group-', '');
+      var matchBtn = document.querySelector('.fx-filters .fx-chip[data-ref-cat="' + h + '"]');
+      if (matchBtn && window.fxFilterRefs) {
+        window.fxFilterRefs(h, matchBtn);
+      }
+    }
   };
 
   window.fxFilterRefs = function (cat, btn) {
@@ -79,6 +162,16 @@
       }
     });
   };
+
+  window.addEventListener('hashchange', function () {
+    if (window.location.hash) {
+      var h = window.location.hash.replace('#', '').replace('group-', '');
+      var matchBtn = document.querySelector('.fx-filters .fx-chip[data-ref-cat="' + h + '"]');
+      if (matchBtn && window.fxFilterRefs) {
+        window.fxFilterRefs(h, matchBtn);
+      }
+    }
+  });
 
 
   /* ---------- HACİM HESAPLAYICI ----------
