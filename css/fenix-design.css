@@ -3694,9 +3694,24 @@ body.fx-nav-open {
   .fx-section--red .fx-wrap {
     gap: 16px !important;
   }
-  .fx-section--red a[href^="tel:"],
-  .fx-section--red .fx-cta-phones {
+  .fx-section--red .fx-cta-phones,
+  .fx-section--red .fx-desktop-only,
+  .fx-section--red a[href^="tel:"] {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+  }
+  .fx-section--red .fx-btn--on-red {
+    width: auto !important;
+    align-self: flex-start !important;
   }
 }
 
