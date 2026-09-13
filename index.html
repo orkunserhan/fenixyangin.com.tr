@@ -988,99 +988,320 @@
   <!-- ==================================================
        SECTION 9: GALERİ & VİDEO MASTER SYSTEM
        ================================================== -->
-  <section class="fx-section fx-section--paper fx-section--tight">
-    <div class="fx-wrap fx-grid fx-grid--7-5">
-      <div>
-        <span class="fx-eyebrow" style="color:var(--fx-red); font-weight:600;">Galeri · Saha Medyası</span>
-        <h2 class="fx-h2 fx-h2--sm" style="margin:14px 0 20px; color:var(--fx-ink)">Sistemi çalışırken görün</h2>
+  <!-- ==================================================
+       SECTION 9: GALERİ & TEKNİK BİLGİ MERKEZİ (DUAL BAND)
+       ================================================== -->
+  <section class="fx-section fx-section--paper fx-section--tight" id="medya-ve-bilgi">
+    <div class="fx-wrap">
+      
+      <!-- BANT 1: GALERİ · SAHA MEDYASI -->
+      <div class="fx-sec9-block">
+        <div style="margin-bottom:20px;">
+          <span class="fx-eyebrow" style="color:var(--fx-red); font-weight:600;">Galeri · Saha Medyası</span>
+          <h2 class="fx-h2 fx-h2--sm" style="margin:8px 0 0; color:var(--fx-ink)">Sistemi çalışırken görün</h2>
+        </div>
         
-        <!-- Video Stories Rail -->
-        <div class="fx-video-scroller" style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type: x mandatory; padding-bottom:16px; scrollbar-width:none; -webkit-overflow-scrolling:touch;">
+        <!-- Video Stories Rail / Desktop 3-Column Grid -->
+        <div class="fx-video-scroller">
           
           <!-- Video 1: Fenix Sistem Tanıtım Filmi -->
-          <div class="fx-video" data-fx-video data-fx-yt="JrgcGzyLbYM" data-fx-title="Fenix Sistem Yangın Söndürme ve Mühendislik" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+          <div class="fx-video" data-fx-video data-fx-yt="JrgcGzyLbYM" data-fx-title="Fenix Sistem Yangın Söndürme ve Mühendislik" style="border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
             <div class="fx-video__poster fx-media fx-media--16x9" style="background:#14181B;">
               <img src="assets/img/video-fenix-yangin-tanitim-filmi.webp" alt="Fenix Sistem Yangın Söndürme ve Mühendislik Tanıtım Filmi" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
             </div>
-            <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); pointer-events:none;"></div>
-            <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
+            <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); pointer-events:none;"></div>
+            <div style="position:absolute;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;z-index:2;">
               <span class="fx-badge fx-badge--red">Kurumsal Film</span>
             </div>
-            <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg viewBox="0 0 24 24" style="width:32px; fill:currentColor;"><path d="M8 5v14l11-7z"/></svg></button>
-            <div style="position:absolute;left:20px;bottom:20px;right:20px;">
-              <h3 class="fx-h3" style="color:#fff; margin:0; font-size:18px;">Fenix Sistem Yangın Mühendislik Tanıtım Filmi</h3>
+            <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:54px; height:54px; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2; box-shadow:0 4px 16px rgba(190,21,35,0.4);"><svg viewBox="0 0 24 24" style="width:26px; height:26px; fill:currentColor; margin-left:2px;"><path d="M8 5v14l11-7z"/></svg></button>
+            <div style="position:absolute;left:20px;bottom:18px;right:20px;z-index:2;">
+              <h3 class="fx-h3" style="color:#fff; margin:0; font-size:17px; line-height:1.35; text-shadow:0 2px 8px rgba(0,0,0,0.5);">Fenix Sistem Yangın Mühendislik Tanıtım Filmi</h3>
             </div>
           </div>
 
           <!-- Video 2: TRT Haber Özel -->
-          <div class="fx-video" data-fx-video data-fx-yt="BNlU6TrLYak" data-fx-title="TRT Haber Yangın Güvenliği ve Doğru Sistem Seçimi" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+          <div class="fx-video" data-fx-video data-fx-yt="BNlU6TrLYak" data-fx-title="TRT Haber Yangın Güvenliği ve Doğru Sistem Seçimi" style="border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1);">
             <div class="fx-video__poster fx-media fx-media--16x9" style="background:#14181B;">
               <img src="assets/img/video-trt-haber-sahte-yangin-sondurme.webp" alt="TRT Haber Yangın Güvenliği ve Doğru Sistem Seçimi" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
             </div>
-            <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); pointer-events:none;"></div>
-            <div style="position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between">
+            <div class="fx-video__scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); pointer-events:none;"></div>
+            <div style="position:absolute;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;z-index:2;">
               <span class="fx-badge fx-badge--dark">TRT Haber Özel</span>
             </div>
-            <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:64px; height:64px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><svg viewBox="0 0 24 24" style="width:32px; fill:currentColor;"><path d="M8 5v14l11-7z"/></svg></button>
-            <div style="position:absolute;left:20px;bottom:20px;right:20px;">
-              <h3 class="fx-h3" style="color:#fff; margin:0; font-size:18px;">TRT Haber: Yangın Güvenliği ve Standartlar</h3>
+            <button class="fx-video__play" type="button" aria-label="Videoyu oynat" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--fx-red); color:#fff; border:none; border-radius:50%; width:54px; height:54px; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2; box-shadow:0 4px 16px rgba(190,21,35,0.4);"><svg viewBox="0 0 24 24" style="width:26px; height:26px; fill:currentColor; margin-left:2px;"><path d="M8 5v14l11-7z"/></svg></button>
+            <div style="position:absolute;left:20px;bottom:18px;right:20px;z-index:2;">
+              <h3 class="fx-h3" style="color:#fff; margin:0; font-size:17px; line-height:1.35; text-shadow:0 2px 8px rgba(0,0,0,0.5);">TRT Haber: Yangın Güvenliği ve Standartlar</h3>
             </div>
           </div>
           
           <!-- Kart 3: YouTube Kanalı Takip CTA Kartı -->
-          <a class="fx-video" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" style="flex: 0 0 85%; scroll-snap-align: center; border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1); background:#0F172A; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between; padding:28px 24px;">
+          <a class="fx-video fx-video--yt-cta" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" style="border-radius:16px; overflow:hidden; position:relative; box-shadow:0 8px 30px rgba(0,0,0,0.1); background:#0F172A; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between; padding:20px 20px 18px; box-sizing:border-box;">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
                 <span class="fx-badge fx-badge--red">YouTube Kanalı</span>
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </div>
-              <h3 class="fx-h3" style="color:#fff; margin:0 0 10px; font-size:20px; line-height:1.3;">Tüm Saha Testlerini ve Videoları İzleyin</h3>
-              <p style="color:rgba(255,255,255,0.7); font-size:14px; line-height:1.5; margin:0;">Oda sızdırmazlık testi, gaz deşarjı ve devreye alma videolarını resmi kanalımızdan izleyin.</p>
+              <h3 class="fx-h3" style="color:#fff; margin:0 0 6px; font-size:17px; line-height:1.3;">Tüm Saha Testleri ve Videolar</h3>
+              <p style="color:rgba(255,255,255,0.72); font-size:12.5px; line-height:1.45; margin:0;">Oda sızdırmazlık testi, gaz deşarjı ve devreye alma videolarını resmi kanalımızdan inceleyin.</p>
             </div>
-            <div style="margin-top:20px;">
-              <span class="fx-btn fx-btn--primary" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; font-size:13px; font-weight:600;">Kanalı Ziyaret Edin &#8594;</span>
+            <div style="margin-top:14px;">
+              <span class="fx-btn fx-btn--primary" style="display:inline-flex; align-items:center; gap:6px; padding:8px 15px; font-size:12.5px; font-weight:600; border-radius:8px;">Kanalı Ziyaret Edin &#8594;</span>
             </div>
           </a>
         </div>
-        <style>
-        .fx-video-scroller::-webkit-scrollbar { display:none; }
-        @media(min-width:761px){
-          .fx-video-scroller { display:grid !important; grid-template-columns:1fr 1fr 1fr !important; overflow:visible !important; gap:20px !important; }
-          .fx-video-scroller .fx-video { flex:auto !important; }
-        }
-        </style>
-
-
       </div>
 
-      <!-- Teknik Bilgi Merkezi -->
-      <div>
-        <span class="fx-eyebrow" style="color:var(--fx-red); font-weight:600;">Teknik Bilgi Merkezi</span>
-        <h2 class="fx-h2 fx-h2--sm" style="margin:14px 0 20px; color:var(--fx-ink)">Karar öncesi okunacaklar</h2>
-        <div class="fx-rows fx-rows--on-paper">
-          <a class="fx-rows__item" href="pages/oda-sizdirmazlik-testi.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:6px">Door fan testi nedir, neden zorunlu?</h3>
-            <span class="fx-label">rehber · oda sızdırmazlık testi</span>
-          </a>
-          <a class="fx-rows__item" href="pages/fm200-gazli-yangin-sondurme-sistemleri.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:6px">FM200 ile Novec 1230 arasında nasıl seçim yapılır?</h3>
-            <span class="fx-label">karşılaştırma · FM200 · Novec 1230</span>
-          </a>
-          <a class="fx-rows__item" href="pages/yangin-algilama-ve-ihbar-sistemleri.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:6px">Sunucu odasında dedektör yerleşiminin dört yaygın hatası</h3>
-            <span class="fx-label">rehber · yangın algılama</span>
-          </a>
-          <a class="fx-rows__item" href="pages/fm200-gazli-yangin-sondurme-sistemleri-bakimi.html" style="display:block">
-            <h3 class="fx-h3 fx-h3--sm" style="margin-bottom:6px">Devralınan bir sistemin bakımı nasıl devreye alınır?</h3>
-            <span class="fx-label">rehber · periyodik bakım</span>
-          </a>
+      <!-- BANT 2: TEKNİK BİLGİ MERKEZİ -->
+      <div class="fx-sec9-block fx-sec9-block--tech" style="margin-top:48px; padding-top:40px; border-top:1px solid var(--fx-line);">
+        <div style="margin-bottom:20px;">
+          <span class="fx-eyebrow" style="color:var(--fx-red); font-weight:600;">Teknik Bilgi Merkezi</span>
+          <h2 class="fx-h2 fx-h2--sm" style="margin:8px 0 0; color:var(--fx-ink)">Karar öncesi okunacaklar</h2>
         </div>
-        <div style="display:flex;gap:20px;margin-top:22px">
-          <a class="fx-link-arrow" href="pages/blog.html" style="color:var(--fx-ink); font-weight:600;">Blog Arşivi &#8594;</a>
-          <a class="fx-link-arrow" href="pages/yangin-danismanligi.html" style="color:var(--fx-ink); font-weight:600;">Teknik Danışmanlık &#8594;</a>
+        
+        <!-- Blog Cards Scroller / Desktop 4-Column Grid -->
+        <div class="fx-tech-grid">
+          
+          <!-- Kart 1: Elektrikli Araç Şarj İstasyonları -->
+          <a class="fx-tech-card" href="pages/elektrikli-arac-sarj-istasyonlarinda-yangin-sondurme.html">
+            <div class="fx-tech-card__thumb">
+              <img src="assets/img/blog/elektrikli-arac-sarj-istasyonlari-yangin-sondurme.webp" alt="Elektrikli Araç Şarj İstasyonlarında Yangın Söndürme" loading="lazy">
+            </div>
+            <div class="fx-tech-card__body">
+              <span class="fx-badge fx-badge--red fx-tech-card__badge">Batarya Güvenliği</span>
+              <h3 class="fx-h3 fx-h3--sm fx-tech-card__title">Elektrikli Araç Şarj İstasyonlarında Yangın Söndürme</h3>
+              <span class="fx-label fx-tech-card__mobile-label">rehber · lityum-iyon batarya güvenliği</span>
+              <p class="fx-tech-card__desc">Kapalı otopark ve açık şarj istasyonlarında lityum-iyon batarya yangın riskleri, termal kaçak yönetimi ve NFPA 855 odaklı koruma çözümleri.</p>
+              <span class="fx-tech-card__cta">İncele &#8594;</span>
+            </div>
+          </a>
+
+          <!-- Kart 2: Rotarex Vana -->
+          <a class="fx-tech-card" href="pages/rotarex-vana.html">
+            <div class="fx-tech-card__thumb">
+              <img src="assets/img/blog/rotarex-vana-yangin-sondurme-sistemi.webp" alt="Rotarex Vana ve Mikro Yangın Söndürme Sistemleri" loading="lazy">
+            </div>
+            <div class="fx-tech-card__body">
+              <span class="fx-badge fx-badge--dark fx-tech-card__badge">Vana Teknolojileri</span>
+              <h3 class="fx-h3 fx-h3--sm fx-tech-card__title">Rotarex Vana ve Doğrudan Algılamalı Sistemler</h3>
+              <span class="fx-label fx-tech-card__mobile-label">teknoloji · mikro söndürme vanaları</span>
+              <p class="fx-tech-card__desc">Doğrudan algılama borusuyla çalışan Rotarex FireDETEC vana teknolojisi, elektrik panoları ve kritik kapalı hacimlerde hızlı müdahale sağlar.</p>
+              <span class="fx-tech-card__cta">İncele &#8594;</span>
+            </div>
+          </a>
+
+          <!-- Kart 3: CNC Yangın Söndürme -->
+          <a class="fx-tech-card" href="pages/cnc-yangin-sondurme-sistemleri.html">
+            <div class="fx-tech-card__thumb">
+              <img src="assets/img/blog/cnc-yangin-sondurme-sistemleri.webp" alt="CNC Yangın Söndürme Sistemleri" loading="lazy">
+            </div>
+            <div class="fx-tech-card__body">
+              <span class="fx-badge fx-badge--red fx-tech-card__badge">Endüstriyel Güvenlik</span>
+              <h3 class="fx-h3 fx-h3--sm fx-tech-card__title">CNC Tezgahlarında Doğru Yangın Söndürme Sistemleri</h3>
+              <span class="fx-label fx-tech-card__mobile-label">rehber · endüstriyel talaşlı imalat</span>
+              <p class="fx-tech-card__desc">Yüksek hızlı talaşlı imalat ve yağ bazlı soğutma sıvılarında saniyeler içinde alev baskılama, CO2 ve temiz gazlı koruma mimarisi.</p>
+              <span class="fx-tech-card__cta">İncele &#8594;</span>
+            </div>
+          </a>
+
+          <!-- Kart 4: Otomatik Davlumbaz İçi Yangın Söndürme -->
+          <a class="fx-tech-card" href="pages/otomatik-davlumbaz-ici-yangin-sondurme-sistemleri.html">
+            <div class="fx-tech-card__thumb">
+              <img src="assets/img/blog/davlumbaz-yangin-sondurme-sistemi-endustriyel-mutfak.webp" alt="Otomatik Davlumbaz İçi Yangın Söndürme Sistemleri" loading="lazy">
+            </div>
+            <div class="fx-tech-card__body">
+              <span class="fx-badge fx-badge--dark fx-tech-card__badge">Mutfak Güvenliği</span>
+              <h3 class="fx-h3 fx-h3--sm fx-tech-card__title">Otomatik Davlumbaz İçi Yangın Söndürme Sistemleri</h3>
+              <span class="fx-label fx-tech-card__mobile-label">rehber · endüstriyel mutfak güvenliği</span>
+              <p class="fx-tech-card__desc">Endüstriyel mutfaklarda kızgın yağ yangınlarına karşı mekanik/eriyen telli algılama ve potasyum karbonat bazlı ıslak kimyasal söndürme.</p>
+              <span class="fx-tech-card__cta">İncele &#8594;</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Alt CTA Linkleri -->
+        <div style="display:flex; gap:24px; margin-top:28px; align-items:center;">
+          <a class="fx-link-arrow" href="pages/blog.html" style="color:var(--fx-ink); font-weight:600; font-size:15px;">Blog Arşivi &#8594;</a>
+          <a class="fx-link-arrow" href="pages/yangin-danismanligi.html" style="color:var(--fx-ink); font-weight:600; font-size:15px;">Teknik Danışmanlık &#8594;</a>
         </div>
       </div>
+
     </div>
+
+    <!-- Scoped CSS for Section 9 Desktop Redesign & Mobile Lock -->
+    <style>
+    /* 1. Mobile Lock (<= 760px) - STRICT 0 REGRESSION */
+    @media (max-width: 760px) {
+      .fx-video-scroller {
+        display: flex !important;
+        gap: 16px !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        padding-bottom: 16px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .fx-video-scroller::-webkit-scrollbar { display: none !important; }
+      .fx-video-scroller .fx-video {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+      }
+      
+      .fx-tech-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 16px !important;
+        padding-bottom: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        background: transparent !important;
+        border: none !important;
+      }
+      .fx-tech-grid::-webkit-scrollbar { display: none !important; }
+      
+      .fx-tech-card {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        background: #fff !important;
+        border: 1px solid var(--fx-line) !important;
+        border-radius: 16px !important;
+        padding: 24px !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.06) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+        color: var(--fx-ink) !important;
+      }
+      .fx-tech-card__thumb { display: none !important; }
+      .fx-tech-card__badge { display: none !important; }
+      .fx-tech-card__desc { display: none !important; }
+      .fx-tech-card__cta { display: none !important; }
+      .fx-tech-card__mobile-label { display: block !important; margin-top: 6px !important; }
+      .fx-tech-card__title { margin: 0 !important; }
+      .fx-tech-card__body { padding: 0 !important; }
+    }
+
+    /* 2. Desktop & Tablet Redesign (min-width: 761px) */
+    @media (min-width: 761px) {
+      .fx-video-scroller {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        overflow: visible !important;
+        gap: 20px !important;
+        padding-bottom: 0 !important;
+        align-items: stretch !important;
+      }
+      .fx-video-scroller .fx-video {
+        flex: auto !important;
+        min-height: 220px !important;
+        height: 100% !important;
+      }
+      
+      .fx-tech-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+        overflow: visible !important;
+        background: transparent !important;
+        border: none !important;
+        padding-bottom: 0 !important;
+      }
+      .fx-tech-card {
+        background: #fff !important;
+        border: 1px solid var(--fx-line) !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        text-decoration: none !important;
+        color: var(--fx-ink) !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+      }
+      .fx-tech-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08) !important;
+        border-color: rgba(190,21,35,0.3) !important;
+      }
+      .fx-tech-card__thumb {
+        display: block !important;
+        width: 100% !important;
+        height: 175px !important;
+        overflow: hidden !important;
+        background: #F1F5F9 !important;
+        position: relative !important;
+      }
+      .fx-tech-card__thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        transition: transform 0.35s ease !important;
+      }
+      .fx-tech-card:hover .fx-tech-card__thumb img {
+        transform: scale(1.04) !important;
+      }
+      .fx-tech-card__body {
+        padding: 20px 20px 22px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
+      }
+      .fx-tech-card__badge {
+        display: inline-block !important;
+        align-self: flex-start !important;
+        margin-bottom: 12px !important;
+      }
+      .fx-tech-card__title {
+        font-size: 15.5px !important;
+        line-height: 1.35 !important;
+        font-weight: 700 !important;
+        color: var(--fx-ink) !important;
+        margin: 0 0 10px 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        min-height: 62px !important;
+      }
+      .fx-tech-card__desc {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+        color: var(--fx-body) !important;
+        margin: 0 0 16px 0 !important;
+        flex: 1 1 auto !important;
+      }
+      .fx-tech-card__cta {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: var(--fx-red) !important;
+        margin-top: auto !important;
+        transition: gap 0.2s ease !important;
+      }
+      .fx-tech-card:hover .fx-tech-card__cta {
+        gap: 10px !important;
+      }
+      .fx-tech-card__mobile-label { display: none !important; }
+    }
+
+    /* 3. Large Desktop Breakpoint (>= 1024px) */
+    @media (min-width: 1024px) {
+      .fx-tech-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+      }
+    }
+    </style>
   </section>
 
   <!-- ==================================================
