@@ -6,6 +6,23 @@
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
+  /* ---------- WHATSAPP ACTION CONFIGURATION (SINGLE SOURCE OF TRUTH) ---------- */
+  window.FENIX_CONFIG = window.FENIX_CONFIG || {};
+  window.FENIX_CONFIG.WHATSAPP_TARGET = "905327409097";
+  window.FENIX_CONFIG.WHATSAPP_URL = "https://wa.me/" + window.FENIX_CONFIG.WHATSAPP_TARGET;
+
+  function fxInitWhatsApp() {
+    var waUrl = (window.FENIX_CONFIG && window.FENIX_CONFIG.WHATSAPP_URL) || "https://wa.me/905327409097";
+    $$('a.fx-wa, a.fx-footer-mobile__contact-pill--wa, a.fx-support-btn--wa, a[href*="wa.me"]').forEach(function (el) {
+      el.setAttribute('href', waUrl);
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fxInitWhatsApp);
+  } else {
+    fxInitWhatsApp();
+  }
+
   /* ---------- 0 · CENTRAL REFERENCE REGISTRY (SINGLE SOURCE OF TRUTH) ---------- */
   window.FENIX_VERIFIED_REFS = [
     { id: "baykar", name: "Baykar", cat: "havacilik-savunma", logo: "ref-01-baykar.webp" },
