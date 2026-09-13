@@ -3733,3 +3733,100 @@ body.fx-nav-open {
     display: none !important;
   }
 }
+
+/* --- 10. Desktop Footer High Contrast & Readability (>= 761px) --- */
+@media (min-width: 761px) {
+  .fx-footer {
+    background: var(--fx-paper, #F5F6F6) !important;
+    color: var(--fx-ink, #0E1214) !important;
+    border-top: 1px solid var(--fx-line, #E2E8F0) !important;
+    padding: 64px 0 32px !important;
+  }
+
+  .fx-footer .fx-footer__title {
+    color: #0E1214 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 18px !important;
+    line-height: 1.2 !important;
+  }
+
+  .fx-footer p,
+  .fx-footer .fx-text--sm,
+  .fx-footer__brand p {
+    color: #334155 !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+    opacity: 1 !important;
+  }
+
+  .fx-footer .fx-footer__certs .fx-footer__cert {
+    border: 1px solid rgba(0, 0, 0, 0.14) !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+    color: #334155 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .fx-footer .fx-footer__list a,
+  .fx-footer .fx-footer__list span,
+  .fx-footer address span,
+  .fx-footer address a {
+    color: #334155 !important;
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease, transform 0.15s ease !important;
+  }
+
+  .fx-footer .fx-footer__list a:hover,
+  .fx-footer address a:hover {
+    color: var(--fx-red, #BE1523) !important;
+    transform: translateX(2px) !important;
+  }
+
+  .fx-footer .fx-logo:hover {
+    transform: none !important;
+  }
+
+  .fx-footer address a.fx-num,
+  .fx-footer a[href^="tel:"] {
+    color: #0E1214 !important;
+    font-weight: 600 !important;
+  }
+
+  .fx-footer address a.fx-num:hover,
+  .fx-footer a[href^="tel:"]:hover {
+    color: var(--fx-red, #BE1523) !important;
+  }
+
+  .fx-footer address a[href^="mailto:"] {
+    color: #334155 !important;
+  }
+
+  .fx-footer address a[href^="mailto:"]:hover {
+    color: var(--fx-red, #BE1523) !important;
+  }
+
+  .fx-footer .fx-footer__bottom {
+    border-top: 1px solid var(--fx-line, #E2E8F0) !important;
+    padding-top: 24px !important;
+    margin-top: 48px !important;
+    color: #64748b !important;
+    font-size: 12.5px !important;
+  }
+
+  .fx-footer .fx-footer__legal a {
+    color: #64748b !important;
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    transition: color 0.15s ease !important;
+  }
+
+  .fx-footer .fx-footer__legal a:hover {
+    color: var(--fx-red, #BE1523) !important;
+  }
+}
+
