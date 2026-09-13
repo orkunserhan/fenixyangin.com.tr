@@ -95,7 +95,8 @@
     { id: "yilmaz-reduktor", name: "Yılmaz Redüktör", cat: "enerji-sanayi", logo: "ref-83-yilmaz-reduktor.webp" },
     { id: "cengiz-makina", name: "Cengiz Makina", cat: "enerji-sanayi", logo: "ref-84-cengiz-makina.webp" },
     { id: "park-inn-by-radisson", name: "Park Inn by Radisson", cat: "turizm-perakende", logo: "ref-85-park-inn-by-radisson.webp" },
-    { id: "hyundai", name: "Hyundai", cat: "enerji-sanayi", logo: "ref-86-hyundai.webp" }
+    { id: "hyundai", name: "Hyundai", cat: "enerji-sanayi", logo: "ref-86-hyundai.webp" },
+    { id: "87-mes", name: "87 MES", cat: "enerji-sanayi", logo: "ref-87-mes.webp" }
   ];
 
   window.fxInitReferenceCounts = function () {
@@ -395,9 +396,26 @@
   }
 
   $$('[data-fx-video]').forEach(function (box) {
-    var btn = $('.fx-video__play', box);
-    if (!btn) return;
-    btn.addEventListener('click', function () {
+    function startVideo(e) {
+      if (box.classList.contains('is-playing')) return;
+      if (e && e.stopPropagation) e.stopPropagation();
+      var mp4 = box.getAttribute('data-fx-mp4');
+      if (mp4) {
+        var v = document.createElement('video');
+        v.className = 'fx-video__frame';
+        v.src = mp4;
+        v.controls = true;
+        v.autoplay = true;
+        v.playsInline = true;
+        v.style.width = '100%';
+        v.style.height = '100%';
+        v.style.objectFit = 'contain';
+        v.style.background = '#000';
+        box.appendChild(v);
+        box.classList.add('is-playing');
+        try { v.play(); } catch(err) {}
+        return;
+      }
       var id = fxYtId(box.getAttribute('data-fx-yt'));
       if (!id) return;
       var f = document.createElement('iframe');
@@ -407,9 +425,19 @@
       f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
       f.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; picture-in-picture');
       f.setAttribute('allowfullscreen', '');
-      f.setAttribute('title', 'Video');
+      f.setAttribute('title', box.getAttribute('data-fx-title') || 'Video');
       box.appendChild(f);
       box.classList.add('is-playing');
+    }
+
+    var btn = $('.fx-video__play', box);
+    if (btn) {
+      btn.addEventListener('click', startVideo);
+    }
+    box.addEventListener('click', function (e) {
+      if (!box.classList.contains('is-playing')) {
+        startVideo(e);
+      }
     });
   });
 
