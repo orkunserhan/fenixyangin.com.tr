@@ -448,10 +448,240 @@
     } catch (err) {}
   })();
 
-  /* Auto-initialize dynamic reference counts */
+  /* ---------- SİSTEMLER NAVİGASYONU (HIZLI SEÇİM SİSTEMİ) ---------- */
+  window.FENIX_SYSTEMS = [
+    { name: 'FM200 Yangın Söndürme Sistemleri', short: 'FM200 Yangın Söndürme', sub: 'HFC-227ea temiz gazlı söndürme', slug: 'fm200-gazli-yangin-sondurme-sistemleri.html' },
+    { name: 'Novec 1230 Gazlı Yangın Söndürme', short: 'Novec 1230 Gazlı Yangın Söndürme', sub: 'FK-5-1-12 çevre dostu koruma', slug: 'novec-1230-gazli-yangin-sondurme-sistemleri.html' },
+    { name: 'CO₂ Gazlı Yangın Söndürme', short: 'CO₂ Gazlı Yangın Söndürme', sub: 'Karbondioksit yüksek güç koruma', slug: 'co2-gazli-yangin-sondurme-sistemleri.html' },
+    { name: 'Pano İçi Yangın Söndürme', short: 'Pano İçi Yangın Söndürme', sub: 'Mikro hacim otomatik söndürme', slug: 'pano-ici-yangin-sondurme-sistemleri.html' },
+    { name: 'Aerosol Yangın Söndürme', short: 'Aerosol Yangın Söndürme', sub: 'Kondanse aerosol jeneratörleri', slug: 'aerosol-gazli-yangin-sondurme-sistemleri.html' },
+    { name: 'Davlumbaz Yangın Söndürme', short: 'Davlumbaz Yangın Söndürme', sub: 'Endüstriyel mutfak yangın koruma', slug: 'davlumbaz-yangin-sondurme-sistemleri.html' },
+    { name: 'Lityum / Batarya Yangın Söndürme', short: 'Lityum / Batarya Yangın Söndürme', sub: 'ESS ve batarya odası koruma', slug: 'lityum-batarya-yangin-sondurme-sistemleri.html' }
+  ];
+
+  window.fxInitSystemsNav = function () {
+    var systems = window.FENIX_SYSTEMS || [];
+    var p = window.location.pathname || '';
+    var isSubPage = p.indexOf('/pages/') !== -1 || p.indexOf('\\pages\\') !== -1;
+    if (!isSubPage) {
+      var scr = document.querySelector('script[src*="js/fenix.js"]');
+      if (scr && (scr.getAttribute('src') || '').indexOf('../') === 0) isSubPage = true;
+    }
+    if (!isSubPage) {
+      var lnk = document.querySelector('link[href*="css/fenix-design.css"]');
+      if (lnk && (lnk.getAttribute('href') || '').indexOf('../') === 0) isSubPage = true;
+    }
+    var prefix = isSubPage ? '' : 'pages/';
+
+    /* --- 1. DESKTOP DROPDOWN --- */
+    var desktopNav = document.querySelector('.fx-nav');
+    if (desktopNav) {
+      var sistemLink = desktopNav.querySelector('a[href*="sistemler.html"]');
+      if (sistemLink && !sistemLink.closest('.fx-nav__item--dropdown')) {
+        var wrap = document.createElement('div');
+        wrap.className = 'fx-nav__item fx-nav__item--dropdown';
+
+        sistemLink.classList.add('fx-nav__link--has-dropdown');
+        sistemLink.setAttribute('aria-haspopup', 'true');
+        sistemLink.setAttribute('aria-expanded', 'false');
+
+        // Add caret icon
+        var caret = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        caret.setAttribute('class', 'fx-nav__caret');
+        caret.setAttribute('viewBox', '0 0 12 12');
+        caret.setAttribute('width', '10');
+        caret.setAttribute('height', '10');
+        caret.setAttribute('fill', 'none');
+        caret.setAttribute('stroke', 'currentColor');
+        caret.setAttribute('stroke-width', '1.8');
+        caret.setAttribute('stroke-linecap', 'round');
+        caret.setAttribute('stroke-linejoin', 'round');
+        caret.setAttribute('aria-hidden', 'true');
+        var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        poly.setAttribute('points', '3 4.5 6 7.5 9 4.5');
+        caret.appendChild(poly);
+        sistemLink.appendChild(caret);
+
+        // Build dropdown menu
+        var dropdown = document.createElement('div');
+        dropdown.className = 'fx-dropdown';
+        dropdown.setAttribute('role', 'menu');
+        dropdown.setAttribute('aria-label', 'Sistemler alt menüsü');
+
+        var inner = document.createElement('div');
+        inner.className = 'fx-dropdown__inner';
+
+        var head = document.createElement('div');
+        head.className = 'fx-dropdown__head';
+        var eyebrow = document.createElement('span');
+        eyebrow.className = 'fx-dropdown__eyebrow';
+        eyebrow.textContent = 'Gazlı Yangın Söndürme Sistemleri';
+        head.appendChild(eyebrow);
+        inner.appendChild(head);
+
+        var menu = document.createElement('div');
+        menu.className = 'fx-dropdown__menu';
+
+        systems.forEach(function (sys) {
+          var item = document.createElement('a');
+          var isCurrent = p.indexOf(sys.slug) !== -1;
+          item.className = 'fx-dropdown__item' + (isCurrent ? ' is-active' : '');
+          if (isCurrent) item.setAttribute('aria-current', 'page');
+          item.href = prefix + sys.slug;
+          item.setAttribute('role', 'menuitem');
+
+          var main = document.createElement('div');
+          main.className = 'fx-dropdown__item-main';
+
+          var title = document.createElement('span');
+          title.className = 'fx-dropdown__item-title';
+          title.textContent = sys.name;
+
+          var sub = document.createElement('span');
+          sub.className = 'fx-dropdown__item-sub';
+          sub.textContent = sys.sub;
+
+          main.appendChild(title);
+          main.appendChild(sub);
+
+          var arr = document.createElement('span');
+          arr.className = 'fx-dropdown__item-arrow';
+          arr.setAttribute('aria-hidden', 'true');
+          arr.textContent = '→';
+
+          item.appendChild(main);
+          item.appendChild(arr);
+          menu.appendChild(item);
+        });
+        inner.appendChild(menu);
+
+        var foot = document.createElement('div');
+        foot.className = 'fx-dropdown__foot';
+        var allLink = document.createElement('a');
+        var isAllCurrent = p.indexOf('sistemler.html') !== -1;
+        allLink.className = 'fx-dropdown__all' + (isAllCurrent ? ' is-active' : '');
+        allLink.href = prefix + 'sistemler.html';
+        allLink.setAttribute('role', 'menuitem');
+        allLink.innerHTML = '<span>Tüm Sistemleri İnceleyin</span>' +
+          '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+        foot.appendChild(allLink);
+        inner.appendChild(foot);
+
+        dropdown.appendChild(inner);
+
+        // Replace sistemLink with wrap containing sistemLink and dropdown
+        sistemLink.parentNode.insertBefore(wrap, sistemLink);
+        wrap.appendChild(sistemLink);
+        wrap.appendChild(dropdown);
+
+        // Desktop interaction handlers
+        wrap.addEventListener('mouseenter', function () {
+          sistemLink.setAttribute('aria-expanded', 'true');
+        });
+        wrap.addEventListener('mouseleave', function () {
+          sistemLink.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('is-open');
+        });
+
+        sistemLink.addEventListener('click', function (e) {
+          if (window.innerWidth >= 761 && !dropdown.classList.contains('is-open')) {
+            e.preventDefault();
+            dropdown.classList.add('is-open');
+            sistemLink.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!wrap.contains(e.target)) {
+            dropdown.classList.remove('is-open');
+            sistemLink.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            dropdown.classList.remove('is-open');
+            sistemLink.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    }
+
+    /* --- 2. MOBILE DRAWER ACCORDION --- */
+    var mobDrawer = document.getElementById('fx-mobilenav');
+    if (mobDrawer) {
+      var mobList = mobDrawer.querySelector('.fx-mobilenav__list');
+      if (mobList) {
+        var mobLink = mobList.querySelector('a[href*="sistemler.html"]');
+        if (mobLink && !mobLink.classList.contains('fx-mobilenav__link--accordion')) {
+          mobLink.classList.add('fx-mobilenav__link--accordion');
+          mobLink.setAttribute('role', 'button');
+          mobLink.setAttribute('aria-expanded', 'false');
+          mobLink.setAttribute('aria-controls', 'fx-mobilenav-systems-sub');
+
+          var subBox = document.createElement('div');
+          subBox.className = 'fx-mobilenav__sub';
+          subBox.id = 'fx-mobilenav-systems-sub';
+          subBox.setAttribute('role', 'region');
+          subBox.setAttribute('aria-label', 'Sistemler alt menüsü');
+
+          systems.forEach(function (sys) {
+            var subLink = document.createElement('a');
+            var isCurrent = p.indexOf(sys.slug) !== -1;
+            subLink.className = 'fx-mobilenav__sublink' + (isCurrent ? ' is-active' : '');
+            if (isCurrent) subLink.setAttribute('aria-current', 'page');
+            subLink.href = prefix + sys.slug;
+            subLink.innerHTML = '<span>' + (sys.short || sys.name) + '</span>' +
+              '<span class="fx-mobilenav__sublink-bullet" aria-hidden="true">&#8250;</span>';
+            subLink.addEventListener('click', function () {
+              window.fxCloseNav();
+            });
+            subBox.appendChild(subLink);
+          });
+
+          // "Tüm Sistemler →" option
+          var allMobLink = document.createElement('a');
+          var isAllCurrentMob = p.indexOf('sistemler.html') !== -1;
+          allMobLink.className = 'fx-mobilenav__sublink fx-mobilenav__sublink--all' + (isAllCurrentMob ? ' is-active' : '');
+          allMobLink.href = prefix + 'sistemler.html';
+          allMobLink.innerHTML = '<span>Tüm Sistemler →</span>';
+          allMobLink.addEventListener('click', function () {
+            window.fxCloseNav();
+          });
+          subBox.appendChild(allMobLink);
+
+          mobLink.parentNode.insertBefore(subBox, mobLink.nextSibling);
+
+          // Click / Tap toggle handler
+          mobLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var isOpen = subBox.classList.contains('is-open');
+            if (isOpen) {
+              subBox.classList.remove('is-open');
+              mobLink.setAttribute('aria-expanded', 'false');
+            } else {
+              subBox.classList.add('is-open');
+              mobLink.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      }
+    }
+  };
+
+  window.addEventListener('pageshow', function () {
+    if (window.fxCloseNav) window.fxCloseNav();
+  });
+
+  /* Auto-initialize dynamic systems nav and reference counts */
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', window.fxInitReferenceCounts);
+    document.addEventListener('DOMContentLoaded', function () {
+      window.fxInitSystemsNav();
+      window.fxInitReferenceCounts();
+    });
   } else {
+    window.fxInitSystemsNav();
     window.fxInitReferenceCounts();
   }
 })();
