@@ -664,6 +664,233 @@
               subBox.classList.remove('is-open');
               mobLink.setAttribute('aria-expanded', 'false');
             } else {
+              var otherSubs = mobDrawer.querySelectorAll('.fx-mobilenav__sub.is-open');
+              otherSubs.forEach(function (s) { s.classList.remove('is-open'); });
+              var otherAccs = mobDrawer.querySelectorAll('.fx-mobilenav__link--accordion[aria-expanded="true"]');
+              otherAccs.forEach(function (a) { a.setAttribute('aria-expanded', 'false'); });
+
+              subBox.classList.add('is-open');
+              mobLink.setAttribute('aria-expanded', 'true');
+            }
+          });
+        }
+      }
+    }
+  };
+
+  /* ---------- HİZMETLER NAVİGASYONU (6 TEMEL HİZMET HİYERARŞİSİ) ---------- */
+  window.FENIX_SERVICES = [
+    { name: 'Mühendislik', short: 'Mühendislik', sub: 'Yangın danışmanlığı, hidrolik hesap ve projelendirme', slug: 'iletisim.html' },
+    { name: 'Kurulum', short: 'Kurulum', sub: 'Anahtar teslim sistem kurulumu ve entegrasyon', slug: 'iletisim.html' },
+    { name: 'Montaj', short: 'Montaj', sub: 'Standartlara uygun mekanik ve elektriksel montaj', slug: 'iletisim.html' },
+    { name: 'Tedarik', short: 'Tedarik', sub: 'Onaylı silindir, vana, nozul ve ekipman temini', slug: 'iletisim.html' },
+    { name: 'Dolum', short: 'Dolum', sub: 'FM200 ve Novec 1230 sertifikalı gaz dolumu', slug: 'iletisim.html' },
+    { name: 'Bakım', short: 'Bakım', sub: 'TSE-HYB onaylı periyodik bakım ve kontrol', slug: 'iletisim.html' }
+  ];
+
+  window.fxInitServicesNav = function () {
+    var services = window.FENIX_SERVICES || [];
+    var p = window.location.pathname || '';
+    var isSubPage = p.indexOf('/pages/') !== -1 || p.indexOf('\\pages\\') !== -1;
+    if (!isSubPage) {
+      var scr = document.querySelector('script[src*="js/fenix.js"]');
+      if (scr && (scr.getAttribute('src') || '').indexOf('../') === 0) isSubPage = true;
+    }
+    if (!isSubPage) {
+      var lnk = document.querySelector('link[href*="css/fenix-design.css"]');
+      if (lnk && (lnk.getAttribute('href') || '').indexOf('../') === 0) isSubPage = true;
+    }
+    var prefix = isSubPage ? '' : 'pages/';
+
+    /* --- 1. DESKTOP DROPDOWN --- */
+    var desktopNav = document.querySelector('.fx-nav');
+    if (desktopNav) {
+      var hizmetLink = desktopNav.querySelector('a[href*="hizmetler.html"]');
+      if (hizmetLink && !hizmetLink.closest('.fx-nav__item--dropdown')) {
+        var wrap = document.createElement('div');
+        wrap.className = 'fx-nav__item fx-nav__item--dropdown';
+
+        hizmetLink.classList.add('fx-nav__link--has-dropdown');
+        hizmetLink.setAttribute('aria-haspopup', 'true');
+        hizmetLink.setAttribute('aria-expanded', 'false');
+
+        // Add caret icon
+        var caret = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        caret.setAttribute('class', 'fx-nav__caret');
+        caret.setAttribute('viewBox', '0 0 12 12');
+        caret.setAttribute('width', '10');
+        caret.setAttribute('height', '10');
+        caret.setAttribute('fill', 'none');
+        caret.setAttribute('stroke', 'currentColor');
+        caret.setAttribute('stroke-width', '1.8');
+        caret.setAttribute('stroke-linecap', 'round');
+        caret.setAttribute('stroke-linejoin', 'round');
+        caret.setAttribute('aria-hidden', 'true');
+        var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        poly.setAttribute('points', '3 4.5 6 7.5 9 4.5');
+        caret.appendChild(poly);
+        hizmetLink.appendChild(caret);
+
+        // Build dropdown menu
+        var dropdown = document.createElement('div');
+        dropdown.className = 'fx-dropdown';
+        dropdown.setAttribute('role', 'menu');
+        dropdown.setAttribute('aria-label', 'Hizmetler alt menüsü');
+
+        var inner = document.createElement('div');
+        inner.className = 'fx-dropdown__inner';
+
+        var head = document.createElement('div');
+        head.className = 'fx-dropdown__head';
+        var eyebrow = document.createElement('span');
+        eyebrow.className = 'fx-dropdown__eyebrow';
+        eyebrow.textContent = 'Yangın Söndürme Hizmetleri';
+        head.appendChild(eyebrow);
+        inner.appendChild(head);
+
+        var menu = document.createElement('div');
+        menu.className = 'fx-dropdown__menu';
+
+        services.forEach(function (svc) {
+          var item = document.createElement('a');
+          item.className = 'fx-dropdown__item';
+          item.href = prefix + svc.slug;
+          item.setAttribute('role', 'menuitem');
+
+          var main = document.createElement('div');
+          main.className = 'fx-dropdown__item-main';
+
+          var title = document.createElement('span');
+          title.className = 'fx-dropdown__item-title';
+          title.textContent = svc.name;
+
+          var sub = document.createElement('span');
+          sub.className = 'fx-dropdown__item-sub';
+          sub.textContent = svc.sub;
+
+          main.appendChild(title);
+          main.appendChild(sub);
+
+          var arr = document.createElement('span');
+          arr.className = 'fx-dropdown__item-arrow';
+          arr.setAttribute('aria-hidden', 'true');
+          arr.textContent = '→';
+
+          item.appendChild(main);
+          item.appendChild(arr);
+          menu.appendChild(item);
+        });
+        inner.appendChild(menu);
+
+        var foot = document.createElement('div');
+        foot.className = 'fx-dropdown__foot';
+        var allLink = document.createElement('a');
+        var isAllCurrent = p.indexOf('hizmetler.html') !== -1;
+        allLink.className = 'fx-dropdown__all' + (isAllCurrent ? ' is-active' : '');
+        allLink.href = prefix + 'hizmetler.html';
+        allLink.setAttribute('role', 'menuitem');
+        allLink.innerHTML = '<span>Tüm Hizmetleri İnceleyin</span>' +
+          '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+        foot.appendChild(allLink);
+        inner.appendChild(foot);
+
+        dropdown.appendChild(inner);
+
+        // Replace hizmetLink with wrap containing hizmetLink and dropdown
+        hizmetLink.parentNode.insertBefore(wrap, hizmetLink);
+        wrap.appendChild(hizmetLink);
+        wrap.appendChild(dropdown);
+
+        // Desktop interaction handlers
+        wrap.addEventListener('mouseenter', function () {
+          hizmetLink.setAttribute('aria-expanded', 'true');
+        });
+        wrap.addEventListener('mouseleave', function () {
+          hizmetLink.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('is-open');
+        });
+
+        hizmetLink.addEventListener('click', function (e) {
+          if (window.innerWidth >= 761 && !dropdown.classList.contains('is-open')) {
+            e.preventDefault();
+            dropdown.classList.add('is-open');
+            hizmetLink.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!wrap.contains(e.target)) {
+            dropdown.classList.remove('is-open');
+            hizmetLink.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') {
+            dropdown.classList.remove('is-open');
+            hizmetLink.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    }
+
+    /* --- 2. MOBILE DRAWER ACCORDION --- */
+    var mobDrawer = document.getElementById('fx-mobilenav');
+    if (mobDrawer) {
+      var mobList = mobDrawer.querySelector('.fx-mobilenav__list');
+      if (mobList) {
+        var mobLink = mobList.querySelector('a[href*="hizmetler.html"]');
+        if (mobLink && !mobLink.classList.contains('fx-mobilenav__link--accordion')) {
+          mobLink.classList.add('fx-mobilenav__link--accordion');
+          mobLink.setAttribute('role', 'button');
+          mobLink.setAttribute('aria-expanded', 'false');
+          mobLink.setAttribute('aria-controls', 'fx-mobilenav-services-sub');
+
+          var subBox = document.createElement('div');
+          subBox.className = 'fx-mobilenav__sub';
+          subBox.id = 'fx-mobilenav-services-sub';
+          subBox.setAttribute('role', 'region');
+          subBox.setAttribute('aria-label', 'Hizmetler alt menüsü');
+
+          services.forEach(function (svc) {
+            var subLink = document.createElement('a');
+            subLink.className = 'fx-mobilenav__sublink';
+            subLink.href = prefix + svc.slug;
+            subLink.innerHTML = '<span>' + (svc.short || svc.name) + '</span>' +
+              '<span class="fx-mobilenav__sublink-bullet" aria-hidden="true">&#8250;</span>';
+            subLink.addEventListener('click', function () {
+              window.fxCloseNav();
+            });
+            subBox.appendChild(subLink);
+          });
+
+          // "Tüm Hizmetler →" option
+          var allMobLink = document.createElement('a');
+          var isAllCurrentMob = p.indexOf('hizmetler.html') !== -1;
+          allMobLink.className = 'fx-mobilenav__sublink fx-mobilenav__sublink--all' + (isAllCurrentMob ? ' is-active' : '');
+          allMobLink.href = prefix + 'hizmetler.html';
+          allMobLink.innerHTML = '<span>Tüm Hizmetler →</span>';
+          allMobLink.addEventListener('click', function () {
+            window.fxCloseNav();
+          });
+          subBox.appendChild(allMobLink);
+
+          mobLink.parentNode.insertBefore(subBox, mobLink.nextSibling);
+
+          // Click / Tap toggle handler
+          mobLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var isOpen = subBox.classList.contains('is-open');
+            if (isOpen) {
+              subBox.classList.remove('is-open');
+              mobLink.setAttribute('aria-expanded', 'false');
+            } else {
+              var otherSubs = mobDrawer.querySelectorAll('.fx-mobilenav__sub.is-open');
+              otherSubs.forEach(function (s) { s.classList.remove('is-open'); });
+              var otherAccs = mobDrawer.querySelectorAll('.fx-mobilenav__link--accordion[aria-expanded="true"]');
+              otherAccs.forEach(function (a) { a.setAttribute('aria-expanded', 'false'); });
+
               subBox.classList.add('is-open');
               mobLink.setAttribute('aria-expanded', 'true');
             }
@@ -677,17 +904,19 @@
     if (window.fxCloseNav) window.fxCloseNav();
   });
 
-  /* Auto-initialize dynamic systems nav, calculator and reference counts */
+  /* Auto-initialize dynamic services/systems nav, calculator and reference counts */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       window.fxInitCalculator && window.fxInitCalculator();
-      window.fxInitSystemsNav();
-      window.fxInitReferenceCounts();
+      window.fxInitServicesNav && window.fxInitServicesNav();
+      window.fxInitSystemsNav && window.fxInitSystemsNav();
+      window.fxInitReferenceCounts && window.fxInitReferenceCounts();
     });
   } else {
     window.fxInitCalculator && window.fxInitCalculator();
-    window.fxInitSystemsNav();
-    window.fxInitReferenceCounts();
+    window.fxInitServicesNav && window.fxInitServicesNav();
+    window.fxInitSystemsNav && window.fxInitSystemsNav();
+    window.fxInitReferenceCounts && window.fxInitReferenceCounts();
   }
 })();
 
