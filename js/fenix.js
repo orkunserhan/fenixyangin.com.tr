@@ -8,11 +8,11 @@
 
   /* ---------- WHATSAPP ACTION CONFIGURATION (SINGLE SOURCE OF TRUTH) ---------- */
   window.FENIX_CONFIG = window.FENIX_CONFIG || {};
-  window.FENIX_CONFIG.WHATSAPP_TARGET = "905327409097";
+  window.FENIX_CONFIG.WHATSAPP_TARGET = "902126180701";
   window.FENIX_CONFIG.WHATSAPP_URL = "https://wa.me/" + window.FENIX_CONFIG.WHATSAPP_TARGET;
 
   function fxInitWhatsApp() {
-    var waUrl = (window.FENIX_CONFIG && window.FENIX_CONFIG.WHATSAPP_URL) || "https://wa.me/905327409097";
+    var waUrl = (window.FENIX_CONFIG && window.FENIX_CONFIG.WHATSAPP_URL) || "https://wa.me/902126180701";
     $$('a.fx-wa, a.fx-footer-mobile__contact-pill--wa, a.fx-support-btn--wa, a[href*="wa.me"]').forEach(function (el) {
       el.setAttribute('href', waUrl);
     });
@@ -113,7 +113,7 @@
     { id: "cengiz-makina", name: "Cengiz Makina", cat: "enerji-sanayi", logo: "ref-84-cengiz-makina.webp" },
     { id: "park-inn-by-radisson", name: "Park Inn by Radisson", cat: "turizm-perakende", logo: "ref-85-park-inn-by-radisson.webp" },
     { id: "hyundai", name: "Hyundai", cat: "enerji-sanayi", logo: "ref-86-hyundai.webp" },
-    { id: "87-mes", name: "87 MES", cat: "enerji-sanayi", logo: "ref-87-mes.webp" }
+    { id: "mes", name: "MES", cat: "enerji-sanayi", logo: "ref-mes.webp" }
   ];
 
   window.fxInitReferenceCounts = function () {
