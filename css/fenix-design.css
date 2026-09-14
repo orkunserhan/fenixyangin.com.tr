@@ -368,62 +368,133 @@ a[href^="tel:"] strong {
 .fx-topbar__right span {
   color: rgba(255, 255, 255, 0.6) !important;
 }
+/* ============================================================
+   GLOBAL SOCIAL MEDIA ICON / BUTTON SYSTEM (FENIX MASTER SYSTEM)
+   Master Reference: Topbar circular pill system (Screenshot 2)
+   Background-aware: Dark / Topbar / Mobile Drawer vs. Light Card / Paper
+   ============================================================ */
+:root {
+  --fx-soc-size: 30px;
+  --fx-soc-icon-size: 15px;
+  --fx-soc-color: #ffffff;
+  --fx-soc-bg: rgba(255, 255, 255, 0.08);
+  --fx-soc-border: rgba(255, 255, 255, 0.18);
+  --fx-soc-hover-bg: rgba(255, 255, 255, 0.18);
+  --fx-soc-hover-border: rgba(255, 255, 255, 0.35);
+  --fx-soc-hover-color: #ffffff;
+}
+
 .fx-social, .fx-social-modern {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
+
 .fx-social__link, .fx-social-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.9) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: var(--fx-soc-size, 30px) !important;
+  height: var(--fx-soc-size, 30px) !important;
+  border-radius: 50% !important;
+  background: var(--fx-soc-bg, rgba(255, 255, 255, 0.08)) !important;
+  border: 1px solid var(--fx-soc-border, rgba(255, 255, 255, 0.18)) !important;
+  color: var(--fx-soc-color, #ffffff) !important;
   text-decoration: none !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
 }
+
 .fx-social__link svg, .fx-social-pill svg {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: var(--fx-soc-icon-size, 15px);
+  height: var(--fx-soc-icon-size, 15px);
   fill: currentColor;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  pointer-events: none;
 }
+
 .fx-social__link:hover svg, .fx-social-pill:hover svg {
   transform: scale(1.12);
 }
 
-/* Branded Micro-Interactions */
-.fx-social-pill--yt:hover, .fx-social__link[href*="youtube"]:hover {
+.fx-social__link:focus-visible, .fx-social-pill:focus-visible {
+  outline: 2px solid var(--fx-red, #BE1523);
+  outline-offset: 2px;
+}
+
+/* Context: Dark / Topbar / Red Strip / Drawer / Mobile Footer */
+.fx-topbar,
+.fx-mobilenav,
+.fx-section--dark,
+.fx-section--darker,
+.fx-section--red,
+.fx-footer-mobile,
+.fx-footer-mobile .fx-social-modern,
+.fx-footer-mobile__socials,
+.fx-social--dark {
+  --fx-soc-color: #ffffff !important;
+  --fx-soc-bg: rgba(255, 255, 255, 0.08) !important;
+  --fx-soc-border: rgba(255, 255, 255, 0.18) !important;
+  --fx-soc-hover-bg: rgba(255, 255, 255, 0.22) !important;
+  --fx-soc-hover-border: rgba(255, 255, 255, 0.4) !important;
+  --fx-soc-hover-color: #ffffff !important;
+}
+
+/* Context: Light / White / Paper (Contact Card, Desktop Footer) */
+.fx-card .fx-social,
+.fx-card .fx-social-modern,
+.fx-social--light,
+.fx-footer__desktop .fx-social-modern,
+.fx-footer__desktop .fx-social {
+  --fx-soc-color: var(--fx-red, #BE1523);
+  --fx-soc-bg: rgba(190, 21, 35, 0.04);
+  --fx-soc-border: rgba(190, 21, 35, 0.22);
+  --fx-soc-size: 32px;
+  --fx-soc-icon-size: 15px;
+  --fx-soc-hover-bg: #BE1523;
+  --fx-soc-hover-border: #BE1523;
+  --fx-soc-hover-color: #ffffff;
+}
+
+/* Size Modifier */
+.fx-social--lg,
+.fx-social-pill--lg,
+.fx-social--lg .fx-social-pill,
+.fx-social--lg .fx-social__link {
+  --fx-soc-size: 36px;
+  --fx-soc-icon-size: 16px;
+}
+
+/* Branded Platform Hover (Clean, Subtle, No Extreme Glow) */
+.fx-social-pill--yt:hover, .fx-social__link[href*="youtube"]:hover, .fx-mobilenav__soc-pill[href*="youtube"]:hover {
   background: #FF0000 !important;
   border-color: #FF0000 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(255, 0, 0, 0.45);
   transform: translateY(-2px);
 }
-.fx-social-pill--li:hover, .fx-social__link[href*="linkedin"]:hover {
+.fx-social-pill--li:hover, .fx-social__link[href*="linkedin"]:hover, .fx-mobilenav__soc-pill[href*="linkedin"]:hover {
   background: #0A66C2 !important;
   border-color: #0A66C2 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.45);
   transform: translateY(-2px);
 }
-.fx-social-pill--fb:hover, .fx-social__link[href*="facebook"]:hover {
+.fx-social-pill--fb:hover, .fx-social__link[href*="facebook"]:hover, .fx-mobilenav__soc-pill[href*="facebook"]:hover {
   background: #1877F2 !important;
   border-color: #1877F2 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.45);
   transform: translateY(-2px);
 }
-.fx-social-pill--ig:hover, .fx-social__link[href*="instagram"]:hover {
+.fx-social-pill--ig:hover, .fx-social__link[href*="instagram"]:hover, .fx-mobilenav__soc-pill[href*="instagram"]:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
   border-color: transparent !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(214, 36, 159, 0.45);
   transform: translateY(-2px);
 }
 
@@ -1071,7 +1142,7 @@ a[href^="tel:"] strong {
   }
   .fx-section{padding-block:var(--fx-s7)}
   .fx-topbar{font-size:var(--fx-fs-xs);min-height:34px}
-  .fx-topbar__right .fx-social{display:none}
+  .fx-topbar__right .fx-social, .fx-topbar__right .fx-social-modern {display:none !important}
   .fx-header{min-height:60px}
   .fx-logo img{height:22px}
   .fx-hero--home,.fx-hero--page{min-height:0}
@@ -3338,19 +3409,30 @@ body.fx-nav-open {
   .fx-mobilenav__soc-pill {
     width: 32px !important;
     height: 32px !important;
-    border-radius: 8px !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: #cbd5e1 !important;
-    display: flex !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
-    transition: background 0.15s ease, color 0.15s ease !important;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+    flex-shrink: 0;
+  }
+  .fx-mobilenav__soc-pill svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fx-mobilenav__soc-pill:hover svg {
+    transform: scale(1.12);
   }
   .fx-mobilenav__soc-pill:hover {
-    background: rgba(255, 255, 255, 0.12) !important;
-    color: #fff !important;
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
   }
   .fx-mobilenav__sep {
     color: rgba(255, 255, 255, 0.2) !important;
@@ -3790,14 +3872,19 @@ body.fx-nav-open {
   .fx-footer-mobile__socials {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    font-size: 12.5px !important;
+    gap: 8px !important;
+    margin: 4px 0 !important;
   }
-  .fx-footer-mobile__socials a {
+  .fx-footer-mobile__socials .fx-social-pill {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .fx-footer-mobile__socials a:not(.fx-social-pill) {
     color: #94a3b8 !important;
     text-decoration: none !important;
+    font-size: 12.5px !important;
   }
-  .fx-footer-mobile__socials a:hover {
+  .fx-footer-mobile__socials a:not(.fx-social-pill):hover {
     color: #fff !important;
   }
   .fx-footer-mobile__socials span {
