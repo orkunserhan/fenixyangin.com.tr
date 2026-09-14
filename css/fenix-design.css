@@ -180,36 +180,105 @@ a[href^="tel:"] strong {
   color: inherit !important;
 }
 
-/* Dedicated .fx-btn--white */
-.fx-btn--white {
+/* Dedicated .fx-btn--white - Solid white button ALWAYS has crisp Fenix Red text */
+.fx-btn--white,
+.fx-cta-phones .fx-btn--white,
+.fx-cta-phones a.fx-btn--white,
+.fx-section--red .fx-btn--white,
+.fx-section--dark .fx-btn--white,
+.fx-section--paper .fx-btn--white,
+.fx-section--white .fx-btn--white,
+a.fx-btn--white,
+button.fx-btn--white {
   background: #ffffff !important;
   color: var(--fx-red, #BE1523) !important;
   border: 1px solid #ffffff !important;
   font-weight: 600 !important;
 }
-.fx-btn--white:hover {
+.fx-btn--white:hover,
+.fx-cta-phones .fx-btn--white:hover,
+.fx-cta-phones a.fx-btn--white:hover,
+.fx-section--red .fx-btn--white:hover,
+.fx-section--dark .fx-btn--white:hover,
+.fx-section--paper .fx-btn--white:hover,
+.fx-section--white .fx-btn--white:hover,
+a.fx-btn--white:hover,
+button.fx-btn--white:hover {
   background: var(--fx-paper, #F5F6F6) !important;
   color: var(--fx-red-dark, #95101C) !important;
   border-color: var(--fx-paper, #F5F6F6) !important;
 }
 
-/* Phone CTA buttons on red or dark background strips */
-.fx-cta-phones .fx-btn,
-.fx-cta-phones a[href^="tel:"],
-.fx-section--red a[href^="tel:"].fx-btn,
-.fx-section--dark a[href^="tel:"].fx-btn {
+/* Phone CTA buttons on red or dark background strips (translucent white pill) */
+.fx-cta-phones .fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
+.fx-cta-phones a[href^="tel:"]:not(.fx-btn--white):not(.fx-btn--primary),
+.fx-section--red a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
+.fx-section--dark a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
+.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary) {
   background: rgba(255, 255, 255, 0.12) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.35) !important;
   font-weight: 600 !important;
 }
-.fx-cta-phones .fx-btn:hover,
-.fx-cta-phones a[href^="tel:"]:hover,
-.fx-section--red a[href^="tel:"].fx-btn:hover,
-.fx-section--dark a[href^="tel:"].fx-btn:hover {
+.fx-cta-phones .fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
+.fx-cta-phones a[href^="tel:"]:not(.fx-btn--white):not(.fx-btn--primary):hover,
+.fx-section--red a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
+.fx-section--dark a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
+.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover {
   background: rgba(255, 255, 255, 0.22) !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
+}
+
+/* Phone links and phone buttons on light/white/paper surfaces MUST be red */
+.fx-section--white a[href^="tel:"]:not(.fx-btn--primary),
+.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary),
+.fx-callout a[href^="tel:"]:not(.fx-btn--primary),
+.fx-footer a[href^="tel:"],
+.fx-footer address a.fx-num,
+a[href^="tel:"].fx-btn--secondary,
+a[href^="tel:"].fx-btn--ghost {
+  color: var(--fx-red, #BE1523) !important;
+  border-color: var(--fx-line, #D1D5DB) !important;
+}
+.fx-section--white a[href^="tel:"]:not(.fx-btn--primary):hover,
+.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary):hover,
+.fx-callout a[href^="tel:"]:not(.fx-btn--primary):hover,
+.fx-footer a[href^="tel:"]:hover,
+.fx-footer address a.fx-num:hover,
+a[href^="tel:"].fx-btn--secondary:hover,
+a[href^="tel:"].fx-btn--ghost:hover {
+  color: var(--fx-red-dark, #95101C) !important;
+  border-color: var(--fx-red, #BE1523) !important;
+}
+
+/* Ensure any ghost-dark button in a light/paper section is dark/readable */
+.fx-section--paper .fx-btn--ghost-dark,
+.fx-section--white .fx-btn--ghost-dark,
+.fx-section:not(.fx-section--red):not(.fx-section--dark):not(.fx-section--darker) .fx-btn--ghost-dark {
+  color: var(--fx-ink, #111827) !important;
+  border-color: var(--fx-line, #D1D5DB) !important;
+  background: transparent !important;
+}
+.fx-section--paper .fx-btn--ghost-dark:hover,
+.fx-section--white .fx-btn--ghost-dark:hover,
+.fx-section:not(.fx-section--red):not(.fx-section--dark):not(.fx-section--darker) .fx-btn--ghost-dark:hover {
+  color: var(--fx-red, #BE1523) !important;
+  border-color: var(--fx-red, #BE1523) !important;
+}
+
+/* If that ghost button is a phone link on light surface, color must be red */
+.fx-section--paper a[href^="tel:"].fx-btn--ghost-dark,
+.fx-section--white a[href^="tel:"].fx-btn--ghost-dark,
+.fx-section:not(.fx-section--red):not(.fx-section--dark):not(.fx-section--darker) a[href^="tel:"].fx-btn--ghost-dark {
+  color: var(--fx-red, #BE1523) !important;
+  border-color: var(--fx-red, #BE1523) !important;
+}
+.fx-section--paper a[href^="tel:"].fx-btn--ghost-dark:hover,
+.fx-section--white a[href^="tel:"].fx-btn--ghost-dark:hover,
+.fx-section:not(.fx-section--red):not(.fx-section--dark):not(.fx-section--darker) a[href^="tel:"].fx-btn--ghost-dark:hover {
+  color: var(--fx-red-dark, #95101C) !important;
+  border-color: var(--fx-red-dark, #95101C) !important;
 }
 
 /* ---------- 5 · BUTTON ---------- */
