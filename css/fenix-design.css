@@ -158,6 +158,7 @@ table{border-collapse:collapse;width:100%}
 .fx-header--dark,
 .fx-cta-phones,
 .fx-footer-mobile,
+.fx-dlb-cta,
 [data-theme="dark"],
 .fx-on-dark-context {
   --fx-phone-color: #ffffff;
@@ -214,19 +215,25 @@ button.fx-btn--white:hover {
 .fx-cta-phones a[href^="tel:"]:not(.fx-btn--white):not(.fx-btn--primary),
 .fx-section--red a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
 .fx-section--dark a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
-.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary) {
-  background: rgba(255, 255, 255, 0.12) !important;
+.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary),
+.fx-dlb-cta a[href^="tel:"],
+.fx-dlb-cta-tel {
+  background: rgba(255, 255, 255, 0.18) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  font-weight: 600 !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  font-weight: 700 !important;
 }
 .fx-cta-phones .fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
 .fx-cta-phones a[href^="tel:"]:not(.fx-btn--white):not(.fx-btn--primary):hover,
 .fx-section--red a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
 .fx-section--dark a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
-.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover {
-  background: rgba(255, 255, 255, 0.22) !important;
+.fx-section--darker a[href^="tel:"].fx-btn:not(.fx-btn--white):not(.fx-btn--primary):hover,
+.fx-dlb-cta a[href^="tel:"]:hover,
+.fx-dlb-cta-tel:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   border-color: #ffffff !important;
 }
 
