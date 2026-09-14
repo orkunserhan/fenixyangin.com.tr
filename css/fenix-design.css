@@ -134,8 +134,10 @@ table{border-collapse:collapse;width:100%}
 .fx-section--dark .fx-h1,.fx-section--dark .fx-h2,.fx-section--dark .fx-h3,
 .fx-section--darker .fx-h1,.fx-section--darker .fx-h2,.fx-section--darker .fx-h3{color:#fff}
 .fx-section--dark .fx-lead,.fx-section--dark .fx-text{color:var(--fx-on-dark)}
-.fx-section--red .fx-h2,.fx-section--red .fx-h1{color:#fff}
-.fx-section--red .fx-lead{color:rgba(255,255,255,.94)}
+.fx-section--red .fx-h2,.fx-section--red .fx-h1,.fx-section--red .fx-h3{color:#fff !important}
+.fx-section--red .fx-lead,.fx-section--red .fx-text,.fx-section--red p{color:rgba(255,255,255,.94) !important}
+.fx-section--red a:not(.fx-btn){color:#fff !important}
+.fx-section--red a:not(.fx-btn):hover{color:rgba(255,255,255,.85) !important}
 /* sayısal veri */
 .fx-num{font-variant-numeric:tabular-nums}
 .fx-hi{color:var(--fx-red)}
@@ -477,10 +479,34 @@ a[href^="tel:"] strong {
 .fx-header--dark .fx-nav__link--active{background:rgba(255,255,255,.1);color:#fff}
 .fx-nav__cta{margin-left:var(--fx-s3)}
 
-@media (min-width: 761px) and (max-width: 1140px) {
+.fx-nav {
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+@media (min-width: 761px) and (max-width: 1120px) {
   .fx-header { gap: 8px !important; }
+  .fx-header__inner { gap: 10px !important; }
   .fx-nav { gap: 1px !important; }
-  .fx-nav__link { padding: 6px 7px !important; font-size: 13px !important; }
+  .fx-nav__link { padding: 5px 5px !important; font-size: 12px !important; }
+}
+@media (min-width: 1121px) and (max-width: 1260px) {
+  .fx-header { gap: 12px !important; }
+  .fx-header__inner { gap: 12px !important; }
+  .fx-nav { gap: 1px !important; }
+  .fx-nav__link { padding: 6px 6px !important; font-size: 12.5px !important; }
+}
+@media (min-width: 1261px) and (max-width: 1380px) {
+  .fx-header { gap: 16px !important; }
+  .fx-header__inner { gap: 16px !important; }
+  .fx-nav { gap: 2px !important; }
+  .fx-nav__link { padding: 7px 8px !important; font-size: 13.5px !important; }
+}
+@media (min-width: 1381px) {
+  .fx-header { gap: 20px !important; }
+  .fx-header__inner { gap: 20px !important; }
+  .fx-nav { gap: 3px !important; }
+  .fx-nav__link { padding: 8px 10px !important; font-size: 14px !important; }
 }
 
 .fx-mobilenav__link.is-active,
@@ -2545,6 +2571,7 @@ body.fx-nav-open {
 }
 @media (min-width: 761px) {
   .fx-mobile-only { display: none !important; }
+  .fx-sec9-block--press { display: none !important; }
 }
 
 /* ==========================================================================
