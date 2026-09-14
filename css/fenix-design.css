@@ -141,6 +141,75 @@ table{border-collapse:collapse;width:100%}
 .fx-hi{color:var(--fx-red)}
 .fx-hi--tech{color:var(--fx-yellow)}      /* YALNIZ koyu zeminde teknik veri */
 
+/* ---------- 4.5 · GLOBAL PHONE COLOR & CONTRAST ARCHITECTURE ---------- */
+:root {
+  --fx-phone-color: var(--fx-red, #BE1523);
+  --fx-phone-hover: var(--fx-red-dark, #95101C);
+}
+
+/* Dark & colored contexts switch token to crisp white */
+.fx-topbar,
+.fx-mobilenav,
+.fx-section--dark,
+.fx-section--darker,
+.fx-section--red,
+.fx-header--dark,
+.fx-cta-phones,
+.fx-footer-mobile,
+[data-theme="dark"],
+.fx-on-dark-context {
+  --fx-phone-color: #ffffff;
+  --fx-phone-hover: rgba(255, 255, 255, 0.85);
+}
+
+/* Universal phone link contract:
+   - Light surfaces: FENIX RED (#BE1523), hover #95101C
+   - Dark surfaces: WHITE (#FFFFFF), hover rgba(255,255,255,0.85) */
+a[href^="tel:"]:not(.fx-btn):not(.fx-footer-mobile__contact-pill):not(.fx-support-btn) {
+  color: var(--fx-phone-color) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+a[href^="tel:"]:not(.fx-btn):not(.fx-footer-mobile__contact-pill):not(.fx-support-btn):hover {
+  color: var(--fx-phone-hover) !important;
+  text-decoration: underline !important;
+}
+a[href^="tel:"] strong {
+  color: inherit !important;
+}
+
+/* Dedicated .fx-btn--white */
+.fx-btn--white {
+  background: #ffffff !important;
+  color: var(--fx-red, #BE1523) !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 600 !important;
+}
+.fx-btn--white:hover {
+  background: var(--fx-paper, #F5F6F6) !important;
+  color: var(--fx-red-dark, #95101C) !important;
+  border-color: var(--fx-paper, #F5F6F6) !important;
+}
+
+/* Phone CTA buttons on red or dark background strips */
+.fx-cta-phones .fx-btn,
+.fx-cta-phones a[href^="tel:"],
+.fx-section--red a[href^="tel:"].fx-btn,
+.fx-section--dark a[href^="tel:"].fx-btn {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  font-weight: 600 !important;
+}
+.fx-cta-phones .fx-btn:hover,
+.fx-cta-phones a[href^="tel:"]:hover,
+.fx-section--red a[href^="tel:"].fx-btn:hover,
+.fx-section--dark a[href^="tel:"].fx-btn:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
 /* ---------- 5 · BUTTON ---------- */
 .fx-btn{
   display:inline-flex;align-items:center;justify-content:center;gap:var(--fx-s2);
@@ -266,10 +335,36 @@ table{border-collapse:collapse;width:100%}
   opacity: 1;
   transform: scale(1.08);
 }
+.fx-topbar a,
+.fx-topbar a[href^="tel:"],
+.fx-topbar .fx-topbar__right a,
+.fx-topbar__link a,
+.fx-topbar__link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.fx-topbar a:hover,
+.fx-topbar a[href^="tel:"]:hover,
+.fx-topbar .fx-topbar__right a:hover,
+.fx-topbar__link a:hover,
+.fx-topbar__link:hover {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: underline !important;
+}
+.fx-topbar a strong,
+.fx-topbar__link strong {
+  color: #ffffff !important;
+}
 .fx-topbar__right {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.fx-topbar__right span {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 .fx-social, .fx-social-modern {
   display: flex;
@@ -3903,13 +3998,15 @@ body.fx-nav-open {
 
   .fx-footer address a.fx-num,
   .fx-footer a[href^="tel:"] {
-    color: #0E1214 !important;
+    color: var(--fx-red, #BE1523) !important;
     font-weight: 600 !important;
+    text-decoration: none !important;
   }
 
   .fx-footer address a.fx-num:hover,
   .fx-footer a[href^="tel:"]:hover {
-    color: var(--fx-red, #BE1523) !important;
+    color: var(--fx-red-dark, #95101C) !important;
+    text-decoration: underline !important;
   }
 
   .fx-footer address a[href^="mailto:"] {
@@ -4277,13 +4374,13 @@ body.fx-nav-open {
 }
 .fx-support-btn--phone {
   background: #f8fafc;
-  color: var(--fx-ink, #0E1214);
-  border: 1px solid #cbd5e1;
+  color: var(--fx-red, #BE1523) !important;
+  border: 1px solid rgba(190, 21, 35, 0.22);
 }
 .fx-support-btn--phone:hover {
-  background: var(--fx-wash-red, #FBEDEE);
-  color: var(--fx-red, #BE1523);
-  border-color: var(--fx-red, #BE1523);
+  background: var(--fx-wash-red, #FBEDEE) !important;
+  color: var(--fx-red-dark, #95101C) !important;
+  border-color: var(--fx-red, #BE1523) !important;
   transform: translateY(-1px);
 }
 .fx-support-btn--wa {
