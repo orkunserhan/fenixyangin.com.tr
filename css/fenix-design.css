@@ -4318,6 +4318,12 @@ body.fx-nav-open {
     opacity: 0.65;
     flex-shrink: 0;
   }
+  .fx-nav__item--dropdown:hover > .fx-nav__link--has-dropdown,
+  .fx-nav__item--dropdown.is-open > .fx-nav__link--has-dropdown {
+    color: var(--fx-red, #BE1523) !important;
+    background: var(--fx-wash-red, #FBEDEE);
+    border-radius: 6px;
+  }
   .fx-nav__item--dropdown:hover .fx-nav__caret,
   .fx-nav__item--dropdown.is-open .fx-nav__caret {
     transform: rotate(180deg);
@@ -5451,6 +5457,86 @@ body.fx-nav-open {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.35;
+}
+
+/* Hizmet CTA Bandı (Kırmızı Kurumsal) */
+.fx-service-cta-banner--red {
+  background: var(--fx-red, #BE1523) !important;
+  border: none !important;
+  border-radius: 16px;
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 0 12px 36px rgba(190, 21, 35, 0.22);
+  color: #ffffff;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__title {
+  color: #ffffff !important;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__desc {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__phones {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link svg {
+  color: #ffffff !important;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link:hover {
+  text-decoration: underline;
+  opacity: 0.92;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.fx-service-cta-banner--red .fx-btn--white {
+  background: #ffffff !important;
+  color: var(--fx-red, #BE1523) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ffffff;
+}
+.fx-service-cta-banner--red .fx-btn--white:hover {
+  background: #f8fafc !important;
+  color: var(--fx-red-dark, #95101C) !important;
+  transform: translateY(-2px);
+}
+@media (max-width: 760px) {
+  .fx-service-cta-banner--red {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 20px;
+  }
+  .fx-service-cta-banner--red .fx-service-cta-banner__title {
+    font-size: 21px;
+  }
 }
 
 /* Hizmet CTA Bandı */
