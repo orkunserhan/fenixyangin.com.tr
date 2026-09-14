@@ -1358,6 +1358,8 @@ a[href^="tel:"].fx-btn--ghost:hover {
   .fx-footer__brand p, .fx-footer .fx-text--sm {
     font-size: 13px;
     margin: 12px 0 16px;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
   }
   .fx-footer__title {
     font-size: 12px;
@@ -3908,6 +3910,18 @@ body.fx-nav-open {
     background: #0B0E10 !important;
     color: #fff !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  .fx-footer p,
+  .fx-footer .fx-text--sm,
+  .fx-footer__brand p,
+  .fx-footer-mobile__desc {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+  }
+  .fx-footer .fx-footer__bottom,
+  .fx-footer .fx-footer__bottom span,
+  .fx-footer .fx-footer__legal a {
+    color: #94a3b8 !important;
   }
   .fx-footer-mobile {
     display: flex !important;
