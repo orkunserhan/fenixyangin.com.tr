@@ -159,6 +159,7 @@ table{border-collapse:collapse;width:100%}
 .fx-cta-phones,
 .fx-footer-mobile,
 .fx-dlb-cta,
+.fx-service-cta-banner--red,
 [data-theme="dark"],
 .fx-on-dark-context {
   --fx-phone-color: #ffffff;
@@ -238,9 +239,9 @@ button.fx-btn--white:hover {
 }
 
 /* Phone links and phone buttons on light/white/paper surfaces MUST be red */
-.fx-section--white a[href^="tel:"]:not(.fx-btn--primary),
-.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary),
-.fx-callout a[href^="tel:"]:not(.fx-btn--primary),
+.fx-section--white a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link),
+.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link),
+.fx-callout a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link),
 .fx-footer a[href^="tel:"],
 .fx-footer address a.fx-num,
 a[href^="tel:"].fx-btn--secondary,
@@ -248,9 +249,9 @@ a[href^="tel:"].fx-btn--ghost {
   color: var(--fx-red, #BE1523) !important;
   border-color: var(--fx-line, #D1D5DB) !important;
 }
-.fx-section--white a[href^="tel:"]:not(.fx-btn--primary):hover,
-.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary):hover,
-.fx-callout a[href^="tel:"]:not(.fx-btn--primary):hover,
+.fx-section--white a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link):hover,
+.fx-section--paper a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link):hover,
+.fx-callout a[href^="tel:"]:not(.fx-btn--primary):not(.fx-service-cta-banner__phone-link):hover,
 .fx-footer a[href^="tel:"]:hover,
 .fx-footer address a.fx-num:hover,
 a[href^="tel:"].fx-btn--secondary:hover,
@@ -5502,21 +5503,44 @@ body.fx-nav-open {
   gap: 16px;
   flex-wrap: wrap;
 }
-.fx-service-cta-banner--red .fx-service-cta-banner__phone-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15.5px;
-  font-weight: 700;
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link,
+.fx-section--white .fx-service-cta-banner--red .fx-service-cta-banner__phone-link,
+.fx-section--paper .fx-service-cta-banner--red .fx-service-cta-banner__phone-link,
+.fx-service-cta-banner--red a[href^="tel:"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
   color: #ffffff !important;
-  text-decoration: none;
+  -webkit-text-fill-color: #ffffff !important;
+  text-decoration: none !important;
 }
-.fx-service-cta-banner--red .fx-service-cta-banner__phone-link svg {
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link span,
+.fx-section--white .fx-service-cta-banner--red .fx-service-cta-banner__phone-link span,
+.fx-section--paper .fx-service-cta-banner--red .fx-service-cta-banner__phone-link span,
+.fx-service-cta-banner--red a[href^="tel:"] span {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 700 !important;
 }
-.fx-service-cta-banner--red .fx-service-cta-banner__phone-link:hover {
-  text-decoration: underline;
-  opacity: 0.92;
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link svg,
+.fx-section--white .fx-service-cta-banner--red .fx-service-cta-banner__phone-link svg,
+.fx-section--paper .fx-service-cta-banner--red .fx-service-cta-banner__phone-link svg,
+.fx-service-cta-banner--red a[href^="tel:"] svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+  flex-shrink: 0 !important;
+}
+.fx-service-cta-banner--red .fx-service-cta-banner__phone-link:hover,
+.fx-section--white .fx-service-cta-banner--red .fx-service-cta-banner__phone-link:hover,
+.fx-section--paper .fx-service-cta-banner--red .fx-service-cta-banner__phone-link:hover,
+.fx-service-cta-banner--red a[href^="tel:"]:hover {
+  text-decoration: underline !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 0.92 !important;
 }
 .fx-service-cta-banner--red .fx-service-cta-banner__btns {
   display: flex;
