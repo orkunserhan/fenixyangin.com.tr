@@ -818,12 +818,12 @@
 
   /* ---------- HİZMETLER NAVİGASYONU (6 TEMEL HİZMET HİYERARŞİSİ) ---------- */
   window.FENIX_SERVICES = [
-    { name: 'Mühendislik', short: 'Mühendislik', sub: 'Yangın danışmanlığı, hidrolik hesap ve projelendirme', slug: 'iletisim.html' },
-    { name: 'Kurulum', short: 'Kurulum', sub: 'Anahtar teslim sistem kurulumu ve entegrasyon', slug: 'iletisim.html' },
-    { name: 'Montaj', short: 'Montaj', sub: 'Standartlara uygun mekanik ve elektriksel montaj', slug: 'iletisim.html' },
-    { name: 'Tedarik', short: 'Tedarik', sub: 'Onaylı silindir, vana, nozul ve ekipman temini', slug: 'iletisim.html' },
-    { name: 'Dolum', short: 'Dolum', sub: 'FM200 ve Novec 1230 sertifikalı gaz dolumu', slug: 'iletisim.html' },
-    { name: 'Bakım', short: 'Bakım', sub: 'TSE-HYB onaylı periyodik bakım ve kontrol', slug: 'iletisim.html' }
+    { name: 'Mühendislik', short: 'Mühendislik', sub: 'Yangın danışmanlığı, hidrolik hesap ve projelendirme', slug: 'yangin-muhendislik-hizmetleri.html' },
+    { name: 'Kurulum', short: 'Kurulum', sub: 'Anahtar teslim sistem kurulumu ve entegrasyon', slug: 'yangin-sistemleri-kurulum-hizmeti.html' },
+    { name: 'Montaj', short: 'Montaj', sub: 'Standartlara uygun mekanik ve elektriksel montaj', slug: 'yangin-sistemleri-montaj-hizmeti.html' },
+    { name: 'Tedarik', short: 'Tedarik', sub: 'Onaylı silindir, vana, nozul ve ekipman temini', slug: 'yangin-sistemleri-tedarik-hizmeti.html' },
+    { name: 'Dolum', short: 'Dolum', sub: 'FM200 ve Novec 1230 sertifikalı gaz dolumu', slug: 'yangin-sondurme-gaz-dolum-hizmeti.html' },
+    { name: 'Bakım', short: 'Bakım', sub: 'TSE-HYB onaylı periyodik bakım ve kontrol', slug: 'yangin-sistemleri-bakim-hizmeti.html' }
   ];
 
   window.fxInitServicesNav = function () {
