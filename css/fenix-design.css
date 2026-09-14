@@ -298,6 +298,14 @@ a[href^="tel:"].fx-btn--ghost:hover {
 .fx-btn--ghost-dark:hover{border-color:#fff;color:#fff}
 .fx-btn--on-red{background:#fff;color:var(--fx-red)}
 .fx-btn--on-red:hover{background:var(--fx-paper);color:var(--fx-red-dark)}
+.fx-btn--white{background:#fff;color:var(--fx-red);border-color:var(--fx-line)}
+.fx-btn--white:hover{background:var(--fx-paper);color:var(--fx-red-dark);border-color:var(--fx-line)}
+.fx-card .fx-btn--white,
+.fx-card a.fx-btn--white{background:#ffffff !important;color:var(--fx-red,#BE1523) !important;border:1px solid var(--fx-line,#D1D5DB) !important;text-decoration:none !important}
+.fx-card .fx-btn--white:hover,
+.fx-card a.fx-btn--white:hover{background:var(--fx-paper,#F7F8F9) !important;color:var(--fx-red-dark,#95101C) !important}
+.fx-btn--outline{background:transparent;color:var(--fx-ink);border-color:var(--fx-line);text-decoration:none}
+.fx-btn--outline:hover{border-color:var(--fx-ink);color:var(--fx-ink);text-decoration:none}
 .fx-btn--block{display:flex;width:100%}
 .fx-btn--sm{font-size:var(--fx-fs-sm);padding:var(--fx-s3) var(--fx-s6)}
 /* BİRİNCİL CTA metni yalnız "Bize Ulaşın" · hedef /iletisim/ */

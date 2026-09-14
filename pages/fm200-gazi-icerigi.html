@@ -160,14 +160,14 @@
 .fx-blog-body li strong {
   color: var(--fx-ink);
 }
-.fx-blog-body a {
+.fx-blog-body a:not(.fx-btn) {
   color: var(--fx-red);
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 500;
   transition: color var(--fx-t-fast);
 }
-.fx-blog-body a:hover {
+.fx-blog-body a:not(.fx-btn):hover {
   color: var(--fx-ink);
 }
 .fx-blog-hero-img {
@@ -551,7 +551,7 @@
                 </div>
               </div>
               <div style="display:flex;flex-direction:column;gap:10px;min-width:200px;">
-                <a class="fx-btn fx-btn--primary fx-btn--block" href="iletisim.html">7/24 Bize Ulaşın</a>
+                <a class="fx-btn fx-btn--white fx-btn--block" href="iletisim.html" style="background:#ffffff !important;color:var(--fx-red,#BE1523) !important;border:1px solid var(--fx-line,#D1D5DB) !important;text-decoration:none !important;font-weight:600 !important;box-shadow:0 2px 6px rgba(0,0,0,0.06) !important;">7/24 Bize Ulaşın</a>
                 <a class="fx-btn fx-btn--outline fx-btn--block" href="https://wa.me/905327409097" target="_blank" rel="noopener">WhatsApp ile Danışın</a>
               </div>
             </div>
