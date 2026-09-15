@@ -19,6 +19,140 @@
 <link rel="icon" href="../assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../css/fenix-design.css?v=2026.10">
+<style>
+  /* Scoped Kurumsal Katalog Banner */
+  .fx-catalog-banner {
+    background: #0E1217 radial-gradient(circle at 88% 50%, rgba(190, 21, 35, 0.16) 0%, transparent 55%);
+    border-top: 1px solid var(--fx-line);
+    border-bottom: 1px solid var(--fx-line);
+    padding: 40px 0;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  .fx-catalog-banner::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--fx-red);
+  }
+  .fx-catalog-banner__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .fx-catalog-banner__content {
+    flex: 1 1 540px;
+    max-width: 640px;
+  }
+  .fx-catalog-banner__title {
+    color: #ffffff !important;
+    font-size: clamp(21px, 2.3vw, 29px) !important;
+    line-height: 1.25 !important;
+    margin: 4px 0 10px !important;
+    letter-spacing: -0.02em;
+  }
+  .fx-catalog-banner__desc {
+    color: rgba(255, 255, 255, 0.74) !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin: 0 0 20px !important;
+    max-width: 520px;
+  }
+  .fx-catalog-banner__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .fx-catalog-banner__meta {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .fx-catalog-banner__visual {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fx-catalog-book {
+    display: inline-block;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    text-decoration: none;
+    background: #ffffff;
+  }
+  .fx-catalog-book:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 24px rgba(190, 21, 35, 0.3);
+    border-color: rgba(190, 21, 35, 0.6);
+  }
+  .fx-catalog-book img {
+    display: block;
+    width: 136px;
+    height: 192px;
+    object-fit: cover;
+  }
+  .fx-catalog-book__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(190, 21, 35, 0.92);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    line-height: 1.2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  @media (max-width: 768px) {
+    .fx-catalog-banner {
+      padding: 28px 0;
+    }
+    .fx-catalog-banner__wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .fx-catalog-banner__content {
+      max-width: 100%;
+    }
+    .fx-catalog-banner__title {
+      font-size: 21px !important;
+      line-height: 1.25 !important;
+      margin: 4px 0 8px !important;
+    }
+    .fx-catalog-banner__desc {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+    }
+    .fx-catalog-banner__actions {
+      gap: 12px;
+    }
+    .fx-catalog-banner__visual {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    .fx-catalog-book img {
+      width: 104px;
+      height: 147px;
+    }
+  }
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://fenixyangin.com.tr/#organization","name":"Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş.","url":"https://fenixyangin.com.tr/","telephone":"+902126180701","email":"info@fenixyangin.com.tr","foundingDate":"2011","address":{"@type":"PostalAddress","streetAddress":"Yıldırım Mah. Buğday Sok. No:16","addressLocality":"Bayrampaşa","addressRegion":"İstanbul","postalCode":"34405","addressCountry":"TR"},"sameAs":["https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA","https://www.instagram.com/fenixyangin","https://www.facebook.com/fenixyangin/","https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/"],"knowsAbout":["FM200 gazlı yangın söndürme","Novec 1230 gazlı yangın söndürme","CO2 gazlı yangın söndürme","Davlumbaz yangın söndürme","NFPA 2001","ISO 14520","TS EN 15004"]},{"@type":"BreadcrumbList","@id":"https://fenixyangin.com.tr/pages/kurumsal.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://fenixyangin.com.tr/"},{"@type":"ListItem","position":2,"name":"Kurumsal","item":"https://fenixyangin.com.tr/pages/kurumsal.html"}]}]}
 </script>
@@ -472,6 +606,32 @@
           <span class="fx-table__cell--muted">Endüstriyel mutfak ve davlumbaz söndürme</span>
           <span class="fx-table__cell--muted">Ticari pişirme işlemleri için yangın güvenliği standardı</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       KATALOG BANNER (KOMPAKT & PREMIUM DOKÜMAN BANDI)
+       ================================================== -->
+  <section class="fx-section fx-catalog-banner" id="katalog" aria-label="Fenix Yangın Katalogları">
+    <div class="fx-wrap fx-catalog-banner__wrap">
+      <div class="fx-catalog-banner__content">
+        <span class="fx-eyebrow" style="color:var(--fx-red);font-weight:700;letter-spacing:0.06em;margin-bottom:8px;display:inline-block">DOKÜMANTASYON &amp; KATALOG</span>
+        <h2 class="fx-h2 fx-catalog-banner__title">Fenix Yangın Kataloglarına Ulaşabilirsiniz.</h2>
+        <p class="fx-text fx-catalog-banner__desc">Ürün, sistem ve hizmetlerimizle ilgili detaylı teknik dokümanlara buradan ulaşabilirsiniz.</p>
+        <div class="fx-catalog-banner__actions">
+          <a class="fx-btn fx-btn--primary" href="../assets/docs/fenix-yangin-katalog.pdf" target="_blank" rel="noopener noreferrer">Katalogları İncele →</a>
+          <span class="fx-catalog-banner__meta">PDF · 16 Sayfa · 1.0 MB</span>
+        </div>
+      </div>
+      <div class="fx-catalog-banner__visual">
+        <a class="fx-catalog-book" href="../assets/docs/fenix-yangin-katalog.pdf" target="_blank" rel="noopener noreferrer" title="Fenix Yangın Kataloğunu Yeni Sekmede Aç (PDF)" aria-label="Fenix Yangın Kataloğunu Yeni Sekmede Aç (PDF)">
+          <picture>
+            <source type="image/webp" srcset="../assets/img/fenix-yangin-katalog-kapak.webp">
+            <img src="../assets/img/fenix-yangin-katalog-kapak.jpg" alt="Fenix Yangın Söndürme Sistemleri Katalog Kapağı" width="136" height="192" loading="lazy" decoding="async">
+          </picture>
+          <span class="fx-catalog-book__badge" aria-hidden="true">PDF</span>
+        </a>
       </div>
     </div>
   </section>
