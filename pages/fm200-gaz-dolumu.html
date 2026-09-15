@@ -27,6 +27,21 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+.fx-how-media--cylinder {
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+  background: #f8fafc;
+}
+.fx-how-media--cylinder img {
+  object-fit: cover;
+  object-position: center 25%;
+}
+@media (max-width: 768px) {
+  .fx-how-media--cylinder {
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+  }
+}
 </style>
 
 <!-- SCHEMA (JSON-LD) -->
@@ -559,10 +574,10 @@
   <section class="fx-section fx-section--white">
     <div class="fx-wrap">
       <div class="fx-how-grid">
-        <div class="fx-how-media">
+        <div class="fx-how-media fx-how-media--cylinder">
           <picture>
-            <source type="image/webp" srcset="../assets/img/fm200-gaz-dolumu-sistem-kontrolleri.webp">
-            <img class="fx-sys-hero__img" src="../assets/img/fm200-gaz-dolumu-sistem-kontrolleri.png" width="1024" height="682" alt="HPC dolum ve geri kazanım cihazı ile FM200 gazlı söndürme tüplerinin basınç kontrolü ve dolumu" loading="lazy" decoding="async">
+            <source type="image/webp" srcset="../assets/img/fm200-gaz-dolumu-saha-silindirleri.webp">
+            <img class="fx-sys-hero__img" src="../assets/img/fm200-gaz-dolumu-saha-silindirleri.jpg" width="576" height="1024" alt="FM200 gaz dolumu ve sızdırmazlık kontrolleri tamamlanmış yangın söndürme silindirleri" loading="lazy" decoding="async">
           </picture>
           <div class="fx-how-badge">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#16a34a" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
