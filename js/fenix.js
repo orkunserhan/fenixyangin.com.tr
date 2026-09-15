@@ -6,10 +6,12 @@
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
-  /* ---------- WHATSAPP ACTION CONFIGURATION (SINGLE SOURCE OF TRUTH) ---------- */
+  /* ---------- WHATSAPP & GA4 CONFIGURATION (SINGLE SOURCE OF TRUTH) ---------- */
   window.FENIX_CONFIG = window.FENIX_CONFIG || {};
   window.FENIX_CONFIG.WHATSAPP_TARGET = "905327409097";
   window.FENIX_CONFIG.WHATSAPP_URL = "https://wa.me/" + window.FENIX_CONFIG.WHATSAPP_TARGET;
+  window.FENIX_CONFIG.GA4_MEASUREMENT_ID = "G-MM63K7Q8EG";
+  window.FENIX_GA4_ID = window.FENIX_GA4_ID || "G-MM63K7Q8EG";
 
   function fxInitWhatsApp() {
     var waUrl = (window.FENIX_CONFIG && window.FENIX_CONFIG.WHATSAPP_URL) || "https://wa.me/905327409097";
@@ -1057,28 +1059,32 @@
     window.fxInitReferenceCounts && window.fxInitReferenceCounts();
   }
 
-  /* ---------- CENTRAL GA4 LOADER (PRODUCTION READY - AWAITING CLIENT ID) ---------- */
+  /* ---------- CENTRAL GA4 LOADER (SINGLE SOURCE OF TRUTH) ---------- */
   function fxInitGA4() {
-    var gaId = window.FENIX_GA4_ID || (window.FENIX_CONFIG && window.FENIX_CONFIG.GA4_MEASUREMENT_ID);
+    var gaId = window.FENIX_GA4_ID || (window.FENIX_CONFIG && window.FENIX_CONFIG.GA4_MEASUREMENT_ID) || "G-MM63K7Q8EG";
     if (!gaId || typeof gaId !== 'string' || !/^G-[A-Z0-9]+$/i.test(gaId) || gaId === 'G-XXXXXXXXXX') {
       return;
     }
     if (window._fxGA4Initialized) return;
     window._fxGA4Initialized = true;
 
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
-    document.head.appendChild(s);
-
+    /* Initialize Google Tag Manager / GA4 dataLayer & gtag function */
     window.dataLayer = window.dataLayer || [];
     function gtag(){ window.dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', gaId, { anonymize_ip: true });
+
+    /* Inject Google Tag script into <head> */
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+    (document.head || document.documentElement).appendChild(s);
   }
 
-  if (document.readyState === 'loading') {
+  if (document.head || document.documentElement) {
+    fxInitGA4();
+  } else if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fxInitGA4);
   } else {
     fxInitGA4();
