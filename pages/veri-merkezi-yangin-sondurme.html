@@ -194,6 +194,168 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Scoped Infographic & Data Card Styles for Technical Guide Section */
+  .fx-risk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0 28px;
+  }
+  .fx-risk-card {
+    background: #ffffff;
+    border: 1px solid var(--fx-line);
+    border-radius: var(--fx-r-ui);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .fx-risk-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  }
+  .fx-risk-card__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(190,21,35,0.08);
+    color: var(--fx-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .fx-risk-card__title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--fx-ink);
+    margin: 0 0 8px;
+    line-height: 1.35;
+  }
+  .fx-risk-card__text {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--fx-body);
+    margin: 0;
+  }
+  
+  .fx-sol-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 18px 0 16px;
+  }
+  .fx-sol-card {
+    background: #ffffff;
+    border: 1px solid var(--fx-line);
+    border-radius: var(--fx-r-ui);
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .fx-sol-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border-color: rgba(190,21,35,0.3);
+  }
+  .fx-sol-card__spec {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+  }
+  .fx-sol-card__spec:last-child {
+    border-bottom: none;
+  }
+  .fx-sol-card__k {
+    color: var(--fx-muted);
+  }
+  .fx-sol-card__v {
+    font-weight: 600;
+    color: var(--fx-ink);
+    text-align: right;
+  }
+
+  .fx-req-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 18px 0 28px;
+  }
+  .fx-req-item {
+    background: #ffffff;
+    border: 1px solid var(--fx-line);
+    border-radius: var(--fx-r-ui);
+    padding: 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .fx-req-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+  .fx-req-num {
+    font-family: var(--fx-font);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--fx-red);
+    line-height: 1;
+    background: rgba(190,21,35,0.08);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .fx-req-content h4 {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--fx-ink);
+    line-height: 1.35;
+  }
+  .fx-req-content p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--fx-body);
+  }
+
+  .fx-maint-box {
+    background: #ffffff;
+    border: 1px solid var(--fx-line);
+    border-left: 3px solid var(--fx-red);
+    border-radius: var(--fx-r-ui);
+    padding: 22px 24px;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+  }
+
+  @media (max-width: 768px) {
+    .fx-risk-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .fx-sol-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .fx-req-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .fx-maint-box {
+      padding: 18px 16px;
+    }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -563,7 +725,7 @@
           <div class="fx-sys-card__top">
             <div class="fx-sys-card__header">
               <div class="fx-sys-card__icon fx-sys-card__icon--red" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"/><path d="M10 5V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/><path d="M7 13h10"/></svg>
               </div>
               <div>
                 <span class="fx-badge fx-badge--red" style="font-size:11px">Temiz Gaz</span>
@@ -743,7 +905,7 @@
         <!-- 5. Dolum -->
         <a class="fx-srv-card" href="yangin-sondurme-gaz-dolum-hizmeti.html" aria-label="Yangın söndürme gaz dolum hizmeti: Sertifikalı istasyonda FM200 ve Novec dolumu">
           <div class="fx-srv-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9z"/><path d="M8 6V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/><path d="M18 9v6a2 2 0 0 1-2 2h-1"/><path d="M16 7l2 2 2-2"/></svg>
           </div>
           <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Dolum</h3>
           <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">Sertifikalı istasyonda FM200 & Novec dolumu.</p>
@@ -770,7 +932,10 @@
       <div style="background:#ffffff;border:1px solid var(--fx-line);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.04)">
         <div class="fx-grid fx-grid--2" style="gap:0;align-items:stretch">
           <div style="min-height:280px;background:#14181B;position:relative;overflow:hidden">
-            <img src="../assets/img/veri-merkezi-saha-uygulama.jpg" alt="Veri Merkezi Gazlı Yangın Söndürme Sistemi Saha Uygulaması" width="320" height="320" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+            <picture>
+              <source type="image/webp" srcset="../assets/img/veri-merkezi-saha-uygulama.webp">
+              <img src="../assets/img/veri-merkezi-saha-uygulama.jpg" alt="Veri Merkezi Gazlı Yangın Söndürme Sistemi Saha Uygulaması" width="1024" height="682" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block">
+            </picture>
           </div>
           <div style="padding:32px 36px;display:flex;flex-direction:column;justify-content:center">
             <span class="fx-badge fx-badge--red" style="align-self:flex-start;margin-bottom:12px">Öne Çıkan Saha Metodolojisi</span>
@@ -791,31 +956,154 @@
     <div class="fx-wrap fx-grid fx-grid--8-4" style="gap:36px">
       <article class="fx-text" style="max-width:var(--fx-measure)">
         
-        <h2>Veri Merkezlerinde Yangın Riski</h2>
-        <p>Veri merkezleri; yüksek yoğunlukta elektrikli ekipman, kesintisiz güç ünitesi (UPS), soğutma sistemleri ve yüksek kapasiteli kablo altyapısıyla ciddi yangın riski barındırır. Yangın kaynakları arasında en yaygın olanlar; kısa devre ve kablo ısınması, UPS batarya arızaları, PDU (güç dağıtım ünitesi) hataları ve soğutma sistemi arızalarıdır.</p>
-        <p>Geleneksel sprinkler sistemleri bu ortamlarda ciddi risk oluşturur; su, elektrikli ekipmanı anında tahrip eder ve donanım kaybına ek olarak veri kaybına da yol açar. Bu nedenle veri merkezleri için gazlı temiz ajan söndürme sistemleri standart haline gelmiştir.</p>
+        <!-- A: Veri Merkezlerinde Yangın Riski -->
+        <h2 class="fx-h2" style="font-size:24px;margin-bottom:12px">Veri Merkezlerinde Yangın Riski</h2>
+        <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:16px">Veri merkezleri; yüksek yoğunlukta elektrikli ekipman, kesintisiz güç ünitesi (UPS), soğutma sistemleri ve yüksek kapasiteli kablo altyapısıyla 7/24 kritik yangın riski barındırır. Geleneksel sprinkler sistemleri suyuyla elektrikli donanımı ve hassas sunucuları anında tahrip edeceğinden, veri merkezleri için gazlı temiz ajan söndürme sistemleri küresel standart haline gelmiştir.</p>
 
-        <h2>Önerilen Çözüm: FM200 veya Novec 1230</h2>
-        <p>Veri merkezleri için iki ana gazlı söndürme çözümü öne çıkmaktadır:</p>
-        <ul>
-          <li><strong><a href="fm200-gazli-yangin-sondurme-sistemleri.html">FM200 (HFC-227ea):</a></strong> Kanıtlanmış teknoloji, düşük başlangıç maliyeti, 8–10 saniye müdahale. Küçük ve orta ölçekli veri merkezleri için ideal.</li>
-          <li><strong><a href="novec-1230-gazli-yangin-sondurme-sistemleri.html">Novec 1230 (FK-5-1-12):</a></strong> Çok düşük GWP, atmosferde yalnızca 5 gün kalır. Büyük ölçekli ve çevre uyumu ön planda olan tesisler için tercih.</li>
-        </ul>
-        <p>Her ikisi de elektriki iletkenliği olmayan, kalıntısız söndürme gerçekleştiren ve 10 dakika retention süresi hedeflenen sistemlere uygundur.</p>
+        <div class="fx-risk-grid">
+          <!-- Risk 1 -->
+          <div class="fx-risk-card">
+            <div class="fx-risk-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="fx-risk-card__title">Elektriksel Yangın Riski</h3>
+            <p class="fx-risk-card__text">Kısa devre ve aşırı kablo ısınması, UPS batarya bloğu arızaları, PDU güç dağıtım panosu hataları ve iklimlendirme aşırı yüklenmeleri.</p>
+          </div>
 
-        <h2>Veri Merkezi Tasarım Gereksinimleri</h2>
-        <p>Veri merkezi yangın söndürme sistemi tasarımında özel dikkat edilmesi gereken noktalar:</p>
-        <ul>
-          <li><strong>Raised floor (yükseltilmiş taban):</strong> Alt plenom ayrı bir yangın bölgesi olarak değerlendirilmeli, ayrı nozul tasarımı yapılmalıdır.</li>
-          <li><strong>Asma tavan:</strong> Üst plenum da ayrı nozullarla korunmalıdır.</li>
-          <li><strong>Soğutma hava akışı:</strong> CRAC/CRAH birimlerinin oluşturduğu hava akışı, gaz dağılımını etkileyebilir; nozul yerleşimi buna göre optimize edilmelidir.</li>
-          <li><strong>Çift algılama (double interlock):</strong> Yanlış boşaltımı önlemek için en az iki bağımsız dedektörün onayı aranır.</li>
-          <li><strong>Abort switch:</strong> Tahliye süresinde personelin sistemi durdurabilmesi için zorunludur.</li>
-          <li><strong>Oda sızdırmazlık testi:</strong> <a href="oda-sizdirmazlik-testi.html">Door fan test</a> ile mahallerin sızdırmazlığı yıllık olarak doğrulanmalıdır.</li>
-        </ul>
+          <!-- Risk 2 -->
+          <div class="fx-risk-card">
+            <div class="fx-risk-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="fx-risk-card__title">Kritik Altyapı & Süreklilik</h3>
+            <p class="fx-risk-card__text">Saniyeler içinde binlerce işlem ve veri akışı kesintiye uğrar. Geri döndürülemez veri kaybı ve yüksek finansal hasar oluşur.</p>
+          </div>
 
-        <h2>Periyodik Bakım</h2>
-        <p>NFPA 2001 standartlarına uygun yıllık bakım; silindir tartımı, algılama sistemi testi, oda sızdırmazlık testi ve sistem onay raporunu kapsar. Fenix Yangın olarak veri merkezleri için 7/24 acil servis ve bakım sözleşmesi sunmaktayız.</p>
+          <!-- Risk 3 -->
+          <div class="fx-risk-card">
+            <div class="fx-risk-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="fx-risk-card__title">Neden Gazlı Söndürme?</h3>
+            <p class="fx-risk-card__text">Elektriksel iletkenliği yoktur, donanıma sıfır hasar verir, su gibi tortu veya kalıntı bırakmaz ve 10 saniyede alevi söndürür.</p>
+          </div>
+        </div>
+
+        <!-- B: Önerilen Çözüm -->
+        <h2 class="fx-h2" style="font-size:24px;margin:32px 0 12px">Önerilen Çözüm: FM200 veya Novec 1230</h2>
+        <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:16px">Veri merkezleri için uluslararası yangın mühendisliği standartlarında kanıtlanmış iki ana temiz gazlı söndürme teknolojisi uygulanır:</p>
+
+        <div class="fx-sol-grid">
+          <!-- FM200 Kartı -->
+          <div class="fx-sol-card">
+            <div>
+              <span class="fx-badge fx-badge--red" style="font-size:11px;margin-bottom:10px;display:inline-block">Kanıtlanmış Standart</span>
+              <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 8px;font-size:18px"><a href="fm200-gazli-yangin-sondurme-sistemleri.html" style="color:inherit;text-decoration:none">FM200 (HFC-227ea) →</a></h3>
+              <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin-bottom:14px;line-height:1.5">Kanıtlanmış teknoloji, düşük başlangıç maliyeti ve 8–10 saniye hızlı söndürme. Küçük ve orta ölçekli veri merkezleri ile sistem odaları için küresel standarttır.</p>
+              
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Müdahale Süresi:</span><span class="fx-sol-card__v">8–10 Saniye</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Ekipman Hasarı:</span><span class="fx-sol-card__v" style="color:#059669">Sıfır — Kalıntısız</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">İletkenlik:</span><span class="fx-sol-card__v">Elektriksel iletken değil</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Optimum Alan:</span><span class="fx-sol-card__v">Küçük & Orta Ölçek</span></div>
+            </div>
+            <a href="fm200-gazli-yangin-sondurme-sistemleri.html" class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" style="margin-top:16px">FM200 Sistemini İncele →</a>
+          </div>
+
+          <!-- Novec 1230 Kartı -->
+          <div class="fx-sol-card">
+            <div>
+              <span class="fx-badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;font-size:11px;margin-bottom:10px;display:inline-block">Yeni Nesil & Sürdürülebilir</span>
+              <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 8px;font-size:18px"><a href="novec-1230-gazli-yangin-sondurme-sistemleri.html" style="color:inherit;text-decoration:none">Novec 1230 (FK-5-1-12) →</a></h3>
+              <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin-bottom:14px;line-height:1.5">Çok düşük GWP (≤1) ve atmosferde yalnızca 5 gün kalma özelliği ile çevreye duyarlı, insanlı mahallerde en geniş güvenlik marjına sahip modern çözümdür.</p>
+              
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Müdahale Süresi:</span><span class="fx-sol-card__v">10 Saniye</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Çevresel Ömür:</span><span class="fx-sol-card__v" style="color:#059669">Atmosferde 5 Gün</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Ozon Aşındırma:</span><span class="fx-sol-card__v">ODP = 0</span></div>
+              <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Optimum Alan:</span><span class="fx-sol-card__v">Büyük & Kurumsal Tesis</span></div>
+            </div>
+            <a href="novec-1230-gazli-yangin-sondurme-sistemleri.html" class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" style="margin-top:16px">Novec 1230 Sistemini İncele →</a>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;padding:12px 16px;background:#f8fafc;border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);font-size:13px;color:var(--fx-body);line-height:1.55">
+          <strong style="color:var(--fx-ink)">Standart Hedef:</strong> Her iki teknoloji de elektriki iletkenliği olmayan, kalıntısız söndürme gerçekleştiren ve mahalde en az 10 dakika gaz tutma süresi (retention time) hedeflenen sistemlere uygundur.
+        </div>
+
+        <!-- C: Veri Merkezi Tasarım Gereksinimleri -->
+        <h2 class="fx-h2" style="font-size:24px;margin:36px 0 12px">Veri Merkezi Tasarım Gereksinimleri</h2>
+        <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:18px">Veri merkezi yangın söndürme sistemi tasarımında NFPA 2001 ve ISO 14520 standartları doğrultusunda dikkat edilmesi gereken 6 kritik mühendislik gereksinimi:</p>
+
+        <div class="fx-req-grid">
+          <!-- 01 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">01</div>
+            <div class="fx-req-content">
+              <h4>Raised Floor (Yükseltilmiş Taban)</h4>
+              <p>Alt plenum (kablo ve soğutma kanalları) bağımsız bir yangın bölgesi olarak değerlendirilmeli, ayrı nozul tasarımı ve debi hesabı yapılmalıdır.</p>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">02</div>
+            <div class="fx-req-content">
+              <h4>Asma Tavan (Üst Plenum)</h4>
+              <p>Üst asma tavan hacmi de bağımsız nozullarla korunmalı; tavan üstü kablo tavaları ve hava boşlukları hidrolik hesaplamaya tam dahil edilmelidir.</p>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">03</div>
+            <div class="fx-req-content">
+              <h4>Soğutma Hava Akışı (CRAC/CRAH)</h4>
+              <p>Hassas klima ünitelerinin oluşturduğu hava akışı, gaz dağılımını etkileyebilir; nozul yerleşimi ve yönlendirmeleri hava akış dinamiğine göre optimize edilmelidir.</p>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">04</div>
+            <div class="fx-req-content">
+              <h4>Çift Algılama (Cross-Zone Interlock)</h4>
+              <p>Yanlış boşaltımı önlemek için en az iki bağımsız dedektörün (duman ve sıcaklık) çapraz teyit onayı aranır ve sistem güvenliği garanti edilir.</p>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">05</div>
+            <div class="fx-req-content">
+              <h4>Abort Switch (Acil Durdurma)</h4>
+              <p>Geri sayım ve tahliye süresinde personelin sistemi manüel durdurabilmesi için standartlara uygun acil durdurma butonları kaçış kapılarına entegre edilir.</p>
+            </div>
+          </div>
+
+          <!-- 06 -->
+          <div class="fx-req-item">
+            <div class="fx-req-num">06</div>
+            <div class="fx-req-content">
+              <h4>Oda Sızdırmazlık Testi (Door Fan)</h4>
+              <p><a href="oda-sizdirmazlik-testi.html" style="color:var(--fx-red);font-weight:600">Door fan test</a> ile mahallerin gaz tutma sızdırmazlığı devreye alma öncesi ve her yıl periyodik olarak doğrulanmalıdır.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- D: Periyodik Bakım -->
+        <h2 class="fx-h2" style="font-size:24px;margin:36px 0 12px">Periyodik Bakım</h2>
+        <div class="fx-maint-box">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(190,21,35,0.08);color:var(--fx-red);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="fx-h3" style="margin:0;font-size:18px">NFPA 2001 Standartlarında Periyodik Bakım & 7/24 Destek</h3>
+          </div>
+          <p class="fx-text" style="color:var(--fx-body);line-height:1.6;font-size:14px;margin:0 0 16px">NFPA 2001 standartlarına uygun yıllık bakım; silindir tartımı ve basınç kontrolü, algılama sistemi testi, oda sızdırmazlık testi ve sistem onay raporunu kapsar. Fenix Yangın olarak veri merkezleri için 7/24 acil servis ve periyodik bakım sözleşmesi sunmaktayız.</p>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <a href="yangin-sistemleri-bakim-hizmeti.html" class="fx-btn fx-btn--secondary fx-btn--sm">Bakım Hizmetini İncele →</a>
+            <a href="tel:+902126180701" class="fx-btn fx-btn--primary fx-btn--sm">+90 212 618 07 01</a>
+          </div>
+        </div>
 
       </article>
 
