@@ -1056,6 +1056,34 @@
     window.fxInitSystemsNav && window.fxInitSystemsNav();
     window.fxInitReferenceCounts && window.fxInitReferenceCounts();
   }
+
+  /* ---------- CENTRAL GA4 LOADER (PRODUCTION READY - AWAITING CLIENT ID) ---------- */
+  function fxInitGA4() {
+    var gaId = window.FENIX_GA4_ID || (window.FENIX_CONFIG && window.FENIX_CONFIG.GA4_MEASUREMENT_ID);
+    if (!gaId || typeof gaId !== 'string' || !/^G-[A-Z0-9]+$/i.test(gaId) || gaId === 'G-XXXXXXXXXX') {
+      return;
+    }
+    if (window._fxGA4Initialized) return;
+    window._fxGA4Initialized = true;
+
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', gaId, { anonymize_ip: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fxInitGA4);
+  } else {
+    fxInitGA4();
+  }
+
 })();
 
 

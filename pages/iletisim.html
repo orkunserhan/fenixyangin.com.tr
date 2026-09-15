@@ -291,6 +291,10 @@
         <h2 class="fx-h2 fx-h2--sm" style="margin-bottom:6px">Ön değerlendirme / teklif talebi</h2>
         <p class="fx-label" style="margin-bottom:22px">Mahal ölçülerini girerek tahmini hacim hesaplayabilir, ardından talebinizi göndererek en kısa sürede fiyat teklifi alabilirsiniz.</p>
         <form class="fx-form" id="teklif-formu" method="post" action="https://formspree.io/f/xeqyagjb" novalidate>
+          <!-- Anti-Spam Honeypot & Routing Config -->
+          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Yeni İletişim / Teklif Talebi — Fenix Yangın">
+          <input type="hidden" name="_to" value="info@fenixyangin.com.tr">
           <div class="fx-form__row fx-form__row--2">
             <div><label class="fx-form__label" for="ad">Ad soyad *</label><input class="fx-input" id="ad" name="ad_soyad" type="text" required autocomplete="name"></div>
             <div><label class="fx-form__label" for="kurum">Kurum</label><input class="fx-input" id="kurum" name="kurum" type="text" autocomplete="organization"></div>
@@ -310,9 +314,10 @@
             <div><label class="fx-form__label" for="f-yuk">Yükseklik (m)</label><input class="fx-input fx-num" id="f-yuk" name="yukseklik" type="number" step="0.1" min="0" inputmode="decimal"></div>
           </div>
           <div><label class="fx-form__label" for="mesaj">Mesajınız</label><textarea class="fx-textarea" id="mesaj" name="mesaj" rows="4"></textarea></div>
-          <div class="fx-consent">
-            <input id="kvkk" name="kvkk" type="checkbox" required>
-            <label for="kvkk"><a href="#">KVKK aydınlatma metnini</a> okudum; verilerimin talebimin değerlendirilmesi amacıyla işlenmesine onay veriyorum. *</label>
+          <div class="fx-consent" style="margin-bottom:18px;">
+            <p class="fx-text fx-text--xs" style="color:var(--fx-muted);margin:0;font-size:13.5px;line-height:1.5;">
+              Kişisel verileriniz, <a href="kvkk-aydinlatma-metni.html" target="_blank" rel="noopener" style="color:var(--fx-ink);text-decoration:underline;font-weight:600;">KVKK Aydınlatma Metni</a> kapsamında talebinizin değerlendirilmesi ve sizinle iletişime geçilmesi amacıyla işlenmektedir.
+            </p>
           </div>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
             <button class="fx-btn fx-btn--primary" type="submit">Talebi gönder</button>
@@ -445,7 +450,7 @@
     <div class="fx-footer__bottom">
       <span>© 2026 Fenix Sistem Yangın Mühendislik San. ve Tic. A.Ş.</span>
       <nav class="fx-footer__legal">
-        <a href="#">KVKK Aydınlatma Metni</a><a href="#">Çerez Politikası</a><a href="#">Site Haritası</a>
+        <a href="kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a><a href="cerez-politikasi.html">Çerez Politikası</a><a href="site-haritasi.html">Site Haritası</a>
       </nav>
     </div>
   </div>
