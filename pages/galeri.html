@@ -20,6 +20,580 @@
 <link rel="icon" href="../assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../css/fenix-design.css?v=2026.11">
+<style>
+/* ==========================================================
+   FENIX YANGIN — GALERİ SAYFASI ÖZEL STILLERİ
+   ========================================================== */
+
+/* 1. Video Bölümü & YouTube Kartı */
+.fx-video-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.fx-video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.fx-yt-cta-card {
+  background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 22px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.fx-yt-cta-card__left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.fx-yt-cta-card__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.fx-yt-cta-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+.fx-yt-cta-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+.fx-yt-cta-card__desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+.fx-yt-cta-card .fx-btn {
+  font-size: 13px;
+  padding: 10px 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(190, 21, 35, 0.35);
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+.fx-yt-cta-card .fx-btn:hover {
+  transform: translateY(-1px);
+  background: #a1111d !important;
+}
+
+.fx-yt-cta-card__phone {
+  flex: 0 0 110px;
+  height: 185px;
+  background: #020617;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.fx-yt-cta-card__phone-notch {
+  width: 36px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  margin: 5px auto 4px;
+}
+.fx-yt-cta-card__phone-screen {
+  flex: 1;
+  background: #090d16;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fx-yt-cta-card__phone-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.fx-yt-cta-card__phone-thumb {
+  position: relative;
+  width: 100%;
+  height: 74px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1e293b;
+}
+.fx-yt-cta-card__phone-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fx-yt-cta-card__phone-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(190, 21, 35, 0.9);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.fx-yt-cta-card__phone-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.fx-yt-cta-card__phone-line {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+.fx-yt-cta-card__phone-line--w70 { width: 70%; }
+.fx-yt-cta-card__phone-line--w50 { width: 50%; }
+
+@media (max-width: 720px) {
+  .fx-yt-cta-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .fx-yt-cta-card__phone {
+    display: none !important;
+  }
+}
+
+/* ==========================================================
+   2. YENİ SOSYAL MEDYA ALANI (VIDEO - GALERİ ARASI)
+   ========================================================== */
+.fx-soc-banner-section {
+  position: relative;
+  background: #ffffff;
+  padding: 32px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.fx-soc-banner-wrap {
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+.fx-soc-banner-wing-l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: var(--fx-red, #BE1523);
+  clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
+  pointer-events: none;
+}
+.fx-soc-banner-wing-r {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: var(--fx-red, #BE1523);
+  clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.fx-soc-banner__intro {
+  flex: 1 1 280px;
+  max-width: 350px;
+}
+.fx-soc-banner__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fx-ink, #0E1214);
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.fx-soc-banner__text {
+  font-size: 13.5px;
+  color: var(--fx-muted, #64748B);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.fx-soc-banner__cards {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 auto;
+}
+
+.fx-soc-card {
+  flex: 1;
+  min-width: 190px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+.fx-soc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+.fx-soc-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: transform 0.2s ease;
+}
+.fx-soc-card:hover .fx-soc-card__icon {
+  transform: scale(1.08);
+}
+.fx-soc-card__icon--yt {
+  background: #fef2f2;
+}
+.fx-soc-card__icon--ig {
+  background: linear-gradient(135deg, #fdf497 0%, #fd5949 50%, #d6249f 100%);
+}
+.fx-soc-card__info {
+  flex: 1;
+  min-width: 0;
+}
+.fx-soc-card__name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--fx-ink, #0E1214);
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+.fx-soc-card__sub {
+  display: block;
+  font-size: 12px;
+  color: var(--fx-muted, #64748B);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fx-soc-card__arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: all 0.2s ease;
+}
+.fx-soc-card:hover .fx-soc-card__arrow {
+  background: var(--fx-red, #BE1523);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.fx-soc-banner__phones {
+  flex: 0 0 160px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fx-phone-duo {
+  position: relative;
+  width: 140px;
+  height: 110px;
+}
+.fx-phone-duo__item {
+  position: absolute;
+  width: 82px;
+  height: 110px;
+  background: #020617;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.fx-phone-duo__item--yt {
+  left: 0;
+  top: 0;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+.fx-phone-duo__item--ig {
+  right: 0;
+  bottom: 0;
+  transform: rotate(6deg);
+  z-index: 2;
+}
+.fx-phone-duo:hover .fx-phone-duo__item--yt {
+  transform: rotate(-10deg) translateY(-2px);
+}
+.fx-phone-duo:hover .fx-phone-duo__item--ig {
+  transform: rotate(8deg) translateY(-2px);
+}
+.fx-phone-duo__screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+.fx-phone-duo__screen--yt {
+  background: #0f172a;
+}
+.fx-phone-duo__screen--ig {
+  background: #18181b;
+}
+
+@media (max-width: 1100px) {
+  .fx-soc-banner__phones {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .fx-soc-banner-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 22px 24px !important;
+    gap: 18px !important;
+  }
+  .fx-soc-banner__intro {
+    max-width: none !important;
+  }
+  .fx-soc-banner-wing-l,
+  .fx-soc-banner-wing-r {
+    display: none !important;
+  }
+}
+@media (max-width: 640px) {
+  .fx-soc-banner-wrap {
+    padding: 20px 16px !important;
+  }
+  .fx-soc-banner__cards {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .fx-soc-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ==========================================================
+   3. KIRMIZI TEKLİF & SOSYAL MEDYA CTA
+   ========================================================== */
+.fx-cta-red-section {
+  background: var(--fx-red, #BE1523) !important;
+  color: #ffffff !important;
+  padding: 26px 0 !important;
+}
+.fx-cta-red-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+.fx-cta-red-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 340px;
+}
+.fx-cta-red-icon {
+  flex: none;
+  opacity: 0.95;
+}
+.fx-cta-red-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 4px;
+}
+.fx-cta-red-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.4;
+  margin: 0;
+  max-width: 52ch;
+}
+.fx-cta-red-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  flex-wrap: wrap;
+}
+.fx-cta-btn {
+  background: #ffffff !important;
+  color: var(--fx-red, #BE1523) !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.fx-cta-btn:hover {
+  background: #f8fafc !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+.fx-cta-phone-btn {
+  font-family: var(--fx-font-mono, monospace);
+  letter-spacing: 0.01em;
+}
+
+.fx-cta-red-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 18px;
+}
+.fx-cta-red-social-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.fx-cta-red-social-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fx-cta-social-pill {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+.fx-cta-social-pill:hover {
+  background: #ffffff;
+  color: var(--fx-red, #BE1523);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1240px) {
+  .fx-cta-red-wrap {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .fx-cta-red-social {
+    border-left: none;
+    padding-left: 0;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .fx-cta-red-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+  .fx-cta-red-left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .fx-cta-red-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .fx-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .fx-cta-red-section a[href^="tel:"].fx-cta-phone-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px 18px !important;
+    pointer-events: auto !important;
+    justify-content: center !important;
+  }
+  .fx-cta-red-social {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding-top: 14px !important;
+    width: 100% !important;
+  }
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -309,19 +883,147 @@
         </div>
 
         <!-- Video 3: Resmi YouTube Kanalı Kartı -->
+        <!-- Video 3: Resmi YouTube Kanalı Kartı (2-Kolonlu + Telefon Mockup) -->
         <div class="fx-yt-cta-card">
-          <div>
-            <div class="fx-yt-cta-card__top">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <span class="fx-yt-cta-card__badge">Resmi Kanal</span>
+          <div class="fx-yt-cta-card__left">
+            <div>
+              <div class="fx-yt-cta-card__top">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span class="fx-yt-cta-card__badge">Resmi Kanal</span>
+              </div>
+              <h3 class="fx-yt-cta-card__title">Tüm Saha Testlerimizi YouTube Üzerinden İzleyin</h3>
+              <p class="fx-yt-cta-card__desc">Saha uygulamaları, door fan testleri, gaz dolum istasyonu süreçleri ve daha fazlası kanalımızda.</p>
             </div>
-            <h3 class="fx-yt-cta-card__title">Tüm Saha Testlerimizi YouTube Üzerinden İzleyin</h3>
-            <p class="fx-yt-cta-card__desc">Saha uygulamaları, door fan testleri, gaz dolum istasyonu süreçleri ve daha fazlası kanalımızda.</p>
+            <div>
+              <a class="fx-btn fx-btn--primary" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" style="background:#BE1523;border-color:#BE1523;">
+                YouTube Kanalımıza Abone Olun &#8594;
+              </a>
+            </div>
           </div>
-          <div>
-            <a class="fx-btn fx-btn--primary" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" style="background:#BE1523;border-color:#BE1523;">
-              YouTube Kanalımıza Abone Olun &#8594;
-            </a>
+          
+          <!-- Telefon Mockup (Kanal Önizleme) -->
+          <div class="fx-yt-cta-card__phone" aria-hidden="true">
+            <div class="fx-yt-cta-card__phone-notch"></div>
+            <div class="fx-yt-cta-card__phone-screen">
+              <div class="fx-yt-cta-card__phone-header">
+                <svg viewBox="0 0 24 24" width="10" height="10" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>Fenix Yangın</span>
+              </div>
+              <div class="fx-yt-cta-card__phone-thumb">
+                <img src="../assets/img/video-fenix-yangin-tanitim-filmi.webp" alt="">
+                <div class="fx-yt-cta-card__phone-play">
+                  <svg viewBox="0 0 24 24" width="10" height="10" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="fx-yt-cta-card__phone-lines">
+                <div class="fx-yt-cta-card__phone-line fx-yt-cta-card__phone-line--w70"></div>
+                <div class="fx-yt-cta-card__phone-line fx-yt-cta-card__phone-line--w50"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 1.5: SOSYAL MEDYADA DA BİZİMLE OLUN! (YOUTUBE & INSTAGRAM CTA)
+       ================================================== -->
+  <section class="fx-soc-banner-section" id="sosyal-medya-cta">
+    <div class="fx-wrap">
+      <div class="fx-soc-banner-wrap">
+        <span class="fx-soc-banner-wing-l" aria-hidden="true"></span>
+        <span class="fx-soc-banner-wing-r" aria-hidden="true"></span>
+
+        <!-- Sol: Başlık ve Açıklama -->
+        <div class="fx-soc-banner__intro">
+          <h2 class="fx-soc-banner__title">Sosyal Medyada da Bizimle Olun!</h2>
+          <p class="fx-soc-banner__text">Projelerimiz, saha çalışmalarımız, ürün tanıtımlarımız ve daha fazlası için sosyal medya hesaplarımızı takip edin.</p>
+        </div>
+
+        <!-- Orta: YouTube & Instagram Aksiyon Kartları -->
+        <div class="fx-soc-banner__cards">
+          <!-- YouTube Kartı -->
+          <a class="fx-soc-card fx-soc-card--yt" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" aria-label="Fenix Yangın YouTube Kanalı (Yeni pencerede açılır)">
+            <div class="fx-soc-card__icon fx-soc-card__icon--yt">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div class="fx-soc-card__info">
+              <span class="fx-soc-card__name">YouTube'da Takip Et</span>
+              <span class="fx-soc-card__sub">Saha videolarımızı izleyin.</span>
+            </div>
+            <div class="fx-soc-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Instagram Kartı -->
+          <a class="fx-soc-card fx-soc-card--ig" href="https://www.instagram.com/fenixyangin/" target="_blank" rel="noopener noreferrer" aria-label="Fenix Yangın Instagram Hesabı (Yeni pencerede açılır)">
+            <div class="fx-soc-card__icon fx-soc-card__icon--ig">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+              </svg>
+            </div>
+            <div class="fx-soc-card__info">
+              <span class="fx-soc-card__name">Instagram'da Takip Et</span>
+              <span class="fx-soc-card__sub">Güncel paylaşımlarımızı kaçırmayın.</span>
+            </div>
+            <div class="fx-soc-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- Sağ: Telefon Mockupları (Duo Preview) -->
+        <div class="fx-soc-banner__phones" aria-hidden="true">
+          <div class="fx-phone-duo">
+            <!-- Telefon 1: YouTube -->
+            <div class="fx-phone-duo__item fx-phone-duo__item--yt">
+              <div class="fx-phone-duo__screen fx-phone-duo__screen--yt">
+                <div style="display:flex;align-items:center;gap:3px;margin-bottom:3px;">
+                  <svg viewBox="0 0 24 24" width="10" height="10" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <span style="font-size:6.5px;color:#fff;font-weight:700;">YouTube</span>
+                </div>
+                <div style="position:relative;width:100%;height:46px;border-radius:4px;overflow:hidden;background:#1e293b;">
+                  <img src="../assets/img/video-fenix-yangin-tanitim-filmi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="">
+                  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#BE1523;display:flex;align-items:center;justify-content:center;">
+                      <svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top:4px;font-size:6px;color:#fff;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fenix Sistem Yangın</div>
+                <div style="margin-top:2px;font-size:5.5px;color:#94a3b8;">1.4K Abone · 48 Video</div>
+              </div>
+            </div>
+
+            <!-- Telefon 2: Instagram -->
+            <div class="fx-phone-duo__item fx-phone-duo__item--ig">
+              <div class="fx-phone-duo__screen fx-phone-duo__screen--ig">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;">
+                  <span style="font-size:6px;color:#fff;font-weight:700;">@fenixyangin</span>
+                  <span style="width:4px;height:4px;border-radius:50%;background:#BE1523;"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                  <div style="width:14px;height:14px;border-radius:50%;background:#27272a;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                    <img src="../assets/favicon.png" style="width:100%;height:100%;object-fit:contain;" alt="">
+                  </div>
+                  <div style="display:flex;gap:4px;font-size:5px;color:#e4e4e7;">
+                    <div><b>142</b> g</div>
+                    <div><b>2.8K</b> t</div>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:2px;flex:1;">
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/01-gazli-yangin-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/02-sprinkler-yangin-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/07-bina-ici-yangin-dolaplari.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/11-endustriyel-mutfak-davlumbaz-sondurme.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/16-jenerator-odasi-gazli-yangin-sondurme.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/20-pano-ici-aerosol-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -667,21 +1369,58 @@
   </section>
 
   <!-- ==================================================
-       SECTION 3: RED CTA BAND (GLOBAL COMPLIANT)
+       SECTION 3: TEKNİK SUNUM, TEKLİF & SOSYAL MEDYA CTA
        ================================================== -->
-  <section class="fx-section fx-section--red fx-section--tight">
-    <div class="fx-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap">
-      <div>
-        <h2 class="fx-h2 fx-h2--sm" style="margin-bottom:8px;color:#ffffff">Projeniz için teknik sunum ve teklif talep edin</h2>
-        <p class="fx-lead" style="max-width:64ch;color:rgba(255,255,255,0.92);margin:0">Mühendislerimiz, mekanınızı inceleyerek sistem çalışma animasyonlarını ve simülasyonlarını sunar.</p>
-      </div>
-      <div style="display:flex;gap:12px;flex:none;flex-wrap:wrap;align-items:center">
-        <a class="fx-btn fx-btn--white" href="iletisim.html">7/24 Bize Ulaşın</a>
-        <div class="fx-cta-phones fx-desktop-only" style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a class="fx-btn fx-btn--white" href="tel:+902126180701">+90 212 618 07 01</a>
-          <a class="fx-btn fx-btn--white" href="tel:+902126180702">+90 212 618 07 02</a>
+  <section class="fx-section fx-section--red fx-section--tight fx-cta-red-section">
+    <div class="fx-wrap fx-cta-red-wrap">
+      
+      <!-- SOL: İkon + Başlık ve Açıklama -->
+      <div class="fx-cta-red-left">
+        <div class="fx-cta-red-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            <path d="m9 14 2 2 4-4"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="fx-cta-red-title">Projeler için teknik sunum ve teklif talep edin</h2>
+          <p class="fx-cta-red-desc">Mühendislerimiz, mekanınıza özel en uygun yangın güvenliği sistemi için sizinle iletişime geçsin, detaylı teknik bilgi ve teklif sunalım.</p>
         </div>
       </div>
+
+      <!-- ORTA: Teklif Talebi ve Telefonlar -->
+      <div class="fx-cta-red-actions">
+        <a class="fx-btn fx-btn--white fx-cta-btn" href="iletisim.html">Teklif Talebi Oluştur</a>
+        <a class="fx-btn fx-btn--white fx-cta-btn fx-cta-phone-btn" href="tel:+902126180701" aria-label="Telefon: +90 212 618 07 01">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+90 212 618 07 01</span>
+        </a>
+        <a class="fx-btn fx-btn--white fx-cta-btn fx-cta-phone-btn" href="tel:+902126180702" aria-label="Telefon: +90 212 618 07 02">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+90 212 618 07 02</span>
+        </a>
+      </div>
+
+      <!-- SAĞ: Bizi Sosyal Medyada da Takip Edin (Section 8) -->
+      <div class="fx-cta-red-social">
+        <span class="fx-cta-red-social-title">Bizi sosyal medyada takip edin</span>
+        <div class="fx-cta-red-social-pills">
+          <a class="fx-cta-social-pill" href="https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a class="fx-cta-social-pill" href="https://www.instagram.com/fenixyangin/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a class="fx-cta-social-pill" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a class="fx-cta-social-pill" href="https://www.facebook.com/fenixyangin/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
@@ -1194,6 +1933,32 @@
       else nextLightbox();        // Swiped Left
     }
   }, { passive: true });
+
+  // Video Filter Tabs Interactive Controller
+  var videoChips = document.querySelectorAll('#video-galeri .fx-filters .fx-chip');
+  var video1 = document.getElementById('kurumsal-film');
+  var video2 = document.getElementById('basin-yayin');
+
+  videoChips.forEach(function(chip) {
+    chip.addEventListener('click', function(e) {
+      var href = chip.getAttribute('href');
+      if (href && href.indexOf('http') === 0) return;
+      e.preventDefault();
+      videoChips.forEach(function(c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+
+      if (href === '#video-galeri') {
+        if (video1) video1.style.display = '';
+        if (video2) video2.style.display = '';
+      } else if (href === '#kurumsal-film') {
+        if (video1) video1.style.display = '';
+        if (video2) video2.style.display = 'none';
+      } else if (href === '#basin-yayin') {
+        if (video1) video1.style.display = 'none';
+        if (video2) video2.style.display = '';
+      }
+    });
+  });
 
 })();
 </script>
