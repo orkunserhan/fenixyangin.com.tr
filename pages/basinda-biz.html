@@ -599,50 +599,237 @@
   color: #b91c1c;
 }
 
-/* YouTube Channel Banner */
-.fx-mr-yt-channel {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #ffffff;
-  border-radius: 14px;
-  padding: 28px 32px;
+/* ==========================================================================
+   SOSYAL MEDYA BANNER (YouTube & Instagram)
+   ========================================================================== */
+.fx-soc-banner-wrap {
+  position: relative;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  flex-wrap: wrap;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
 }
-.fx-mr-yt-channel__left {
+.fx-soc-banner-wing-l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: #BE1523;
+  clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
+  pointer-events: none;
+}
+.fx-soc-banner-wing-r {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: #BE1523;
+  clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.fx-soc-banner__intro {
+  flex: 1 1 280px;
+  max-width: 350px;
+}
+.fx-soc-banner__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0E1214;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+.fx-soc-banner__text {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.fx-soc-banner__cards {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
+  flex: 1 1 auto;
 }
-.fx-mr-yt-channel__icon {
-  width: 52px;
-  height: 52px;
+
+.fx-soc-card {
+  flex: 1;
+  min-width: 190px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
-  background: #ef4444;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+.fx-soc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+.fx-soc-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex: none;
+  transition: transform 0.2s ease;
 }
-.fx-mr-yt-channel__icon svg {
+.fx-soc-card:hover .fx-soc-card__icon {
+  transform: scale(1.08);
+}
+.fx-soc-card__icon--yt {
+  background: #fef2f2;
+}
+.fx-soc-card__icon--ig {
+  background: linear-gradient(135deg, #fdf497 0%, #fd5949 50%, #d6249f 100%);
+}
+.fx-soc-card__info {
+  flex: 1;
+  min-width: 0;
+}
+.fx-soc-card__name {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0E1214;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+.fx-soc-card__sub {
+  display: block;
+  font-size: 12px;
+  color: #64748B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fx-soc-card__arrow {
   width: 28px;
   height: 28px;
-  fill: #ffffff;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: all 0.2s ease;
 }
-.fx-mr-yt-channel__title {
-  font-size: 18px;
-  font-weight: 700;
+.fx-soc-card:hover .fx-soc-card__arrow {
+  background: #BE1523;
   color: #ffffff;
-  margin: 0 0 4px;
+  transform: translateX(2px);
 }
-.fx-mr-yt-channel__text {
-  font-size: 14px;
-  color: #94a3b8;
-  margin: 0;
-  max-width: 540px;
-  line-height: 1.5;
+
+.fx-soc-banner__phones {
+  flex: 0 0 160px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fx-phone-duo {
+  position: relative;
+  width: 140px;
+  height: 110px;
+}
+.fx-phone-duo__item {
+  position: absolute;
+  width: 82px;
+  height: 110px;
+  background: #020617;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.fx-phone-duo__item--yt {
+  left: 0;
+  top: 0;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+.fx-phone-duo__item--ig {
+  right: 0;
+  bottom: 0;
+  transform: rotate(6deg);
+  z-index: 2;
+}
+.fx-phone-duo:hover .fx-phone-duo__item--yt {
+  transform: rotate(-10deg) translateY(-2px);
+}
+.fx-phone-duo:hover .fx-phone-duo__item--ig {
+  transform: rotate(8deg) translateY(-2px);
+}
+.fx-phone-duo__screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+.fx-phone-duo__screen--yt {
+  background: #0f172a;
+}
+.fx-phone-duo__screen--ig {
+  background: #18181b;
+}
+
+@media (max-width: 1100px) {
+  .fx-soc-banner__phones {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .fx-soc-banner-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 22px 24px !important;
+    gap: 18px !important;
+  }
+  .fx-soc-banner__intro {
+    max-width: none !important;
+    flex: none !important;
+  }
+  .fx-soc-banner__cards {
+    flex: none !important;
+  }
+  .fx-soc-banner-wing-l,
+  .fx-soc-banner-wing-r {
+    display: none !important;
+  }
+}
+@media (max-width: 640px) {
+  .fx-soc-banner-wrap {
+    padding: 20px 16px !important;
+  }
+  .fx-soc-banner__cards {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .fx-soc-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -732,13 +919,6 @@
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 28px 20px;
-  }
-  .fx-mr-yt-channel {
-    padding: 24px 20px;
-  }
-  .fx-mr-yt-channel__left {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
 
@@ -1199,18 +1379,101 @@
         </article>
       </div>
 
-      <!-- YouTube Channel Link Banner -->
-      <div class="fx-mr-yt-channel">
-        <div class="fx-mr-yt-channel__left">
-          <div class="fx-mr-yt-channel__icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.4-.4-5c-.2-.9-.9-1.6-1.8-1.8C19.2 4.8 12 4.8 12 4.8s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 8.6 1 12 1 12s0 3.4.4 5c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-5 .4-5zM9.7 15.4V8.6l6 3.4-6 3.4z"/></svg>
-          </div>
-          <div>
-            <div class="fx-mr-yt-channel__title">Fenix Yangın Resmi YouTube Kanalı</div>
-            <p class="fx-mr-yt-channel__text">Saha uygulamaları, oda sızdırmazlık testleri, teknik bakım süreçleri ve söndürme test videolarımız için resmi kanalımızı takip edebilirsiniz.</p>
+      <!-- Sosyal Medya Banner (YouTube & Instagram) -->
+      <div class="fx-soc-banner-wrap">
+        <span class="fx-soc-banner-wing-l" aria-hidden="true"></span>
+        <span class="fx-soc-banner-wing-r" aria-hidden="true"></span>
+
+        <!-- Sol: Başlık ve Açıklama -->
+        <div class="fx-soc-banner__intro">
+          <h3 class="fx-soc-banner__title">Sosyal Medyada da Bizimle Olun!</h3>
+          <p class="fx-soc-banner__text">Projelerimiz, saha çalışmalarımız, ürün tanıtımlarımız ve daha fazlası için sosyal medya hesaplarımızı takip edin.</p>
+        </div>
+
+        <!-- Orta: YouTube & Instagram Aksiyon Kartları -->
+        <div class="fx-soc-banner__cards">
+          <!-- YouTube Kartı -->
+          <a class="fx-soc-card fx-soc-card--yt" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer" aria-label="Fenix Yangın YouTube Kanalı (Yeni pencerede açılır)">
+            <div class="fx-soc-card__icon fx-soc-card__icon--yt">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div class="fx-soc-card__info">
+              <span class="fx-soc-card__name">YouTube'da Takip Et</span>
+              <span class="fx-soc-card__sub">Saha videolarımızı izleyin.</span>
+            </div>
+            <div class="fx-soc-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </a>
+
+          <!-- Instagram Kartı -->
+          <a class="fx-soc-card fx-soc-card--ig" href="https://www.instagram.com/fenixyangin/" target="_blank" rel="noopener noreferrer" aria-label="Fenix Yangın Instagram Hesabı (Yeni pencerede açılır)">
+            <div class="fx-soc-card__icon fx-soc-card__icon--ig">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+              </svg>
+            </div>
+            <div class="fx-soc-card__info">
+              <span class="fx-soc-card__name">Instagram'da Takip Et</span>
+              <span class="fx-soc-card__sub">Güncel paylaşımlarımızı kaçırmayın.</span>
+            </div>
+            <div class="fx-soc-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- Sağ: Telefon Mockupları (Duo Preview) -->
+        <div class="fx-soc-banner__phones" aria-hidden="true">
+          <div class="fx-phone-duo">
+            <!-- Telefon 1: YouTube -->
+            <div class="fx-phone-duo__item fx-phone-duo__item--yt">
+              <div class="fx-phone-duo__screen fx-phone-duo__screen--yt">
+                <div style="display:flex;align-items:center;gap:3px;margin-bottom:3px;">
+                  <svg viewBox="0 0 24 24" width="10" height="10" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <span style="font-size:6.5px;color:#fff;font-weight:700;">YouTube</span>
+                </div>
+                <div style="position:relative;width:100%;height:46px;border-radius:4px;overflow:hidden;background:#1e293b;">
+                  <img src="../assets/img/video-fenix-yangin-tanitim-filmi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="">
+                  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
+                    <div style="width:14px;height:14px;border-radius:50%;background:#BE1523;display:flex;align-items:center;justify-content:center;">
+                      <svg viewBox="0 0 24 24" width="8" height="8" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top:4px;font-size:6px;color:#fff;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fenix Sistem Yangın</div>
+                <div style="margin-top:2px;font-size:5.5px;color:#94a3b8;">1.4K Abone · 48 Video</div>
+              </div>
+            </div>
+
+            <!-- Telefon 2: Instagram -->
+            <div class="fx-phone-duo__item fx-phone-duo__item--ig">
+              <div class="fx-phone-duo__screen fx-phone-duo__screen--ig">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px;">
+                  <span style="font-size:6px;color:#fff;font-weight:700;">@fenixyangin</span>
+                  <span style="width:4px;height:4px;border-radius:50%;background:#BE1523;"></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;">
+                  <div style="width:14px;height:14px;border-radius:50%;background:#27272a;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                    <img src="../assets/favicon.png" style="width:100%;height:100%;object-fit:contain;" alt="">
+                  </div>
+                  <div style="display:flex;gap:4px;font-size:5px;color:#e4e4e7;">
+                    <div><b>142</b> g</div>
+                    <div><b>2.8K</b> t</div>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:2px;flex:1;">
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/01-gazli-yangin-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/02-sprinkler-yangin-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/07-bina-ici-yangin-dolaplari.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/11-endustriyel-mutfak-davlumbaz-sondurme.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/16-jenerator-odasi-gazli-yangin-sondurme.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                  <div style="background:#27272a;border-radius:2px;overflow:hidden;"><img src="../assets/img/galeri/20-pano-ici-aerosol-sondurme-sistemi.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt=""></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="fx-btn fx-btn--on-red" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" target="_blank" rel="noopener noreferrer">Kanalı Ziyaret Edin ↗</a>
       </div>
     </div>
   </section>
