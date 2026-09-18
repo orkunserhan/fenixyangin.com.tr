@@ -12,5 +12,4 @@ Disallow: /pages/404.html
 Disallow: /pages/arama.html
 Disallow: /pages/*-single.html
 Disallow: /pages/bolge.html
-Disallow: /pages/aerosol-yangin-sondurme-sistemleri.html
 Disallow: /parts/
