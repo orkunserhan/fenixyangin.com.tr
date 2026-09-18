@@ -3,7 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}</script>
+<script>
+try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}
+(function(){
+  var p = window.location.pathname.replace(/\/$/, '').toLowerCase();
+  var map = {
+    '/yangin-sondurucu-siniflari-nelerdir': '/pages/yangin-siniflari.html',
+    '/yangin-siniflari': '/pages/yangin-siniflari.html',
+    '/aerosol-gazli-yangin-sondurme-sistemleri': '/pages/aerosol-gazli-yangin-sondurme-sistemleri.html',
+    '/mutfak-davlumbaz-yangin-sondurme-sistemi-nedir': '/pages/davlumbaz-yangin-sondurme-sistemleri.html',
+    '/fm-200-gazli-sondurme-sistemleri': '/pages/fm200-gazli-yangin-sondurme-sistemleri.html',
+    '/fm-200-gazi-icerigi': '/pages/fm200-gazi-icerigi.html',
+    '/gazli-yangin-sondurme-sistemleri': '/pages/sistemler.html',
+    '/novec-1230-gazli-yangin-sondurme-sistemleri': '/pages/novec-1230-gazli-yangin-sondurme-sistemleri.html',
+    '/otomatik-gazli-yangin-sondurme-sistemleri-nelerdir': '/pages/sistemler.html',
+    '/tag/novec-1230-gazli-yangin-sondurme-sistemleri': '/pages/novec-1230-gazli-yangin-sondurme-sistemleri.html',
+    '/oda-sizdirmazlik-testi': '/pages/oda-sizdirmazlik-testi.html',
+    '/door-fan-oda-sizdirmazlik-testi': '/pages/oda-sizdirmazlik-testi.html',
+    '/trafo-yangin-sondurme-sistemleri': '/pages/trafo-odasi-yangin-sondurme.html',
+    '/karbondioksit-gazli-yangin-sondurme-sistemleri': '/pages/co2-gazli-yangin-sondurme-sistemleri.html',
+    '/davlumbaz-yangin-sondurme-sistemleri': '/pages/davlumbaz-yangin-sondurme-sistemleri.html',
+    '/fm200-gazli-yangin-sondurme-sistemleri': '/pages/fm200-gazli-yangin-sondurme-sistemleri.html',
+    '/pano-ici-yangin-sondurme-sistemleri': '/pages/pano-ici-yangin-sondurme-sistemleri.html',
+    '/yangin-danismanligi': '/pages/yangin-danismanligi.html'
+  };
+  if (map[p]) { window.location.replace(map[p]); }
+})();
+</script>
 <meta name="robots" content="noindex, follow">
 <title>Sayfa bulunamadı — Fenix Yangın</title>
 <meta name="description" content="Aradığınız sayfa bulunamadı veya adresi değişti. Hizmetler, sistemler, projeler ve iletişim sayfalarından devam edebilir ya da sitede arama yapabilirsiniz.">
