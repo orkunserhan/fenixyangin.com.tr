@@ -368,22 +368,53 @@
       if (badge) badge.textContent = numStr;
     });
 
-    function updateStrip() {
-      var max = strip.scrollWidth - strip.clientWidth;
-      if (bar) bar.style.width = (max > 0 ? Math.max(12, (strip.scrollLeft / max) * 100) : 100) + '%';
-      if (progressText && cards.length) {
-        var cardW = cards[0].offsetWidth + (parseFloat(window.getComputedStyle(cards[0]).marginRight) || 20);
-        var current = Math.min(totalCards, Math.max(1, Math.round(strip.scrollLeft / (cardW || 300)) + 1));
-        var str = (current < 10 ? '0' + current : current) + ' / ' + (totalCards < 10 ? '0' + totalCards : totalCards) + ' · kaydır';
-        progressText.textContent = str;
+    var cachedCardW = 300;
+    function measureStripCard() {
+      if (cards.length) {
+        var mr = parseFloat(window.getComputedStyle(cards[0]).marginRight) || 20;
+        cachedCardW = (cards[0].offsetWidth || 300) + mr;
       }
-      if (b[0]) b[0].classList.toggle('is-disabled', strip.scrollLeft <= 5);
-      if (b[1]) b[1].classList.toggle('is-disabled', strip.scrollLeft >= max - 5);
+    }
+    measureStripCard();
+    window.addEventListener('resize', function () {
+      measureStripCard();
+      scheduleUpdateStrip();
+    }, { passive: true });
+
+    var stripTicking = false;
+    function scheduleUpdateStrip() {
+      if (!stripTicking) {
+        window.requestAnimationFrame(function () {
+          updateStrip();
+          stripTicking = false;
+        });
+        stripTicking = true;
+      }
+    }
+
+    function updateStrip() {
+      // 1. All DOM reads first
+      var sLeft = strip.scrollLeft;
+      var sWidth = strip.scrollWidth;
+      var cWidth = strip.clientWidth;
+      var max = sWidth - cWidth;
+
+      // 2. Pure calculations
+      var barPct = (max > 0 ? Math.max(12, (sLeft / max) * 100) : 100) + '%';
+      var current = Math.min(totalCards, Math.max(1, Math.round(sLeft / (cachedCardW || 300)) + 1));
+      var str = (current < 10 ? '0' + current : current) + ' / ' + (totalCards < 10 ? '0' + totalCards : totalCards) + ' · kaydır';
+      var atStart = sLeft <= 5;
+      var atEnd = sLeft >= max - 5;
+
+      // 3. All DOM writes together
+      if (bar) bar.style.width = barPct;
+      if (progressText && cards.length) progressText.textContent = str;
+      if (b[0]) b[0].classList.toggle('is-disabled', atStart);
+      if (b[1]) b[1].classList.toggle('is-disabled', atEnd);
     }
 
     function step(d) {
-      var cardW = cards[0] ? cards[0].offsetWidth + 20 : strip.clientWidth * 0.75;
-      strip.scrollBy({ left: d * cardW, behavior: 'smooth' });
+      strip.scrollBy({ left: d * (cachedCardW || 300), behavior: 'smooth' });
     }
 
     if (b[0]) {
@@ -394,7 +425,7 @@
       b[1].onclick = function () { step(1); };
       b[1].setAttribute('aria-label', 'Sonraki sektör');
     }
-    strip.addEventListener('scroll', updateStrip, { passive: true });
+    strip.addEventListener('scroll', scheduleUpdateStrip, { passive: true });
     updateStrip();
   };
 
@@ -470,31 +501,57 @@
     var cards = $$('.fx-decision-card', rail);
     var total = cards.length || 8;
 
-    function updateProgress() {
-      var max = rail.scrollWidth - rail.clientWidth;
-      var pct = max > 0 ? Math.min(100, Math.max(12, (rail.scrollLeft / max) * 100)) : 100;
-      if (bar) bar.style.width = pct + '%';
-      if (text && cards.length) {
-        var cardW = cards[0].offsetWidth + 20;
-        var current = Math.min(total, Math.max(1, Math.round(rail.scrollLeft / cardW) + 1));
-        var str = (current < 10 ? '0' + current : current) + ' / ' + (total < 10 ? '0' + total : total) + ' · Sağa kaydırın';
-        text.textContent = str;
+    var cachedRailCardW = 360;
+    function measureRailCard() {
+      if (cards.length) {
+        cachedRailCardW = (cards[0].offsetWidth || 340) + 20;
       }
+    }
+    measureRailCard();
+    window.addEventListener('resize', function () {
+      measureRailCard();
+      scheduleUpdateProgress();
+    }, { passive: true });
+
+    var railTicking = false;
+    function scheduleUpdateProgress() {
+      if (!railTicking) {
+        window.requestAnimationFrame(function () {
+          updateProgress();
+          railTicking = false;
+        });
+        railTicking = true;
+      }
+    }
+
+    function updateProgress() {
+      // 1. All DOM reads first
+      var rLeft = rail.scrollLeft;
+      var rWidth = rail.scrollWidth;
+      var cWidth = rail.clientWidth;
+      var max = rWidth - cWidth;
+
+      // 2. Pure calculations
+      var pct = max > 0 ? Math.min(100, Math.max(12, (rLeft / max) * 100)) : 100;
+      var current = Math.min(total, Math.max(1, Math.round(rLeft / (cachedRailCardW || 360)) + 1));
+      var str = (current < 10 ? '0' + current : current) + ' / ' + (total < 10 ? '0' + total : total) + ' · Sağa kaydırın';
+
+      // 3. All DOM writes together
+      if (bar) bar.style.width = pct + '%';
+      if (text && cards.length) text.textContent = str;
     }
 
     if (prevBtn) {
       prevBtn.addEventListener('click', function () {
-        var step = (cards[0] ? cards[0].offsetWidth + 20 : 360);
-        rail.scrollBy({ left: -step, behavior: 'smooth' });
+        rail.scrollBy({ left: -cachedRailCardW, behavior: 'smooth' });
       });
     }
     if (nextBtn) {
       nextBtn.addEventListener('click', function () {
-        var step = (cards[0] ? cards[0].offsetWidth + 20 : 360);
-        rail.scrollBy({ left: step, behavior: 'smooth' });
+        rail.scrollBy({ left: cachedRailCardW, behavior: 'smooth' });
       });
     }
-    rail.addEventListener('scroll', updateProgress, { passive: true });
+    rail.addEventListener('scroll', scheduleUpdateProgress, { passive: true });
     updateProgress();
   });
 

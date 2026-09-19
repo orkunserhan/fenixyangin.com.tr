@@ -19,14 +19,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://fenixyangin.com.tr/assets/img/hero-fenix-yangin.webp">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
-<link rel="preload" as="image" href="assets/img/fenix-yangin-mobile-hero.webp?v=2026.13" type="image/webp" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" href="assets/fonts/instrument-sans-v4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-v4-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/fenix-yangin-mobile-hero-540.webp?v=2026.14" type="image/webp" media="(max-width: 480px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/fenix-yangin-mobile-hero.webp?v=2026.14" type="image/webp" media="(min-width: 481px) and (max-width: 760px)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero-fenix-yangin.webp" type="image/webp" media="(min-width: 761px)" fetchpriority="high">
 <link rel="icon" href="assets/favicon.png" sizes="256x256">
 <link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="stylesheet" href="css/fenix-design.css?v=2026.12">
+<link rel="stylesheet" href="css/fenix-design.min.css?v=2026.14">
 
 <!-- Schema.org Structured Data (JSON-LD) -->
 <script type="application/ld+json">
@@ -356,7 +356,8 @@
   <section class="fx-hero fx-hero--home fx-hero--full" style="background:var(--fx-paper);">
     <div class="fx-hero__media">
       <picture>
-        <source type="image/webp" media="(max-width:760px)" srcset="assets/img/fenix-yangin-mobile-hero.webp?v=2026.13">
+        <source type="image/webp" media="(max-width:480px)" srcset="assets/img/fenix-yangin-mobile-hero-540.webp?v=2026.14">
+        <source type="image/webp" media="(max-width:760px)" srcset="assets/img/fenix-yangin-mobile-hero.webp?v=2026.14">
         <source type="image/webp" srcset="assets/img/hero-fenix-yangin.webp">
         <img src="assets/img/hero-fenix-yangin.png" alt="Sunucu odası girişinde FM200 gazlı söndürme silindir grubu ve dağıtım borulaması" width="1920" height="1062" fetchpriority="high" decoding="async">
       </picture>
@@ -368,10 +369,10 @@
     <div class="fx-wrap fx-hero__inner">
       <div class="fx-hero__col-layout">
         <div class="fx-hero__badges" aria-label="Uluslararası Standart ve Sertifikasyonlar">
-          <div class="fx-hero__badge-wrap"><img src="assets/img/logo-tse.png" alt="TSE-HYB Hizmet Yeterlilik" class="fx-hero__badge fx-hero__badge--tse" loading="eager" width="288" height="168"></div>
-          <div class="fx-hero__badge-wrap"><img src="assets/img/logo-ul.png" alt="UL Listed" class="fx-hero__badge" loading="eager" width="958" height="958"></div>
-          <div class="fx-hero__badge-wrap"><img src="assets/img/logo-fm.png" alt="FM Approved" class="fx-hero__badge" loading="eager" width="288" height="177"></div>
-          <div class="fx-hero__badge-wrap"><img src="assets/img/logo-nfpa.png" alt="NFPA" class="fx-hero__badge" loading="eager" width="416" height="443"></div>
+          <div class="fx-hero__badge-wrap"><picture><source type="image/webp" srcset="assets/img/logo-tse.webp?v=2026.14"><img src="assets/img/logo-tse.png?v=2026.14" alt="TSE-HYB Hizmet Yeterlilik" class="fx-hero__badge fx-hero__badge--tse" loading="eager" decoding="async" width="156" height="91"></picture></div>
+          <div class="fx-hero__badge-wrap"><picture><source type="image/webp" srcset="assets/img/logo-ul.webp?v=2026.14"><img src="assets/img/logo-ul.png?v=2026.14" alt="UL Listed" class="fx-hero__badge" loading="eager" decoding="async" width="156" height="156"></picture></div>
+          <div class="fx-hero__badge-wrap"><picture><source type="image/webp" srcset="assets/img/logo-fm.webp?v=2026.14"><img src="assets/img/logo-fm.png?v=2026.14" alt="FM Approved" class="fx-hero__badge" loading="eager" decoding="async" width="156" height="96"></picture></div>
+          <div class="fx-hero__badge-wrap"><picture><source type="image/webp" srcset="assets/img/logo-nfpa.webp?v=2026.14"><img src="assets/img/logo-nfpa.png?v=2026.14" alt="NFPA" class="fx-hero__badge" loading="eager" decoding="async" width="139" height="148"></picture></div>
         </div>
 
         <div class="fx-hero__main">
@@ -1744,6 +1745,6 @@
   <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
 </a>
 
-<script src="js/fenix.js?v=2026.10"></script>
+<script src="js/fenix.min.js?v=2026.14" defer></script>
 </body>
 </html>

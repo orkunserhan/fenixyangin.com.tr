@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fenix Yangın — Hizmet Ağı</title>
 <meta name="robots" content="noindex, follow">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
 <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
 <style>
@@ -23,6 +21,8 @@ html,body{margin:0;height:100%;background:transparent;font-family:'Instrument Sa
 .pulse{fill:none;stroke:#BE1523;stroke-width:1;transform-box:fill-box;transform-origin:center;animation:pulse 3.6s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.arc{animation:none!important;stroke-dashoffset:0!important}.pulse{animation:none;opacity:.36}}
 </style>
+<link rel="preload" href="../assets/fonts/instrument-sans-v4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-v4-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <svg id="map" role="img" aria-label="İstanbul merkezli Fenix Yangın hizmet ağı — Türkiye'nin 81 ili"></svg>
