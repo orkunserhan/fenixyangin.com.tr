@@ -1125,27 +1125,39 @@
     if (window._fxGA4Initialized) return;
     window._fxGA4Initialized = true;
 
-    /* Initialize Google Tag Manager / GA4 dataLayer & gtag function */
+    /* Initialize Google Tag Manager / GA4 dataLayer & gtag function immediately */
     window.dataLayer = window.dataLayer || [];
     function gtag(){ window.dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', gaId, { anonymize_ip: true });
 
-    /* Inject Google Tag script into <head> */
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
-    (document.head || document.documentElement).appendChild(s);
+    /* Defer injecting remote Google Tag script until window load to protect initial render */
+    function injectGA4Script() {
+      if (window._fxGA4ScriptInjected) return;
+      window._fxGA4ScriptInjected = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+      (document.head || document.documentElement).appendChild(s);
+    }
+
+    if (document.readyState === 'complete') {
+      injectGA4Script();
+    } else {
+      window.addEventListener('load', function () {
+        if (typeof requestIdleCallback === 'function') {
+          requestIdleCallback(injectGA4Script, { timeout: 1500 });
+        } else {
+          setTimeout(injectGA4Script, 100);
+        }
+      });
+      /* Safety fallback: ensure GA4 always fires even if load event was missed or delayed */
+      setTimeout(injectGA4Script, 3500);
+    }
   }
 
-  if (document.head || document.documentElement) {
-    fxInitGA4();
-  } else if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fxInitGA4);
-  } else {
-    fxInitGA4();
-  }
+  fxInitGA4();
 
 })();
 
