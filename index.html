@@ -99,7 +99,7 @@
 
 <style id="fx-desktop-hero-styles">
 /* ==========================================================================
-   DESKTOP HOMEPAGE HERO (Final Single Visual - Precision Design Grid)
+   DESKTOP HOMEPAGE HERO (Visual Geometry Master Refinement)
    Strictly isolated to min-width: 992px
    ========================================================================== */
 
@@ -123,7 +123,7 @@
 @media (min-width: 992px) {
   .fx-hero--home {
     background: #ffffff !important;
-    min-height: 570px !important;
+    min-height: 590px !important;
     display: flex !important;
     align-items: center !important;
     position: relative !important;
@@ -178,26 +178,35 @@
     object-position: left center !important;
   }
 
-  /* Inner container aligned to site header grid */
+  /* Inner container aligned to site header grid, vertically centered */
   .fx-hero--home .fx-hero__inner {
     position: relative !important;
     z-index: 5 !important;
     width: 100% !important;
     max-width: var(--fx-wrap, 1240px) !important;
     margin: 0 auto !important;
-    padding-top: 54px !important;
-    padding-bottom: 54px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     padding-left: var(--fx-gut, 32px) !important;
     padding-right: var(--fx-gut, 32px) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    justify-content: center !important;
+    min-height: auto !important;
   }
 
   .fx-hero--home .fx-hero__col-layout {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
     width: 100% !important;
-    max-width: 530px !important;
+    max-width: 580px !important;
+  }
+
+  .fx-hero--home .fx-hero__aside {
+    display: none !important;
   }
 
   .fx-hero--home .fx-hero__badges.fx-hero__badges--mobile {
@@ -211,41 +220,45 @@
     width: 100% !important;
   }
 
-  /* Eyebrow / Kicker */
+  /* Eyebrow / Kicker: Text first, red bar second on desktop matching reference geometry */
   .fx-hero__eyebrow-wrap {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 14px !important;
     margin-top: 0 !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 16px !important;
     height: 22px !important;
   }
-  .fx-hero__eyebrow-bar {
-    width: 28px !important;
-    height: 3px !important;
-    background: #be1523 !important;
-    border-radius: 2px !important;
-    flex-shrink: 0 !important;
-  }
   .fx-hero__eyebrow-text {
+    order: 1 !important;
     font-size: 13.5px !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
     color: #1e293b !important;
   }
+  .fx-hero--home .fx-hero__eyebrow-bar {
+    display: block !important;
+    order: 2 !important;
+    width: 44px !important;
+    height: 2px !important;
+    background: #be1523 !important;
+    border-radius: 1px !important;
+    flex-shrink: 0 !important;
+  }
 
-  /* Title: Uppercase 3-line Corporate Engineering standard */
+  /* Title: Uppercase 3-line Corporate Engineering standard (56px, line-height 0.98) */
   .fx-hero--home .fx-hero__title {
-    font-size: 54px !important;
+    font-size: 56px !important;
     line-height: 0.98 !important;
     font-weight: 750 !important;
-    letter-spacing: -0.025em !important;
+    letter-spacing: -0.02em !important;
     color: #0f172a !important;
     text-transform: uppercase !important;
     margin-top: 0 !important;
-    margin-bottom: 24px !important;
-    max-width: 530px !important;
+    margin-bottom: 20px !important;
+    max-width: 580px !important;
   }
 
   .fx-hero__line {
@@ -263,7 +276,7 @@
     color: #475569 !important;
     margin-top: 0 !important;
     margin-bottom: 22px !important;
-    max-width: 480px !important;
+    max-width: 520px !important;
   }
 
   /* Desktop Trust Marks Row (Directly below description) */
@@ -320,7 +333,7 @@
     align-items: center !important;
     justify-content: center !important;
     gap: 10px !important;
-    padding: 13px 24px !important;
+    padding: 13px 26px !important;
     border-radius: 8px !important;
     font-size: 15px !important;
     font-weight: 600 !important;
@@ -368,6 +381,7 @@
   }
 }
 </style>
+
 
 </head>
 <body class="fx-page fx-page--home">
