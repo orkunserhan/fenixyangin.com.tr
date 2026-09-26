@@ -123,7 +123,7 @@
 @media (min-width: 992px) {
   .fx-hero--home {
     background: #ffffff !important;
-    min-height: 590px !important;
+    min-height: 470px !important;
     display: flex !important;
     align-items: center !important;
     position: relative !important;
@@ -165,7 +165,7 @@
     left: -40px !important;
     top: 0 !important;
     bottom: 0 !important;
-    width: 380px !important;
+    width: 340px !important;
     height: 100% !important;
     opacity: 0.16 !important;
     z-index: 3 !important;
@@ -202,7 +202,7 @@
     align-items: flex-start !important;
     justify-content: center !important;
     width: 100% !important;
-    max-width: 580px !important;
+    max-width: 530px !important;
   }
 
   .fx-hero--home .fx-hero__aside {
@@ -225,14 +225,14 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: 12px !important;
     margin-top: 0 !important;
-    margin-bottom: 16px !important;
-    height: 22px !important;
+    margin-bottom: 12px !important;
+    height: 20px !important;
   }
   .fx-hero__eyebrow-text {
     order: 1 !important;
-    font-size: 13.5px !important;
+    font-size: 12.5px !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
@@ -241,24 +241,24 @@
   .fx-hero--home .fx-hero__eyebrow-bar {
     display: block !important;
     order: 2 !important;
-    width: 44px !important;
+    width: 36px !important;
     height: 2px !important;
     background: #be1523 !important;
     border-radius: 1px !important;
     flex-shrink: 0 !important;
   }
 
-  /* Title: Uppercase 3-line Corporate Engineering standard (56px, line-height 0.98) */
+  /* Title: Uppercase 3-line Corporate Engineering standard (45px, line-height 0.98) */
   .fx-hero--home .fx-hero__title {
-    font-size: 56px !important;
+    font-size: 45px !important;
     line-height: 0.98 !important;
     font-weight: 750 !important;
     letter-spacing: -0.02em !important;
     color: #0f172a !important;
     text-transform: uppercase !important;
     margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    max-width: 580px !important;
+    margin-bottom: 14px !important;
+    max-width: 530px !important;
   }
 
   .fx-hero__line {
@@ -271,12 +271,12 @@
 
   /* Description */
   .fx-hero--home .fx-hero__text {
-    font-size: 17.5px !important;
+    font-size: 15px !important;
     line-height: 1.5 !important;
     color: #475569 !important;
     margin-top: 0 !important;
-    margin-bottom: 22px !important;
-    max-width: 520px !important;
+    margin-bottom: 18px !important;
+    max-width: 470px !important;
   }
 
   /* Desktop Trust Marks Row (Directly below description) */
@@ -284,13 +284,13 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 18px !important;
+    gap: 16px !important;
     margin-top: 0 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
     padding: 0 !important;
     border: none !important;
     width: auto !important;
-    height: 36px !important;
+    height: 32px !important;
   }
 
   .fx-hero__badges--desktop .fx-hero__badge-wrap {
@@ -300,19 +300,19 @@
   }
 
   .fx-hero__badges--desktop .fx-hero__badge {
-    height: 32px !important;
+    height: 28px !important;
     width: auto !important;
     object-fit: contain !important;
     filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06)) !important;
   }
   .fx-hero__badges--desktop .fx-hero__badge--tse {
-    height: 28px !important;
+    height: 25px !important;
   }
 
   .fx-hero__badge-divider {
     display: block !important;
     width: 1px !important;
-    height: 20px !important;
+    height: 18px !important;
     background: #cbd5e1 !important;
     flex-shrink: 0 !important;
   }
@@ -322,7 +322,7 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: 12px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     width: 100% !important;
@@ -332,15 +332,15 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
-    padding: 13px 26px !important;
+    gap: 9px !important;
+    padding: 11px 22px !important;
     border-radius: 8px !important;
-    font-size: 15px !important;
+    font-size: 14.5px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
     cursor: pointer !important;
     transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
-    height: 48px !important;
+    height: 44px !important;
     box-sizing: border-box !important;
   }
 
@@ -378,6 +378,18 @@
   /* Scroll hint hidden on desktop */
   .fx-hero--home .fx-hero__scroll-hint {
     display: none !important;
+  }
+
+  /* Compact Referanslar section on desktop so rotating marquee is completely visible above the fold */
+  .fx-hero--home + .fx-section {
+    padding-top: 24px !important;
+    padding-bottom: 28px !important;
+  }
+  .fx-hero--home + .fx-section .fx-wrap:first-child {
+    margin-bottom: 16px !important;
+  }
+  .fx-hero--home + .fx-section .fx-h2--sm {
+    margin-top: 6px !important;
   }
 }
 </style>
