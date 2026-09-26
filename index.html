@@ -95,9 +95,11 @@
   ]
 }
 </script>
+
+
 <style id="fx-desktop-hero-styles">
 /* ==========================================================================
-   DESKTOP HOMEPAGE HERO (Reference Design Master Match)
+   DESKTOP HOMEPAGE HERO (Final Single Visual - Precision Design Grid)
    Strictly isolated to min-width: 992px
    ========================================================================== */
 
@@ -109,14 +111,11 @@
   .fx-hero--home .fx-hero__badges.fx-hero__badges--mobile {
     display: flex !important;
   }
-  .fx-hero__slide:not(:first-child) {
-    display: none !important;
-  }
-  .fx-hero__dots {
-    display: none !important;
-  }
   .fx-hero-cta__phone {
     display: none !important;
+  }
+  .fx-hero__line {
+    display: inline !important;
   }
 }
 
@@ -124,7 +123,7 @@
 @media (min-width: 992px) {
   .fx-hero--home {
     background: #ffffff !important;
-    min-height: 590px !important;
+    min-height: 570px !important;
     display: flex !important;
     align-items: center !important;
     position: relative !important;
@@ -179,14 +178,17 @@
     object-position: left center !important;
   }
 
-  /* Inner container */
+  /* Inner container aligned to site header grid */
   .fx-hero--home .fx-hero__inner {
     position: relative !important;
     z-index: 5 !important;
     width: 100% !important;
-    max-width: 1240px !important;
+    max-width: var(--fx-wrap, 1240px) !important;
     margin: 0 auto !important;
-    padding: 64px 28px !important;
+    padding-top: 54px !important;
+    padding-bottom: 54px !important;
+    padding-left: var(--fx-gut, 32px) !important;
+    padding-right: var(--fx-gut, 32px) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -209,39 +211,13 @@
     width: 100% !important;
   }
 
-  /* Slider container: mathematically locked geometry across all 3 slides */
-  .fx-hero__slider {
-    position: relative !important;
-    width: 100% !important;
-    height: 290px !important;
-  }
-
-  .fx-hero__slide {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 100% !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: opacity 0.35s ease, visibility 0.35s ease !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .fx-hero__slide.is-active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
   /* Eyebrow / Kicker */
   .fx-hero__eyebrow-wrap {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
-    margin-bottom: 14px !important;
+    margin-top: 0 !important;
+    margin-bottom: 18px !important;
     height: 22px !important;
   }
   .fx-hero__eyebrow-bar {
@@ -259,40 +235,34 @@
     color: #1e293b !important;
   }
 
-  /* Title Slot */
-  .fx-hero__title-slot {
-    height: 180px !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    margin-bottom: 14px !important;
-  }
-
+  /* Title: Uppercase 3-line Corporate Engineering standard */
   .fx-hero--home .fx-hero__title {
-    font-size: 58px !important;
-    line-height: 1.05 !important;
+    font-size: 54px !important;
+    line-height: 0.98 !important;
     font-weight: 750 !important;
     letter-spacing: -0.025em !important;
     color: #0f172a !important;
-    margin: 0 !important;
-    max-width: 510px !important;
+    text-transform: uppercase !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    max-width: 530px !important;
+  }
+
+  .fx-hero__line {
+    display: block !important;
   }
 
   .fx-hero-red {
     color: #be1523 !important;
   }
 
-  /* Desc Slot */
-  .fx-hero__desc-slot {
-    height: 72px !important;
-    display: flex !important;
-    align-items: flex-start !important;
-  }
-
+  /* Description */
   .fx-hero--home .fx-hero__text {
-    font-size: 15.5px !important;
-    line-height: 1.55 !important;
+    font-size: 17.5px !important;
+    line-height: 1.5 !important;
     color: #475569 !important;
-    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
     max-width: 480px !important;
   }
 
@@ -302,12 +272,12 @@
     flex-direction: row !important;
     align-items: center !important;
     gap: 18px !important;
-    margin-top: 18px !important;
+    margin-top: 0 !important;
     margin-bottom: 24px !important;
     padding: 0 !important;
     border: none !important;
     width: auto !important;
-    height: 40px !important;
+    height: 36px !important;
   }
 
   .fx-hero__badges--desktop .fx-hero__badge-wrap {
@@ -329,7 +299,7 @@
   .fx-hero__badge-divider {
     display: block !important;
     width: 1px !important;
-    height: 22px !important;
+    height: 20px !important;
     background: #cbd5e1 !important;
     flex-shrink: 0 !important;
   }
@@ -339,9 +309,9 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 14px !important;
     margin-top: 0 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 0 !important;
     width: 100% !important;
   }
 
@@ -390,28 +360,6 @@
     background: #f8fafc !important;
     border-color: #94a3b8 !important;
     transform: translateY(-1px) !important;
-  }
-
-  /* Dots */
-  .fx-hero__dots {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    margin-top: 10px !important;
-  }
-  .fx-hero__dot {
-    width: 8px !important;
-    height: 4px !important;
-    border-radius: 2px !important;
-    background: #cbd5e1 !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    transition: width 0.25s ease, background 0.25s ease !important;
-  }
-  .fx-hero__dot.is-active {
-    width: 26px !important;
-    background: #be1523 !important;
   }
 
   /* Scroll hint hidden on desktop */
@@ -679,7 +627,7 @@
   <!-- ==================================================
        SECTION 1: HERO
        ================================================== -->
-    <section class="fx-hero fx-hero--home fx-hero--full" style="background:var(--fx-paper);">
+      <section class="fx-hero fx-hero--home fx-hero--full" style="background:var(--fx-paper);">
     <div class="fx-hero__media">
       <picture>
         <source type="image/webp" media="(max-width:480px)" srcset="assets/img/fenix-yangin-mobile-hero-540.webp?v=2026.14">
@@ -703,50 +651,17 @@
         </div>
 
         <div class="fx-hero__main">
-          <!-- 3-Slide System (Slide 1 is default/mobile; Slides 2 & 3 rotate on desktop) -->
-          <div class="fx-hero__slider" data-hero-slider>
-            <!-- Slide 1: Riski Söndürüyoruz / Yangın söndürme sistemlerinde güvenin adresi -->
-            <div class="fx-hero__slide is-active" data-hero-slide="0">
-              <div class="fx-hero__eyebrow-wrap">
-                <span class="fx-hero__eyebrow-bar" aria-hidden="true"></span>
-                <span class="fx-hero__eyebrow-text">RİSKİ SÖNDÜRÜYORUZ</span>
-              </div>
-              <div class="fx-hero__title-slot">
-                <h1 class="fx-h1 fx-h1--hero fx-hero__title">Yangın söndürme sistemlerinde <span class="fx-hero-red">güvenin adresi</span></h1>
-              </div>
-              <div class="fx-hero__desc-slot">
-                <p class="fx-lead fx-hero__text">Can ve mal güvenliğiniz için yangın söndürme sistemleri kurulum, montaj, devreye alma, bakım ve mühendislik hizmetleriyle yanınızdayız.</p>
-              </div>
-            </div>
-
-            <!-- Slide 2: Kritik Alanlarda / Kesintisiz Koruma -->
-            <div class="fx-hero__slide" data-hero-slide="1" aria-hidden="true">
-              <div class="fx-hero__eyebrow-wrap">
-                <span class="fx-hero__eyebrow-bar" aria-hidden="true"></span>
-                <span class="fx-hero__eyebrow-text">KRİTİK ALANLARDA</span>
-              </div>
-              <div class="fx-hero__title-slot">
-                <h2 class="fx-h1 fx-h1--hero fx-hero__title">Kritik alanlarda <span class="fx-hero-red">kesintisiz koruma</span></h2>
-              </div>
-              <div class="fx-hero__desc-slot">
-                <p class="fx-lead fx-hero__text">Veri merkezleri, server odaları ve UPS hacimleri için temiz gazlı yangın söndürme sistemleri ve kesintisiz mühendislik güvencesi.</p>
-              </div>
-            </div>
-
-            <!-- Slide 3: Endüstriyel Tesislerde / Riski Kontrol Altında Tutun -->
-            <div class="fx-hero__slide" data-hero-slide="2" aria-hidden="true">
-              <div class="fx-hero__eyebrow-wrap">
-                <span class="fx-hero__eyebrow-bar" aria-hidden="true"></span>
-                <span class="fx-hero__eyebrow-text">ENDÜSTRİYEL TESİSLERDE</span>
-              </div>
-              <div class="fx-hero__title-slot">
-                <h2 class="fx-h1 fx-h1--hero fx-hero__title">Riski kontrol <span class="fx-hero-red">altında tutun</span></h2>
-              </div>
-              <div class="fx-hero__desc-slot">
-                <p class="fx-lead fx-hero__text">Pano, trafo ve üretim tesisleri için risk odaklı yangın söndürme sistemleri, projelendirme ve periyodik bakım.</p>
-              </div>
-            </div>
+          <!-- Eyebrow: Riski Söndürüyoruz -->
+          <div class="fx-hero__eyebrow-wrap">
+            <span class="fx-hero__eyebrow-bar" aria-hidden="true"></span>
+            <span class="fx-hero__eyebrow-text">RİSKİ SÖNDÜRÜYORUZ</span>
           </div>
+
+          <!-- Main Title: Single H1, 3 lines, uppercase on desktop, unchanged text for SEO/mobile -->
+          <h1 class="fx-h1 fx-h1--hero fx-hero__title"><span class="fx-hero__line">Yangın söndürme</span> <span class="fx-hero__line">sistemlerinde</span> <span class="fx-hero__line fx-hero-red">güvenin adresi</span></h1>
+
+          <!-- Description -->
+          <p class="fx-lead fx-hero__text">Can ve mal güvenliğiniz için yangın söndürme sistemleri kurulum, montaj, devreye alma, bakım ve mühendislik hizmetleriyle yanınızdayız.</p>
 
           <!-- Desktop Trust Marks Row (Directly below description on desktop) -->
           <div class="fx-hero__badges fx-hero__badges--desktop" aria-label="Uluslararası Standart ve Sertifikasyonlar">
@@ -770,13 +685,6 @@
               <span>Çözümleri Gör</span>
               <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
             </a>
-          </div>
-
-          <!-- Navigation Dots (Desktop only) -->
-          <div class="fx-hero__dots" role="tablist" aria-label="Hero Slaytları">
-            <button type="button" role="tab" class="fx-hero__dot is-active" data-hero-dot="0" aria-label="Slayt 1: Riski Söndürüyoruz" aria-selected="true"></button>
-            <button type="button" role="tab" class="fx-hero__dot" data-hero-dot="1" aria-label="Slayt 2: Kritik Alanlarda" aria-selected="false"></button>
-            <button type="button" role="tab" class="fx-hero__dot" data-hero-dot="2" aria-label="Slayt 3: Endüstriyel Tesislerde" aria-selected="false"></button>
           </div>
         </div>
       </div>
@@ -2132,87 +2040,7 @@
 </a>
 
 <script src="js/fenix.min.js?v=2026.14" defer></script>
-<script id="fx-hero-slider-script">
-(function() {
-  'use strict';
-  function initHeroSlider() {
-    if (window.innerWidth < 992) return;
 
-    var container = document.querySelector('[data-hero-slider]');
-    if (!container) return;
-
-    var slides = container.querySelectorAll('[data-hero-slide]');
-    var dots = document.querySelectorAll('[data-hero-dot]');
-    if (slides.length < 2) return;
-
-    var current = 0;
-    var timer = null;
-    var INTERVAL = 6000;
-    var isPaused = false;
-
-    function goTo(next) {
-      if (next === current) return;
-      slides[current].classList.remove('is-active');
-      slides[current].setAttribute('aria-hidden', 'true');
-
-      slides[next].classList.add('is-active');
-      slides[next].removeAttribute('aria-hidden');
-
-      dots.forEach(function(dot, idx) {
-        if (idx === next) {
-          dot.classList.add('is-active');
-          dot.setAttribute('aria-selected', 'true');
-        } else {
-          dot.classList.remove('is-active');
-          dot.setAttribute('aria-selected', 'false');
-        }
-      });
-      current = next;
-    }
-
-    function start() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      stop();
-      timer = setInterval(function() {
-        if (!isPaused && window.innerWidth >= 992) {
-          var next = (current + 1) % slides.length;
-          goTo(next);
-        }
-      }, INTERVAL);
-    }
-
-    function stop() {
-      if (timer) {
-        clearInterval(timer);
-        timer = null;
-      }
-    }
-
-    dots.forEach(function(dot, idx) {
-      dot.addEventListener('click', function() {
-        goTo(idx);
-        start();
-      });
-    });
-
-    var heroEl = document.querySelector('.fx-hero--home');
-    if (heroEl) {
-      heroEl.addEventListener('mouseenter', function() { isPaused = true; });
-      heroEl.addEventListener('mouseleave', function() { isPaused = false; });
-      heroEl.addEventListener('focusin', function() { isPaused = true; });
-      heroEl.addEventListener('focusout', function() { isPaused = false; });
-    }
-
-    start();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHeroSlider);
-  } else {
-    initHeroSlider();
-  }
-})();
-</script>
 
 </body>
 </html>
