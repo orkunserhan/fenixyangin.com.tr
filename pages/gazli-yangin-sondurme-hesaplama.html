@@ -26,18 +26,41 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication",
       "@id": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html#app",
       "name": "Fenix Yangın Gazlı Söndürme Hesaplama Aracı",
       "url": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html",
-      "applicationCategory": "BusinessApplication",
+      "applicationCategory": "EngineeringApplication",
+      "applicationSubCategory": "FireProtectionEngineering",
       "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "description": "Gazlı yangın söndürme sistemleri için mahal ölçülerine göre gaz miktarı, oda hacmi ve silindir adedi ön mühendislik hesaplama aracı.",
+      "browserRequirements": "Requires HTML5 and JavaScript",
+      "description": "Gazlı yangın söndürme sistemleri için mahal ölçülerine (en, boy, yükseklik), tasarım konsantrasyonuna ve sıcaklığa göre FM200, Novec 1230 ve CO₂ gaz miktarı, oda hacmi ve silindir adedi ön mühendislik hesaplama aracı.",
+      "inLanguage": "tr",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+        "availability": "https://schema.org/OnlineOnly"
+      },
       "provider": {
         "@type": "Organization",
+        "@id": "https://fenixyangin.com.tr/#organization",
         "name": "Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş.",
         "url": "https://fenixyangin.com.tr/"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html",
+      "url": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html",
+      "name": "Gazlı Yangın Söndürme Hesaplama Aracı | Fenix Yangın",
+      "description": "Gazlı yangın söndürme sistemlerinde hacme göre gaz miktarı ve tüp adedi hesaplama aracı. FM200, Novec 1230 ve CO₂ için hızlı mühendislik hesabı yapın.",
+      "inLanguage": "tr",
+      "mainEntity": {
+        "@id": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html#app"
+      },
+      "breadcrumb": {
+        "@id": "https://fenixyangin.com.tr/pages/gazli-yangin-sondurme-hesaplama.html#breadcrumb"
       }
     },
     {
