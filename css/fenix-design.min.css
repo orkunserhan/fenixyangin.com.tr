@@ -293,3 +293,25 @@
   -webkit-overflow-scrolling: touch;
   margin: 24px 0;
 }
+
+/* ==========================================================================
+   FM200 & SAHA UYGULAMASI EDITORIAL SHOWCASE (2-COLUMN)
+   ========================================================================== */
+.fx-saha-showcase{margin-top:40px;background:#ffffff;border:1px solid var(--fx-line,#e2e8f0);border-radius:14px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.03)}
+.fx-saha-showcase__grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:center}
+.fx-saha-showcase__media{display:flex;flex-direction:column}
+.fx-saha-showcase__frame{border-radius:10px;overflow:hidden;border:1px solid var(--fx-line,#e2e8f0);aspect-ratio:4/3;background:var(--fx-paper,#f8fafc);box-shadow:0 4px 14px rgba(0,0,0,0.04)}
+.fx-saha-showcase__img{width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block}
+.fx-saha-showcase__caption{margin:10px 0 0;font-size:12.5px;line-height:1.45;color:var(--fx-muted,#64748b)}
+.fx-saha-showcase__caption strong{color:var(--fx-ink,#0f172a);font-weight:600}
+.fx-saha-showcase__content{display:flex;flex-direction:column;justify-content:center}
+.fx-saha-showcase__eyebrow{display:inline-block;font-size:11px;font-weight:700;color:var(--fx-red,#BE1523);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.fx-saha-showcase__title{font-size:26px;font-weight:700;color:var(--fx-ink,#0f172a);line-height:1.25;margin:0 0 12px}
+.fx-saha-showcase__desc{font-size:14.5px;line-height:1.6;color:var(--fx-body,#475569);margin:0 0 20px}
+.fx-saha-showcase__list{display:flex;flex-direction:column;gap:10px;border-top:1px solid #f1f5f9;padding-top:16px}
+.fx-saha-showcase__item{display:flex;align-items:center;gap:12px}
+.fx-saha-showcase__num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:24px;border-radius:6px;background:#fef2f2;border:1px solid #fee2e2;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12.5px;font-weight:700;color:var(--fx-red,#BE1523);flex-shrink:0}
+.fx-saha-showcase__item-text{font-size:14.5px;font-weight:600;color:var(--fx-ink,#0f172a)}
+@media (max-width:900px){.fx-saha-showcase{padding:24px 20px;margin-top:28px;border-radius:12px}.fx-saha-showcase__grid{grid-template-columns:1fr;gap:22px}.fx-saha-showcase__title{font-size:22px}}
+@media (max-width:480px){.fx-saha-showcase{padding:18px 14px}.fx-saha-showcase__title{font-size:20px}.fx-saha-showcase__desc{font-size:13.5px}}
+

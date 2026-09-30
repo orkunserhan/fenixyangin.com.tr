@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}</script>
+<script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');if(window.history&&window.history.replaceState&&window.location.search){var s=new URLSearchParams(window.location.search);if(s.has('shem')){s.delete('shem');var r=s.toString();window.history.replaceState(null,document.title,window.location.pathname+(r?'?'+r:'')+window.location.hash);}}}catch(e){}</script>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <title>FM200 (HFC-227ea) Gazlı Yangın Söndürme Sistemleri | Fenix Yangın</title>
 <meta content="FM200 (HFC-227ea) gazlı yangın söndürme sistemleri. Bilgi işlem, server odası ve elektrik panoları için sistem yapısı, standartlar ve bileşenler." name="description"/>
@@ -23,7 +23,7 @@
 <link href="../assets/favicon.png" rel="apple-touch-icon"/>
 <link as="font" crossorigin="" href="../assets/fonts/instrument-sans-v4-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="../assets/fonts/instrument-sans-v4-latin-ext.woff2" rel="preload" type="font/woff2"/>
-<link href="../css/fenix-design.min.css?v=2026.14" rel="stylesheet"/>
+<link href="../css/fenix-design.min.css?v=2026.15" rel="stylesheet"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -634,15 +634,42 @@
 <p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5">Telekom santralleri, endüstriyel SCADA merkezleri ve hava trafik kontrol kuleleri.</p>
 </div>
 </div>
-<!-- PHOTO 4: Kontrol Paneli ve Korunan Hacim Girişi -->
-<div style="max-width:640px;margin:32px auto 0;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,0.04)">
-<picture>
-<source srcset="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" type="image/webp"/>
-<img alt="FM200 yangın söndürme sistemi kontrol paneli ve korunan hacim girişinde Fenix saha uygulaması" decoding="async" height="1024" loading="lazy" src="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" style="width:100%;height:auto;display:block;aspect-ratio:629/1024" width="629"/>
-</picture>
-<div style="padding:14px 20px;background:#f8fafc;border-top:1px solid #e2e8f0">
-<p class="fx-text fx-text--sm" style="color:#64748b;margin:0;line-height:1.5"><strong>Saha Uygulaması:</strong> Korunan hacim girişinde FM200 yangın söndürme sistemi kontrol paneli, sesli tahliye ikaz zilleri ve uyarı tabelaları entegrasyonu.</p>
-</div>
+<!-- PHOTO 4: Saha Uygulaması Teknik Editorial Bloğu -->
+<div class="fx-saha-showcase">
+  <div class="fx-saha-showcase__grid">
+    <!-- SOL: Gerçek Saha Fotoğrafı & Caption -->
+    <div class="fx-saha-showcase__media">
+      <div class="fx-saha-showcase__frame">
+        <picture>
+          <source srcset="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" type="image/webp"/>
+          <img alt="FM200 yangın söndürme sistemi saha uygulaması" class="fx-saha-showcase__img" decoding="async" height="1024" loading="lazy" src="../assets/img/fm200-yangin-sondurme-sistemi-kontrol-paneli-saha.webp" width="629"/>
+        </picture>
+      </div>
+      <p class="fx-saha-showcase__caption">
+        <strong>Saha Uygulaması:</strong> Korunan hacim girişinde FM200 yangın söndürme sistemi kontrol paneli, sesli tahliye ve ikaz ekipmanlarının saha entegrasyonu.
+      </p>
+    </div>
+    <!-- SAĞ: Teknik Detay ve Maddeler -->
+    <div class="fx-saha-showcase__content">
+      <span class="fx-saha-showcase__eyebrow">SAHA UYGULAMASI</span>
+      <h3 class="fx-saha-showcase__title">FM200 Yangın<br/>Söndürme Sistemi</h3>
+      <p class="fx-saha-showcase__desc">Korunan hacim girişinde FM200 yangın söndürme sistemi kontrol paneli, sesli tahliye, ikaz ve saha ekipmanlarının entegrasyonunu gösteren gerçek saha uygulaması.</p>
+      <div class="fx-saha-showcase__list">
+        <div class="fx-saha-showcase__item">
+          <span class="fx-saha-showcase__num">01</span>
+          <span class="fx-saha-showcase__item-text">Kontrol Paneli</span>
+        </div>
+        <div class="fx-saha-showcase__item">
+          <span class="fx-saha-showcase__num">02</span>
+          <span class="fx-saha-showcase__item-text">Algılama &amp; İkaz</span>
+        </div>
+        <div class="fx-saha-showcase__item">
+          <span class="fx-saha-showcase__num">03</span>
+          <span class="fx-saha-showcase__item-text">Söndürme Sistemi</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </section>
@@ -1142,6 +1169,6 @@
 </span>
 <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
 </a>
-<script defer="" src="../js/fenix.min.js?v=2026.14"></script>
+<script defer="" src="../js/fenix.min.js?v=2026.15"></script>
 </body>
 </html>

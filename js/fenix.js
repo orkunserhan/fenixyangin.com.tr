@@ -1159,6 +1159,26 @@
 
   fxInitGA4();
 
+  /* --------------------------------------------------------------------------
+     CLEAN EXTERNAL PREVIEW & TRACKING PARAMETERS (e.g. ?shem=aimgspe,)
+     Safely normalizes browser address bar via replaceState without page reload
+     -------------------------------------------------------------------------- */
+  function fxNormalizeUrlParams() {
+    try {
+      if (window.history && window.history.replaceState && window.location.search) {
+        var sp = new URLSearchParams(window.location.search);
+        if (sp.has('shem')) {
+          sp.delete('shem');
+          var remaining = sp.toString();
+          var cleanPath = window.location.pathname + (remaining ? '?' + remaining : '') + window.location.hash;
+          window.history.replaceState(null, document.title, cleanPath);
+        }
+      }
+    } catch (e) {}
+  }
+  fxNormalizeUrlParams();
+
 })();
+
 
 
