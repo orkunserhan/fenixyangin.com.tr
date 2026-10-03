@@ -784,7 +784,7 @@
         });
 
         sistemLink.addEventListener('click', function (e) {
-          if (window.innerWidth >= 761 && !dropdown.classList.contains('is-open')) {
+          if (window.innerWidth >= 769 && !dropdown.classList.contains('is-open')) {
             e.preventDefault();
             dropdown.classList.add('is-open');
             sistemLink.setAttribute('aria-expanded', 'true');
@@ -1008,7 +1008,7 @@
         });
 
         hizmetLink.addEventListener('click', function (e) {
-          if (window.innerWidth >= 761 && !dropdown.classList.contains('is-open')) {
+          if (window.innerWidth >= 769 && !dropdown.classList.contains('is-open')) {
             e.preventDefault();
             dropdown.classList.add('is-open');
             hizmetLink.setAttribute('aria-expanded', 'true');
