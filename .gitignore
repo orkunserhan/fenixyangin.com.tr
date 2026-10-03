@@ -36,3 +36,7 @@ Thumbs.db
 # --- ham video kopyası ---
 assets/video/Fenix 2026 Tanitim.mp4
 assets/video/Fenix 2026 Tanıtım.mp4
+
+# --- dahili denetim raporları (canlı siteye sızmasını engelle) ---
+FENIXYANGIN_COMTR_*
+
