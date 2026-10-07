@@ -31,3 +31,53 @@ ErrorDocument 404 /404.html
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType text/html "access plus 0 seconds"
 </IfModule>
+
+# 6 · SEOXROBOT LEGACY URL MIGRATION (301 PERMANENT REDIRECTS & 410 GONE)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # A) 15 Eski / İlgisiz / E-ticaret / CMS kalıntısı URL'ler -> 410 Gone (veya 404)
+  RewriteRule ^magaza/?$ - [G,L]
+  RewriteRule ^sepet/?$ - [G,L]
+  RewriteRule ^urun/page/.*$ - [G,L]
+  RewriteRule ^wp-admin/.*$ - [G,L]
+  RewriteRule ^fusion_tb_category/.*$ - [G,L]
+  RewriteRule ^projects/(electrical-security|energy-survey-job|lighting-work)/?$ - [G,L]
+  RewriteRule ^tag/kidde-davlumbaz-ici-yangin-sondurme-sistemleri/feed/?$ - [G,L]
+  RewriteRule ^fm200-gazli-yangin-sondurme-sistemleri/feed/?$ - [G,L]
+  RewriteRule ^wp-content/uploads/2020/03/Pano- - [G,L]
+  RewriteRule ^yangin-sondurme-sistemleri/yangin-sondurme-sistemleri-6/?$ - [G,L]
+
+  # B) 29 Doğrulanmış Legacy URL -> Tek Sıçramalı 301 Kalıcı Yönlendirme (Hedef: 200 OK Canonical)
+  RewriteRule ^karbondioksit-co2-gazli-yangin-sondurme-sistemleri/?$ /pages/co2-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^co2-gazli-sondurme-sistemleri/?$ /pages/co2-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^elektrikli-arac-sarj-istasyonlari-yangin-sondurme-sistemi/?$ /pages/elektrikli-arac-sarj-istasyonlarinda-yangin-sondurme.html [R=301,L]
+  RewriteRule ^3m-novec-1230-gazli-yangin-sondurme-sistemleri/?$ /pages/novec-1230-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^novec-1230-gazli-sondurme-sistemleri/?$ /pages/novec-1230-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^sevo-systems-novec-1230/?$ /pages/novec-1230-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^yangin-algilama-sistemlerinin-periyodik-kontrolleri-ve-bakimi/?$ /pages/yangin-algilama-ve-ihbar-sistemleri.html [R=301,L]
+  RewriteRule ^teletek-yangin-alarm-sistemleri/?$ /pages/yangin-algilama-ve-ihbar-sistemleri.html [R=301,L]
+  RewriteRule ^rotarex-turkiye/?$ /pages/rotarex-vana.html [R=301,L]
+  RewriteRule ^rotarex/?$ /pages/rotarex-vana.html [R=301,L]
+  RewriteRule ^rotarex-vana/?$ /pages/rotarex-vana.html [R=301,L]
+  RewriteRule ^hakkimizda/?$ /pages/kurumsal.html [R=301,L]
+  RewriteRule ^fm200-gazli-yangin-sondurme-sistemleri-bakimi/?$ /pages/fm200-gazli-yangin-sondurme-sistemleri-bakimi.html [R=301,L]
+  RewriteRule ^fm200-gaz-dolumu-ve-bakimi\.html$ /pages/fm200-gaz-dolumu.html [R=301,L]
+  RewriteRule ^fm200-gaz-dolumu-ve-bakimi/?$ /pages/fm200-gaz-dolumu.html [R=301,L]
+  RewriteRule ^elektrik-panosu-yangin-sondurme-sistemi-bakimi/?$ /pages/pano-ici-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^yangin-sondurme-sistemleri/?$ /pages/sistemler.html [R=301,L]
+  RewriteRule ^temiz-gazli-sondurme-sistemleri/?$ /pages/sistemler.html [R=301,L]
+  RewriteRule ^basinda-biz/?$ /pages/basinda-biz.html [R=301,L]
+  RewriteRule ^iletisim-2/?$ /pages/iletisim.html [R=301,L]
+  RewriteRule ^referanslar/?$ /pages/referanslar.html [R=301,L]
+  RewriteRule ^yangin-danismani/?$ /pages/yangin-danismanligi.html [R=301,L]
+  RewriteRule ^tag/kidde-davlumbaz-ici-yangin-sondurme-sistemleri/?$ /pages/davlumbaz-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^kidde-davlumbaz-ici-yangin-sondurme-sistemleri/?$ /pages/davlumbaz-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^davlumbaz-ici-yangin-sondurme-sistemleri-bakimi/?$ /pages/davlumbaz-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^tag/argon-ig01-inert-gazli-yangin-sondurme-sistemleri/?$ /pages/inert-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^argon-gazli-yangin-sondurme-sistemleri/?$ /pages/inert-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^inert-gazli-yangin-sondurme-sistemleri\.html$ /pages/inert-gazli-yangin-sondurme-sistemleri.html [R=301,L]
+  RewriteRule ^yangin-sondurme-sistemleri-bakimi/?$ /pages/yangin-sistemleri-bakim-hizmeti.html [R=301,L]
+  RewriteRule ^ups-odasi-yangin-sondurme-sistemleri\.html$ /pages/ups-odasi-yangin-sondurme.html [R=301,L]
+</IfModule>
+
