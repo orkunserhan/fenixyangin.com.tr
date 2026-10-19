@@ -2,6 +2,24 @@
 
 <html lang="tr">
 <head>
+<!-- Google Consent Mode v2 -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'granted',
+  'ad_user_data': 'granted',
+  'ad_personalization': 'granted',
+  'analytics_storage': 'granted'
+});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TPLPTPGJ');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}</script>
@@ -140,6 +158,10 @@
 </style>
 </head>
 <body class="fx-page">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPLPTPGJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="fx-skip" href="#icerik">İçeriğe atla</a>
 <div class="fx-topbar">
 <div class="fx-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%">
@@ -633,5 +655,57 @@
 <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
 </a>
 <script defer="" src="../js/fenix.min.js?v=2026.14"></script>
+<!-- GTM & GA4 Universal Event Tracking Helper -->
+<script>
+(function() {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) {
+      var phoneNum = href.replace('tel:', '').trim();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'phone_click',
+        event_category: 'Contact',
+        event_action: 'Click Phone',
+        event_label: phoneNum,
+        phone_number: phoneNum
+      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_phone', { 'phone_number': phoneNum });
+      }
+    } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'whatsapp_click',
+        event_category: 'Contact',
+        event_action: 'Click WhatsApp',
+        event_label: href,
+        destination: href
+      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', { 'destination': href });
+      }
+    }
+  }, true);
+
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (form && (form.id === 'teklif-formu' || (form.getAttribute('action') && form.getAttribute('action').indexOf('formspree') !== -1))) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_submission',
+        event_category: 'Lead',
+        event_action: 'Submit Quote Form',
+        event_label: form.id || 'contact_form'
+      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { 'form_id': form.id || 'contact_form' });
+      }
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>
