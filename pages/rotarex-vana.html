@@ -2,16 +2,27 @@
 
 <html lang="tr">
 <head>
-<!-- Google Consent Mode v2 -->
+<!-- Google Consent Mode v2 (KVKK & GDPR Compliant) -->
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'ad_storage': 'granted',
-  'ad_user_data': 'granted',
-  'ad_personalization': 'granted',
-  'analytics_storage': 'granted'
-});
+var fxStoredConsent = null;
+try { fxStoredConsent = localStorage.getItem('fx_cookie_consent'); } catch(e){}
+if (fxStoredConsent === 'granted') {
+  gtag('consent', 'default', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+  });
+} else {
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+}
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -660,9 +671,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
 </a>
 <script defer="" src="../js/fenix.min.js?v=2026.14"></script>
-<!-- GTM & GA4 Universal Event Tracking Helper -->
+<!-- GTM & GA4 Universal Event Tracking & KVKK Cookie Consent Banner -->
 <script>
 (function() {
+  /* 1. Phone, WhatsApp & Form Submissions Tracking */
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a) return;
@@ -710,6 +722,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
   }, true);
+
+  /* 2. KVKK Cookie Consent Banner & Dynamic Consent Update */
+  var consent = null;
+  try { consent = localStorage.getItem('fx_cookie_consent'); } catch(e){}
+  if (consent) return; // User already made a choice
+
+  function initBanner() {
+    if (document.getElementById('fx-cookie-banner')) return;
+    var div = document.createElement('div');
+    div.id = 'fx-cookie-banner';
+    div.setAttribute('role', 'dialog');
+    div.setAttribute('aria-label', 'Çerez ve Gizlilik Tercihleri');
+    div.innerHTML = '' +
+      '<style>' +
+      '#fx-cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 460px; margin: 0 auto 0 0; background: #0E1217; color: #e6edf3; border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.65); padding: 18px 20px; z-index: 99999999; font-family: inherit; font-size: 13.5px; line-height: 1.5; animation: fxSlideUp 0.3s ease-out; }' +
+      '@keyframes fxSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }' +
+      '#fx-cookie-banner a { color: #ffffff; text-decoration: underline; }' +
+      '.fx-cb-title { font-weight: 700; font-size: 14.5px; margin-bottom: 8px; color: #ffffff; display: flex; align-items: center; gap: 8px; }' +
+      '.fx-cb-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }' +
+      '.fx-cb-btn { cursor: pointer; border-radius: 6px; font-size: 13px; font-weight: 600; padding: 9px 16px; transition: all 0.2s ease; border: none; flex: 1 1 auto; text-align: center; }' +
+      '.fx-cb-btn--accept { background: #be1523; color: #ffffff; }' +
+      '.fx-cb-btn--accept:hover { background: #96101b; }' +
+      '.fx-cb-btn--reject { background: rgba(255,255,255,0.08); color: #c9d1d9; border: 1px solid rgba(255,255,255,0.18); }' +
+      '.fx-cb-btn--reject:hover { background: rgba(255,255,255,0.15); color: #ffffff; }' +
+      '@media (max-width: 600px) { #fx-cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 16px; } }' +
+      '</style>' +
+      '<div class="fx-cb-title">🍪 Çerez ve Gizlilik Tercihleriniz</div>' +
+      '<p style="margin:0 0 6px 0; color:#8b949e; font-size:13px;">' +
+      'Sitemizde temel fonksiyonların çalışması, kullanıcı deneyiminizin iyileştirilmesi ve ziyaret trafiğinin analizi için KVKK mevzuatına uygun çerezler kullanılmaktadır. Detaylar için <a href="/pages/cerez-politikasi.html" target="_blank">Çerez Politikamızı</a> inceleyebilirsiniz.' +
+      '</p>' +
+      '<div class="fx-cb-actions">' +
+      '<button type="button" class="fx-cb-btn fx-cb-btn--accept" id="fx-cb-accept">Tümünü Kabul Et</button>' +
+      '<button type="button" class="fx-cb-btn fx-cb-btn--reject" id="fx-cb-reject">Yalnızca Zorunluları Kabul Et / Reddet</button>' +
+      '</div>';
+    document.body.appendChild(div);
+
+    function hideBanner() {
+      div.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      div.style.opacity = '0';
+      div.style.transform = 'translateY(15px)';
+      setTimeout(function() {
+        if (div.parentNode) div.parentNode.removeChild(div);
+      }, 260);
+    }
+
+    document.getElementById('fx-cb-accept').addEventListener('click', function() {
+      try { localStorage.setItem('fx_cookie_consent', 'granted'); } catch(e){}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'consent_updated', consent_status: 'granted' });
+      hideBanner();
+    });
+
+    document.getElementById('fx-cb-reject').addEventListener('click', function() {
+      try { localStorage.setItem('fx_cookie_consent', 'denied'); } catch(e){}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'consent_updated', consent_status: 'denied' });
+      hideBanner();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBanner);
+  } else {
+    initBanner();
+  }
 })();
 </script>
 </body>
