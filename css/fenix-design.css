@@ -438,3 +438,5 @@
   }
 }
 
+
+.fx-btn--wa{background:#25D366!important;color:#fff!important;border:1px solid #25D366!important;box-shadow:0 4px 14px rgba(37,211,102,0.28)!important;display:inline-flex!important;align-items:center!important;gap:8px!important;font-weight:700!important;text-decoration:none!important;transition:all .2s ease!important}.fx-btn--wa:hover{background:#1eb954!important;border-color:#1eb954!important;color:#fff!important;transform:translateY(-2px)!important;box-shadow:0 6px 20px rgba(37,211,102,0.4)!important}.fx-btn--wa svg{flex-shrink:0}
