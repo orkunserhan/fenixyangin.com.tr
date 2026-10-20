@@ -1,4 +1,4 @@
-import os, glob, sys
+import os, glob, sys, json, re
 from html.parser import HTMLParser
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -61,7 +61,16 @@ for fpath in all_files:
             print(f"  {err}")
         total_errs += len(validator.errors)
 
+    # Validate all JSON-LD blocks
+    ld_blocks = re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.DOTALL | re.IGNORECASE)
+    for idx, block in enumerate(ld_blocks):
+        try:
+            json.loads(block.strip())
+        except Exception as je:
+            print(f"JSON-LD syntax error in {fname} (block #{idx+1}): {je}")
+            total_errs += 1
+
 if total_errs == 0:
-    print(f"PERFECT: All {len(all_files)} HTML files parsed with 0 unclosed/mismatched tag errors!")
+    print(f"PERFECT: All {len(all_files)} HTML files parsed with 0 unclosed/mismatched tag errors and 100% valid JSON-LD!")
 else:
     print(f"Validation completed with {total_errs} errors across files.")

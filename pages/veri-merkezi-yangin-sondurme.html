@@ -1,1855 +1,930 @@
 <!DOCTYPE html>
 
-
-
 <html lang="tr">
-
 <head>
-
 <!-- Google Consent Mode v2 (KVKK & GDPR Compliant) -->
-
 <script>
-
 window.dataLayer = window.dataLayer || [];
-
 function gtag(){dataLayer.push(arguments);}
-
 var fxStoredConsent = null;
-
 try { fxStoredConsent = localStorage.getItem('fx_cookie_consent'); } catch(e){}
-
 if (fxStoredConsent === 'granted') {
-
   gtag('consent', 'default', {
-
     'ad_storage': 'granted',
-
     'ad_user_data': 'granted',
-
     'ad_personalization': 'granted',
-
     'analytics_storage': 'granted'
-
   });
-
 } else {
-
   gtag('consent', 'default', {
-
     'ad_storage': 'denied',
-
     'ad_user_data': 'denied',
-
     'ad_personalization': 'denied',
-
     'analytics_storage': 'denied'
-
   });
-
 }
-
 </script>
-
 <!-- Google Tag Manager -->
-
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-
 })(window,document,'script','dataLayer','GTM-TPLPTPGJ');</script>
-
 <!-- End Google Tag Manager -->
-
 <meta charset="utf-8"/>
-
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-
 <script>try{if(sessionStorage.getItem('fx_logo_revealed'))document.documentElement.classList.add('fx-logo-revealed');}catch(e){}</script>
-
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-
 <title>Veri Merkezi Yangın Söndürme Sistemleri — Fenix Yangın</title>
-
 <meta content="Veri merkezi (data center) yangın söndürme sistemleri. FM200 ve Novec 1230; NFPA 2001 standartlarında anahtar teslim kurulum, test ve periyodik bakım." name="description"/>
-
 <link href="https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html" rel="canonical"/>
-
 <meta content="tr_TR" property="og:locale"/>
-
 <meta content="website" property="og:type"/>
-
 <meta content="Veri Merkezi Yangın Söndürme Sistemleri — Fenix Yangın" property="og:title"/>
-
 <meta content="Veri merkezi yangın söndürme; FM200, Novec 1230 gazlı söndürme, NFPA 2001 uyumlu. Tier I–IV tasarım. Türkiye geneli." property="og:description"/>
-
 <meta content="https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html" property="og:url"/>
-
 <meta content="https://fenixyangin.com.tr/assets/img/hero-fenix-yangin.webp" property="og:image"/>
-
 <meta content="summary_large_image" name="twitter:card"/>
-
 <meta content="https://fenixyangin.com.tr/assets/img/hero-fenix-yangin.webp" name="twitter:image"/>
-
 <meta content="Veri Merkezi Yangın Söndürme Sistemleri — Fenix Yangın" name="twitter:title"/>
-
 <meta content="Veri merkezi (data center) yangın söndürme sistemleri. FM200 ve Novec 1230; NFPA 2001 standartlarında anahtar teslim kurulum, test ve periyodik bakım." name="twitter:description"/>
-
 <link href="../assets/favicon.png" rel="icon" sizes="256x256"/>
-
 <link href="../assets/favicon.png" rel="apple-touch-icon"/>
-
 <link as="font" crossorigin="" href="../assets/fonts/instrument-sans-v4-latin.woff2" rel="preload" type="font/woff2"/>
-
 <link as="font" crossorigin="" href="../assets/fonts/instrument-sans-v4-latin-ext.woff2" rel="preload" type="font/woff2"/>
-
 <link href="../css/fenix-design.min.css?v=2026.14" rel="stylesheet"/>
-
 <style>
-
   /* Scoped Component Styles for Veri Merkezi Sector Page */
-
   .fx-sys-card {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 24px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-
   }
-
   .fx-sys-card:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-
     border-color: rgba(190,21,35,0.3);
-
   }
-
   .fx-sys-card__header {
-
     display: flex;
-
     align-items: center;
-
     gap: 14px;
-
   }
-
   .fx-sys-card__icon {
-
     width: 48px;
-
     height: 48px;
-
     border-radius: 12px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-shrink: 0;
-
   }
-
   .fx-sys-card__icon--red {
-
     background: rgba(190,21,35,0.08);
-
     color: var(--fx-red);
-
   }
-
   .fx-sys-card__icon--green {
-
     background: rgba(16,185,129,0.1);
-
     color: #047857;
-
   }
-
   .fx-sys-card__icon--dark {
-
     background: #f1f5f9;
-
     color: #334155;
-
   }
-
   .fx-check-list {
-
     list-style: none;
-
     padding: 0;
-
     margin: 0;
-
   }
-
   .fx-check-list li {
-
     position: relative;
-
     padding-left: 20px;
-
     font-size: 13.5px;
-
     line-height: 1.5;
-
     color: var(--fx-ink);
-
     margin-bottom: 8px;
-
   }
-
   .fx-check-list li::before {
-
     content: "✓";
-
     position: absolute;
-
     left: 0;
-
     top: 0;
-
     color: var(--fx-red);
-
     font-weight: 700;
-
   }
-
   .fx-why-box {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 22px;
-
     display: flex;
-
     flex-direction: column;
-
     transition: transform .18s ease, box-shadow .18s ease;
-
   }
-
   .fx-why-box:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
   }
-
   .fx-why-box__icon {
-
     width: 40px;
-
     height: 40px;
-
     border-radius: 10px;
-
     background: rgba(190,21,35,0.08);
-
     color: var(--fx-red);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
   }
-
   .fx-srv-grid {
-
     display: grid;
-
     grid-template-columns: repeat(5, 1fr);
-
     gap: 16px;
-
   }
-
   .fx-srv-card {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 22px 18px;
-
     display: flex;
-
     flex-direction: column;
-
     text-decoration: none;
-
     color: inherit;
-
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-
   }
-
   .fx-srv-card:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
     border-color: rgba(190,21,35,0.3);
-
   }
-
   .fx-srv-card__icon {
-
     width: 40px;
-
     height: 40px;
-
     border-radius: 10px;
-
     background: rgba(190,21,35,0.08);
-
     color: var(--fx-red);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
   }
-
   .fx-ref-grid {
-
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 14px;
-
   }
-
   .fx-ref-box {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     height: 76px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 12px 18px;
-
     transition: border-color .2s, box-shadow .2s;
-
   }
-
   .fx-ref-box:hover {
-
     border-color: #d1d5db;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-
   }
-
   .fx-ref-box img {
-
     max-height: 38px;
-
     max-width: 100%;
-
     width: auto;
-
     object-fit: contain;
-
     filter: grayscale(100%);
-
     opacity: 0.85;
-
     transition: filter .2s, opacity .2s;
-
   }
-
   .fx-ref-box:hover img {
-
     filter: grayscale(0%);
-
     opacity: 1;
-
   }
-
   @media (max-width: 991px) {
-
     .fx-srv-grid {
-
       grid-template-columns: repeat(3, 1fr);
-
     }
-
   }
-
   @media (max-width: 768px) {
-
     .fx-ref-grid {
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 10px;
-
     }
-
     .fx-why-box {
-
       padding: 18px;
-
     }
-
   }
-
   @media (max-width: 640px) {
-
     .fx-srv-grid {
-
       grid-template-columns: repeat(2, 1fr);
-
     }
-
   }
-
   @media (max-width: 480px) {
-
     .fx-srv-grid {
-
       grid-template-columns: 1fr;
-
     }
-
   }
-
-
 
   /* Scoped Infographic & Data Card Styles for Technical Guide Section */
-
   .fx-risk-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 16px;
-
     margin: 20px 0 28px;
-
   }
-
   .fx-risk-card {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 18px 16px;
-
     display: flex;
-
     flex-direction: column;
-
     transition: transform .18s ease, box-shadow .18s ease;
-
   }
-
   .fx-risk-card:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
   }
-
   .fx-risk-card__icon {
-
     width: 38px;
-
     height: 38px;
-
     border-radius: 10px;
-
     background: rgba(190,21,35,0.08);
-
     color: var(--fx-red);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     margin-bottom: 12px;
-
   }
-
   .fx-risk-card__title {
-
     font-size: 15px;
-
     font-weight: 700;
-
     color: var(--fx-ink);
-
     margin: 0 0 8px;
-
     line-height: 1.35;
-
   }
-
   .fx-risk-card__text {
-
     font-size: 13px;
-
     line-height: 1.55;
-
     color: var(--fx-body);
-
     margin: 0;
-
   }
-
   
-
   .fx-sol-grid {
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 16px;
-
     margin: 18px 0 16px;
-
   }
-
   .fx-sol-card {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 22px 20px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-
   }
-
   .fx-sol-card:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-
     border-color: rgba(190,21,35,0.3);
-
   }
-
   .fx-sol-card__spec {
-
     display: flex;
-
     justify-content: space-between;
-
     padding: 6px 0;
-
     border-bottom: 1px solid #f1f5f9;
-
     font-size: 13px;
-
   }
-
   .fx-sol-card__spec:last-child {
-
     border-bottom: none;
-
   }
-
   .fx-sol-card__k {
-
     color: var(--fx-muted);
-
   }
-
   .fx-sol-card__v {
-
     font-weight: 600;
-
     color: var(--fx-ink);
-
     text-align: right;
-
   }
-
-
 
   .fx-req-grid {
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 14px;
-
     margin: 18px 0 28px;
-
   }
-
   .fx-req-item {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-radius: var(--fx-r-ui);
-
     padding: 18px;
-
     display: flex;
-
     gap: 14px;
-
     align-items: flex-start;
-
     transition: transform .18s ease, box-shadow .18s ease;
-
   }
-
   .fx-req-item:hover {
-
     transform: translateY(-2px);
-
     box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-
   }
-
   .fx-req-num {
-
     font-family: var(--fx-font);
-
     font-size: 18px;
-
     font-weight: 800;
-
     color: var(--fx-red);
-
     line-height: 1;
-
     background: rgba(190,21,35,0.08);
-
     width: 36px;
-
     height: 36px;
-
     border-radius: 8px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     flex-shrink: 0;
-
   }
-
   .fx-req-content h4 {
-
     margin: 0 0 6px;
-
     font-size: 14.5px;
-
     font-weight: 700;
-
     color: var(--fx-ink);
-
     line-height: 1.35;
-
   }
-
   .fx-req-content p {
-
     margin: 0;
-
     font-size: 13px;
-
     line-height: 1.5;
-
     color: var(--fx-body);
-
   }
-
-
 
   .fx-maint-box {
-
     background: #ffffff;
-
     border: 1px solid var(--fx-line);
-
     border-left: 3px solid var(--fx-red);
-
     border-radius: var(--fx-r-ui);
-
     padding: 22px 24px;
-
     margin-top: 20px;
-
     box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-
   }
-
-
 
   @media (max-width: 768px) {
-
     .fx-risk-grid {
-
       grid-template-columns: 1fr;
-
       gap: 12px;
-
     }
-
     .fx-sol-grid {
-
       grid-template-columns: 1fr;
-
       gap: 14px;
-
     }
-
     .fx-req-grid {
-
       grid-template-columns: 1fr;
-
       gap: 12px;
-
     }
-
     .fx-maint-box {
-
       padding: 18px 16px;
-
     }
-
   }
-
 </style>
-
 <script type="application/ld+json">
-
 {
-
   "@context": "https://schema.org",
-
   "@graph": [
-
     {
-
       "@type": "LocalBusiness",
-
       "@id": "https://fenixyangin.com.tr/#organization",
-
       "name": "Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş.",
-
       "url": "https://fenixyangin.com.tr/",
-
       "telephone": "+902126180701",
-
       "email": "info@fenixyangin.com.tr",
-
       "address": {
-
         "@type": "PostalAddress",
-
         "streetAddress": "Yıldırım Mah. Buğday Sok. No:16",
-
         "addressLocality": "Bayrampaşa",
-
         "addressRegion": "İstanbul",
-
         "postalCode": "34405",
-
         "addressCountry": "TR"
-
       },
-
       "geo": {"@type": "GeoCoordinates", "latitude": "41.0491", "longitude": "28.9125"},
-
       "sameAs": [
-
     "https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA",
-
     "https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/",
-
     "https://www.facebook.com/fenixyangin/",
-
     "https://www.instagram.com/fenixyangin",
-
     "https://x.com/fenixyangin",
-
     "https://www.tiktok.com/@fenixyangin"
-
   ]
-
     },
-
     {
-
       "@type": "WebPage",
-
       "@id": "https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html",
-
       "url": "https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html",
-
       "name": "Veri Merkezi Yangın Söndürme Sistemleri — Fenix Yangın",
-
       "description": "Veri merkezi ve data center yangın söndürme sistemi kurulum ve bakım hizmetleri.",
-
       "inLanguage": "tr",
-
       "breadcrumb": {"@id": "https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html#breadcrumb"}
-
     },
-
     {
-
       "@type": "BreadcrumbList",
-
       "@id": "https://fenixyangin.com.tr/pages/veri-merkezi-yangin-sondurme.html#breadcrumb",
-
       "itemListElement": [
-
         {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://fenixyangin.com.tr/"},
-
         {"@type": "ListItem", "position": 2, "name": "Sektörler", "item": "https://fenixyangin.com.tr/pages/sektorler.html"},
-
         {"@type": "ListItem", "position": 3, "name": "Veri Merkezi Yangın Söndürme"}
-
       ]
-
     },
-
     {
-
       "@type": "Service",
-
       "name": "Veri Merkezi Yangın Söndürme Sistemleri",
-
       "provider": {"@id": "https://fenixyangin.com.tr/#organization"},
-
       "description": "Veri merkezleri için FM200, Novec 1230 gazlı yangın söndürme sistemi kurulum, periyodik bakım ve oda sızdırmazlık testi hizmetleri.",
-
       "serviceType": "Yangın Söndürme Sistemi Kurulumu",
-
       "areaServed": {"@type": "Country", "name": "Türkiye"}
-
     },
-
     {
-
       "@type": "FAQPage",
-
       "mainEntity": [
-
         {
-
           "@type": "Question",
-
           "name": "Veri merkezleri için hangi yangın söndürme sistemi önerilir?",
-
           "acceptedAnswer": {
-
             "@type": "Answer",
-
             "text": "Veri merkezleri için FM200 (HFC-227ea) veya Novec 1230 (FK-5-1-12) gazlı söndürme sistemleri önerilir. Her ikisi de renksiz, kokusuz ve elektriksel iletkenliği olmayan temiz ajanlardır. Söndürme sonrası kalıntı bırakmaz; sunucular, network ekipmanları ve depolama sistemleri hasarsız kalır. NFPA 2001 ve ISO 14520 standartlarına uygun tasarlanırlar."
-
           }
-
         },
-
         {
-
           "@type": "Question",
-
           "name": "Veri merkezi yangın söndürme sistemi tasarımında nelere dikkat edilir?",
-
           "acceptedAnswer": {
-
             "@type": "Answer",
-
             "text": "Veri merkezi yangın söndürme sistemi tasarımında; korunan mahal hacmi, serbest yükseltilmiş taban (raised floor) ve asma tavan boşlukları, soğutma sistemi hava akışı, kapı ve geçişlerin sızdırmazlığı, ikincil kablo galerileri ile UPS odası entegrasyonu, çift-kilit (double interlock) algılama ve abort switch gereklilikleri dikkate alınmalıdır."
-
           }
-
         }
-
       ]
-
     }
-
   ]
-
 }
-
 </script>
-
 </head>
-
 <body class="fx-page">
-
 <!-- Google Tag Manager (noscript) -->
-
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPLPTPGJ"
-
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
 <!-- End Google Tag Manager (noscript) -->
-
 <a class="fx-skip" href="#icerik">İçeriğe atla</a>
-
 <div class="fx-topbar">
-
 <div class="fx-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%">
-
 <span>TS EN 15004 · NFPA 2001 · ISO 14520</span>
-
 <div class="fx-topbar__right">
-
 <a href="tel:+902126180701">+90 212 618 07 01</a> <span style="opacity:0.5">/</span> <a href="tel:+902126180702">+90 212 618 07 02</a>
-
 <div class="fx-social-modern">
-
 <!-- 1. YouTube -->
-
 <a aria-label="YouTube" class="fx-social-pill fx-social-pill--yt" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-
 </a>
-
 <!-- 2. LinkedIn -->
-
 <a aria-label="LinkedIn" class="fx-social-pill fx-social-pill--li" href="https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
-
 </a>
-
 <!-- 3. Facebook -->
-
 <a aria-label="Facebook" class="fx-social-pill fx-social-pill--fb" href="https://www.facebook.com/fenixyangin/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-
 </a>
-
 <!-- 4. Instagram -->
-
 <a aria-label="Instagram" class="fx-social-pill fx-social-pill--ig" href="https://www.instagram.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
-
 </a>
-
 <a aria-label="X (Twitter)" class="fx-social-pill fx-social-pill--x" href="https://x.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-
 </a>
-
 <a aria-label="TikTok" class="fx-social-pill fx-social-pill--tk" href="https://www.tiktok.com/@fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
-
 </a>
-
 </div></div>
-
 </div>
-
 </div>
-
 <header class="fx-header fx-header--light">
-
 <div class="fx-wrap fx-header__inner" style="display:flex;align-items:center;gap:22px;width:100%">
-
 <a aria-label="Fenix Yangın Ana Sayfa" class="fx-logo" href="../index.html">
-
 <span class="fx-logo__track">
-
 <picture class="fx-logo__pic">
-
 <source srcset="../assets/fenix-logo.webp" type="image/webp"/>
-
 <img alt="Fenix Yangın" decoding="async" height="26" src="../assets/fenix-logo.png" width="140"/>
-
 </picture>
-
 <span aria-hidden="true" class="fx-logo__reveal"></span>
-
 <span aria-hidden="true" class="fx-logo__shine"></span>
-
 </span>
-
 </a>
-
 <nav aria-label="Ana menü" class="fx-nav">
-
 <a class="fx-nav__link" href="kurumsal.html">Kurumsal</a>
-
 <a class="fx-nav__link" href="hizmetler.html">Hizmetler</a>
-
 <a class="fx-nav__link" href="sistemler.html">Sistemler</a>
-
 <a class="fx-nav__link" href="gazli-yangin-sondurme-hesaplama.html">Hesaplama</a>
-
 <a class="fx-nav__link fx-nav__link--active" href="sektorler.html">Sektörler</a>
-
 <a class="fx-nav__link" href="projeler.html">Projeler</a>
-
 <a class="fx-nav__link" href="galeri.html">Galeri</a>
-
 <a class="fx-nav__link" href="referanslar.html">Referanslar</a>
-
 <a class="fx-nav__link" href="blog.html">Blog</a>
-
 <a class="fx-nav__link" href="basinda-biz.html">Basında Biz</a>
-
 <a class="fx-nav__link" href="iletisim.html">İletişim</a>
-
 </nav>
-
 <div class="fx-header__actions">
-
 <a aria-label="Site İçi Arama" class="fx-mobile-search-btn" href="arama.html">
-
 <svg aria-hidden="true" fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="19"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
-
 </a>
-
 <button aria-controls="fx-mobilenav" aria-expanded="false" aria-label="Menüyü Aç" class="fx-burger" onclick="window.fxToggleNav &amp;&amp; window.fxToggleNav(event)" type="button">
-
 <svg style="width:22px;height:22px;fill:currentColor;pointer-events:none;" viewbox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-
 </button>
-
 </div>
-
 </div>
-
 </header>
-
 <nav aria-label="Mobil menü" class="fx-mobilenav" id="fx-mobilenav">
-
 <!-- 1. Drawer Header -->
-
 <div class="fx-mobilenav__header">
-
 <a class="fx-logo" href="../index.html" onclick="window.fxCloseNav &amp;&amp; window.fxCloseNav(event)">
-
 <picture><source srcset="../assets/fenix-logo.webp" type="image/webp"/><img alt="Fenix Yangın" decoding="async" height="25" src="../assets/fenix-logo.png" width="136"/></picture>
-
 </a>
-
 <button aria-label="Kapat" class="fx-mobilenav-close" onclick="window.fxCloseNav &amp;&amp; window.fxCloseNav(event)" type="button">
-
 <svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
-
 </button>
-
 </div>
-
 <!-- 2. Search Bar -->
-
 <form action="arama.html" class="fx-mobilenav__search" method="get">
-
 <svg aria-hidden="true" class="fx-mobilenav__search-icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
-
 <input aria-label="Site içi arama" autocomplete="off" class="fx-mobilenav__search-input" name="q" placeholder="Site içinde ara..." type="search"/>
-
 <button aria-label="Ara" class="fx-mobilenav__search-submit" type="submit">
-
 <svg aria-hidden="true" fill="currentColor" height="15" viewbox="0 0 20 20" width="15"><path clip-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
-
 </button>
-
 </form>
-
 <!-- 3. 8 Nav Items with Icons -->
-
 <div class="fx-mobilenav__list">
-
 <!-- 0. Anasayfa -->
-
 <a class="fx-mobilenav__link" href="../index.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Anasayfa</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 1. Hizmetler -->
-
 <a class="fx-mobilenav__link" href="hizmetler.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Hizmetler</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 2. Sistemler -->
-
 <a class="fx-mobilenav__link" href="sistemler.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Sistemler</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 2.5. Hesaplama -->
-
 <a class="fx-mobilenav__link" href="gazli-yangin-sondurme-hesaplama.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><rect height="20" rx="2" width="16" x="4" y="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Hesaplama</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 3. Sektörler -->
-
 <a class="fx-mobilenav__link" href="sektorler.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v8h4"></path><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Sektörler</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 4. Projeler -->
-
 <a class="fx-mobilenav__link" href="projeler.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Projeler</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 5. Galeri -->
-
 <a class="fx-mobilenav__link" href="galeri.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Galeri</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 6. Referanslar -->
-
 <a class="fx-mobilenav__link" href="referanslar.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Referanslar</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 7. Blog -->
-
 <a class="fx-mobilenav__link" href="blog.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Blog</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 8. Kurumsal -->
-
 <a class="fx-mobilenav__link" href="kurumsal.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Kurumsal</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 <!-- 10. Basında Biz -->
-
 <a class="fx-mobilenav__link" href="basinda-biz.html">
-
 <span aria-hidden="true" class="fx-mobilenav__link-icon">
-
 <svg fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="19"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg>
-
 </span>
-
 <span class="fx-mobilenav__link-text">Basında Biz</span>
-
 <span aria-hidden="true" class="fx-mobilenav__link-arrow">›</span>
-
 </a>
-
 </div>
-
 <!-- 4. Highlight Contact Card -->
-
 <a class="fx-mobilenav__card" href="iletisim.html">
-
 <div class="fx-mobilenav__card-left">
-
 <div class="fx-mobilenav__card-badge">
-
 <span class="fx-pulse-dot" style="background:#BE1523;box-shadow:0 0 8px #BE1523;"></span>
-
 <span>7/24 Bize Ulaşın</span>
-
 </div>
-
 <p class="fx-mobilenav__card-desc">Hızlı iletişim, uzman mühendis desteği</p>
-
 </div>
-
 <div aria-hidden="true" class="fx-mobilenav__card-arrow">
-
 <svg fill="currentColor" height="16" viewbox="0 0 20 20" width="16"><path clip-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
-
 </div>
-
 </a>
-
 <!-- 5. Drawer Footer -->
-
 <div class="fx-mobilenav__footer">
-
 <div class="fx-mobilenav__footer-row">
-
 <div class="fx-mobilenav__socials">
-
 <a aria-label="YouTube" class="fx-mobilenav__soc-pill" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-
 </a>
-
 <a aria-label="LinkedIn" class="fx-mobilenav__soc-pill" href="https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
-
 </a>
-
 <a aria-label="Facebook" class="fx-mobilenav__soc-pill" href="https://www.facebook.com/fenixyangin/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-
 </a>
-
 <a aria-label="Instagram" class="fx-mobilenav__soc-pill" href="https://www.instagram.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
-
 </a>
-
 </div>
-
 <span aria-hidden="true" class="fx-mobilenav__sep">|</span>
-
 <div class="fx-mobilenav__lang" title="Dil / Language">
-
 <span>TR</span>
-
 <svg aria-hidden="true" fill="currentColor" height="12" viewbox="0 0 20 20" width="12"><path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd"></path></svg>
-
 </div>
-
 </div>
-
 <div class="fx-mobilenav__tagline">Güvenli Yapılar. Kesintisiz Gelecek.</div>
-
 </div>
-
 </nav>
-
 <main class="fx-page fx-page--single-hizmet" id="icerik">
-
 <nav aria-label="Breadcrumb" class="fx-crumb">
-
 <div class="fx-wrap">
-
 <a href="../index.html">Ana Sayfa</a> ›
-
       <a href="sektorler.html">Sektörler</a> ›
-
       <span class="fx-crumb__current">Veri Merkezi Yangın Söndürme</span>
-
 </div>
-
 </nav>
-
 <!-- Hero Section -->
-
 <section class="fx-section fx-section--paper fx-section--tight" style="border-bottom:1px solid var(--fx-line)">
-
 <div class="fx-wrap fx-grid fx-grid--7-5" style="align-items:center;gap:36px">
-
 <div>
-
 <span class="fx-eyebrow" style="color:var(--fx-red)">Sektör · Data Center · Tier I–IV</span>
-
 <h1 class="fx-h1" style="font-size: clamp(28px, 4vw, 42px); margin: 12px 0 16px; line-height: 1.18;">Veri Merkezi Yangın Söndürme Sistemleri</h1>
-
 <p class="fx-lead" style="font-size: 17px; line-height: 1.6; color: var(--fx-ink); margin-bottom: 18px;">Kesintisiz operasyon için üst düzey yangın güvenliği çözümleri. Donanım ve verileriniz daima güvende.</p>
-
 <div class="fx-callout fx-callout--dark" style="margin-bottom:22px">
-
 <span class="fx-label" style="display:block;margin-bottom:6px;font-weight:600">Kritik Güvenlik İlkesi</span>
-
 <p style="color:var(--fx-ink);font-size:14.5px;line-height:1.55;margin:0">Veri merkezleri, yüksek değerli BT ekipmanlarının kesintisiz çalışması gereken yapılardır. Fenix Yangın, bu kritik alanlar için uluslararası standartlara uygun, elektriksel iletkenliği olmayan, kalıntısız ve güvenilir gazlı söndürme mühendisliği sunar.</p>
-
 </div>
-
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-
 <a class="fx-btn fx-btn--primary" href="iletisim.html">Teklif Alın — +90 212 618 07 01</a>
-
 <a class="fx-btn fx-btn--secondary" href="gazli-yangin-sondurme-hesaplama.html">Hacim Hesaplayıcı</a>
-
 </div>
-
 </div>
-
 <div style="background:#ffffff;border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.03)">
-
 <span class="fx-label" style="display:block;margin-bottom:14px;color:var(--fx-ink);font-weight:600">Teknik Standartlar &amp; Veri Güvenliği</span>
-
 <dl class="fx-dl" style="margin:0">
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Önerilen sistem</dt><dd class="fx-dl__v" style="font-weight:600;color:var(--fx-ink)">FM200 veya Novec 1230</dd></div>
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Müdahale süresi</dt><dd class="fx-dl__v" style="font-weight:600;color:var(--fx-red)">8–10 saniye</dd></div>
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Veri kaybı</dt><dd class="fx-dl__v fx-hi--tech" style="color:#0f766e;font-weight:600">Sıfır — Kalıntısız, iletken değil</dd></div>
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Algılama</dt><dd class="fx-dl__v">Çift dedektör (Cross-zone)</dd></div>
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Standartlar</dt><dd class="fx-dl__v">NFPA 2001 · ISO 14520</dd></div>
-
 <div class="fx-dl__row"><dt class="fx-dl__k">Test zorunluluğu</dt><dd class="fx-dl__v"><a href="oda-sizdirmazlik-testi.html" style="color:var(--fx-red);text-decoration:none;font-weight:500">Door Fan Test (Yıllık) →</a></dd></div>
-
 </dl>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- 3.1 Bu Alan İçin Önerilen Sistemler -->
-
 <section class="fx-section fx-section--white" id="onerilen-sistemler">
-
 <div class="fx-wrap">
-
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:14px">
-
 <div>
-
 <span class="fx-eyebrow" style="color:var(--fx-red)">Sistem Çözümleri</span>
-
 <h2 class="fx-h2" style="margin:6px 0 0">Bu Alan İçin Önerilen Sistemler</h2>
-
 <p class="fx-text" style="color:var(--fx-body);margin-top:6px;max-width:640px">Veri merkezi altyapınıza en uygun yangın söndürme sistemlerini keşfedin.</p>
-
 </div>
-
 <div>
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm" href="sistemler.html">Tüm Sistemleri Gör →</a>
-
 </div>
-
 </div>
-
 <div class="fx-grid fx-grid--3" style="gap:24px">
-
 <!-- Kart 1: FM200 -->
-
 <div class="fx-sys-card">
-
 <div class="fx-sys-card__top">
-
 <div class="fx-sys-card__header">
-
 <div aria-hidden="true" class="fx-sys-card__icon fx-sys-card__icon--red">
-
 <svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="26"><path d="M7 9a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"></path><path d="M10 5V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"></path><path d="M7 13h10"></path></svg>
-
 </div>
-
 <div>
-
 <span class="fx-badge fx-badge--red" style="font-size:11px">Temiz Gaz</span>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:4px 0 2px">FM200</h3>
-
 <span class="fx-label" style="font-size:12px;color:var(--fx-muted)">Temiz gazlı söndürme sistemi</span>
-
 </div>
-
 </div>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:16px 0 14px;line-height:1.55">Hassas elektronik bileşenler ve sunucu donanımları için global ölçekte en yaygın tercih edilen gazlı söndürme ajanıdır.</p>
-
 <ul class="fx-check-list">
-
 <li>Hassas elektronik ekipmanlar için ideal</li>
-
 <li>Kalıntı bırakmaz</li>
-
 <li>Hızlı ve etkili söndürme</li>
-
 </ul>
-
 </div>
-
 <div class="fx-sys-card__bottom" style="margin-top:20px;padding-top:14px;border-top:1px solid var(--fx-line)">
-
 <a aria-label="FM200 gazlı yangın söndürme sistemleri detaylı bilgi" class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" href="fm200-gazli-yangin-sondurme-sistemleri.html">Detaylı Bilgi →</a>
-
 </div>
-
 </div>
-
 <!-- Kart 2: Novec 1230 -->
-
 <div class="fx-sys-card">
-
 <div class="fx-sys-card__top">
-
 <div class="fx-sys-card__header">
-
 <div aria-hidden="true" class="fx-sys-card__icon fx-sys-card__icon--green">
-
 <svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </div>
-
 <div>
-
 <span class="fx-badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;font-size:11px">Yeni Nesil</span>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:4px 0 2px">Novec 1230</h3>
-
 <span class="fx-label" style="font-size:12px;color:var(--fx-muted)">Yeni nesil temiz gaz çözümü</span>
-
 </div>
-
 </div>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:16px 0 14px;line-height:1.55">Sıfır ozon tüketme potansiyeli ve 5 günlük atmosferik ömrü ile çevreye duyarlı, yüksek güvenlikli modern veri merkezi standardıdır.</p>
-
 <ul class="fx-check-list">
-
 <li>Yüksek güvenlik</li>
-
 <li>Çevre dostu (düşük GWP)</li>
-
 <li>Kritik sistemler için uygun</li>
-
 </ul>
-
 </div>
-
 <div class="fx-sys-card__bottom" style="margin-top:20px;padding-top:14px;border-top:1px solid var(--fx-line)">
-
 <a aria-label="Novec 1230 gazlı yangın söndürme sistemleri detaylı bilgi" class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" href="novec-1230-gazli-yangin-sondurme-sistemleri.html">Detaylı Bilgi →</a>
-
 </div>
-
 </div>
-
 <!-- Kart 3: Aerosol -->
-
 <div class="fx-sys-card">
-
 <div class="fx-sys-card__top">
-
 <div class="fx-sys-card__header">
-
 <div aria-hidden="true" class="fx-sys-card__icon fx-sys-card__icon--dark">
-
 <svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="26"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M3 9h18M9 21V9"></path></svg>
-
 </div>
-
 <div>
-
 <span class="fx-badge" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:11px">Kompakt</span>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:4px 0 2px">Aerosol</h3>
-
 <span class="fx-label" style="font-size:12px;color:var(--fx-muted)">Kompakt ve etkili çözüm</span>
-
 </div>
-
 </div>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:16px 0 14px;line-height:1.55">Boru tesisatı ve basınçlı tüp alanı gerektirmeyen, müstakil sunucu kabinleri ve dağıtım panoları için modüler koruma sağlar.</p>
-
 <ul class="fx-check-list">
-
 <li>Pano ve kabin uygulamalarında ideal</li>
-
 <li>Hızlı söndürme</li>
-
 <li>Kompakt tasarım</li>
-
 </ul>
-
 </div>
-
 <div class="fx-sys-card__bottom" style="margin-top:20px;padding-top:14px;border-top:1px solid var(--fx-line)">
-
 <a aria-label="Aerosol gazlı yangın söndürme sistemleri detaylı bilgi" class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" href="aerosol-gazli-yangin-sondurme-sistemleri.html">Detaylı Bilgi →</a>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- 3.2 Neden Fenix? -->
-
 <section class="fx-section fx-section--paper" style="border-top:1px solid var(--fx-line);border-bottom:1px solid var(--fx-line)">
-
 <div class="fx-wrap">
-
 <div style="max-width:760px;margin-bottom:32px">
-
 <span class="fx-eyebrow" style="color:var(--fx-red)">Mühendislik Yaklaşımı</span>
-
 <h2 class="fx-h2" style="margin:6px 0 12px">Neden Fenix?</h2>
-
 <p class="fx-text" style="color:var(--fx-body);line-height:1.6">Veri merkezlerinde yangın güvenliği yalnızca bir zorunluluk değil, kesintisiz operasyonun temelidir. Fenix, proje tasarımından devreye almaya kadar tüm süreçlerde yanınızdadır.</p>
-
 </div>
-
 <div class="fx-grid fx-grid--4" style="gap:20px">
-
 <!-- 1. Güvenilir çözümler -->
-
 <div class="fx-why-box">
-
 <div aria-hidden="true" class="fx-why-box__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:12px 0 6px;font-size:16px">Güvenilir çözümler</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0;line-height:1.5">Kritik sunucu donanımlarını ve veri sürekliliğini koruyan güvenilir gazlı söndürme sistemleri.</p>
-
 </div>
-
 <!-- 2. Standartlara uygun tasarım -->
-
 <div class="fx-why-box">
-
 <div aria-hidden="true" class="fx-why-box__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:12px 0 6px;font-size:16px">Standartlara uygun tasarım</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0;line-height:1.5">NFPA 2001, ISO 14520 ve Uptime Institute Tier standartlarına tam uyumlu hidrolik ve mimari tasarım.</p>
-
 </div>
-
 <!-- 3. Mühendislik yaklaşımı -->
-
 <div class="fx-why-box">
-
 <div aria-hidden="true" class="fx-why-box__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:12px 0 6px;font-size:16px">Mühendislik yaklaşımı</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0;line-height:1.5">Mahal hacmi, soğutma hava akışı ve yükseltilmiş taban gereksinimlerine göre optimize edilen mühendislik.</p>
-
 </div>
-
 <!-- 4. Proje sonrası hizmet -->
-
 <div class="fx-why-box">
-
 <div aria-hidden="true" class="fx-why-box__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:12px 0 6px;font-size:16px">Proje sonrası hizmet</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0;line-height:1.5">Zorunlu Door Fan sızdırmazlık testi, periyodik bakım anlaşması ve 7/24 kesintisiz teknik destek.</p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- 3.3 İlgili Hizmetlerimiz -->
-
 <section class="fx-section fx-section--white" id="ilgili-hizmetler">
-
 <div class="fx-wrap">
-
 <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:14px">
-
 <div>
-
 <span class="fx-eyebrow" style="color:var(--fx-red)">Hizmetlerimiz</span>
-
 <h2 class="fx-h2" style="margin:6px 0 0">İlgili Hizmetlerimiz</h2>
-
 <p class="fx-text" style="color:var(--fx-body);margin-top:6px;max-width:640px">Veri merkezi projelerinizde ihtiyaç duyabileceğiniz tüm hizmetler.</p>
-
 </div>
-
 <div>
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm" href="hizmetler.html">Tüm Hizmetleri Gör →</a>
-
 </div>
-
 </div>
-
 <div class="fx-srv-grid">
-
 <!-- 1. Mühendislik -->
-
 <a aria-label="Yangın mühendislik hizmetleri: Hacim hesabı, hidrolik debi ve projelendirme" class="fx-srv-card" href="yangin-muhendislik-hizmetleri.html">
-
 <div aria-hidden="true" class="fx-srv-card__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 13h6M9 17h6"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Mühendislik</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">Hacim hesabı, hidrolik debi ve projelendirme.</p>
-
 <span class="fx-label" style="color:var(--fx-red);font-weight:600">İncele →</span>
-
 </a>
-
 <!-- 2. Kurulum -->
-
 <a aria-label="Yangın sistemleri kurulum hizmeti: Anahtar teslim sistem kurulumu ve devreye alma" class="fx-srv-card" href="yangin-sistemleri-kurulum-hizmeti.html">
-
 <div aria-hidden="true" class="fx-srv-card__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><rect height="8" rx="2" width="20" x="2" y="2"></rect><rect height="8" rx="2" width="20" x="2" y="14"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Kurulum</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">Anahtar teslim sistem kurulumu ve devreye alma.</p>
-
 <span class="fx-label" style="color:var(--fx-red);font-weight:600">İncele →</span>
-
 </a>
-
 <!-- 3. Montaj -->
-
 <a aria-label="Yangın sistemleri montaj hizmeti: Mekanik borulama ve nozul montaj işçiliği" class="fx-srv-card" href="yangin-sistemleri-montaj-hizmeti.html">
-
 <div aria-hidden="true" class="fx-srv-card__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Montaj</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">Mekanik borulama ve nozul montaj işçiliği.</p>
-
 <span class="fx-label" style="color:var(--fx-red);font-weight:600">İncele →</span>
-
 </a>
-
 <!-- 4. Bakım -->
-
 <a aria-label="Yangın sistemleri bakım hizmeti: NFPA standartlarında periyodik bakım ve test" class="fx-srv-card" href="yangin-sistemleri-bakim-hizmeti.html">
-
 <div aria-hidden="true" class="fx-srv-card__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Bakım</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">NFPA standartlarında periyodik bakım &amp; test.</p>
-
 <span class="fx-label" style="color:var(--fx-red);font-weight:600">İncele →</span>
-
 </a>
-
 <!-- 5. Dolum -->
-
 <a aria-label="Yangın söndürme gaz dolum hizmeti: Sertifikalı istasyonda FM200 ve Novec dolumu" class="fx-srv-card" href="yangin-sondurme-gaz-dolum-hizmeti.html">
-
 <div aria-hidden="true" class="fx-srv-card__icon">
-
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M6 9a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9z"></path><path d="M8 6V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"></path><path d="M18 9v6a2 2 0 0 1-2 2h-1"></path><path d="M16 7l2 2 2-2"></path></svg>
-
 </div>
-
 <h3 class="fx-h3 fx-h3--sm" style="font-size:16px;margin:12px 0 4px">Dolum</h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin:0 0 12px;line-height:1.45">Sertifikalı istasyonda FM200 &amp; Novec dolumu.</p>
-
 <span class="fx-label" style="color:var(--fx-red);font-weight:600">İncele →</span>
-
 </a>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- 3.4 Örnek Projeler -->
-
+<!-- 3.4 Örnek Projeler (3 GERÇEK DÜNYA VAKA ANALİZİ) -->
 <!-- 3.4 Örnek Projeler (3 GERÇEK DÜNYA VAKA ANALİZİ) -->
 <section class="fx-section fx-section--paper" id="ornek-projeler" style="border-top:1px solid var(--fx-line);border-bottom:1px solid var(--fx-line)">
 <div class="fx-wrap">
@@ -1926,1065 +1001,540 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 
-<!-- Saha İnceleme ve Hızlı WhatsApp Yönlendirme -->
+<!-- Saha İnceleme ve Hızlı WhatsApp + Canlı Hesaplama Yönlendirme -->
 <div style="background:#fff;border:1px solid var(--fx-line);border-radius:12px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
 <div>
-<h4 style="margin:0 0 6px;font-size:17px;color:var(--fx-ink)">Veri Merkeziniz veya Sunucu Odanız İçin Ücretsiz Keşif Randevusu</h4>
-<p class="fx-text fx-text--sm" style="margin:0;color:var(--fx-body)">Oda boyutlarınızı, yükseltilmiş taban yüksekliğini ve mevcut soğutma tipini iletin; hidrolik hesap raporu ve bütçenizi çıkaralım.</p>
+<h4 style="margin:0 0 6px;font-size:17px;color:var(--fx-ink)">Veri Merkeziniz İçin 10 Saniyede Gaz Miktarı Hesaplayın veya Keşif İsteyin</h4>
+<p class="fx-text fx-text--sm" style="margin:0;color:var(--fx-body)">Oda boyutlarınızı interaktif hesaplama aracımıza girerek gereken FM200 / Novec 1230 miktarını hemen görün veya WhatsApp'tan mühendislerimize ulaşın.</p>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
+<a class="fx-btn fx-btn--primary" href="gazli-yangin-sondurme-hesaplama.html">10 Saniyede Gaz Miktarı Hesapla →</a>
 <a class="fx-btn fx-btn--wa" href="https://wa.me/905327409097?text=Merhaba,%20veri%20merkezi%20ve%20sunucu%20odas%C4%B1%20yang%C4%B1n%20s%C3%B6nd%C3%BCrme%20sistemi%20ke%C5%9Ffi%20ve%20teklifi%20almak%20istiyorum." rel="noopener" target="_blank"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.838.88 2.791.88 3.182 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.77zm3.385 8.163c-.144.405-.837.774-1.17.822-.311.045-.694.053-1.055-.065-.214-.07-.487-.163-.836-.317-1.464-.643-2.416-2.115-2.489-2.213-.072-.098-.596-.794-.596-1.52 0-.726.381-1.082.517-1.23.136-.148.297-.185.396-.185.099 0 .198.001.284.005.091.004.213-.035.333.254.125.3.428 1.045.466 1.121.038.077.063.167.013.267-.05.1-.075.162-.15.25-.075.088-.158.196-.226.263-.075.074-.153.155-.066.305.087.15.385.635.826 1.028.568.507 1.048.665 1.198.74.15.075.238.066.326-.036.088-.102.376-.437.476-.587.1-.15.2-.125.337-.075.137.05.867.409 1.016.484.15.075.25.112.287.175.037.062.037.362-.107.767z"/></svg>WhatsApp Hızlı Teklif</a>
-<a class="fx-btn fx-btn--secondary" href="gazli-yangin-sondurme-hesaplama.html">Hacim Hesaplayıcı</a>
 </div>
 </div>
 </div>
 </section>
-
 <!-- Orijinal Detaylı Teknik Kılavuz (Eksiksiz Korundu) -->
-
 <section class="fx-section fx-section--white" id="teknik-detaylar">
-
 <div class="fx-wrap fx-grid fx-grid--8-4" style="gap:36px">
-
 <article class="fx-text" style="max-width:var(--fx-measure)">
-
 <!-- A: Veri Merkezlerinde Yangın Riski -->
-
 <h2 class="fx-h2" style="font-size:24px;margin-bottom:12px">Veri Merkezlerinde Yangın Riski</h2>
-
 <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:16px">Veri merkezleri; yüksek yoğunlukta elektrikli ekipman, kesintisiz güç ünitesi (UPS), soğutma sistemleri ve yüksek kapasiteli kablo altyapısıyla 7/24 kritik yangın riski barındırır. Geleneksel sprinkler sistemleri suyuyla elektrikli donanımı ve hassas sunucuları anında tahrip edeceğinden, veri merkezleri için gazlı temiz ajan söndürme sistemleri küresel standart haline gelmiştir.</p>
-
 <div class="fx-risk-grid">
-
 <!-- Risk 1 -->
-
 <div class="fx-risk-card">
-
 <div aria-hidden="true" class="fx-risk-card__icon">
-
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-
 </div>
-
 <h3 class="fx-risk-card__title">Elektriksel Yangın Riski</h3>
-
 <p class="fx-risk-card__text">Kısa devre ve aşırı kablo ısınması, UPS batarya bloğu arızaları, PDU güç dağıtım panosu hataları ve iklimlendirme aşırı yüklenmeleri.</p>
-
 </div>
-
 <!-- Risk 2 -->
-
 <div class="fx-risk-card">
-
 <div aria-hidden="true" class="fx-risk-card__icon">
-
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><rect height="8" rx="2" ry="2" width="20" x="2" y="2"></rect><rect height="8" rx="2" ry="2" width="20" x="2" y="14"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
-
 </div>
-
 <h3 class="fx-risk-card__title">Kritik Altyapı &amp; Süreklilik</h3>
-
 <p class="fx-risk-card__text">Saniyeler içinde binlerce işlem ve veri akışı kesintiye uğrar. Geri döndürülemez veri kaybı ve yüksek finansal hasar oluşur.</p>
-
 </div>
-
 <!-- Risk 3 -->
-
 <div class="fx-risk-card">
-
 <div aria-hidden="true" class="fx-risk-card__icon">
-
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </div>
-
 <h3 class="fx-risk-card__title">Neden Gazlı Söndürme?</h3>
-
 <p class="fx-risk-card__text">Elektriksel iletkenliği yoktur, donanıma sıfır hasar verir, su gibi tortu veya kalıntı bırakmaz ve 10 saniyede alevi söndürür.</p>
-
 </div>
-
 </div>
-
 <!-- B: Önerilen Çözüm -->
-
 <h2 class="fx-h2" style="font-size:24px;margin:32px 0 12px">Önerilen Çözüm: FM200 veya Novec 1230</h2>
-
 <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:16px">Veri merkezleri için uluslararası yangın mühendisliği standartlarında kanıtlanmış iki ana temiz gazlı söndürme teknolojisi uygulanır:</p>
-
 <div class="fx-sol-grid">
-
 <!-- FM200 Kartı -->
-
 <div class="fx-sol-card">
-
 <div>
-
 <span class="fx-badge fx-badge--red" style="font-size:11px;margin-bottom:10px;display:inline-block">Kanıtlanmış Standart</span>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 8px;font-size:18px"><a href="fm200-gazli-yangin-sondurme-sistemleri.html" style="color:inherit;text-decoration:none">FM200 (HFC-227ea) →</a></h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin-bottom:14px;line-height:1.5">Kanıtlanmış teknoloji, düşük başlangıç maliyeti ve 8–10 saniye hızlı söndürme. Küçük ve orta ölçekli veri merkezleri ile sistem odaları için küresel standarttır.</p>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Müdahale Süresi:</span><span class="fx-sol-card__v">8–10 Saniye</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Ekipman Hasarı:</span><span class="fx-sol-card__v" style="color:#047857">Sıfır — Kalıntısız</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">İletkenlik:</span><span class="fx-sol-card__v">Elektriksel iletken değil</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Optimum Alan:</span><span class="fx-sol-card__v">Küçük &amp; Orta Ölçek</span></div>
-
 </div>
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" href="fm200-gazli-yangin-sondurme-sistemleri.html" style="margin-top:16px">FM200 Sistemini İncele →</a>
-
 </div>
-
 <!-- Novec 1230 Kartı -->
-
 <div class="fx-sol-card">
-
 <div>
-
 <span class="fx-badge" style="background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;font-size:11px;margin-bottom:10px;display:inline-block">Yeni Nesil &amp; Sürdürülebilir</span>
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 8px;font-size:18px"><a href="novec-1230-gazli-yangin-sondurme-sistemleri.html" style="color:inherit;text-decoration:none">Novec 1230 (FK-5-1-12) →</a></h3>
-
 <p class="fx-text fx-text--sm" style="color:var(--fx-body);margin-bottom:14px;line-height:1.5">Çok düşük GWP (≤1) ve atmosferde yalnızca 5 gün kalma özelliği ile çevreye duyarlı, insanlı mahallerde en geniş güvenlik marjına sahip modern çözümdür.</p>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Müdahale Süresi:</span><span class="fx-sol-card__v">10 Saniye</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Çevresel Ömür:</span><span class="fx-sol-card__v" style="color:#047857">Atmosferde 5 Gün</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Ozon Aşındırma:</span><span class="fx-sol-card__v">ODP = 0</span></div>
-
 <div class="fx-sol-card__spec"><span class="fx-sol-card__k">Optimum Alan:</span><span class="fx-sol-card__v">Büyük &amp; Kurumsal Tesis</span></div>
-
 </div>
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm fx-btn--block" href="novec-1230-gazli-yangin-sondurme-sistemleri.html" style="margin-top:16px">Novec 1230 Sistemini İncele →</a>
-
 </div>
-
 </div>
-
 <div style="margin-top:14px;padding:12px 16px;background:#f8fafc;border:1px solid var(--fx-line);border-radius:var(--fx-r-ui);font-size:13px;color:var(--fx-body);line-height:1.55">
-
 <strong style="color:var(--fx-ink)">Standart Hedef:</strong> Her iki teknoloji de elektriki iletkenliği olmayan, kalıntısız söndürme gerçekleştiren ve mahalde en az 10 dakika gaz tutma süresi (retention time) hedeflenen sistemlere uygundur.
-
         </div>
-
 <!-- C: Veri Merkezi Tasarım Gereksinimleri -->
-
 <h2 class="fx-h2" style="font-size:24px;margin:36px 0 12px">Veri Merkezi Tasarım Gereksinimleri</h2>
-
 <p class="fx-text" style="color:var(--fx-body);line-height:1.6;margin-bottom:18px">Veri merkezi yangın söndürme sistemi tasarımında NFPA 2001 ve ISO 14520 standartları doğrultusunda dikkat edilmesi gereken 6 kritik mühendislik gereksinimi:</p>
-
 <div class="fx-req-grid">
-
 <!-- 01 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">01</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Raised Floor (Yükseltilmiş Taban)</h3>
-
 <p>Alt plenum (kablo ve soğutma kanalları) bağımsız bir yangın bölgesi olarak değerlendirilmeli, ayrı nozul tasarımı ve debi hesabı yapılmalıdır.</p>
-
 </div>
-
 </div>
-
 <!-- 02 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">02</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Asma Tavan (Üst Plenum)</h3>
-
 <p>Üst asma tavan hacmi de bağımsız nozullarla korunmalı; tavan üstü kablo tavaları ve hava boşlukları hidrolik hesaplamaya tam dahil edilmelidir.</p>
-
 </div>
-
 </div>
-
 <!-- 03 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">03</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Soğutma Hava Akışı (CRAC/CRAH)</h3>
-
 <p>Hassas klima ünitelerinin oluşturduğu hava akışı, gaz dağılımını etkileyebilir; nozul yerleşimi ve yönlendirmeleri hava akış dinamiğine göre optimize edilmelidir.</p>
-
 </div>
-
 </div>
-
 <!-- 04 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">04</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Çift Algılama (Cross-Zone Interlock)</h3>
-
 <p>Yanlış boşaltımı önlemek için en az iki bağımsız dedektörün (duman ve sıcaklık) çapraz teyit onayı aranır ve sistem güvenliği garanti edilir.</p>
-
 </div>
-
 </div>
-
 <!-- 05 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">05</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Abort Switch (Acil Durdurma)</h3>
-
 <p>Geri sayım ve tahliye süresinde personelin sistemi manüel durdurabilmesi için standartlara uygun acil durdurma butonları kaçış kapılarına entegre edilir.</p>
-
 </div>
-
 </div>
-
 <!-- 06 -->
-
 <div class="fx-req-item">
-
 <div class="fx-req-num">06</div>
-
 <div class="fx-req-content">
-
 <h3 class="fx-h3 fx-h3--sm" style="margin:0 0 6px;font-size:16px;font-weight:700">Oda Sızdırmazlık Testi (Door Fan)</h3>
-
 <p><a href="oda-sizdirmazlik-testi.html" style="color:var(--fx-red);font-weight:600">Door fan test</a> ile mahallerin gaz tutma sızdırmazlığı devreye alma öncesi ve her yıl periyodik olarak doğrulanmalıdır.</p>
-
 </div>
-
 </div>
-
 </div>
-
 <!-- D: Periyodik Bakım -->
-
 <h2 class="fx-h2" style="font-size:24px;margin:36px 0 12px">Periyodik Bakım</h2>
-
 <div class="fx-maint-box">
-
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-
 <div style="width:36px;height:36px;border-radius:8px;background:rgba(190,21,35,0.08);color:var(--fx-red);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-
 </div>
-
 <h3 class="fx-h3" style="margin:0;font-size:18px">NFPA 2001 Standartlarında Periyodik Bakım &amp; 7/24 Destek</h3>
-
 </div>
-
 <p class="fx-text" style="color:var(--fx-body);line-height:1.6;font-size:14px;margin:0 0 16px">NFPA 2001 standartlarına uygun yıllık bakım; silindir tartımı ve basınç kontrolü, algılama sistemi testi, oda sızdırmazlık testi ve sistem onay raporunu kapsar. Fenix Yangın olarak veri merkezleri için 7/24 acil servis ve periyodik bakım sözleşmesi sunmaktayız.</p>
-
 <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm" href="yangin-sistemleri-bakim-hizmeti.html">Bakım Hizmetini İncele →</a>
-
 <a class="fx-btn fx-btn--primary fx-btn--sm" href="tel:+902126180701">+90 212 618 07 01</a>
-
 </div>
-
 </div>
-
 </article>
-
 <aside>
-
 <h2 class="fx-h2 fx-h2--sm" style="margin-bottom:16px">Benzer Sektörler</h2>
-
 <div class="fx-filters" style="margin-bottom:24px">
-
 <a class="fx-chip" href="server-odasi-yangin-sondurme.html">Server Odası</a>
-
 <a class="fx-chip" href="ups-odasi-yangin-sondurme.html">UPS Odası</a>
-
 <a class="fx-chip" href="trafo-odasi-yangin-sondurme.html">Trafo Odası</a>
-
 </div>
-
 <div class="fx-callout">
-
 <span class="fx-label" style="display:block;margin-bottom:8px;font-weight:600">Veri Merkezi Teklifi</span>
-
 <p style="margin-bottom:12px;font-size:0.92em;line-height:1.5">Veri merkeziniz için mahale özel hacim hesabı, teknik şartname ve fiyat teklifi hazırlayalım.</p>
-
 <a class="fx-btn fx-btn--primary fx-btn--block" href="tel:+902126180701">+90 212 618 07 01</a>
-
 <a class="fx-btn fx-btn--primary fx-btn--block" href="tel:+902126180702" style="margin-top:8px">+90 212 618 07 02</a>
-
 <a class="fx-btn fx-btn--ghost fx-btn--block" href="iletisim.html" style="margin-top:8px">Teklif Formu</a>
-
 </div>
-
 </aside>
-
 </div>
-
 </section>
-
 <!-- 3.5 Referanslar: Bu Alanda Bize Güvenenler -->
-
 <section class="fx-section fx-section--paper" id="referanslar" style="border-top:1px solid var(--fx-line)">
-
 <div class="fx-wrap">
-
 <div style="text-align:center;max-width:680px;margin:0 auto 32px">
-
 <span class="fx-eyebrow" style="color:var(--fx-red)">Referanslarımız</span>
-
 <h2 class="fx-h2" style="margin:6px 0 8px">Bu Alanda Bize Güvenenler</h2>
-
 <p class="fx-text" style="color:var(--fx-body);font-size:15px">Veri merkezi ve kritik altyapı yangın güvenliğinde Fenix Yangın tecrübesine güvenen öncü kurumlar.</p>
-
 </div>
-
 <div class="fx-ref-grid">
-
 <div class="fx-ref-box" title="Türk Telekom">
-
 <img alt="Türk Telekom Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-19-turk-telekom.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Vodafone">
-
 <img alt="Vodafone Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-29-vodafone.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Trendyol">
-
 <img alt="Trendyol Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-10-trendyol.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Paribu">
-
 <img alt="Paribu Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-11-paribu.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Türkiye İş Bankası">
-
 <img alt="Türkiye İş Bankası Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-17-turkiye-is-bankasi.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Yapı Kredi">
-
 <img alt="Yapı Kredi Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-48-yapi-kredi.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Iron Mountain">
-
 <img alt="Iron Mountain Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-20-iron-mountain.webp" width="120"/>
-
 </div>
-
 <div class="fx-ref-box" title="Havelsan">
-
 <img alt="Havelsan Logo" decoding="async" height="40" loading="lazy" src="../assets/img/referanslar/ref-06-havelsan.webp" width="120"/>
-
 </div>
-
 </div>
-
 <div style="text-align:center;margin-top:28px">
-
 <a class="fx-btn fx-btn--secondary fx-btn--sm" href="referanslar.html">Tüm Referansları Gör →</a>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- 3.6 Son CTA -->
-
 <section class="fx-section fx-section--red fx-section--tight">
-
 <div class="fx-wrap">
-
 <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
-
 <div>
-
 <h2 class="fx-h2" style="margin-bottom:8px;color:#ffffff">Veri Merkezi Projeniz İçin Çözüm Geliştirelim</h2>
-
 <p style="color:#ffffff;max-width:580px;line-height:1.6">Tier I'den Tier IV'e veri merkezi projenizin keşif, hidrolik hesaplama, anahtar teslim montaj ve periyodik bakım süreçleri için mühendislik ekibimizle hemen görüşün.</p>
-
 </div>
-
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-
 <a class="fx-btn fx-btn--wa" href="https://wa.me/905327409097?text=Merhaba,%20veri%20merkezi%20ve%20server%20odas%C4%B1%20gazl%C4%B1%20s%C3%B6nd%C3%BCrme%20projesi%20i%C3%A7in%20teklif%20almak%20istiyoruz." target="_blank" rel="noopener"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.838.88 2.791.88 3.182 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.77zm3.385 8.163c-.144.405-.837.774-1.17.822-.311.045-.694.053-1.055-.065-.214-.07-.487-.163-.836-.317-1.464-.643-2.416-2.115-2.489-2.213-.072-.098-.596-.794-.596-1.52 0-.726.381-1.082.517-1.23.136-.148.297-.185.396-.185.099 0 .198.001.284.005.091.004.213-.035.333.254.125.3.428 1.045.466 1.121.038.077.063.167.013.267-.05.1-.075.162-.15.25-.075.088-.158.196-.226.263-.075.074-.153.155-.066.305.087.15.385.635.826 1.028.568.507 1.048.665 1.198.74.15.075.238.066.326-.036.088-.102.376-.437.476-.587.1-.15.2-.125.337-.075.137.05.867.409 1.016.484.15.075.25.112.287.175.037.062.037.362-.107.767z"/></svg>WhatsApp Hızlı Teklif</a>
-
 <div class="fx-cta-phones fx-desktop-only" style="display:flex;gap:12px;flex-wrap:wrap;">
-
 <a class="fx-btn fx-btn--white" href="tel:+902126180701">+90 212 618 07 01</a>
-
 </div>
-
 <a class="fx-btn fx-btn--ghost-dark" href="iletisim.html">İletişime Geç →</a>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
 </main>
-
 <footer class="fx-footer" style="background:var(--fx-paper);color:var(--fx-ink);">
-
 <div class="fx-wrap">
-
 <div class="fx-footer__grid">
-
 <div>
-
 <a class="fx-logo" href="../index.html" style="margin-bottom:18px;display:block"><picture><source srcset="../assets/fenix-logo.webp" type="image/webp"/><img alt="Fenix Yangın" decoding="async" height="28" src="../assets/fenix-logo.png" width="151"/></picture></a>
-
 <p class="fx-text fx-text--sm" style="margin-bottom:18px;color:var(--fx-body)">Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş. Gazlı söndürme ve algılama sistemlerinde projelendirme, kurulum, devreye alma ve bakım.</p>
-
 <div class="fx-footer__certs">
-
 <span class="fx-footer__cert">NFPA 2001</span><span class="fx-footer__cert">ISO 14520</span><span class="fx-footer__cert">TS EN 15004</span>
-
 </div>
-
 </div>
-
 <div>
-
 <h2 class="fx-footer__title">Sistemler</h2>
-
 <nav class="fx-footer__list">
-
 <a href="fm200-gazli-yangin-sondurme-sistemleri.html">FM200</a>
-
 <a href="novec-1230-gazli-yangin-sondurme-sistemleri.html">Novec 1230</a>
-
 <a href="co2-gazli-yangin-sondurme-sistemleri.html">CO₂</a>
-
 <a href="aerosol-gazli-yangin-sondurme-sistemleri.html">Aerosol</a>
-
 <a href="davlumbaz-yangin-sondurme-sistemleri.html">Davlumbaz</a>
-
 <a href="pano-ici-yangin-sondurme-sistemleri.html">Pano İçi</a>
-
 <a href="lityum-batarya-yangin-sondurme-sistemleri.html">Lityum Batarya</a>
-
 </nav>
-
 </div>
-
 <div>
-
 <h2 class="fx-footer__title">Hizmetler</h2>
-
 <nav class="fx-footer__list">
-
 <a href="fm200-gazli-yangin-sondurme-sistemleri-bakimi.html">FM200 Bakım</a>
-
 <a href="novec-1230-gazli-yangin-sondurme-sistemleri-bakimi.html">Novec 1230 Bakım</a>
-
 <a href="fm200-gaz-dolumu.html">FM200 Gaz Dolumu</a>
-
 <a href="novec-1230-gaz-dolumu.html">Novec 1230 Dolumu</a>
-
 <a href="oda-sizdirmazlik-testi.html">Oda Sızdırmazlık Testi</a>
-
 <a href="yangin-danismanligi.html">Yangın Danışmanlığı</a>
-
 </nav>
-
 </div>
-
 <div>
-
 <h2 class="fx-footer__title">Sektörler</h2>
-
 <nav class="fx-footer__list">
-
 <a href="veri-merkezi-yangin-sondurme.html">Veri Merkezi</a>
-
 <a href="server-odasi-yangin-sondurme.html">Server Odası</a>
-
 <a href="ups-odasi-yangin-sondurme.html">UPS Odası</a>
-
 <a href="endustriyel-mutfak-yangin-sondurme.html">Endüstriyel Mutfak</a>
-
 <a href="trafo-odasi-yangin-sondurme.html">Trafo ve Enerji Odası</a>
-
 <a href="arsiv-muze-yangin-sondurme.html">Arşiv ve Müze</a>
-
 </nav>
-
 </div>
-
 <div>
-
 <h2 class="fx-footer__title">İletişim</h2>
-
 <address class="fx-footer__list" style="font-style:normal">
-
 <span>Yıldırım Mah. Buğday Sok. No:16<br/>34405 Bayrampaşa / İstanbul</span>
-
 <div style="display:flex;flex-direction:column;gap:3px;"><a class="fx-num" href="tel:+902126180701" style="text-decoration:none;">+90 212 618 07 01</a><a class="fx-num" href="tel:+902126180702" style="text-decoration:none;">+90 212 618 07 02</a></div>
-
 <a href="mailto:info@fenixyangin.com.tr">info@fenixyangin.com.tr</a>
-
 </address>
-
 <div class="fx-social-modern fx-social--light" style="margin-top:14px;">
-
 <a aria-label="YouTube" class="fx-social-pill fx-social-pill--yt" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-
 </a>
-
 <a aria-label="LinkedIn" class="fx-social-pill fx-social-pill--li" href="https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
-
 </a>
-
 <a aria-label="Facebook" class="fx-social-pill fx-social-pill--fb" href="https://www.facebook.com/fenixyangin/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-
 </a>
-
 <a aria-label="Instagram" class="fx-social-pill fx-social-pill--ig" href="https://www.instagram.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
-
 </a>
-
 <a aria-label="X (Twitter)" class="fx-social-pill fx-social-pill--x" href="https://x.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-
 </a>
-
 <a aria-label="TikTok" class="fx-social-pill fx-social-pill--tk" href="https://www.tiktok.com/@fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
-
 </a>
-
 </div>
-
 </div>
-
 </div>
-
 <div class="fx-footer__bottom">
-
 <span>© 2026 Fenix Sistem Yangın Mühendislik San. ve Tic. A.Ş.</span>
-
 <nav class="fx-footer__legal">
-
 <a href="kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a><a href="cerez-politikasi.html">Çerez Politikası</a><a href="site-haritasi.html">Site Haritası</a>
-
 </nav>
-
 </div>
-
 <!-- MOBILE COMPACT FOOTER (ONLY SHOWN ON MOBILE <= 767px FOR INNER PAGES) -->
-
 <div class="fx-footer-m">
-
 <!-- 1. Telefon & WhatsApp Row -->
-
 <div class="fx-footer-m__contact">
-
 <a class="fx-footer-m__contact-item" href="tel:+902126180701">
-
 <span class="fx-footer-m__contact-icon">
-
 <svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
-
 </span>
-
 <div class="fx-footer-m__contact-info">
-
 <span class="fx-footer-m__contact-label">Telefon</span>
-
 <span class="fx-footer-m__contact-val">+90 212 618 07 01</span>
-
 </div>
-
 <span aria-hidden="true" class="fx-footer-m__chevron">›</span>
-
 </a>
-
 <span aria-hidden="true" class="fx-footer-m__contact-sep"></span>
-
 <a aria-label="WhatsApp" class="fx-footer-m__contact-item" href="https://wa.me/905327409097" rel="noopener" target="_blank">
-
 <span class="fx-footer-m__contact-icon fx-footer-m__contact-icon--wa">
-
 <svg aria-hidden="true" fill="none" height="26" viewBox="0 0 32 32" width="26" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" fill="#25D366" r="16"></circle><path d="M23.5 8.5C21.5 6.5 18.8 5.4 16 5.4c-5.8 0-10.6 4.8-10.6 10.6 0 1.9.5 3.7 1.4 5.3L5.4 27.2l6.1-1.6c1.5.8 3.2 1.3 4.9 1.3h0c5.8 0 10.6-4.8 10.6-10.6.1-2.8-1-5.5-3-7.5zM16 25.1c-1.6 0-3.2-.4-4.6-1.2l-.3-.2-3.4.9.9-3.3-.2-.4c-.9-1.4-1.4-3.1-1.4-4.8 0-4.9 4-8.8 8.8-8.8 2.4 0 4.6.9 6.2 2.6s2.6 3.9 2.6 6.2c0 4.8-3.9 8.8-8.8 8.8zm4.8-6.6c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.3c-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.3c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z" fill="#FFFFFF"></path></svg>
-
 </span>
-
 <div class="fx-footer-m__contact-info">
-
 <span class="fx-footer-m__contact-title">WhatsApp</span>
-
 </div>
-
 <span aria-hidden="true" class="fx-footer-m__chevron">›</span>
-
 </a>
-
 </div>
-
 <div aria-hidden="true" class="fx-footer-m__divider"></div>
-
 <!-- 2. Nav Row 1: Çözümlerimiz | Hizmetlerimiz | Sektörler > -->
-
 <div class="fx-footer-m__nav-row fx-footer-m__nav-row--1">
-
 <div class="fx-footer-m__nav-links">
-
 <a class="fx-footer-m__nav-link" href="sistemler.html">Çözümlerimiz</a>
-
 <span aria-hidden="true" class="fx-footer-m__nav-sep"></span>
-
 <a class="fx-footer-m__nav-link" href="hizmetler.html">Hizmetlerimiz</a>
-
 <span aria-hidden="true" class="fx-footer-m__nav-sep"></span>
-
 <a class="fx-footer-m__nav-link" href="sektorler.html">Sektörler</a>
-
 </div>
-
 <a aria-label="Çözümlerimiz menüsü" class="fx-footer-m__chevron" href="sistemler.html">›</a>
-
 </div>
-
 <div aria-hidden="true" class="fx-footer-m__divider"></div>
-
 <!-- 3. Nav Row 2: Hakkımızda | Referanslar | Teknik İçerikler | İletişim > -->
-
 <div class="fx-footer-m__nav-row fx-footer-m__nav-row--2">
-
 <div class="fx-footer-m__nav-links">
-
 <a class="fx-footer-m__nav-link" href="kurumsal.html">Hakkımızda</a>
-
 <span aria-hidden="true" class="fx-footer-m__nav-sep"></span>
-
 <a class="fx-footer-m__nav-link" href="referanslar.html">Referanslar</a>
-
 <span aria-hidden="true" class="fx-footer-m__nav-sep"></span>
-
 <a class="fx-footer-m__nav-link" href="blog.html">Teknik İçerikler</a>
-
 <span aria-hidden="true" class="fx-footer-m__nav-sep"></span>
-
 <a class="fx-footer-m__nav-link" href="iletisim.html">İletişim</a>
-
 </div>
-
 <a aria-label="İletişim menüsü" class="fx-footer-m__chevron" href="iletisim.html">›</a>
-
 </div>
-
 <div aria-hidden="true" class="fx-footer-m__divider"></div>
-
 <!-- 4. Social Row: 6 circular red outline icons -->
-
 <div class="fx-footer-m__socials">
-
 <a aria-label="YouTube" class="fx-footer-m__soc" href="https://www.youtube.com/channel/UCJOlJcpl9AGOz0U1Rsq9wbA" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-
 </a>
-
 <a aria-label="LinkedIn" class="fx-footer-m__soc" href="https://www.linkedin.com/in/fenix-yang%C4%B1n-m%C3%BChendislik-a-%C5%9F-926914b6/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
-
 </a>
-
 <a aria-label="Facebook" class="fx-footer-m__soc" href="https://www.facebook.com/fenixyangin/" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
-
 </a>
-
 <a aria-label="Instagram" class="fx-footer-m__soc" href="https://www.instagram.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
-
 </a>
-
 <a aria-label="X (Twitter)" class="fx-footer-m__soc" href="https://x.com/fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-
 </a>
-
 <a aria-label="TikTok" class="fx-footer-m__soc" href="https://www.tiktok.com/@fenixyangin" rel="noopener noreferrer" target="_blank">
-
 <svg fill="currentColor" height="13" viewbox="0 0 24 24" width="13"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
-
 </a>
-
 </div>
-
 <div aria-hidden="true" class="fx-footer-m__divider"></div>
-
 <!-- 5. Copyright & Legal -->
-
 <div class="fx-footer-m__bottom">
-
 <div class="fx-footer-m__copyright">© 2026 Fenix Sistem Yangın Mühendislik San. ve Tic. A.Ş.</div>
-
 <div class="fx-footer-m__legal">
-
 <a href="kvkk-aydinlatma-metni.html">KVKK</a>
-
 <span aria-hidden="true" class="fx-footer-m__legal-sep">|</span>
-
 <a href="kvkk-aydinlatma-metni.html">Gizlilik Politikası</a>
-
 <span aria-hidden="true" class="fx-footer-m__legal-sep">|</span>
-
 <a href="cerez-politikasi.html">Çerez Politikası</a>
-
 <span aria-hidden="true" class="fx-footer-m__legal-sep">|</span>
-
 <a href="site-haritasi.html">Site Haritası</a>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </footer>
-
 <a aria-label="WhatsApp ile 7/24 Bize Ulaşın" class="fx-wa" href="https://wa.me/905327409097" rel="noopener" target="_blank">
-
 <span class="fx-wa__icon">
-
 <svg aria-hidden="true" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" fill="#25D366" r="16"></circle><path d="M23.5 8.5C21.5 6.5 18.8 5.4 16 5.4c-5.8 0-10.6 4.8-10.6 10.6 0 1.9.5 3.7 1.4 5.3L5.4 27.2l6.1-1.6c1.5.8 3.2 1.3 4.9 1.3h0c5.8 0 10.6-4.8 10.6-10.6.1-2.8-1-5.5-3-7.5zM16 25.1c-1.6 0-3.2-.4-4.6-1.2l-.3-.2-3.4.9.9-3.3-.2-.4c-.9-1.4-1.4-3.1-1.4-4.8 0-4.9 4-8.8 8.8-8.8 2.4 0 4.6.9 6.2 2.6s2.6 3.9 2.6 6.2c0 4.8-3.9 8.8-8.8 8.8zm4.8-6.6c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.9 1.1c-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.3c-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3s-1 1-1 2.3c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4.1.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z" fill="#FFFFFF"></path></svg>
-
 <span aria-hidden="true" class="fx-wa__dot"></span>
-
 </span>
-
 <span class="fx-wa__label fx-desktop-only">7/24 Bize Ulaşın</span>
-
 </a>
-
 <script defer="" src="../js/fenix.min.js?v=2026.14"></script>
-
 <!-- GTM & GA4 Universal Event Tracking & KVKK Cookie Consent Banner -->
-
 <script>
-
 (function() {
-
   /* 1. Phone, WhatsApp & Form Submissions Tracking */
-
   document.addEventListener('click', function(e) {
-
     var a = e.target.closest('a');
-
     if (!a) return;
-
     var href = a.getAttribute('href') || '';
-
     if (href.indexOf('tel:') === 0) {
-
       var phoneNum = href.replace('tel:', '').trim();
-
       window.dataLayer = window.dataLayer || [];
-
       window.dataLayer.push({
-
         event: 'phone_click',
-
         event_category: 'Contact',
-
         event_action: 'Click Phone',
-
         event_label: phoneNum,
-
         phone_number: phoneNum
-
       });
-
       if (typeof gtag === 'function') {
-
         gtag('event', 'click_phone', { 'phone_number': phoneNum });
-
       }
-
     } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
-
       window.dataLayer = window.dataLayer || [];
-
       window.dataLayer.push({
-
         event: 'whatsapp_click',
-
         event_category: 'Contact',
-
         event_action: 'Click WhatsApp',
-
         event_label: href,
-
         destination: href
-
       });
-
       if (typeof gtag === 'function') {
-
         gtag('event', 'click_whatsapp', { 'destination': href });
-
       }
-
     }
-
   }, true);
-
-
 
   document.addEventListener('submit', function(e) {
-
     var form = e.target;
-
     if (form && (form.id === 'teklif-formu' || (form.getAttribute('action') && form.getAttribute('action').indexOf('formspree') !== -1))) {
-
       window.dataLayer = window.dataLayer || [];
-
       window.dataLayer.push({
-
         event: 'form_submission',
-
         event_category: 'Lead',
-
         event_action: 'Submit Quote Form',
-
         event_label: form.id || 'contact_form'
-
       });
-
       if (typeof gtag === 'function') {
-
         gtag('event', 'generate_lead', { 'form_id': form.id || 'contact_form' });
-
       }
-
     }
-
   }, true);
 
-
-
   /* 2. KVKK Cookie Consent Banner & Dynamic Consent Update */
-
   var consent = null;
-
   try { consent = localStorage.getItem('fx_cookie_consent'); } catch(e){}
-
   if (consent) return; // User already made a choice
 
-
-
   function initBanner() {
-
     if (document.getElementById('fx-cookie-banner')) return;
-
     var div = document.createElement('div');
-
     div.id = 'fx-cookie-banner';
-
     div.setAttribute('role', 'dialog');
-
     div.setAttribute('aria-label', 'Çerez ve Gizlilik Tercihleri');
-
     div.innerHTML = '' +
-
       '<style>' +
-
       '#fx-cookie-banner { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 460px; margin: 0 auto 0 0; background: #0E1217; color: #e6edf3; border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.65); padding: 18px 20px; z-index: 99999999; font-family: inherit; font-size: 13.5px; line-height: 1.5; animation: fxSlideUp 0.3s ease-out; }' +
-
       '@keyframes fxSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }' +
-
       '#fx-cookie-banner a { color: #ffffff; text-decoration: underline; }' +
-
       '.fx-cb-title { font-weight: 700; font-size: 14.5px; margin-bottom: 8px; color: #ffffff; display: flex; align-items: center; gap: 8px; }' +
-
       '.fx-cb-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }' +
-
       '.fx-cb-btn { cursor: pointer; border-radius: 6px; font-size: 13px; font-weight: 600; padding: 9px 16px; transition: all 0.2s ease; border: none; flex: 1 1 auto; text-align: center; }' +
-
       '.fx-cb-btn--accept { background: #be1523; color: #ffffff; }' +
-
       '.fx-cb-btn--accept:hover { background: #96101b; }' +
-
       '.fx-cb-btn--reject { background: rgba(255,255,255,0.08); color: #c9d1d9; border: 1px solid rgba(255,255,255,0.18); }' +
-
       '.fx-cb-btn--reject:hover { background: rgba(255,255,255,0.15); color: #ffffff; }' +
-
       '@media (max-width: 600px) { #fx-cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 16px; } }' +
-
       '</style>' +
-
       '<div class="fx-cb-title">🍪 Çerez ve Gizlilik Tercihleriniz</div>' +
-
       '<p style="margin:0 0 6px 0; color:#8b949e; font-size:13px;">' +
-
       'Sitemizde temel fonksiyonların çalışması, kullanıcı deneyiminizin iyileştirilmesi ve ziyaret trafiğinin analizi için KVKK mevzuatına uygun çerezler kullanılmaktadır. Detaylar için <a href="/pages/cerez-politikasi.html" target="_blank">Çerez Politikamızı</a> inceleyebilirsiniz.' +
-
       '</p>' +
-
       '<div class="fx-cb-actions">' +
-
       '<button type="button" class="fx-cb-btn fx-cb-btn--accept" id="fx-cb-accept">Tümünü Kabul Et</button>' +
-
       '<button type="button" class="fx-cb-btn fx-cb-btn--reject" id="fx-cb-reject">Yalnızca Zorunluları Kabul Et / Reddet</button>' +
-
       '</div>';
-
     document.body.appendChild(div);
 
-
-
     function hideBanner() {
-
       div.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-
       div.style.opacity = '0';
-
       div.style.transform = 'translateY(15px)';
-
       setTimeout(function() {
-
         if (div.parentNode) div.parentNode.removeChild(div);
-
       }, 260);
-
     }
 
-
-
     document.getElementById('fx-cb-accept').addEventListener('click', function() {
-
       try { localStorage.setItem('fx_cookie_consent', 'granted'); } catch(e){}
-
       if (typeof gtag === 'function') {
-
         gtag('consent', 'update', {
-
           'ad_storage': 'granted',
-
           'ad_user_data': 'granted',
-
           'ad_personalization': 'granted',
-
           'analytics_storage': 'granted'
-
         });
-
       }
-
       window.dataLayer = window.dataLayer || [];
-
       window.dataLayer.push({ event: 'consent_updated', consent_status: 'granted' });
-
       hideBanner();
-
     });
-
-
 
     document.getElementById('fx-cb-reject').addEventListener('click', function() {
-
       try { localStorage.setItem('fx_cookie_consent', 'denied'); } catch(e){}
-
       if (typeof gtag === 'function') {
-
         gtag('consent', 'update', {
-
           'ad_storage': 'denied',
-
           'ad_user_data': 'denied',
-
           'ad_personalization': 'denied',
-
           'analytics_storage': 'denied'
-
         });
-
       }
-
       window.dataLayer = window.dataLayer || [];
-
       window.dataLayer.push({ event: 'consent_updated', consent_status: 'denied' });
-
       hideBanner();
-
     });
-
   }
-
-
 
   if (document.readyState === 'loading') {
-
     document.addEventListener('DOMContentLoaded', initBanner);
-
   } else {
-
     initBanner();
-
   }
-
 })();
-
 </script>
-
 </body>
-
 </html>
-
