@@ -45,3 +45,4 @@ qa/
 *.csv
 FENIXYANGIN_COMTR_*
 scratch/
+scripts/
