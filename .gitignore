@@ -37,6 +37,11 @@ Thumbs.db
 assets/video/Fenix 2026 Tanitim.mp4
 assets/video/Fenix 2026 Tanıtım.mp4
 
-# --- dahili denetim raporları (canlı siteye sızmasını engelle) ---
+# --- dahili denetim raporları ve iç dokümanlar (Görev 4) ---
+gsc-404.csv
+qa/
+*.md
+.htaccess
+*.csv
 FENIXYANGIN_COMTR_*
-
+scratch/

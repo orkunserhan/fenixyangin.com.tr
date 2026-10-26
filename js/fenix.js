@@ -1116,45 +1116,11 @@
     window.fxInitReferenceCounts && window.fxInitReferenceCounts();
   }
 
-  /* ---------- CENTRAL GA4 LOADER (SINGLE SOURCE OF TRUTH) ---------- */
+  /* ---------- CENTRAL GA4 LOADER (DEPRECATED PER GÖREV 5) ---------- */
   function fxInitGA4() {
-    var gaId = window.FENIX_GA4_ID || (window.FENIX_CONFIG && window.FENIX_CONFIG.GA4_MEASUREMENT_ID) || "G-MM63K7Q8EG";
-    if (!gaId || typeof gaId !== 'string' || !/^G-[A-Z0-9]+$/i.test(gaId) || gaId === 'G-XXXXXXXXXX') {
-      return;
-    }
-    if (window._fxGA4Initialized) return;
-    window._fxGA4Initialized = true;
-
-    /* Initialize Google Tag Manager / GA4 dataLayer & gtag function immediately */
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', gaId, { anonymize_ip: true });
-
-    /* Defer injecting remote Google Tag script until window load to protect initial render */
-    function injectGA4Script() {
-      if (window._fxGA4ScriptInjected) return;
-      window._fxGA4ScriptInjected = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
-      (document.head || document.documentElement).appendChild(s);
-    }
-
-    if (document.readyState === 'complete') {
-      injectGA4Script();
-    } else {
-      window.addEventListener('load', function () {
-        if (typeof requestIdleCallback === 'function') {
-          requestIdleCallback(injectGA4Script, { timeout: 1500 });
-        } else {
-          setTimeout(injectGA4Script, 100);
-        }
-      });
-      /* Safety fallback: ensure GA4 always fires even if load event was missed or delayed */
-      setTimeout(injectGA4Script, 3500);
-    }
+    // GA4 measurement is centrally managed via GTM container (GTM-TPLPTPGJ).
+    // Direct gtag.js injection & config disabled to prevent duplicate collect requests.
+    return;
   }
 
   fxInitGA4();
