@@ -277,7 +277,7 @@
 
   document.addEventListener('submit', function (e) {
     var form = e.target;
-    if (form && (form.id === 'teklif-formu' || (form.getAttribute('action') && form.getAttribute('action').indexOf('formspree') !== -1))) {
+    if (form && form.id === 'teklif-formu') {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'form_submission',
