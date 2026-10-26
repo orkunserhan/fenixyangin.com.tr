@@ -671,7 +671,7 @@
       var lnk = document.querySelector('link[href*="css/fenix-design.css"]');
       if (lnk && (lnk.getAttribute('href') || '').indexOf('../') === 0) isSubPage = true;
     }
-    var prefix = isSubPage ? '' : 'pages/';
+    var prefix = isSubPage ? '' : '/pages/';
 
     /* --- 1. DESKTOP DROPDOWN --- */
     var desktopNav = document.querySelector('.fx-nav');
@@ -897,7 +897,7 @@
       var lnk = document.querySelector('link[href*="css/fenix-design.css"]');
       if (lnk && (lnk.getAttribute('href') || '').indexOf('../') === 0) isSubPage = true;
     }
-    var prefix = isSubPage ? '' : 'pages/';
+    var prefix = isSubPage ? '' : '/pages/';
 
     /* --- 1. DESKTOP DROPDOWN --- */
     var desktopNav = document.querySelector('.fx-nav');
