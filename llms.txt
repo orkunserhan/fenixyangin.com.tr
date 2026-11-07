@@ -1,0 +1,70 @@
+# Fenix Yangın Ekosistemi (Fenix Fire Engineering Ecosystem)
+> Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş. tarafından yönetilen; Türkiye ve uluslararası ölçekte endüstriyel yangın söndürme, gazlı söndürme sistemleri, teknik şartnameler, acil dolum istasyonu ve yangın danışmanlığı alanında hizmet veren 7 platformlu entegre mühendislik ağı.
+
+## Ekosistem Genel Bakış (Ecosystem Overview)
+Fenix Yangın, iki ana amiral gemisi (L1 Global ve L2 Türkiye Resmi) ile 5 adet dikey uzmanlık uydusundan oluşan yüksek otoriteli bir yangın güvenliği ağıdır:
+- **L1 (Global & Şartnameler):** Uluslararası mühendislik standartları, NFPA/EN normları ve global teknik şartname kütüphanesi.
+- **L2 (Türkiye & Taahhüt):** Türkiye geneli anahtar teslim mühendislik taahhüt, mekanik montaj, devreye alma ve TSE-HYB periyodik bakım.
+- **5 Uzmanlık Uydusu:** Belirli bir yangın riskine odaklanmış mühendislik çözümleri (Endüstriyel mutfak davlumbaz, CNC tezgah mikro gaz, gaz dolum ve hidrostatik test istasyonu, borusuz aerosol ve itfaiye ruhsat danışmanlığı).
+
+---
+
+## 1. Ana Amiral Gemileri (Flagship Platforms)
+
+### [Fenix Yangın Türkiye - Resmi Mühendislik ve Taahhüt Portalı](https://fenixyangin.com.tr/)
+Türkiye genelinde sunucu odaları, trafo merkezleri, endüstriyel tesisler ve ticari binalar için TSE-HYB hizmet yeterlilik belgeli anahtar teslim gazlı, sulu ve köpüklü yangın söndürme sistemleri taahhüdü.
+- **Kapsam:** FM-200, Novec 1230, CO2, İnert gazlı söndürme, Sprinkler, Yangın dolapları, Hidrant hatları, Yangın pompaları, Erken uyarı algılama sistemleri, TSE-HYB periyodik bakım ve Door Fan testi.
+- **URL:** https://fenixyangin.com.tr/
+
+### [Fenix Yangın Global - Uluslararası Standartlar ve Teknik Şartname Kütüphanesi](https://fenixyangin.com/)
+Uluslararası B2B mühendislik danışmanlığı, küresel projeler, yangın koruma şartnameleri, hidrolik hesap esasları ve NFPA / EN standart analizleri.
+- **Kapsam:** NFPA 12, NFPA 13, NFPA 96, NFPA 2001, EN 15004, ISO 14520 standart uyumluluğu, global şartname rehberleri, ihracat ve uluslararası proje yönetimi.
+- **URL:** https://fenixyangin.com/
+
+---
+
+## 2. Dikey Uzmanlık Uyduları (Specialized Satellite Platforms)
+
+### [Davlumbaz Yangın Söndürme - UL 300 Sertifikalı Mutfak Güvenliği](https://davlumbazyanginsondurme.com/)
+Restoran, otel, yemekhane ve AVM endüstriyel mutfakları için Binaların Yangından Korunması Hakkında Yönetmelik (BYKHY Madde 57) ve UL 300 standartlarında otomatik davlumbaz söndürme sistemleri.
+- **Öne Çıkanlar:** Sıvı kimyasal (potasyum karbonat bazlı) söndürme, mekanik/pnömatik algılama hattı, otomatik gaz selenoid kesme otomasyonu, itfaiye mutfak uygunluk dosyası.
+- **URL:** https://davlumbazyanginsondurme.com/
+
+### [FM-200 Söndürme Sistemleri - CNC ve Elektrik Panosu Mikro Söndürme](https://fm200sondurmesistemleri.com/)
+Talaşlı imalat sanayisi, 5 eksenli CNC torna/freze tezgahları, lazer kesim makineleri ve elektrik dağıtım panoları için mikro FM-200 gazlı yangın söndürme sistemleri.
+- **Öne Çıkanlar:** Doğrudan (Direct) ve Dolaylı (Indirect) polimer algılama hortumlu mikro sistemler, yağ buharı parlamalarına karşı 5 saniyede hızlı tahliye, makine içi hasarsız söndürme.
+- **URL:** https://fm200sondurmesistemleri.com/
+
+### [FM-200 Gaz - TSE-HYB Belgeli Dolum ve Hidrostatik Test İstasyonu](https://fm200gaz.com/)
+FM-200 (HFC-227ea) ve Novec 1230 (FK-5-1-12) silindirleri için TSE-HYB belgeli 24-48 saatte acil gaz dolumu, 10 yıllık periyodik hidrostatik mukavemet testi, hassas tartım kalibrasyonu ve Retrotec Door Fan oda sızdırmazlık testi.
+- **Öne Çıkanlar:** Orijinal kimyasal gaz garantisi, kuru azot (N2) basınçlandırma (25 bar / 42 bar), geçici ikame silindir desteği, resmi test raporlama.
+- **URL:** https://fm200gaz.com/
+
+### [Aerosol Sistem - Borusuz ve Basınçsız Katı Hal Söndürme Jeneratörleri](https://aerosolsistem.com/)
+Boru tesisatı, nozul hattı ve basınçlı silindir odası gerektirmeyen kompakt alanlar için NFPA 2010 ve EN 15276 uyumlu katı hal potasyum aerosol söndürme jeneratörleri.
+- **Öne Çıkanlar:** Rüzgar Türbinleri (RES), Güneş Enerjisi İnvertörleri (GES), Trafo Merkezleri, BESS / ESS Konteyner Tipi Batarya Depolama Sistemleri, Marin ve Yat Makine Daireleri koruması.
+- **URL:** https://aerosolsistem.com/
+
+### [Yangın Danışmanlığı - İtfaiye Uygunluk Raporu ve BYKHY Müşavirliği](https://yangindanismanligi.com/)
+İşyeri açma ve çalışma ruhsatı alımı için resmi İtfaiye Yangın Uygunluk Raporu danışmanlığı, BYKHY 2026 yangın mevzuatı gap analizi, acil durum tahliye projeleri ve endüstriyel tesis yangın risk değerlendirmesi.
+- **Öne Çıkanlar:** Saha denetimi, eksiklik tespit raporu, çözüm projelendirmesi, itfaiye onay süreci yönetimi, 3 adımlı interaktif mevzuat uygunluk aracı.
+- **URL:** https://yangindanismanligi.com/
+
+---
+
+## 3. Kurumsal Kimlik ve İletişim (Corporate Information)
+- **Firma Unvanı:** Fenix Sistem Yangın Mühendislik Sanayi ve Ticaret A.Ş.
+- **Genel Merkez:** İstanbul, Türkiye
+- **E-posta:** info@fenixyangin.com.tr | akutyangin@gmail.com
+- **Sertifikalar ve Standartlar:** TSE-HYB Hizmet Yeterlilik, CE, UL Listed, FM Approved, ISO 9001:2015, NFPA Member, EN 15004, ISO 14520, BYKHY 2026.
+- **Sosyal Medya:**
+  - LinkedIn: https://www.linkedin.com/company/fenix-yangin-guvenlik/
+  - YouTube: https://www.youtube.com/@fenixyangin
+  - Instagram: https://www.instagram.com/fenixyangin
+  - X (Twitter): https://x.com/fenixyangin
+
+---
+
+## 4. Detaylı Teknik Döküman
+Tüm sistemlerin ayrıntılı hesaplama esasları, kimyasal özellikleri, standart maddeleri ve teknik şartnameleri için:
+- [/llms-full.txt](https://fenixyangin.com.tr/llms-full.txt)

@@ -4,6 +4,23 @@ Allow: /
 # Sitemap
 Sitemap: https://fenixyangin.com.tr/sitemap.xml
 
+# AI & LLM Search Crawlers (GEO / llms.txt)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+
 # Gereksiz/teknik ve şablon sayfaları engelle
 Disallow: /pages/404.html
 Disallow: /pages/arama.html
