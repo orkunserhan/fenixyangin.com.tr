@@ -1,29 +1,54 @@
+# FENIXYANGIN.COM.TR — Google & AI Search Engine Optimization (GEO / AEO)
 User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://fenixyangin.com.tr/sitemap.xml
-
-# AI & LLM Search Crawlers (GEO / llms.txt)
-User-agent: GPTBot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-
-User-agent: PerplexityBot
-Allow: /
-Allow: /llms.txt
-
-User-agent: ClaudeBot
-Allow: /
-Allow: /llms.txt
-
-User-agent: Google-Extended
-Allow: /
-
-# Gereksiz/teknik ve şablon sayfaları engelle
 Disallow: /pages/404.html
 Disallow: /pages/arama.html
 Disallow: /pages/*-single.html
 Disallow: /pages/bolge.html
 Disallow: /parts/
+
+# Google Search & Gemini AI Overviews
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# OpenAI ChatGPT Live Search & GPT Crawlers
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Anthropic Claude AI Search
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Bing & Apple Intelligence
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://fenixyangin.com.tr/sitemap.xml
