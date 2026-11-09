@@ -758,6 +758,158 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3>3. Elektrikli Araç Şarj Alanları ve Kapalı Otoparklar</h3>
 <p>DC hızlı şarj istasyonlarında araç bataryaları yüksek termal strese maruz kalabilir. Kapalı otoparklarda yangın kompartımanlaması, termal izleme kameraları ve <a href="elektrikli-arac-sarj-istasyonlarinda-yangin-sondurme.html">elektrikli araç şarj alanı yangın güvenliği</a> önlemleri uygulanmalıdır.</p>
 
+
+
+<!-- ENRICHED: Koruma Hiyerarşisi -->
+<section class="fx-bess-enriched-sec" style="margin: 32px 0;">
+<h2 class="fx-tech-h2">Koruma seviyeleri: Hücreden açık saha ölçeğine mimari hiyerarşi</h2>
+          <p class="fx-tech-p">Lityum batarya yangın güvenliğinde en yaygın hata, "lityum batarya" ifadesine tek tip bir reçete yazmaktır. Yangın davranışı, termal kütle, gaz birikim hacmi ve müdahale dinamikleri korunulan hiyerarşik seviyeye göre kökten değişir:</p>
+
+          <div class="fx-tech-table-wrap">
+            <table class="fx-tech-table">
+              <thead>
+                <tr>
+                  <th>Fiziksel Seviye</th>
+                  <th>Birincil Tehlike Dinamiği</th>
+                  <th>Mühendislik Koruma Yaklaşımı</th>
+                  <th>Uygulanabilir Standart Referansı</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Hücre (Cell)</strong></td>
+                  <td>İç kısa devre, SEI tabakası çökmesi, basınç diski yırtılması</td>
+                  <td>Hücre kimyası optimizasyonu, akım kesme cihazı (CID), dahili emniyet valfi</td>
+                  <td>UL 1642 / IEC 62619</td>
+                </tr>
+                <tr>
+                  <td><strong>Modül (Module)</strong></td>
+                  <td>Hücreden hücreye termal ısı transferi ve kaskat yayılım</td>
+                  <td>Aerogel/mika termal bariyerler, faz değişim malzemeleri (PCM), hücreler arası soğutma</td>
+                  <td>UL 9540A Modül Testi</td>
+                </tr>
+                <tr>
+                  <td><strong>Kabin / Raf (Rack)</strong></td>
+                  <td>Yüksek DC bara gerilimi, ark parlaması, modüller arası alev sıçraması</td>
+                  <td>Raf seviyesi off-gas/duman algılama, dahili sigortalar, şönt açtırıcı kontaktör</td>
+                  <td>UL 9540A Ünite Testi</td>
+                </tr>
+                <tr>
+                  <td><strong>Kabin (Cabinet)</strong></td>
+                  <td>Kapalı hacimde lokal gaz birikimi ve ikincil kablo yangını</td>
+                  <td>Lokal <a href="/sistemler/pano-ici/">pano içi mikro söndürme</a>, dielektrik gaz deşarjı, sızdırmazlık contaları</td>
+                  <td>NFPA 855 / UL 9540</td>
+                </tr>
+                <tr>
+                  <td><strong>Konteyner (BESS)</strong></td>
+                  <td>Konteyner içi yanıcı gaz birikimi (H<sub>2</sub>, VOC), patlama/deflagrasyon riski</td>
+                  <td>Mekanik süpürme havalandırması, NFPA 68 patlama kapağı, temiz gaz ve risk değerlendirmesine bağlı dış itfaiye/su bağlantısı</td>
+                  <td>NFPA 855 Bölüm 9 / FM DS 5-33</td>
+                </tr>
+                <tr>
+                  <td><strong>Akü Odası (UPS / Oda)</strong></td>
+                  <td>Bina içi yangın sirayeti, toksik duman, yapısal yangın yükü</td>
+                  <td>EI 120 yangın duvarları, <a href="/teknik-icerikler/oda-sizdirmazlik-testi-yontemi/">oda sızdırmazlık testi</a>, gazlı söndürme, acil egzoz</td>
+                  <td>BYKHY Madde 98 / NFPA 855 Bölüm 6</td>
+                </tr>
+                <tr>
+                  <td><strong>Açık Saha (Site Level)</strong></td>
+                  <td>Konteynerler arası termal radyasyon ve çevre yapılara sıçrama</td>
+                  <td>Minimum 3 ft (0,9 m) ila 10 ft mesafe ayırımı, yangın duvarları, hidrant ve itfaiye erişimi</td>
+                  <td>NFPA 855 Tablo 4.3 / FM DS 5-33</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 2: Termal Kaçak ve Yayılım Fiziği -->
+        <section class="fx-tech-section" id="termal-kacak">
+</section>
+
+<!-- ENRICHED: Söndürme vs Soğutma -->
+<section class="fx-bess-enriched-sec" style="margin: 32px 0;">
+<h2 class="fx-tech-h2">Söndürme vs soğutma ayrımı: Kritik mühendislik çizgisi</h2>
+          <p class="fx-tech-p">BESS yangın korumasında en sık karşılaşılan kavram yanılgısı, alev söndürme ile termal soğutmanın birbiriyle karıştırılmasıdır:</p>
+
+          <div class="fx-tech-badge-strip">
+            <div class="fx-tech-badge-strip__item">
+              <span>ALEV SÖNDÜRME</span>
+              <strong>GAZ FAZINI BASTIRMA</strong>
+            </div>
+            <div class="fx-tech-badge-strip__item">
+              <span>TERMAL SOĞUTMA</span>
+              <strong>HÜCRE İÇ ISISINI EMME</strong>
+            </div>
+            <div class="fx-tech-badge-strip__item">
+              <span>HEDEF</span>
+              <strong>KASKAT YAYILIMI DURDURMA</strong>
+            </div>
+          </div>
+
+          <ul class="fx-tech-list" style="margin-top:20px;">
+            <li><strong>Yangın Söndürme (Fire Suppression):</strong> Açıkta yanan elektrolit alevini, kablo plastiklerini ve ikincil yapısal malzemeleri söndürmeyi hedefler. Temiz gazlar (<a href="/sistemler/novec-1230/">Novec 1230</a>, <a href="/sistemler/fm200/">FM-200</a>, <a href="/teknik-icerikler/inert-gazli-sondurme-sistemleri/">İnert gazlar</a>) dielektrik yapıları sayesinde elektrikli donanıma zarar vermeden alevli gaz fazını 10 ila 60 saniyede başarıyla bastırır.</li>
+            <li><strong>Isı Uzaklaştırma ve Soğutma (Heat Removal / Cooling):</strong> Hücre ve modül kütlesinde açığa çıkan kimyasal ekzotermik ısının ortamdan uzaklaştırılmasıdır. Gazlı söndürücü ajanların sınırlı özgül ısı kapasitesi nedeniyle hücre çekirdeğindeki reaksiyon ısısını hızla soğutması beklenemez; doğrudan veya dolaylı soğutma yöntemleri bu amaçla değerlendirilir.</li>
+            <li><strong>Termal Kaçak Kontrolü (Thermal Runaway Control):</strong> Başlamış bir termal kaçağın hücre kimyası içinde kimyasal olarak durdurulması dışarıdan bir ajanla mümkün değildir; BMS üzerinden elektriksel devrenin açılması ve şarj/deşarj akımının kesilmesiyle elektriksel zorlanma ortadan kaldırılır.</li>
+            <li><strong>Yayılım Kontrolü (Propagation Control):</strong> Termal kaçağın etkilenen hücreden komşu hücrelere, modüllere veya raflara sıçramasını engellemektir. Modüller arası termal bariyerler (aerogel, mika, PCM) veya proje mimarisine göre su sisi, sprinkler ya da sıvı soğutma altyapısı bu kapsamda değerlendirilebilir.</li>
+            <li><strong>Yeniden Alevlenme Kontrolü (Re-ignition Control):</strong> Gaz tutma süresi tamamlandığında veya ortama hava girdiğinde soğumamış sıcak hücre kütlesinin yeniden tutuşmasını önlemektir. Sıcak yüzeylerin soğutulması ve yanıcı gaz birikiminin tahliyesi ile yönetilir.</li>
+            <li><strong>Muhafaza ve Sınırlandırma (Containment):</strong> Yangın duvarları, kabin contaları, yangın damperleri ve yapısal bölmelerle olayın başlangıç kabininde veya kompartımanında izole edilmesidir.</li>
+          </ul>
+
+          <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px;color:var(--fx-ink);">Soğutma ve Su Entegrasyonunun Normatif Kapsamı</h3>
+          <p class="fx-tech-p">Su bazlı sistemler (sprinkler veya su sisi), yüksek özgül ısı kapasiteleri (4,184 J/g·K) ve buharlaşma gizli ısıları sayesinde hücreler arası ısı transferini sınırlamada ve kaskat yayılımı kontrol altına almada etkili bir soğutma ortamı sunabilir. Bununla birlikte, su veya belirli bir soğutma teknolojisi tüm batarya tesisleri için evrensel olarak tek veya zorunlu bir çözüm şeklinde nitelendirilemez. Örneğin NFPA 855 Bölüm 4.4 kapsamında sabit yangın söndürme altyapısı tanımlanırken; üreticinin büyük ölçekli yangın test verilerine (UL 9540A) göre hücreler arası yangın yayılımı göstermediği kanıtlanmış onaylı ünitelerde, tesis içi su temini imkanları, atık su/drenaj yönetimi, donma riskleri ve yetkili idarenin (AHJ) yerel gereksinimleri birlikte değerlendirilerek en uygun bastırma ve yayılım kontrolü mimarisi seçilir.</p>
+        </section>
+
+        <!-- Section 6: Temiz Gazlı Söndürmenin Rolü ve Sınırları -->
+        <section class="fx-tech-section" id="temiz-gaz">
+</section>
+
+<!-- ENRICHED: Temiz Gazın Rolü -->
+<section class="fx-bess-enriched-sec" style="margin: 32px 0;">
+<h2 class="fx-tech-h2">Temiz gazlı söndürme sistemleri BESS'te ne zaman rol oynayabilir?</h2>
+          <p class="fx-tech-p">Temiz gazlı yangın söndürme sistemleri BESS tesislerinde ve akü odalarında önemli bir koruma bileşenidir; ancak görev tanımları ve sınırları net çizilmelidir:</p>
+
+          <h3 style="font-size:18px;font-weight:700;margin:20px 0 12px;color:var(--fx-ink);">Temiz Gazların Başardıkları:</h3>
+          <ul class="fx-tech-list">
+            <li><strong>Elektriksel İletkenlik Sıfırdır (Dielektrik):</strong> Canlı elektrik ve DC bara sistemlerine deşarj edildiğinde kısa devreye veya ark parlamasına yol açmaz.</li>
+            <li><strong>Kalıntısız ve Tahribatsızdır:</strong> Yangından etkilenmemiş sağlam elektronik kontrol kartlarına, inverterlere ve batarya yönetim ünitelerine zarar vermez.</li>
+            <li><strong>İlk Alevli Tutuşmayı Hızla Bastırır:</strong> Konteyner veya oda içindeki Class A (kablo, plastik) ve Class B (solvent buharı) alevlerini kontrol altına alarak ortam sıcaklığının ani yükselmesini geciktirir.</li>
+          </ul>
+
+          <h3 style="font-size:18px;font-weight:700;margin:24px 0 12px;color:var(--fx-ink);">Temiz Gazların Sınırları ve Mühendislik Gerçeği:</h3>
+          <ul class="fx-tech-list">
+            <li>Metal muhafazalı hücre gövdesinin içindeki kimyasal parçalanmayı durduramaz.</li>
+            <li>Ortamda gaz tutma süresi (Hold Time) sona erdiğinde veya kapılar açıldığında, soğutulmamış sıcak batarya çekirdeği havayla temas ettiğinde <strong>yeniden alevlenme (re-ignition)</strong> riski taşır.</li>
+          </ul>
+          <p class="fx-tech-p">Bu nedenle temiz gazlı söndürme; erken algılama, BMS açtırma ve gerektiğinde sınırlandırıcı soğutma protokolleriyle birlikte <strong>hibrit bir savunma katmanı</strong> olarak konumlandırılmalıdır.</p>
+        </section>
+
+        <!-- Section 7: Patlama, Deflagrasyon ve Havalandırma -->
+        <section class="fx-tech-section" id="patlama-tahliye">
+</section>
+
+<!-- ENRICHED: Patlama & Deflagrasyon -->
+<section class="fx-bess-enriched-sec" style="margin: 32px 0;">
+<h2 class="fx-tech-h2">Patlama / deflagrasyon riski, mekanik süpürme ve NFPA 68 / NFPA 69</h2>
+          <p class="fx-tech-p">BESS konteynerlerinde en tehlikeli aşamalardan biri, alevsiz termal kaçakta ortama salınan yanıcı gazların konteyner içinde birikmesidir. Yanıcı gaz birikimi (özellikle hidrojen ve VOC solvent buharları) ile bir ark kaynağının buluşması şiddetli bir deflagrasyona yol açabilir.</p>
+
+          <div class="fx-tech-callout">
+            <p class="fx-tech-callout__title">DEFLAGRASYON ZİNCİRİ</p>
+            <p class="fx-tech-callout__text">Gaz Salınımı (H<sub>2</sub> / CO / VOC) &rarr; Kapalı Konteynerde Konsantrasyon Artışı &rarr; Alt Yanma Sınırı (LFL) Aşımı &rarr; Ark veya Sıcak Yüzeyle Tutuşma &rarr; Patlama / Basınç Yükselmesi</p>
+          </div>
+
+          <p class="fx-tech-p">Bu tehlikeyi yönetmek için iki ana normatif mühendislik yaklaşımı uygulanır:</p>
+          <ul class="fx-tech-list">
+            <li><strong>NFPA 69 (Patlama Önleme Sistemleri):</strong> Yanıcı gaz konsantrasyonunu sürekli olarak Alt Yanma Sınırının %25'inin altında (%25 LFL) tutmak amacıyla tasarlanmış acil durum mekanik süpürme havalandırması.</li>
+            <li><strong>NFPA 68 (Deflagrasyon Basınç Tahliyesi):</strong> Olası bir tutuşma durumunda oluşan ani pik basıncın konteyner kabuğunu parçalamaması için hesaplanmış basınç tahliye kapakları (explosion venting panels). Bu kapaklar konteyner tavanına veya personel bulunmayan güvenli cephelere açılarak yapısal hasar ve deflagrasyon riskini sınırlar.</li>
+          </ul>
+          <p class="fx-tech-p"><em>Not:</em> Her BESS projesinde standart bir patlama kapağı ölçüsü uygulanamaz; konteyner hacmine, batarya kimyasının ürettiği maksimum gaz debisine (K<sub>G</sub> değeri) ve kabuk dayanımına göre hidrolik ve yapısal hesaplama yapılır.</p>
+        </section>
+
+        <!-- Section 8: Normatif Standartlar ve UL 9540A -->
+        <section class="fx-tech-section" id="standartlar">
+</section>
+
 <h2>Standartlar ve Mühendislik Referansları</h2>
 <ul>
 <li><strong>NFPA 855:</strong> Standard for the Installation of Stationary Energy Storage Systems (Sabit Enerji Depolama Sistemleri Kurulum Standardı)</li>
