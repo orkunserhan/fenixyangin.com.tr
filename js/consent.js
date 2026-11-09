@@ -240,76 +240,58 @@
     }
   }
 
-  function trackFenixConv(eventName, params, oncePerSession) {
-    if (oncePerSession) {
-      try {
-        if (sessionStorage.getItem('fenix_conv_' + eventName)) return;
-        sessionStorage.setItem('fenix_conv_' + eventName, '1');
-      } catch(e) {}
-    }
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', eventName, params || {});
-    }
-  }
-
-  /* --------------------------------------------------------------------------
-     PHONE, WHATSAPP, EMAIL, CALCULATOR & FORM EVENT TRACKING (GÖREV 3 UNIVERSAL)
+    /* --------------------------------------------------------------------------
+     CANONICAL CONVERSION TRACKING (SADECE dataLayer.push - TEK KAYNAK)
      -------------------------------------------------------------------------- */
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('a');
-    if (!a) return;
-    var href = a.getAttribute('href') || '';
-    if (href.indexOf('tel:') === 0) {
-      var phoneNum = href.replace('tel:', '').trim();
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'phone_click',
-        event_category: 'Contact',
-        event_action: 'Click Phone',
-        event_label: phoneNum,
-        phone_number: phoneNum
-      });
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'click_phone', { phone_number: phoneNum });
-      }
-      trackFenixConv('telefon_tikla', { phone_number: phoneNum }, true);
-    } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'whatsapp_click',
-        event_category: 'Contact',
-        event_action: 'Click WhatsApp',
-        event_label: href,
-        destination: href
-      });
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'click_whatsapp', { destination: href });
-      }
-      trackFenixConv('whatsapp_tikla', { link_url: href }, true);
-    } else if (href.indexOf('mailto:') === 0) {
-      trackFenixConv('eposta_tikla', { email: href.replace('mailto:', '') }, true);
-    }
-  }, true);
+  if (!window.__fenix_tracking_attached) {
+    window.__fenix_tracking_attached = true;
 
-  document.addEventListener('submit', function (e) {
-    var form = e.target;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'form_submission',
-      event_category: 'Lead',
-      event_action: 'Submit Quote Form',
-      event_label: form.id || 'contact_form'
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!href) return;
+
+      if (/wa\.me|whatsapp\.com|api\.whatsapp\.com/i.test(href)) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'whatsapp_tikla',
+          click_url: a.href
+        });
+      } else if (/^tel:/i.test(href)) {
+        var phoneNum = href.replace(/^tel:/i, '').trim();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'telefon_tikla',
+          phone_number: phoneNum,
+          click_url: a.href
+        });
+      } else if (/^mailto:/i.test(href)) {
+        var email = href.replace(/^mailto:/i, '').split('?')[0].trim();
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'eposta_tikla',
+          email: email,
+          click_url: a.href
+        });
+      }
+    }, true);
+
+    document.addEventListener('submit', function (e) {
+      var form = e.target;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_gonderimi',
+        form_id: (form && form.id) || 'contact_form'
+      });
+    }, true);
+
+    window.addEventListener('calculator_used', function (e) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({
+        event: 'hesaplayici_kullanildi'
+      }, (e && e.detail) || {}));
     });
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', { form_id: form.id || 'contact_form' });
-    }
-    trackFenixConv('form_gonderimi', { form_id: form.id || 'contact_form' }, false);
-  }, true);
-
-  window.addEventListener('calculator_used', function(e) {
-    trackFenixConv('hesaplayici_kullanildi', e.detail || {}, false);
-  });
+  }
 
 })();
